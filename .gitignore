@@ -1,0 +1,1 @@
+"*.csproj\n*.unityproj\n*.sln\n*.suo\n*.tmp\n*.user\n*.userprefs\n*.pidb\n*.booproj\n*.svd\n*.pdb\n*.mdb\n*.opendb\n.DS_Store\nLibrary/\nTemp/\nObj/\nBuild/\nBuilds/\nLogs/\nMemoryCaptures/\n/*.csproj\n/*.unityproj\n/*.sln\n/*.userprefs\n/*.pidb\n*.apk\n*.aab\n*.db\n.gradle/\n.idea/\n*.iml\nvs/.\nbuild/\n.ionide/\n" 
