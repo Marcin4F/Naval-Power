@@ -353,7 +353,7 @@
 -analyzer:"D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/ReyCastSelecter.cs"
-"Assets/Scripts/ShipBasic.cs"
+"Assets/Scripts/ShipDrag.cs"
 "Assets/Scripts/ShipPlacement.cs"
 -langversion:9.0
 
