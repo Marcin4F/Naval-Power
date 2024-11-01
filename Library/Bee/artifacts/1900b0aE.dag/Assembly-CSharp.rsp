@@ -352,7 +352,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/Scripts/InGameUI.cs"
 "Assets/Scripts/ReyCastSelecter.cs"
+"Assets/Scripts/ScenesManager.cs"
 "Assets/Scripts/ShipDrag.cs"
 -langversion:9.0
 
