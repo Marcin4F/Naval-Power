@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShipDrag : MonoBehaviour
 {
     Vector3 offset;
     private ReyCastSelecter raycast;    //zainicjalizowanie zmiennych do skryptow ReyCastSelecter i ShipPlacement
-    private ShipPlacement placement;
+    private Collider[] childColliders;
+    private Collider mainCollider;
+    private Collider[] nearbyFields;
+    private Collider nearestField;
 
     private void Start()
     {
-        raycast = FindObjectOfType<ReyCastSelecter>();  // uzyskanie dostepu do skryptow
-        placement = FindObjectOfType<ShipPlacement>();
+        raycast = FindObjectOfType<ReyCastSelecter>();  // uzyskanie dostepu do skryptu Reycast
+ 
+        childColliders = GetComponentsInChildren<Collider>();
+        mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
     }
 
     private void OnMouseDown()      // klikniecie LPM
@@ -24,7 +31,16 @@ public class ShipDrag : MonoBehaviour
     {
         if (raycast != null && raycast.mode == 1)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie ReyCastSelecter
         {
-            placement.Placement();                      // wywolanie funkcji Placement, OBECNIE NIE DZIALA W PELNI
+            nearbyFields = Physics.OverlapSphere(mainCollider.transform.position, 1f)       // tworzymy sfere wokol mainCollider z promieniem 1f i znajdujemy wszystkie pola Fields
+                .Where(collider => collider.CompareTag("Field"))
+                .ToArray();
+
+            if (nearbyFields.Length > 0)        // jezeli znaleziono jakies pola w ustawionym promieniu
+            {
+                nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
+                                                     .FirstOrDefault();
+                transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
+            }
         }
     }
 

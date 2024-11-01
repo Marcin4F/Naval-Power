@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ReyCastSelecter.cs" />
     <Compile Include="Assets\Scripts\ShipDrag.cs" />
-    <Compile Include="Assets\Scripts\ShipPlacement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
