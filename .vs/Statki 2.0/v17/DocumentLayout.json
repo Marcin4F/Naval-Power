@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|d:\\studia\\semestr 3\\programowanie obiektowe\\statki 2.0\\assets\\scripts\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\shipdrag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\shipdrag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|d:\\studia\\semestr 3\\programowanie obiektowe\\statki 2.0\\assets\\scripts\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|d:\\studia\\semestr 3\\programowanie obiektowe\\statki 2.0\\assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|d:\\studia\\semestr 3\\programowanie obiektowe\\statki 2.0\\assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|d:\\studia\\semestr 3\\programowanie obiektowe\\statki 2.0\\assets\\scripts\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -26,11 +34,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "Ship.cs",
+              "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Ship.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Ship.cs",
+              "ToolTip": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Ship.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Ship.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAIwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T17:45:36.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Pancernik.cs",
+              "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Pancernik.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Pancernik.cs",
+              "ToolTip": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Pancernik.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Pancernik.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T17:45:33.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Niszczyciel.cs",
+              "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Niszczyciel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Niszczyciel.cs",
+              "ToolTip": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Niszczyciel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Niszczyciel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-03T17:45:30.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "InGameUI.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\InGameUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\InGameUI.cs",
@@ -38,12 +85,11 @@
               "RelativeToolTip": "Assets\\Scripts\\InGameUI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T15:19:50.629Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T15:19:50.629Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ScenesManager.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\ScenesManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ScenesManager.cs",
@@ -51,25 +97,11 @@
               "RelativeToolTip": "Assets\\Scripts\\ScenesManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:59:38.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-01T14:59:38.373Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ShipDrag.cs",
-              "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\ShipDrag.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ShipDrag.cs",
-              "ToolTip": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\ShipDrag.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ShipDrag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-31T17:07:53.717Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "ReyCastSelecter.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\ReyCastSelecter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ReyCastSelecter.cs",

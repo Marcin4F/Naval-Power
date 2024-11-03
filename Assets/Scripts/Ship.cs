@@ -11,6 +11,7 @@ public class Ship : MonoBehaviour
     protected int hp; // ¿ycie
     protected int zanurzenie;
     protected new string name;
+    protected Vector3 fieldPosition;
 
     // zmienne dla funkcji ship drag
     Vector3 offset;
@@ -64,6 +65,6 @@ public class Ship : MonoBehaviour
         mouseScreenPosition.z = Camera.main.WorldToScreenPoint(transform.position).z;
         return Camera.main.ScreenToWorldPoint(mouseScreenPosition);
     }
-    // koniec funkcji ship drug
+    // koniec funkcji ship drag
 }
 
