@@ -916,6 +916,7 @@ GameObject:
   - component: {fileID: 41379265}
   - component: {fileID: 41379266}
   - component: {fileID: 41379267}
+  - component: {fileID: 41379268}
   m_Layer: 0
   m_Name: ScriptsHolder
   m_TagString: Untagged
@@ -961,6 +962,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cbf363ae4259c1649ab181e25ab11806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &41379268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41379264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5783b5a4036cc8d49846a0b22530c892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &44175867
@@ -2084,7 +2097,7 @@ GameObject:
   - component: {fileID: 100927609}
   - component: {fileID: 100927613}
   m_Layer: 0
-  m_Name: statek
+  m_Name: Pancernik
   m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2190,7 +2203,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 100927607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82686a0c36a0623458599c398c69bc8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 34745365e981f2447b754511547deb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &115592447
@@ -30741,7 +30754,7 @@ GameObject:
   - component: {fileID: 2063951036}
   - component: {fileID: 2063951040}
   m_Layer: 0
-  m_Name: statek (1)
+  m_Name: Niszczyciel
   m_TagString: Ship
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30843,7 +30856,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2063951034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82686a0c36a0623458599c398c69bc8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 56e0210d4b813d9448f2410280a01efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2074155927
