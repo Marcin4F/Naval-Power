@@ -353,13 +353,13 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.13f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/InGameUI.cs"
-"Assets/Scripts/Niszczyciel.cs"
-"Assets/Scripts/Niszczyciel2.cs"
-"Assets/Scripts/Pancernik.cs"
-"Assets/Scripts/Pancernik2.cs"
 "Assets/Scripts/ReyCastSelecter.cs"
 "Assets/Scripts/ScenesManager.cs"
 "Assets/Scripts/Ship.cs"
+"Assets/Scripts/Statki/Niszczyciel.cs"
+"Assets/Scripts/Statki/Niszczyciel2.cs"
+"Assets/Scripts/Statki/Pancernik.cs"
+"Assets/Scripts/Statki/Pancernik2.cs"
 -langversion:9.0
 
 /deterministic

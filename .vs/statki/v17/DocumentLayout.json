@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\niszczyciel2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\niszczyciel2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\statki\\niszczyciel2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\niszczyciel2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\assets\\scripts\\pancernik2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pancernik2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\statki\\pancernik2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\pancernik2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\assets\\scripts\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -24,6 +24,10 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\samur\\OneDrive\\studia\\Programowanie obiektowe\\Projekt statki\\statki\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -33,44 +37,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Niszczyciel2.cs",
-              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Niszczyciel2.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Niszczyciel2.cs",
-              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Niszczyciel2.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Niszczyciel2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAPAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Niszczyciel2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Niszczyciel2.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Niszczyciel2.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Statki\\Niszczyciel2.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:25:41.187Z",
+              "WhenOpened": "2024-11-04T07:59:45.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Niszczyciel.cs",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Niszczyciel.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Niszczyciel.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Niszczyciel.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Statki\\Niszczyciel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T07:59:42.264Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Pancernik2.cs",
-              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Pancernik2.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Pancernik2.cs",
-              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Pancernik2.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Pancernik2.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwCEAAAAoAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Pancernik2.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Pancernik2.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Pancernik2.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Statki\\Pancernik2.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAzwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:23:55.886Z"
+              "WhenOpened": "2024-11-04T07:59:11.185Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Niszczyciel.cs",
-              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Niszczyciel.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Niszczyciel.cs",
-              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Niszczyciel.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Niszczyciel.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAcwCQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Pancernik.cs",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Pancernik.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Pancernik.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Pancernik.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Statki\\Pancernik.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T13:47:00.913Z",
+              "WhenOpened": "2024-11-04T07:58:20.717Z",
               "EditorCaption": ""
             },
             {
@@ -87,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Pancernik.cs",
               "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Pancernik.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Pancernik.cs",
