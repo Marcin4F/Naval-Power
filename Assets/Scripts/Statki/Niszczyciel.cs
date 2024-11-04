@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Nisczyciel : Ship
 {
+    int faza = 0;
     public Nisczyciel() //konstruktor
     {
         name = "Niszczyciel";
@@ -15,20 +16,24 @@ public class Nisczyciel : Ship
 
     private void Awake()
     {
-        transform.position = new Vector3(PlayerPrefs.GetFloat("NiszczycielX"), 0.5f, PlayerPrefs.GetFloat("NiszczycielZ"));
-        fieldPosition = transform.position;
-    }
-
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteKey("NiszczycielX");
-        PlayerPrefs.DeleteKey("NiszczycielZ");
+        faza = PlayerPrefs.GetInt("Faza2");
+        if (faza == 0)
+        {
+            PlayerPrefs.DeleteKey("NiszczycielX");
+            PlayerPrefs.DeleteKey("NiszczycielZ");
+            faza = 1;
+            PlayerPrefs.SetInt("Faza2", faza);
+        }
+        else
+        {
+            transform.position = new Vector3(PlayerPrefs.GetFloat("NiszczycielX"), 0.5f, PlayerPrefs.GetFloat("NiszczycielZ"));
+            fieldPosition = transform.position;
+        }
     }
 
     private void Update()
     {
         PlayerPrefs.SetFloat("NiszczycielX", transform.position.x);
         PlayerPrefs.SetFloat("NiszczycielZ", transform.position.z);
-        //PlayerPrefs.Save();
     }
 }

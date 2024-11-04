@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Pancernik : Ship
 {
+    int faza = 0;
     public Pancernik() //konstruktor
     {
         name = "Pancernik";
@@ -16,20 +17,29 @@ public class Pancernik : Ship
 
     private void Awake()
     {
-        transform.position = new Vector3(PlayerPrefs.GetFloat("PancernikX"), 0.5f, PlayerPrefs.GetFloat("PancernikZ"));
-        fieldPosition = transform.position;
+        faza = PlayerPrefs.GetInt("Faza1");
+        if(faza == 0)
+        {
+            PlayerPrefs.DeleteKey("PancernikX");
+            PlayerPrefs.DeleteKey("PancernikZ");
+            faza = 1;
+            PlayerPrefs.SetInt("Faza1", faza);
+        }
+        else
+        {
+            transform.position = new Vector3(PlayerPrefs.GetFloat("PancernikX"), 0.5f, PlayerPrefs.GetFloat("PancernikZ"));
+            fieldPosition = transform.position;
+        }
     }
 
     private void OnApplicationQuit()
     {
-        PlayerPrefs.DeleteKey("PancernikX");
-        PlayerPrefs.DeleteKey("PancernikZ");
+        PlayerPrefs.DeleteAll();
     }
 
     private void Update()
     {
         PlayerPrefs.SetFloat("PancernikX", transform.position.x);
         PlayerPrefs.SetFloat("PancernikZ", transform.position.z);
-        //PlayerPrefs.Save();
     }
 }

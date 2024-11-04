@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Niszczyciel2 : Ship
+public class Nisczyciel2 : Ship
 {
-    public Niszczyciel2() //konstruktor
+    int faza = 0;
+    public Nisczyciel2() //konstruktor
     {
         name = "Niszczyciel";
         move = 5;
@@ -15,20 +16,24 @@ public class Niszczyciel2 : Ship
 
     private void Awake()
     {
-        transform.position = new Vector3(PlayerPrefs.GetFloat("Niszczyciel2X"), 0.5f, PlayerPrefs.GetFloat("Niszczyciel2Z"));
-        fieldPosition = transform.position;
-    }
-
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteKey("Niszczyciel2X");
-        PlayerPrefs.DeleteKey("Niszczyciel2Z");
+        faza = PlayerPrefs.GetInt("Faza4");
+        if (faza == 0)
+        {
+            PlayerPrefs.DeleteKey("Niszczyciel2X");
+            PlayerPrefs.DeleteKey("Niszczyciel2Z");
+            faza = 1;
+            PlayerPrefs.SetInt("Faza4", faza);
+        }
+        else
+        {
+            transform.position = new Vector3(PlayerPrefs.GetFloat("Niszczyciel2X"), 0.5f, PlayerPrefs.GetFloat("Niszczyciel2Z"));
+            fieldPosition = transform.position;
+        }
     }
 
     private void Update()
     {
         PlayerPrefs.SetFloat("Niszczyciel2X", transform.position.x);
         PlayerPrefs.SetFloat("Niszczyciel2Z", transform.position.z);
-        //PlayerPrefs.Save();
     }
 }
