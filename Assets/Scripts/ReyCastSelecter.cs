@@ -8,6 +8,7 @@ public class ReyCastSelecter : MonoBehaviour
 {
     private Transform lastSelected;
     public int mode = 0;
+    bool isSelected = false;
 
     // Update is called once per frame
     void Update()
@@ -16,10 +17,12 @@ public class ReyCastSelecter : MonoBehaviour
         {
             mode = 0;
         }
-        if(Input.GetKeyDown(KeyCode.E))
+
+        if(Input.GetKeyDown(KeyCode.W))
         {
             mode = 1;
         }
+
         if (Input.GetKeyDown(KeyCode.Mouse0) && mode == 0) 
         {
             var ray = GetRay();
@@ -30,23 +33,43 @@ public class ReyCastSelecter : MonoBehaviour
                     if (lastSelected != null)               // odznaczenie ostatnio wybranego statku
                     {
                         lastSelected.Translate(0, -1, 0);
+                        isSelected = false;
                     }
                     var rayPos = raycastHit.transform;      // uzyskanie pozycji statku
                     lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
                     rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
+                    isSelected = true;
                 }
                 else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
                 {
                     lastSelected.Translate(0, -1, 0);
                     lastSelected = null;
+                    isSelected = false;
                 }
             }
             else if (lastSelected != null)               // jezeli promien w nic nie trafil odznaczamy ostatnio wybrany statek
             {
                 lastSelected.Translate(0, -1, 0);
                 lastSelected = null;
+                isSelected=false;
             }
         }
+
+        if(isSelected)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                float shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+                lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                float shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+                lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
+            }
+        }
+
 
         static Ray GetRay()         // stworzenie promienia od kursora
         {

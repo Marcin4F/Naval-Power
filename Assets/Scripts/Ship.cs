@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Ship : MonoBehaviour
 {
@@ -57,6 +58,18 @@ public class Ship : MonoBehaviour
     {
         if (raycast != null && raycast.mode == 1)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie ReyCastSelecter
             transform.position = MouseWorldPosition() + offset;     // zmiana pozycji obiektu: aktualna pozycja myszy + wyliczony offset
+        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            float shipRotation = transform.rotation.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            float shipRotation = transform.rotation.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
+        }
     }
 
     Vector3 MouseWorldPosition()        // uzyskanie pozycji myszy
