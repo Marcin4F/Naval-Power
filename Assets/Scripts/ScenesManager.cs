@@ -10,6 +10,8 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
     private void Awake()        // przypisanie zmiennej instance, tej klasy, czyli ScenesManager
     {
         instance = this;
+        if (!PlayerPrefs.HasKey("Direction"))
+            PlayerPrefs.SetInt("Direction", 1);
     }
 
     public enum Scene           // lista stalych nazw scen, WAZNA JEST KOLEJNOSC, nazwy NIE musza byc identyczne z nazwami w unity liczy sie tylko kolejnosc
@@ -31,12 +33,25 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 
     public void EndTurn()                   // konczenie tury i przejscie do drugiego gracza
     {
-        // DO DODANIA: ekran przejsciowy pomiedzy graczami
-        int index = SceneManager.GetActiveScene().buildIndex;           // UWAGA zmienic wartosc w if-ach w przypadku zmian w ilosci/kolejnosci scen
+        int index = SceneManager.GetActiveScene().buildIndex;
+        int direction = PlayerPrefs.GetInt("Direction");
+
         if (index == 1)
+        {
+            direction = 1;
+            PlayerPrefs.SetInt("Direction", direction);
             SceneManager.LoadScene(index + 1);
-        else if (index == 2)
+        }
+        else if (index == 3)
+        {
+            direction = -1;
+            PlayerPrefs.SetInt("Direction", direction);
             SceneManager.LoadScene(index - 1);
+        }
+        else if (index == 2)
+        {
+            SceneManager.LoadScene(index + direction);
+        }
     }
 
     public void MainMenu()                  // wyjscie do menu glownego, dodac pozniej pause menu pod ESC w skrypcie InGameUI
