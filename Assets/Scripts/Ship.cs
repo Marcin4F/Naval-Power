@@ -11,7 +11,7 @@ public class Ship : MonoBehaviour
     protected int move;
     protected int hp; // ¿ycie
     protected int zanurzenie;
-    protected new string name;
+    public new string name;
     protected Vector3 fieldPosition;
 
     // zmienne dla funkcji ship drag
@@ -22,14 +22,41 @@ public class Ship : MonoBehaviour
     protected Collider[] nearbyFields;
     protected Collider nearestField;
 
+    int faza = 0;
+    
     protected void Start()
     {
         raycast = FindObjectOfType<ReyCastSelecter>();  // uzyskanie dostepu do skryptu Reycast
 
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
+
+        //zapisywanie pozycji statków do pliku
+        faza = PlayerPrefs.GetInt("Faza2");
+        if (faza == 0)
+        {
+            PlayerPrefs.DeleteKey(name + "X");
+            PlayerPrefs.DeleteKey(name + "Z");
+            faza = 1;
+            PlayerPrefs.SetInt("Faza2", faza);
+        }
+        else
+        {
+            transform.position = new Vector3(PlayerPrefs.GetFloat(name + "X"), 0.5f, PlayerPrefs.GetFloat(name + "Z"));
+            fieldPosition = transform.position;
+        }
     }
 
+    //zapisywanie pozycji statków do pliku
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+    private void Update()
+    {
+        PlayerPrefs.SetFloat(name + "X", transform.position.x);
+        PlayerPrefs.SetFloat(name + "Z", transform.position.z);
+    }
     // funkcje ship drag
     protected void OnMouseDown()      // klikniecie LPM
     {

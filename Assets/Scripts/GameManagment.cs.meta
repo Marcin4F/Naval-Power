@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 16c81331e86a3b34ebcb8ca2700c78db
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
+  - niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
