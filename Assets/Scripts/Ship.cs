@@ -4,6 +4,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class Ship : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class Ship : MonoBehaviour
     protected int hp; // ¿ycie
     protected int zanurzenie;
     public new string name;
+
     protected Vector3 fieldPosition;
+    protected int size;
 
     // zmienne dla funkcji ship drag
     Vector3 offset;
@@ -32,17 +35,19 @@ public class Ship : MonoBehaviour
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
 
         //zapisywanie pozycji statków do pliku
-        faza = PlayerPrefs.GetInt("Faza2");
+        faza = PlayerPrefs.GetInt("Faza" + SceneManager.GetActiveScene().buildIndex);       // faza gry: 0 - pierwsza tura, nie wczytujemy pozycji statkow, 1 - kolejne tury wczytujemy pozycje z plikow
         if (faza == 0)
         {
-            PlayerPrefs.DeleteKey(name + "X");
+            PlayerPrefs.DeleteKey(name + "X");      // usuniecie jezeli istnialy jakies pliki o podanych nazwach z wczesniejszej gry
             PlayerPrefs.DeleteKey(name + "Z");
+            PlayerPrefs.DeleteKey(name + "Rotation");
             faza = 1;
-            PlayerPrefs.SetInt("Faza2", faza);
+            PlayerPrefs.SetInt("Faza" + SceneManager.GetActiveScene().buildIndex, faza);
         }
         else
         {
-            transform.position = new Vector3(PlayerPrefs.GetFloat(name + "X"), 0.5f, PlayerPrefs.GetFloat(name + "Z"));
+            transform.position = new Vector3(PlayerPrefs.GetFloat(name + "X"), 0.5f, PlayerPrefs.GetFloat(name + "Z"));     // wczytanie pozycji z plikow
+            transform.rotation = Quaternion.Euler(0, PlayerPrefs.GetFloat(name + "Rotation"), 0); 
             fieldPosition = transform.position;
         }
     }
@@ -52,11 +57,7 @@ public class Ship : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
     }
-    private void Update()
-    {
-        PlayerPrefs.SetFloat(name + "X", transform.position.x);
-        PlayerPrefs.SetFloat(name + "Z", transform.position.z);
-    }
+
     // funkcje ship drag
     protected void OnMouseDown()      // klikniecie LPM
     {
@@ -78,6 +79,9 @@ public class Ship : MonoBehaviour
                  .FirstOrDefault();
                 transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
             }
+            PlayerPrefs.SetFloat(name + "X", transform.position.x);         // zapisanie pozycji statku do plikow
+            PlayerPrefs.SetFloat(name + "Z", transform.position.z);
+            PlayerPrefs.SetFloat(name + "Rotation", transform.eulerAngles.y);
         }
     }
 

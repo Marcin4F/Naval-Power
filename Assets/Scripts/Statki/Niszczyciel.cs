@@ -11,6 +11,7 @@ public class Niszczyciel : Ship
         hp = 5;
         zanurzenie = 1;
         fieldPosition = new Vector3(5.5f, 0.5f, -2.5f);
+        size = 3;
     }
 
 
