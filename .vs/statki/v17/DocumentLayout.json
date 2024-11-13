@@ -1,22 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\",
+  "WorkspaceRootPath": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|e:\\studia\\iii semestr\\programowanie obiektowe\\projekt\\statki\\assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|c:\\users\\marko\\studia\\programowanie obiektowe\\statki\\assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,54 +30,69 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "ReyCastSelecter.cs",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\ReyCastSelecter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ReyCastSelecter.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\ReyCastSelecter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ReyCastSelecter.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T13:39:31.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GameManagment.cs",
-              "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\GameManagment.cs",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\GameManagment.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManagment.cs",
-              "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\GameManagment.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\GameManagment.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManagment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T11:33:04.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Niszczyciel.cs",
-              "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\Niszczyciel.cs",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Niszczyciel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Niszczyciel.cs",
-              "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\Niszczyciel.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Niszczyciel.cs",
               "RelativeToolTip": "Assets\\Scripts\\Statki\\Niszczyciel.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:59:42.264Z"
+              "WhenOpened": "2024-11-04T07:59:42.264Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Pancernik.cs",
-              "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\Pancernik.cs",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Pancernik.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Pancernik.cs",
-              "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\Pancernik.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Statki\\Pancernik.cs",
               "RelativeToolTip": "Assets\\Scripts\\Statki\\Pancernik.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:58:20.717Z"
+              "WhenOpened": "2024-11-04T07:58:20.717Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Ship.cs",
-              "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Ship.cs",
+              "DocumentMoniker": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Ship.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ship.cs",
-              "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Ship.cs",
+              "ToolTip": "C:\\Users\\marko\\Studia\\Programowanie obiektowe\\statki\\Assets\\Scripts\\Ship.cs",
               "RelativeToolTip": "Assets\\Scripts\\Ship.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAQwBkAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAkwHkAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-03T13:44:56.277Z",
               "EditorCaption": ""

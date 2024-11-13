@@ -10,12 +10,13 @@ public class Ship : MonoBehaviour
 {
     // zmienne podstawowe dla statków
     protected int move;
-    protected int hp; // ¿ycie
+    protected int hp; // zycie
     protected int zanurzenie;
     public new string name;
 
     protected Vector3 fieldPosition;
     protected int size;
+    protected string[] shipFields;
 
     // zmienne dla funkcji ship drag
     Vector3 offset;
@@ -24,6 +25,8 @@ public class Ship : MonoBehaviour
     protected Collider mainCollider;
     protected Collider[] nearbyFields;
     protected Collider nearestField;
+    protected Vector3 lastSelectedPosition;
+    protected Vector3 lastSelectedRotation;
 
     int faza = 0;
     
@@ -62,7 +65,11 @@ public class Ship : MonoBehaviour
     protected void OnMouseDown()      // klikniecie LPM
     {
         if (raycast != null && raycast.mode == 1)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie ReyCastSelecter
+        {
+            lastSelectedPosition = transform.position;
+            lastSelectedRotation = transform.eulerAngles;
             offset = transform.position - MouseWorldPosition();     // wyliczenie offsetu
+        }
     }
 
     protected void OnMouseUp()        // puszczanie LPM
@@ -73,11 +80,59 @@ public class Ship : MonoBehaviour
              .Where(collider => collider.CompareTag("Field"))
                .ToArray();
 
-            if (nearbyFields.Length > 0)        // jezeli znaleziono jakies pola w ustawionym promieniu
+            if (nearbyFields.Length == 0)
+            {
+                transform.position = lastSelectedPosition;
+                transform.rotation = Quaternion.Euler(lastSelectedRotation.x, lastSelectedRotation.y, lastSelectedRotation.z);
+            }
+            else if (nearbyFields.Length > 0)        // jezeli znaleziono jakies pola w ustawionym promieniu
             {
                 nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
                  .FirstOrDefault();
-                transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
+                
+                Vector3 rotacja = transform.eulerAngles;
+                string nazwaPola = nearestField.name;
+                char litera = nazwaPola[0];
+                int numer = int.Parse(nazwaPola.Substring(1));
+                int polowaRozmiaru = size / 2;
+                bool validPosition = true;
+                shipFields = new string[size];
+
+                if (rotacja.y == 0 || rotacja.y == -180)
+                {
+                    for (int i = 0; i < size; i++)
+                    {
+                        int numerPola = numer - polowaRozmiaru + i;
+                        if (numerPola < 1 || numerPola > 16)
+                        {
+                            transform.position = lastSelectedPosition;
+                            transform.rotation = Quaternion.Euler(lastSelectedRotation.x, lastSelectedRotation.y, lastSelectedRotation.z);
+                            validPosition = false;
+                            break;
+                        }
+                        shipFields[i] = $"{litera}{numerPola}";
+                    }
+                }
+                else
+                {
+                    for (int i = 0; i < size; i++)
+                    {
+                        char literaPola = (char)(litera - polowaRozmiaru + i);
+
+                        if ((int)literaPola < 65 || (int)literaPola > 80)
+                        {
+                            transform.position = lastSelectedPosition;
+                            transform.rotation = Quaternion.Euler(lastSelectedRotation.x, lastSelectedRotation.y, lastSelectedRotation.z);
+                            validPosition = false;
+                            break;
+                        }
+
+                        shipFields[i] = $"{literaPola}{numer}";
+                    }
+                }
+
+                if (validPosition)
+                    transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
             }
             PlayerPrefs.SetFloat(name + "X", transform.position.x);         // zapisanie pozycji statku do plikow
             PlayerPrefs.SetFloat(name + "Z", transform.position.z);
