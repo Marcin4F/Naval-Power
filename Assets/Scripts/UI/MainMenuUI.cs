@@ -16,6 +16,7 @@ public class MainMenuUI : MonoBehaviour
     private void Quitting()
     {
         Debug.Log("Dziala");
+        PlayerPrefs.DeleteAll();
         Application.Quit();
     }
 }

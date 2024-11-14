@@ -13,9 +13,8 @@ public class Ship : MonoBehaviour
     protected int hp; // zycie
     protected int zanurzenie;
     public new string name;
-
-    protected Vector3 fieldPosition;
     protected int size;
+
     protected string[] shipFields;
 
     // zmienne dla funkcji ship drag
@@ -51,7 +50,6 @@ public class Ship : MonoBehaviour
         {
             transform.position = new Vector3(PlayerPrefs.GetFloat(name + "X"), 0.5f, PlayerPrefs.GetFloat(name + "Z"));     // wczytanie pozycji z plikow
             transform.rotation = Quaternion.Euler(0, PlayerPrefs.GetFloat(name + "Rotation"), 0); 
-            fieldPosition = transform.position;
         }
     }
 
@@ -110,6 +108,7 @@ public class Ship : MonoBehaviour
                             validPosition = false;
                             break;
                         }
+                        // DO DODANIA reset przy zlej pozycji
                         shipFields[i] = $"{litera}{numerPola}";
                     }
                 }

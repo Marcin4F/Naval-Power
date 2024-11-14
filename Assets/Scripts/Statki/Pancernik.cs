@@ -10,7 +10,6 @@ public class Pancernik : Ship
         move = 5;
         hp = 5;
         zanurzenie = 2;
-        fieldPosition = new Vector3(0.032f, 0.5f, 0.83f);
         size = 5;
         }
 }
