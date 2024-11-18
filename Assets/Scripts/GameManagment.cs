@@ -7,10 +7,18 @@ public class GameManagment : MonoBehaviour
 {
     public GameObject pancernik;
     public GameObject niszczyciel;
+    public int gameState = 0;
 
     // Start is called before the first frame update
     void Awake()
     {
+        gameState = PlayerPrefs.GetInt("gameState" + SceneManager.GetActiveScene().buildIndex);       // faza gry: 0 - pierwsza tura, nie wczytujemy pozycji statkow, 1 - kolejne tury wczytujemy pozycje z plikow
+        if (gameState == 0)
+        {
+            PlayerPrefs.SetInt("gameState" + SceneManager.GetActiveScene().buildIndex, 1);
+        }
+
+        // inicjalizacja statkow
         int index = SceneManager.GetActiveScene().buildIndex;
         if (index == 1)
         {

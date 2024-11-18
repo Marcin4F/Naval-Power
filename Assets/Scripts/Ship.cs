@@ -19,32 +19,27 @@ public class Ship : MonoBehaviour
 
     // zmienne dla funkcji ship drag
     Vector3 offset;
-    protected ReyCastSelecter raycast;    //zainicjalizowanie zmiennych do skryptow ReyCastSelecter i ShipPlacement
+    protected GameManagment gameManagment;
     protected Collider[] childColliders;
     protected Collider mainCollider;
     protected Collider[] nearbyFields;
     protected Collider nearestField;
     protected Vector3 lastSelectedPosition;
     protected Vector3 lastSelectedRotation;
-
-    int faza = 0;
     
     protected void Start()
     {
-        raycast = FindObjectOfType<ReyCastSelecter>();  // uzyskanie dostepu do skryptu Reycast
+        gameManagment = FindObjectOfType<GameManagment>();  // uzyskanie dostepu do skryptu GameManagement
 
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
 
         //zapisywanie pozycji statków do pliku
-        faza = PlayerPrefs.GetInt("Faza" + SceneManager.GetActiveScene().buildIndex);       // faza gry: 0 - pierwsza tura, nie wczytujemy pozycji statkow, 1 - kolejne tury wczytujemy pozycje z plikow
-        if (faza == 0)
+        if (gameManagment.gameState == 0)
         {
             PlayerPrefs.DeleteKey(name + "X");      // usuniecie jezeli istnialy jakies pliki o podanych nazwach z wczesniejszej gry
             PlayerPrefs.DeleteKey(name + "Z");
             PlayerPrefs.DeleteKey(name + "Rotation");
-            faza = 1;
-            PlayerPrefs.SetInt("Faza" + SceneManager.GetActiveScene().buildIndex, faza);
         }
         else
         {
@@ -62,7 +57,7 @@ public class Ship : MonoBehaviour
     // funkcje ship drag
     protected void OnMouseDown()      // klikniecie LPM
     {
-        if (raycast != null && raycast.mode == 1)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie ReyCastSelecter
+        if (gameManagment.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
             lastSelectedPosition = transform.position;
             lastSelectedRotation = transform.eulerAngles;
@@ -72,7 +67,7 @@ public class Ship : MonoBehaviour
 
     protected void OnMouseUp()        // puszczanie LPM
     {
-        if (raycast != null && raycast.mode == 1)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie ReyCastSelecter
+        if (gameManagment.gameState == 0)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
             nearbyFields = Physics.OverlapSphere(mainCollider.transform.position, 1f)       // tworzymy sfere wokol mainCollider z promieniem 1f i znajdujemy wszystkie pola Fields
              .Where(collider => collider.CompareTag("Field"))
@@ -141,7 +136,7 @@ public class Ship : MonoBehaviour
 
     protected void OnMouseDrag()          // gdy trzymany jest LMP
     {
-        if (raycast != null && raycast.mode == 1)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie ReyCastSelecter
+        if (gameManagment.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
             transform.position = MouseWorldPosition() + offset;     // zmiana pozycji obiektu: aktualna pozycja myszy + wyliczony offset
         
         if (Input.GetKeyDown(KeyCode.E))

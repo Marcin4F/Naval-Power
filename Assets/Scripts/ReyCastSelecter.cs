@@ -2,28 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ReyCastSelecter : MonoBehaviour
 {
     private Transform lastSelected;
-    public int mode = 0;
     bool isSelected = false;
+    protected GameManagment gameManagment;
+    int sceneIndex;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        gameManagment = FindObjectOfType<GameManagment>();
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury PRZENIESC NA FAZE KONCOWA
+        foreach (string shipName in shipsNames)
+        {
+            string key = "PossibleRotation" + shipName + sceneIndex;
+            if (PlayerPrefs.HasKey(key))
+            {
+                PlayerPrefs.DeleteKey(key);
+            }
+        }
+    }
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q))     // wybor trybu, TYMCZASOWE
-        {
-            mode = 0;
-        }
-
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            mode = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && mode == 0) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && gameManagment.gameState == 1) 
         {
             var ray = GetRay();
             if (Physics.Raycast(ray, out var raycastHit))       // sprawdzenie czy promien trafil w jakis obiekt
@@ -55,18 +61,20 @@ public class ReyCastSelecter : MonoBehaviour
             }
         }
 
-        if(isSelected)
+        if(isSelected && PlayerPrefs.GetInt("PossibleRotation" + lastSelected.name + sceneIndex) == 0)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 float shipRotation = lastSelected.transform.rotation.eulerAngles.y;
                 lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
+                PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);
             }
 
             if (Input.GetKeyDown(KeyCode.R))
             {
                 float shipRotation = lastSelected.transform.rotation.eulerAngles.y;
                 lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
+                PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);
             }
         }
 
