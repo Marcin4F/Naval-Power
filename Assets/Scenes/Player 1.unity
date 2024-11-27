@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -918,6 +918,7 @@ GameObject:
   - component: {fileID: 41379267}
   - component: {fileID: 41379268}
   - component: {fileID: 41379269}
+  - component: {fileID: 41379270}
   m_Layer: 0
   m_Name: ScriptsHolder
   m_TagString: Untagged
@@ -952,7 +953,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c21f645cc1a2fb47bbca2d92d12e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mode: 0
 --- !u!114 &41379267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,6 +977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5783b5a4036cc8d49846a0b22530c892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: 
+  possibleRotation: 0
 --- !u!114 &41379269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,6 +993,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
   niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
+  gameState: 0
+--- !u!114 &41379270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41379264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c537b4248dde2a48a358f2bf529c800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &44175867
 GameObject:
   m_ObjectHideFlags: 0

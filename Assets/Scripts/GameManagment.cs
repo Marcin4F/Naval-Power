@@ -40,7 +40,6 @@ public class GameManagment : MonoBehaviour
             GameObject niszczyciel2 = Instantiate(niszczyciel);
             Niszczyciel niszczycielComponent2 = niszczyciel2.GetComponent<Niszczyciel>();
             niszczycielComponent2.name = "niszczyciel2";
-
         }
     }
 }

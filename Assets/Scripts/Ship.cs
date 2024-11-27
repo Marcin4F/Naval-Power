@@ -14,6 +14,7 @@ public class Ship : MonoBehaviour
     protected int zanurzenie;
     public new string name;
     protected int size;
+    public int possibleRotation;
 
     protected string[] shipFields;
 
@@ -26,10 +27,12 @@ public class Ship : MonoBehaviour
     protected Collider nearestField;
     protected Vector3 lastSelectedPosition;
     protected Vector3 lastSelectedRotation;
+    protected CheckPosition checkPosition;
     
     protected void Start()
     {
         gameManagment = FindObjectOfType<GameManagment>();  // uzyskanie dostepu do skryptu GameManagement
+        checkPosition = gameObject.AddComponent<CheckPosition>();
 
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
@@ -83,13 +86,10 @@ public class Ship : MonoBehaviour
                 nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
                  .FirstOrDefault();
                 
-                Vector3 rotacja = transform.eulerAngles;
+                float rotacja = transform.rotation.eulerAngles.y;
                 string nazwaPola = nearestField.name;
-                char litera = nazwaPola[0];
-                int numer = int.Parse(nazwaPola.Substring(1));
-                int polowaRozmiaru = size / 2;
-                bool validPosition = true;
-                shipFields = new string[size];
+                bool validPosition = checkPosition.ValidPosition(size, nazwaPola, rotacja);
+                /*shipFields = new string[size];
 
                 if (rotacja.y == 0 || rotacja.y == -180)
                 {
@@ -123,10 +123,15 @@ public class Ship : MonoBehaviour
 
                         shipFields[i] = $"{literaPola}{numer}";
                     }
-                }
+                }*/
 
                 if (validPosition)
                     transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
+                else
+                {
+                    transform.position = lastSelectedPosition;
+                    transform.rotation = Quaternion.Euler(lastSelectedRotation.x, lastSelectedRotation.y, lastSelectedRotation.z);
+                }
             }
             PlayerPrefs.SetFloat(name + "X", transform.position.x);         // zapisanie pozycji statku do plikow
             PlayerPrefs.SetFloat(name + "Z", transform.position.z);

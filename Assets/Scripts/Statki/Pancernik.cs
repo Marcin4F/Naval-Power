@@ -11,5 +11,6 @@ public class Pancernik : Ship
         hp = 5;
         zanurzenie = 2;
         size = 5;
+        possibleRotation = 1;
         }
 }
