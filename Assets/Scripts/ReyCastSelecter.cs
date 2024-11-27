@@ -11,19 +11,19 @@ public class ReyCastSelecter : MonoBehaviour
 {
     private Transform lastSelected;
     bool isSelected = false;
-    protected GameManagment gameManagment;
     int sceneIndex;
-    protected Collider[] nearbyFields;
     protected Collider nearestField;
-    protected Collider[] childColliders;
-    protected Collider mainCollider;
-    protected CheckPosition checkPosition;
+
+    protected GameManagment gameManagment;
+    protected Functions functions;
+    protected Ship ship;
 
 
     private void Start()
     {
-        gameManagment = FindObjectOfType<GameManagment>();
-        checkPosition = gameObject.AddComponent<CheckPosition>();
+        gameManagment = FindObjectOfType<GameManagment>();              // dolaczenie odpowiednich skryptow (gameManagemet -> gameState; functions -> funkcje)
+        functions = gameObject.GetComponent<Functions>();
+        ship = gameObject.GetComponent<Ship>();
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
 
@@ -56,10 +56,8 @@ public class ReyCastSelecter : MonoBehaviour
                     lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
                     rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
                     isSelected = true;
-                    childColliders = lastSelected.GetComponentsInChildren<Collider>();
-                    mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
-
                 }
+
                 else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
                 {
                     lastSelected.Translate(0, -1, 0);
@@ -67,6 +65,7 @@ public class ReyCastSelecter : MonoBehaviour
                     isSelected = false;
                 }
             }
+
             else if (lastSelected != null)               // jezeli promien w nic nie trafil odznaczamy ostatnio wybrany statek
             {
                 lastSelected.Translate(0, -1, 0);
@@ -96,80 +95,53 @@ public class ReyCastSelecter : MonoBehaviour
         }
     }
 
-    void Rotation(char direction)
+    void Rotation(char direction)       // funkcja dokonujaca rotacje statku
     {
         bool validPosition;
-        nearbyFields = Physics.OverlapSphere(mainCollider.transform.position, 1f)       // tworzymy sfere wokol mainCollider z promieniem 1f i znajdujemy wszystkie pola Fields
-         .Where(collider => collider.CompareTag("Field"))
-           .ToArray();
+        nearestField = functions.FindingField(lastSelected);
 
-        nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
-         .FirstOrDefault();
-        
         float shipRotation = lastSelected.transform.rotation.eulerAngles.y;
-        string nazwaPola = nearestField.name;
+        string fieldName = nearestField.name;
 
-        if(direction == 'E')
+        int size = ship.Size;
+        Debug.Log(size);
+
+        if (direction == 'E')       // dokonanie rotacji we wlasciwym kierunku
         {
-            validPosition = checkPosition.ValidPosition(5, nazwaPola, shipRotation - 90);
+            validPosition = functions.ValidPosition(5, fieldName, shipRotation - 90);
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
-            PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);
-            if (!validPosition)
-            {
-                string fieldName = nearestField.name;
-                if (fieldName[0] < 'C')
-                {
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z - (2 + 65 - (int)fieldName[0]));
-                }
-                else if (fieldName[0] > 'N')
-                {
-                    Debug.Log("c");
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z + (2 + 65 - (int)fieldName[0]));
-                }
-                else if (fieldName[1] < '3')
-                {
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x + 2, lastPosition.y, lastPosition.z);
-                }
-                
-                else if (fieldName.Length == 3)
-                {
-                    Debug.Log(fieldName[2]);
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x - 2, lastPosition.y, lastPosition.z);
-                }
-            }
         }
         else
         {
-            validPosition = checkPosition.ValidPosition(5, nazwaPola, shipRotation + 90);
+            validPosition = functions.ValidPosition(5, fieldName, shipRotation + 90);
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
-            PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);
-            if (!validPosition)
+        }
+
+
+        if (!validPosition)     // jezeli aktualna pozycja nie jest wlasciwa dokonujemy przesuniecia statku o odpowiednia wartosc w odopwiednim kierunku, tak aby miescil sie na mapie
+        {
+            if (fieldName[0] < 'C')
             {
-                if (shipRotation + 90 == 0)
-                {
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x - 2, lastPosition.y, lastPosition.z);
-                }
-                else if (shipRotation + 90 == 180 || shipRotation + 90 == -180)
-                {
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x + 2, lastPosition.y, lastPosition.z);
-                }
-                if (shipRotation + 90 == 90)
-                {
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z - 2);
-                }
-                if (shipRotation + 90 == -90)
-                {
-                    Vector3 lastPosition = lastSelected.transform.position;
-                    lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z - 2);
-                }
+                Vector3 lastPosition = lastSelected.transform.position;
+                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z - (2 + 65 - (int)fieldName[0]));
+            }
+            else if (fieldName[0] > 'N')
+            {
+                Vector3 lastPosition = lastSelected.transform.position;
+                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z + (2 + 79 - (int)fieldName[0]));
+            }
+            else if (fieldName.Length != 3 && fieldName[1] < '3')
+            {
+                Vector3 lastPosition = lastSelected.transform.position;
+                lastSelected.transform.position = new Vector3(lastPosition.x + (2 + 49 - (int)fieldName[1]), lastPosition.y, lastPosition.z);
+            }
+
+            else if (fieldName.Length == 3 && fieldName[2] > '4')
+            {
+                Vector3 lastPosition = lastSelected.transform.position;
+                lastSelected.transform.position = new Vector3(lastPosition.x - (2 + 53 - (int)fieldName[2]), lastPosition.y, lastPosition.z);
             }
         }
+        PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);     // zapisanie ze dany statek dokonal ruchu
     }
 }

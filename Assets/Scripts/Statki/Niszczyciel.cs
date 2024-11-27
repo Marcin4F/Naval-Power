@@ -12,6 +12,4 @@ public class Niszczyciel : Ship
         zanurzenie = 1;
         size = 3;
     }
-
-
 }

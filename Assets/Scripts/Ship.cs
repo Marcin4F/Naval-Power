@@ -14,7 +14,11 @@ public class Ship : MonoBehaviour
     protected int zanurzenie;
     public new string name;
     protected int size;
-    public int possibleRotation;
+
+    public int Size
+    {
+        get { return size; }
+    }
 
     protected string[] shipFields;
 
@@ -27,12 +31,13 @@ public class Ship : MonoBehaviour
     protected Collider nearestField;
     protected Vector3 lastSelectedPosition;
     protected Vector3 lastSelectedRotation;
-    protected CheckPosition checkPosition;
+
+    protected Functions functions;
     
     protected void Start()
     {
         gameManagment = FindObjectOfType<GameManagment>();  // uzyskanie dostepu do skryptu GameManagement
-        checkPosition = gameObject.AddComponent<CheckPosition>();
+        functions = FindObjectOfType<Functions>();
 
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
@@ -88,7 +93,7 @@ public class Ship : MonoBehaviour
                 
                 float rotacja = transform.rotation.eulerAngles.y;
                 string nazwaPola = nearestField.name;
-                bool validPosition = checkPosition.ValidPosition(size, nazwaPola, rotacja);
+                bool validPosition = functions.ValidPosition(size, nazwaPola, rotacja);
                 /*shipFields = new string[size];
 
                 if (rotacja.y == 0 || rotacja.y == -180)
