@@ -21,6 +21,7 @@ public class FindNearestField : MonoBehaviour
 
         nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
             .FirstOrDefault();
+        //aaaaaaaaaaaaaaaaaaaaa
 
         return nearestField;
     }

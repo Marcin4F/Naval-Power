@@ -117,7 +117,7 @@ public class ReyCastSelecter : MonoBehaviour
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
         }
 
-
+        //aaaaaaaaaaaaaaaaaaaaa
         if (!validPosition)     // jezeli aktualna pozycja nie jest wlasciwa dokonujemy przesuniecia statku o odpowiednia wartosc w odopwiednim kierunku, tak aby miescil sie na mapie
         {
             if (fieldName[0] < 'C')

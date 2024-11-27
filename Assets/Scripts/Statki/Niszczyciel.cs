@@ -13,3 +13,5 @@ public class Niszczyciel : Ship
         size = 3;
     }
 }
+
+//aaaaaaaaaaaaaaaaaaaaa

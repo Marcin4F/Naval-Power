@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//aaaaaaaaaaaaaaaaaaaaa
+
+
 public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCEN
 {
     public static ScenesManager instance;           // pozwala odwolac sie do tej klasy z kazdego skryptu bez potrzeby inicjalizowania refernecji do tego skryptu 
