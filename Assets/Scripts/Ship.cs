@@ -19,7 +19,6 @@ public class Ship : MonoBehaviour
 
     // zmienne dla funkcji ship drag
     Vector3 offset;
-    public int shipNotPlaced = -7;
     protected Collider[] childColliders;
     protected Collider mainCollider;
     protected Collider[] nearbyFields;
@@ -30,11 +29,13 @@ public class Ship : MonoBehaviour
 
     protected Functions functions;
     protected GameManagment gameManagment;
+    protected InGameUI inGameUI;
 
     protected void Start()
     {
         gameManagment = FindObjectOfType<GameManagment>();  // uzyskanie dostepu do skryptu GameManagement
         functions = FindObjectOfType<Functions>();
+        inGameUI = FindObjectOfType<InGameUI>();
 
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
@@ -85,6 +86,7 @@ public class Ship : MonoBehaviour
             }
             else if (nearbyFields.Length > 0)        // jezeli znaleziono jakies pola w ustawionym promieniu
             {
+                inGameUI.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
                 nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
                  .FirstOrDefault();
                 

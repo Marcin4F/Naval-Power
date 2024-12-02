@@ -979,6 +979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
+  size: 0
 --- !u!114 &41379269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2345,6 +2346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b54f26644b72ce449c91933fffbf838, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipPlaced: 0
   endTurn: {fileID: 265552696}
 --- !u!1 &128642968
 GameObject:

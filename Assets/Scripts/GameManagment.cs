@@ -7,7 +7,8 @@ public class GameManagment : MonoBehaviour
 {
     public GameObject pancernik;
     public GameObject niszczyciel;
-    public int gameState = 0;
+    public int gameState = 0;           // faza gry
+    public int shipsNumber = 2;         // ilosc statkow w grze
 
     // Start is called before the first frame update
     void Awake()
