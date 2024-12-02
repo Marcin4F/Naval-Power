@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//aaaaaaaaaaaaaaaaaaaaa
 
 public class GameManagment : MonoBehaviour
 {
@@ -25,22 +24,22 @@ public class GameManagment : MonoBehaviour
         {
             GameObject pancernik1 = Instantiate(pancernik);
             Pancernik pancernikComponent1 = pancernik1.GetComponent<Pancernik>();
-            pancernikComponent1.name = "pancernik1";
+            pancernikComponent1.name = "Pancernik1";
 
             GameObject niszczyciel1 = Instantiate(niszczyciel);
             Niszczyciel niszczycielComponent1 = niszczyciel1.GetComponent<Niszczyciel>();
-            niszczycielComponent1.name = "niszczyciel1";
+            niszczycielComponent1.name = "Niszczyciel1";
         }
         else if (index == 3)
         {
 
             GameObject pancernik2 = Instantiate(pancernik);
             Pancernik pancernikComponent2 = pancernik2.GetComponent<Pancernik>();
-            pancernikComponent2.name = "pancernik2";
+            pancernikComponent2.name = "Pancernik2";
 
             GameObject niszczyciel2 = Instantiate(niszczyciel);
             Niszczyciel niszczycielComponent2 = niszczyciel2.GetComponent<Niszczyciel>();
-            niszczycielComponent2.name = "niszczyciel2";
+            niszczycielComponent2.name = "Niszczyciel2";
         }
     }
 }

@@ -13,6 +13,7 @@ public class ReyCastSelecter : MonoBehaviour
     bool isSelected = false;
     int sceneIndex;
     protected Collider nearestField;
+    protected int gameState;
 
     protected GameManagment gameManagment;
     protected Functions functions;
@@ -26,6 +27,7 @@ public class ReyCastSelecter : MonoBehaviour
         ship = gameObject.GetComponent<Ship>();
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        gameState = gameManagment.gameState;
 
         string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury PRZENIESC NA FAZE KONCOWA
         foreach (string shipName in shipsNames)
@@ -40,7 +42,7 @@ public class ReyCastSelecter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && gameManagment.gameState == 1) 
+        if (Input.GetKeyDown(KeyCode.Mouse0) && gameState == 1) 
         {
             var ray = GetRay();
             if (Physics.Raycast(ray, out var raycastHit))       // sprawdzenie czy promien trafil w jakis obiekt
@@ -103,8 +105,8 @@ public class ReyCastSelecter : MonoBehaviour
         float shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         string fieldName = nearestField.name;
 
-        int size = ship.Size;
-        Debug.Log(size);
+        int size1 = ship.size;
+        Debug.Log(size1);
 
         if (direction == 'E')       // dokonanie rotacji we wlasciwym kierunku
         {
@@ -143,5 +145,10 @@ public class ReyCastSelecter : MonoBehaviour
             }
         }
         PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);     // zapisanie ze dany statek dokonal ruchu
+        string name = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);          // 7 zeby usunac napis "(Clone)"
+        shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+        PlayerPrefs.SetFloat(name + sceneIndex + "Rotation", shipRotation);
+        PlayerPrefs.SetFloat(name + sceneIndex + "X", lastSelected.transform.position.x);
+        PlayerPrefs.SetFloat(name + sceneIndex + "Z", lastSelected.transform.position.z);
     }
 }

@@ -13,18 +13,13 @@ public class Ship : MonoBehaviour
     protected int hp; // zycie
     protected int zanurzenie;
     public new string name;
-    protected int size;
-
-    public int Size
-    {
-        get { return size; }
-    }
+    public int size;
 
     protected string[] shipFields;
 
     // zmienne dla funkcji ship drag
     Vector3 offset;
-    protected GameManagment gameManagment;
+    public int shipNotPlaced = -7;
     protected Collider[] childColliders;
     protected Collider mainCollider;
     protected Collider[] nearbyFields;
@@ -32,8 +27,10 @@ public class Ship : MonoBehaviour
     protected Vector3 lastSelectedPosition;
     protected Vector3 lastSelectedRotation;
 
+
     protected Functions functions;
-    
+    protected GameManagment gameManagment;
+
     protected void Start()
     {
         gameManagment = FindObjectOfType<GameManagment>();  // uzyskanie dostepu do skryptu GameManagement
