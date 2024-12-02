@@ -36,11 +36,11 @@ public class GameManagment : MonoBehaviour
 
             GameObject pancernik2 = Instantiate(pancernik);
             Pancernik pancernikComponent2 = pancernik2.GetComponent<Pancernik>();
-            pancernikComponent2.name = "Pancernik2";
+            pancernikComponent2.name = "Pancernik3";
 
             GameObject niszczyciel2 = Instantiate(niszczyciel);
             Niszczyciel niszczycielComponent2 = niszczyciel2.GetComponent<Niszczyciel>();
-            niszczycielComponent2.name = "Niszczyciel2";
+            niszczycielComponent2.name = "Niszczyciel3";
         }
     }
 }
