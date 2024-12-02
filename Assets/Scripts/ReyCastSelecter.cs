@@ -113,11 +113,11 @@ public class ReyCastSelecter : MonoBehaviour
         }
         else
         {
+
             validPosition = functions.ValidPosition(5, fieldName, shipRotation + 90);
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
         }
 
-        //aaaaaaaaaaaaaaaaaaaaa
         if (!validPosition)     // jezeli aktualna pozycja nie jest wlasciwa dokonujemy przesuniecia statku o odpowiednia wartosc w odopwiednim kierunku, tak aby miescil sie na mapie
         {
             if (fieldName[0] < 'C')
@@ -128,7 +128,7 @@ public class ReyCastSelecter : MonoBehaviour
             else if (fieldName[0] > 'N')
             {
                 Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z + (2 + 79 - (int)fieldName[0]));
+                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z + (2 - 80 + (int)fieldName[0]));
             }
             else if (fieldName.Length != 3 && fieldName[1] < '3')
             {
@@ -139,7 +139,7 @@ public class ReyCastSelecter : MonoBehaviour
             else if (fieldName.Length == 3 && fieldName[2] > '4')
             {
                 Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x - (2 + 53 - (int)fieldName[2]), lastPosition.y, lastPosition.z);
+                lastSelected.transform.position = new Vector3(lastPosition.x - (2 - 54 + (int)fieldName[2]), lastPosition.y, lastPosition.z);
             }
         }
         PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);     // zapisanie ze dany statek dokonal ruchu

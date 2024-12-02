@@ -11,7 +11,7 @@ public class Functions : MonoBehaviour
         char litera = nazwaPola[0];
         int polowaRozmiaru = size / 2;
 
-        if (rotacja == 0 || rotacja == -180 || rotacja == 180)
+        if (rotacja == 0 || rotacja == -180 || rotacja == 180 || rotacja == 360)
         {
             for (int i = 0; i < size; i++)
             {
@@ -36,10 +36,8 @@ public class Functions : MonoBehaviour
             }
             return true;
         }
-        //aaaaaaaaaaaaaaaaaaaaa
 
     }
-    //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab
     public Collider FindingField(Transform Object)
     {
         Collider[] nearbyFields;

@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
-//aaaaaaaaaaaaaaaaaaaaa
 
 public class Ship : MonoBehaviour
 {

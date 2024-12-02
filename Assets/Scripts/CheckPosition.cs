@@ -23,7 +23,6 @@ public class CheckPosition : MonoBehaviour
             return true;
         }
         else
-        //aaaaaaaaaaaaaaaaaaaaa
 
         {
             for (int i = 0; i < size; i++)
