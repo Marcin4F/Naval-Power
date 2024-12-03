@@ -110,17 +110,15 @@ public class ReyCastSelecter : MonoBehaviour
             .ToArray();
         int size = childColliders.Length - 1;           // nie wiadomo czemu musi byc -1
         int halfSize = size / 2;
-        Debug.Log(size);
-        Debug.Log(halfSize);
 
         if (direction == 'E')       // dokonanie rotacji we wlasciwym kierunku
         {
-            validPosition = functions.ValidPosition(size, fieldName, shipRotation - 90, null);
+            validPosition = functions.ValidPosition(size, fieldName, shipRotation - 90, null, 0);
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
         }
         else
         {
-            validPosition = functions.ValidPosition(size, fieldName, shipRotation + 90, null);
+            validPosition = functions.ValidPosition(size, fieldName, shipRotation + 90, null, 0);
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
         }
 

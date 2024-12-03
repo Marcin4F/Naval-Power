@@ -14,6 +14,7 @@ public class Ship : MonoBehaviour
     protected int zanurzenie;
     public new string name;
     public int size;
+    protected int shipID;
 
     // zmienne dla funkcji ship drag
     Vector3 offset;
@@ -23,8 +24,7 @@ public class Ship : MonoBehaviour
     protected Collider nearestField;
     protected Vector3 lastSelectedPosition;
     protected Vector3 lastSelectedRotation;
-    protected string[] occupiedFields;
-    protected int totalSize = 8;
+    protected int maxSize = 5;
 
     protected Functions functions;
     protected GameManagment gameManagment;
@@ -39,7 +39,7 @@ public class Ship : MonoBehaviour
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
 
-        occupiedFields = new string[totalSize];
+        gameManagment.occupiedFields = new string[gameManagment.shipsNumber, maxSize];
 
         //zapisywanie pozycji statków do pliku
         if (gameManagment.gameState == 0)
@@ -92,7 +92,7 @@ public class Ship : MonoBehaviour
                 
                 float rotacja = transform.rotation.eulerAngles.y;
                 string nazwaPola = nearestField.name;
-                bool validPosition = functions.ValidPosition(size, nazwaPola, rotacja, occupiedFields);
+                bool validPosition = functions.ValidPosition(size, nazwaPola, rotacja, gameManagment.occupiedFields, shipID);
                 
                 if (validPosition)
                 {
@@ -100,8 +100,7 @@ public class Ship : MonoBehaviour
                     inGameUI.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
                     for (int i = 0; i < size; i++)
                     {
-                        occupiedFields[i] = functions.shipFields[i];
-                        Debug.Log(occupiedFields[i]);
+                        gameManagment.occupiedFields[shipID, i] = functions.shipFields[i];
                     }
                 }
                 else

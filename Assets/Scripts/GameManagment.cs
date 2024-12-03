@@ -9,6 +9,7 @@ public class GameManagment : MonoBehaviour
     public GameObject niszczyciel;
     public int gameState = 0;           // faza gry
     public int shipsNumber = 2;         // ilosc statkow w grze
+    public string[,] occupiedFields;
 
     // Start is called before the first frame update
     void Awake()

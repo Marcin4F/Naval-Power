@@ -11,5 +11,6 @@ public class Niszczyciel : Ship
         hp = 3;
         zanurzenie = 1;
         size = 3;
+        shipID = 1;
     }
 }

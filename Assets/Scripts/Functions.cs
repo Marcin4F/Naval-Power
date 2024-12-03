@@ -6,7 +6,7 @@ using System.Linq;
 public class Functions : MonoBehaviour
 {
     public string[] shipFields;
-    public bool ValidPosition(int size, string nazwaPola, float rotacja, string[] occupiedFields)
+    public bool ValidPosition(int size, string nazwaPola, float rotacja, string[,] occupiedFields, int shipID)
     {
         int numer = int.Parse(nazwaPola.Substring(1));
         char litera = nazwaPola[0];
@@ -26,9 +26,13 @@ public class Functions : MonoBehaviour
                 newField = $"{litera}{numerPola}";
                 if (occupiedFields != null)
                 {
-                    if(occupiedFields.Contains(newField))
-                        return false;
-                    
+                    if (Enumerable.Range(0, occupiedFields.GetLength(0))                // Iterujemy po wszystkich wierszach
+                     .Where(row => row != shipID)                                       // Pomijamy wiersz shipId
+                     .Any(row => Enumerable.Range(0, occupiedFields.GetLength(1))       // Iterujemy po kolumnach w danym wierszu
+                     .Any(col => occupiedFields[row, col] == newField)))                // Sprawdzamy, czy newField istnieje
+                    {
+                        return false;                                                   // Jeœli znaleziono newField w innym wierszu, zwracamy false
+                    }
                 }
                 shipFields[i] = newField;
             }
@@ -47,9 +51,13 @@ public class Functions : MonoBehaviour
                 newField = $"{literaPola}{numer}";
                 if (occupiedFields != null)
                 {
-                    if (occupiedFields.Contains(newField))
-                        return false;
-
+                    if (Enumerable.Range(0, occupiedFields.GetLength(0))                // Iterujemy po wszystkich wierszach
+                     .Where(row => row != shipID)                                       // Pomijamy wiersz shipId
+                     .Any(row => Enumerable.Range(0, occupiedFields.GetLength(1))       // Iterujemy po kolumnach w danym wierszu
+                     .Any(col => occupiedFields[row, col] == newField)))                // Sprawdzamy, czy newField istnieje
+                    {
+                        return false;                                                   // Jeœli znaleziono newField w innym wierszu, zwracamy false
+                    }
                 }
                 shipFields[i] = newField;
             }
