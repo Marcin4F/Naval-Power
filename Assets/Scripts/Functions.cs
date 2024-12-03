@@ -5,11 +5,14 @@ using System.Linq;
 
 public class Functions : MonoBehaviour
 {
-    public bool ValidPosition(int size, string nazwaPola, float rotacja)
+    public string[] shipFields;
+    public bool ValidPosition(int size, string nazwaPola, float rotacja, string[] occupiedFields)
     {
         int numer = int.Parse(nazwaPola.Substring(1));
         char litera = nazwaPola[0];
         int polowaRozmiaru = size / 2;
+        string newField;
+        shipFields = new string[size];
 
         if (rotacja == 0 || rotacja == -180 || rotacja == 180 || rotacja == 360)
         {
@@ -20,6 +23,14 @@ public class Functions : MonoBehaviour
                 {
                     return false;
                 }
+                newField = $"{litera}{numerPola}";
+                if (occupiedFields != null)
+                {
+                    if(occupiedFields.Contains(newField))
+                        return false;
+                    
+                }
+                shipFields[i] = newField;
             }
             return true;
         }
@@ -33,6 +44,14 @@ public class Functions : MonoBehaviour
                 {
                     return false;
                 }
+                newField = $"{literaPola}{numer}";
+                if (occupiedFields != null)
+                {
+                    if (occupiedFields.Contains(newField))
+                        return false;
+
+                }
+                shipFields[i] = newField;
             }
             return true;
         }

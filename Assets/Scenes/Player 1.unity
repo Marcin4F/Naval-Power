@@ -918,7 +918,6 @@ GameObject:
   - component: {fileID: 41379267}
   - component: {fileID: 41379268}
   - component: {fileID: 41379269}
-  - component: {fileID: 41379271}
   - component: {fileID: 41379272}
   m_Layer: 0
   m_Name: ScriptsHolder
@@ -954,6 +953,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c21f645cc1a2fb47bbca2d92d12e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pancernik1: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
+  niszczyciel1: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
 --- !u!114 &41379267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -995,18 +996,7 @@ MonoBehaviour:
   pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
   niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
   gameState: 0
---- !u!114 &41379271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 41379264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c537b4248dde2a48a358f2bf529c800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  shipsNumber: 2
 --- !u!114 &41379272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,6 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e5f704355e92740a9c280b1938149c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipFields: []
 --- !u!1 &44175867
 GameObject:
   m_ObjectHideFlags: 0

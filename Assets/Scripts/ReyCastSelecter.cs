@@ -13,18 +13,17 @@ public class ReyCastSelecter : MonoBehaviour
     bool isSelected = false;
     int sceneIndex;
     protected Collider nearestField;
+    protected Collider[] childColliders;
+    protected Collider[] childFieldColliders;   // lista wlasciwych colliderow odpowiadajacych za rozmiar
     protected int gameState;
 
     protected GameManagment gameManagment;
     protected Functions functions;
-    protected Ship ship;
-
 
     private void Start()
     {
         gameManagment = FindObjectOfType<GameManagment>();              // dolaczenie odpowiednich skryptow (gameManagemet -> gameState; functions -> funkcje)
         functions = gameObject.GetComponent<Functions>();
-        ship = gameObject.GetComponent<Ship>();
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         gameState = gameManagment.gameState;
@@ -72,7 +71,7 @@ public class ReyCastSelecter : MonoBehaviour
             {
                 lastSelected.Translate(0, -1, 0);
                 lastSelected = null;
-                isSelected=false;
+                isSelected = false;
             }
         }
 
@@ -105,18 +104,23 @@ public class ReyCastSelecter : MonoBehaviour
         float shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         string fieldName = nearestField.name;
 
-        int size1 = ship.size;
-        Debug.Log(size1);
+        childColliders = lastSelected.GetComponentsInChildren<Collider>();
+        childFieldColliders = childColliders
+            .Where(collider => collider.CompareTag("MainCollider") || collider.CompareTag("FieldCollider"))
+            .ToArray();
+        int size = childColliders.Length - 1;           // nie wiadomo czemu musi byc -1
+        int halfSize = size / 2;
+        Debug.Log(size);
+        Debug.Log(halfSize);
 
         if (direction == 'E')       // dokonanie rotacji we wlasciwym kierunku
         {
-            validPosition = functions.ValidPosition(5, fieldName, shipRotation - 90);
+            validPosition = functions.ValidPosition(size, fieldName, shipRotation - 90, null);
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
         }
         else
         {
-
-            validPosition = functions.ValidPosition(5, fieldName, shipRotation + 90);
+            validPosition = functions.ValidPosition(size, fieldName, shipRotation + 90, null);
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
         }
 
@@ -125,23 +129,23 @@ public class ReyCastSelecter : MonoBehaviour
             if (fieldName[0] < 'C')
             {
                 Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z - (2 + 65 - (int)fieldName[0]));
+                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z - (halfSize + 65 - (int)fieldName[0]));
             }
             else if (fieldName[0] > 'N')
             {
                 Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z + (2 - 80 + (int)fieldName[0]));
+                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z + (halfSize - 80 + (int)fieldName[0]));
             }
             else if (fieldName.Length != 3 && fieldName[1] < '3')
             {
                 Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x + (2 + 49 - (int)fieldName[1]), lastPosition.y, lastPosition.z);
+                lastSelected.transform.position = new Vector3(lastPosition.x + (halfSize + 49 - (int)fieldName[1]), lastPosition.y, lastPosition.z);
             }
 
             else if (fieldName.Length == 3 && fieldName[2] > '4')
             {
                 Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x - (2 - 54 + (int)fieldName[2]), lastPosition.y, lastPosition.z);
+                lastSelected.transform.position = new Vector3(lastPosition.x - (halfSize - 54 + (int)fieldName[2]), lastPosition.y, lastPosition.z);
             }
         }
         PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);     // zapisanie ze dany statek dokonal ruchu

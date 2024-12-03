@@ -62,7 +62,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\GameManagment.cs" />
-    <Compile Include="Assets\Scripts\FindNearestField.cs" />
     <Compile Include="Assets\Scripts\Functions.cs" />
     <Compile Include="Assets\Scripts\Statki\Pancernik.cs" />
     <Compile Include="Assets\Scripts\ReyCastSelecter.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="Assets\Scripts\Ship.cs" />
     <Compile Include="Assets\Scripts\UI\ScenesManager.cs" />
     <Compile Include="Assets\Scripts\Statki\Niszczyciel.cs" />
-    <Compile Include="Assets\Scripts\CheckPosition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

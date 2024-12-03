@@ -15,8 +15,6 @@ public class Ship : MonoBehaviour
     public new string name;
     public int size;
 
-    protected string[] shipFields;
-
     // zmienne dla funkcji ship drag
     Vector3 offset;
     protected Collider[] childColliders;
@@ -25,7 +23,8 @@ public class Ship : MonoBehaviour
     protected Collider nearestField;
     protected Vector3 lastSelectedPosition;
     protected Vector3 lastSelectedRotation;
-
+    protected string[] occupiedFields;
+    protected int totalSize = 8;
 
     protected Functions functions;
     protected GameManagment gameManagment;
@@ -39,6 +38,8 @@ public class Ship : MonoBehaviour
 
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
+
+        occupiedFields = new string[totalSize];
 
         //zapisywanie pozycji statków do pliku
         if (gameManagment.gameState == 0)
@@ -86,51 +87,23 @@ public class Ship : MonoBehaviour
             }
             else if (nearbyFields.Length > 0)        // jezeli znaleziono jakies pola w ustawionym promieniu
             {
-                inGameUI.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
                 nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
                  .FirstOrDefault();
                 
                 float rotacja = transform.rotation.eulerAngles.y;
                 string nazwaPola = nearestField.name;
-                bool validPosition = functions.ValidPosition(size, nazwaPola, rotacja);
-                /*shipFields = new string[size];
-
-                if (rotacja.y == 0 || rotacja.y == -180)
+                bool validPosition = functions.ValidPosition(size, nazwaPola, rotacja, occupiedFields);
+                
+                if (validPosition)
                 {
+                    transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
+                    inGameUI.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
                     for (int i = 0; i < size; i++)
                     {
-                        int numerPola = numer - polowaRozmiaru + i;
-                        if (numerPola < 1 || numerPola > 16)
-                        {
-                            transform.position = lastSelectedPosition;
-                            transform.rotation = Quaternion.Euler(lastSelectedRotation.x, lastSelectedRotation.y, lastSelectedRotation.z);
-                            validPosition = false;
-                            break;
-                        }
-                        // DO DODANIA reset przy zlej pozycji
-                        shipFields[i] = $"{litera}{numerPola}";
+                        occupiedFields[i] = functions.shipFields[i];
+                        Debug.Log(occupiedFields[i]);
                     }
                 }
-                else
-                {
-                    for (int i = 0; i < size; i++)
-                    {
-                        char literaPola = (char)(litera - polowaRozmiaru + i);
-
-                        if ((int)literaPola < 65 || (int)literaPola > 80)
-                        {
-                            transform.position = lastSelectedPosition;
-                            transform.rotation = Quaternion.Euler(lastSelectedRotation.x, lastSelectedRotation.y, lastSelectedRotation.z);
-                            validPosition = false;
-                            break;
-                        }
-
-                        shipFields[i] = $"{literaPola}{numer}";
-                    }
-                }*/
-
-                if (validPosition)
-                    transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
                 else
                 {
                     transform.position = lastSelectedPosition;
