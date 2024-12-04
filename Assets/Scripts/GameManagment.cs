@@ -5,19 +5,26 @@ using UnityEngine.SceneManagement;
 
 public class GameManagment : MonoBehaviour
 {
+    public static GameManagment instance;
     public GameObject pancernik;
     public GameObject niszczyciel;
     public int gameState = 0;           // faza gry
     public int shipsNumber = 2;         // ilosc statkow w grze
+    public int maxSize = 5;
     public string[,] occupiedFields;
 
     // Start is called before the first frame update
     void Awake()
     {
+        instance = this;
         gameState = PlayerPrefs.GetInt("gameState" + SceneManager.GetActiveScene().buildIndex);       // faza gry: 0 - pierwsza tura, nie wczytujemy pozycji statkow, 1 - kolejne tury wczytujemy pozycje z plikow
         if (gameState == 0)
         {
             PlayerPrefs.SetInt("gameState" + SceneManager.GetActiveScene().buildIndex, 1);
+        }
+        else
+        {
+            occupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions" + SceneManager.GetActiveScene().buildIndex));
         }
 
         // inicjalizacja statkow

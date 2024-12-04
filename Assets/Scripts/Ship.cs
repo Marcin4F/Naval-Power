@@ -24,25 +24,22 @@ public class Ship : MonoBehaviour
     protected Collider nearestField;
     protected Vector3 lastSelectedPosition;
     protected Vector3 lastSelectedRotation;
-    protected int maxSize = 5;
 
     protected Functions functions;
-    protected GameManagment gameManagment;
     protected InGameUI inGameUI;
 
     protected void Start()
     {
-        gameManagment = FindObjectOfType<GameManagment>();  // uzyskanie dostepu do skryptu GameManagement
         functions = FindObjectOfType<Functions>();
         inGameUI = FindObjectOfType<InGameUI>();
 
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
 
-        gameManagment.occupiedFields = new string[gameManagment.shipsNumber, maxSize];
+        GameManagment.instance.occupiedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
 
         //zapisywanie pozycji statków do pliku
-        if (gameManagment.gameState == 0)
+        if (GameManagment.instance.gameState == 0)
         {
             PlayerPrefs.DeleteKey(name + "X");      // usuniecie jezeli istnialy jakies pliki o podanych nazwach z wczesniejszej gry
             PlayerPrefs.DeleteKey(name + "Z");
@@ -64,7 +61,7 @@ public class Ship : MonoBehaviour
     // funkcje ship drag
     protected void OnMouseDown()      // klikniecie LPM
     {
-        if (gameManagment.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
+        if (GameManagment.instance.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
             lastSelectedPosition = transform.position;
             lastSelectedRotation = transform.eulerAngles;
@@ -74,7 +71,7 @@ public class Ship : MonoBehaviour
 
     protected void OnMouseUp()        // puszczanie LPM
     {
-        if (gameManagment.gameState == 0)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
+        if (GameManagment.instance.gameState == 0)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
             nearbyFields = Physics.OverlapSphere(mainCollider.transform.position, 1f)       // tworzymy sfere wokol mainCollider z promieniem 1f i znajdujemy wszystkie pola Fields
              .Where(collider => collider.CompareTag("Field"))
@@ -92,7 +89,7 @@ public class Ship : MonoBehaviour
                 
                 float rotacja = transform.rotation.eulerAngles.y;
                 string nazwaPola = nearestField.name;
-                bool validPosition = functions.ValidPosition(size, nazwaPola, rotacja, gameManagment.occupiedFields, shipID);
+                bool validPosition = functions.ValidPosition(size, nazwaPola, rotacja, GameManagment.instance.occupiedFields, shipID);
                 
                 if (validPosition)
                 {
@@ -100,7 +97,7 @@ public class Ship : MonoBehaviour
                     inGameUI.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
                     for (int i = 0; i < size; i++)
                     {
-                        gameManagment.occupiedFields[shipID, i] = functions.shipFields[i];
+                        GameManagment.instance.occupiedFields[shipID, i] = functions.shipFields[i];
                     }
                 }
                 else
@@ -117,7 +114,7 @@ public class Ship : MonoBehaviour
 
     protected void OnMouseDrag()          // gdy trzymany jest LMP
     {
-        if (gameManagment.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
+        if (GameManagment.instance.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
             transform.position = MouseWorldPosition() + offset;     // zmiana pozycji obiektu: aktualna pozycja myszy + wyliczony offset
         
         if (Input.GetKeyDown(KeyCode.E))

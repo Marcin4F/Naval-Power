@@ -6,6 +6,12 @@ using System.Linq;
 public class Functions : MonoBehaviour
 {
     public string[] shipFields;
+    public static Functions instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
     public bool ValidPosition(int size, string nazwaPola, float rotacja, string[,] occupiedFields, int shipID)
     {
         int numer = int.Parse(nazwaPola.Substring(1));
@@ -83,5 +89,38 @@ public class Functions : MonoBehaviour
             .FirstOrDefault();
 
         return nearestField;
+    }
+
+    public string ArrayToString(string[,] array)        // zamiana tablicy na zmienna string. Znak ';' oddziela pola danego wiersza, znak '?' oddziela kolejne wiersze
+    {
+        string changed = "";
+        for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+        {
+            for (int j = 0; j < GameManagment.instance.maxSize; j++)
+            {
+                changed = changed + array[i, j] + ";";
+            }
+            changed = changed + "?";
+        }
+
+        return changed;
+    }
+
+    public string[,] StringToArray(string changed)      // zamiana zmiennej string na tablice
+    {
+        string[,] occupiedFields;
+        occupiedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
+        string[] tmp = changed.Split('?');
+
+        for(int i = 0; i < GameManagment.instance.shipsNumber; i++)
+        {
+            string[] tmp2 = tmp[i].Split(';');
+            for (int j = 0; j < GameManagment.instance.maxSize; j++)
+            {
+                occupiedFields[i,j] = tmp2[j];
+            }
+        }
+
+        return occupiedFields;
     }
 }

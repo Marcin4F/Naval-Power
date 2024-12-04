@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//aaaaaaaaaaaaaaaaaaaaa
-
-
 public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCEN
 {
-    public static ScenesManager instance;           // pozwala odwolac sie do tej klasy z kazdego skryptu bez potrzeby inicjalizowania refernecji do tego skryptu 
+    public static ScenesManager instance;           // pozwala odwolac sie do tej klasy z kazdego skryptu bez potrzeby inicjalizowania refernecji do tego skryptu
+    private Functions functions;
 
     private void Awake()        // przypisanie zmiennej instance, tej klasy, czyli ScenesManager
     {
         instance = this;
+        functions = GetComponent<Functions>();
         if (!PlayerPrefs.HasKey("Direction"))
             PlayerPrefs.SetInt("Direction", 1);
     }
@@ -41,12 +40,18 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 
         if (index == 1)
         {
+            string positions;
+            positions = functions.ArrayToString(GameManagment.instance.occupiedFields);
+            PlayerPrefs.SetString("Positions1", positions);
             direction = 1;
             PlayerPrefs.SetInt("Direction", direction);
             SceneManager.LoadScene(index + 1);
         }
         else if (index == 3)
         {
+            string positions;
+            positions = functions.ArrayToString(GameManagment.instance.occupiedFields);
+            PlayerPrefs.SetString("Positions3", positions);
             direction = -1;
             PlayerPrefs.SetInt("Direction", direction);
             SceneManager.LoadScene(index - 1);
@@ -61,5 +66,4 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
     {
         SceneManager.LoadScene(Scene.MainMenu.ToString());
     }
-
 }

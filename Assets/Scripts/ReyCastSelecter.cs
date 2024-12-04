@@ -17,16 +17,14 @@ public class ReyCastSelecter : MonoBehaviour
     protected Collider[] childFieldColliders;   // lista wlasciwych colliderow odpowiadajacych za rozmiar
     protected int gameState;
 
-    protected GameManagment gameManagment;
     protected Functions functions;
 
     private void Start()
     {
-        gameManagment = FindObjectOfType<GameManagment>();              // dolaczenie odpowiednich skryptow (gameManagemet -> gameState; functions -> funkcje)
         functions = gameObject.GetComponent<Functions>();
 
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
-        gameState = gameManagment.gameState;
+        gameState = GameManagment.instance.gameState;
 
         string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury PRZENIESC NA FAZE KONCOWA
         foreach (string shipName in shipsNames)
@@ -35,6 +33,17 @@ public class ReyCastSelecter : MonoBehaviour
             if (PlayerPrefs.HasKey(key))
             {
                 PlayerPrefs.DeleteKey(key);
+            }
+        }
+
+        if(gameState == 1)
+        {
+            for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+            {
+                for (int j = 0; j < GameManagment.instance.maxSize; j++)
+                {
+                    Debug.Log(GameManagment.instance.occupiedFields[i, j]);
+                }
             }
         }
     }
