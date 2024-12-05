@@ -10,15 +10,12 @@ public class InGameUI : MonoBehaviour
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
 
     [SerializeField] Button endTurn;        // inicjalizacja przyciskow na scenie
-    GameManagment gameManagment;
 
     // Start is called before the first frame update
     void Awake()
     {
-        gameManagment = FindObjectOfType<GameManagment>();
-
         endTurn.onClick.AddListener(EndingTurn);        // dodanie "sluchacza" na przycisku, aktywuje sie w momencie klikniecia
-        if (gameManagment != null && gameManagment.gameState == 0)
+        if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
         {
             endTurn.interactable = false;               // wylaczenie przycisku konca tury na poczatku gry
         }
@@ -31,7 +28,7 @@ public class InGameUI : MonoBehaviour
 
     private void Update()
     {
-        if (gameManagment != null && gameManagment.gameState == 0 && shipPlaced == gameManagment.shipsNumber)        // jezeli wszystkie statki zostaly umieszczone na planszy to umozliwiamy zakonczenie pierwszej tury, UWAGA ZMIENIC 2 NA ILOSC STATKOW W GRZE
+        if (GameManagment.instance.gameState == 0 && shipPlaced == GameManagment.instance.shipsNumber)        // jezeli wszystkie statki zostaly umieszczone na planszy to umozliwiamy zakonczenie pierwszej tury, UWAGA ZMIENIC 2 NA ILOSC STATKOW W GRZE
             endTurn.interactable = true;
 
 
@@ -39,5 +36,10 @@ public class InGameUI : MonoBehaviour
         {
             ScenesManager.instance.MainMenu();
         }
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

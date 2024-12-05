@@ -12,9 +12,12 @@ public class Functions : MonoBehaviour
     {
         instance = this;
     }
-    public bool ValidPosition(int size, string nazwaPola, float rotacja, string[,] occupiedFields, int shipID)
+    public int ValidPosition(int size, string nazwaPola, float rotacja, string[,] occupiedFields, int shipID)       // zwracane wartosci: 0 -> nie mozna wykonac ruchu, inny statek na drodze
+                                                                                                                    // 1 -> nie mo¿na wykonaæ ruchu, wyjscie poza krawedz mapy
+                                                                                                                    // 2 -> mozna wykonac ruch
     {
         int numer = int.Parse(nazwaPola.Substring(1));
+        int wynik = 2;
         char litera = nazwaPola[0];
         int polowaRozmiaru = size / 2;
         string newField;
@@ -27,47 +30,46 @@ public class Functions : MonoBehaviour
                 int numerPola = numer - polowaRozmiaru + i;
                 if (numerPola < 1 || numerPola > 16)
                 {
-                    return false;
+                    wynik = 1;
                 }
                 newField = $"{litera}{numerPola}";
                 if (occupiedFields != null)
                 {
-                    if (Enumerable.Range(0, occupiedFields.GetLength(0))                // Iterujemy po wszystkich wierszach
-                     .Where(row => row != shipID)                                       // Pomijamy wiersz shipId
-                     .Any(row => Enumerable.Range(0, occupiedFields.GetLength(1))       // Iterujemy po kolumnach w danym wierszu
-                     .Any(col => occupiedFields[row, col] == newField)))                // Sprawdzamy, czy newField istnieje
+                    if (Enumerable.Range(0, GameManagment.instance.shipsNumber)             // Iterujemy po wszystkich wierszach
+                     .Where(row => row != shipID)                                           // Pomijamy wiersz shipId
+                     .Any(row => Enumerable.Range(0, GameManagment.instance.maxSize)        // Iterujemy po kolumnach w danym wierszu
+                     .Any(col => occupiedFields[row, col] == newField)))                    // Sprawdzamy, czy newField istnieje
                     {
-                        return false;                                                   // Jeœli znaleziono newField w innym wierszu, zwracamy false
+                        return 0;                                                           // Jeœli znaleziono newField w innym wierszu, zwracamy false
                     }
                 }
                 shipFields[i] = newField;
             }
-            return true;
+            return wynik;
         }
         else
         {
             for (int i = 0; i < size; i++)
             {
                 char literaPola = (char)(litera - polowaRozmiaru + i);
-
                 if ((int)literaPola < 65 || (int)literaPola > 80)
                 {
-                    return false;
+                    wynik = 1;
                 }
                 newField = $"{literaPola}{numer}";
                 if (occupiedFields != null)
                 {
-                    if (Enumerable.Range(0, occupiedFields.GetLength(0))                // Iterujemy po wszystkich wierszach
-                     .Where(row => row != shipID)                                       // Pomijamy wiersz shipId
-                     .Any(row => Enumerable.Range(0, occupiedFields.GetLength(1))       // Iterujemy po kolumnach w danym wierszu
-                     .Any(col => occupiedFields[row, col] == newField)))                // Sprawdzamy, czy newField istnieje
+                    if (Enumerable.Range(0, GameManagment.instance.shipsNumber)             // Iterujemy po wszystkich wierszach
+                     .Where(row => row != shipID)                                           // Pomijamy wiersz shipId
+                     .Any(row => Enumerable.Range(0, GameManagment.instance.maxSize)        // Iterujemy po kolumnach w danym wierszu
+                     .Any(col => occupiedFields[row, col] == newField)))                    // Sprawdzamy, czy newField istnieje
                     {
-                        return false;                                                   // Jeœli znaleziono newField w innym wierszu, zwracamy false
+                        return 0;                                                       // Jeœli znaleziono newField w innym wierszu, zwracamy false
                     }
                 }
                 shipFields[i] = newField;
             }
-            return true;
+            return wynik;
         }
 
     }
