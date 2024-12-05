@@ -13,6 +13,7 @@ public class ReyCastSelecter : MonoBehaviour
     protected int sceneIndex, validPosition, gameState, tmp, size, halfSize;
     protected float shipRotation;
     protected string key, fieldName;
+    Vector3 movment;
 
     protected Collider nearestField;
     protected Collider[] childColliders;
@@ -32,7 +33,7 @@ public class ReyCastSelecter : MonoBehaviour
         tmp = 0;
         foreach (string shipName in shipsNames)
         {
-            key = "PossibleRotation" + shipName + sceneIndex;
+            key = "PossibleMovement" + shipName + sceneIndex;
             if (PlayerPrefs.HasKey(key))
             {
                 PlayerPrefs.DeleteKey(key);
@@ -78,16 +79,33 @@ public class ReyCastSelecter : MonoBehaviour
             }
         }
 
-        if(isSelected && PlayerPrefs.GetInt("PossibleRotation" + lastSelected.name + sceneIndex) == 0)
+        if(isSelected)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            int movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
+            if (movesUsed == 0)
             {
-                TryRotation('E');
-            }
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    TryRotation('A');
+                }
 
-            if (Input.GetKeyDown(KeyCode.R))
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    TryRotation('D');
+                }
+
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    MoveBackward();
+                }
+            }
+            
+            if (movesUsed != 2)
             {
-                TryRotation('R');
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    MoveForward(movesUsed);
+                }
             }
         }
 
@@ -116,7 +134,7 @@ public class ReyCastSelecter : MonoBehaviour
         string name = lastSelected.name;
         shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
 
-        if (direction == 'E')           // sprawdzenie czy dokonanie rotacji we wskazanym kierunku jest mozliwe
+        if (direction == 'A')           // sprawdzenie czy dokonanie rotacji we wskazanym kierunku jest mozliwe
         {
             validPosition = Functions.instance.ValidPosition(size, fieldName, shipRotation - 90, GameManagment.instance.occupiedFields, shipID);
         }
@@ -128,7 +146,7 @@ public class ReyCastSelecter : MonoBehaviour
         if (validPosition == 2)         // wykonanie rotacji
         {
             Rotate(direction, shipID);
-            SaveInfo();
+            SaveInfo(2);
         }
 
         else if (validPosition == 1)        // jezeli aktualna pozycja nie jest wlasciwa dokonujemy przesuniecia statku o odpowiednia wartosc w odopwiednim kierunku, tak aby miescil sie na mapie
@@ -164,14 +182,57 @@ public class ReyCastSelecter : MonoBehaviour
             {
                 GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
             }
-            SaveInfo();
+            SaveInfo(2);
         }
     }
 
-    void SaveInfo()
+    void MoveForward(int movesUsed)
     {
-        PlayerPrefs.SetInt("PossibleRotation" + lastSelected.name + sceneIndex, 1);     // zapisanie ze dany statek dokonal ruchu
-        name = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);               // 7 zeby usunac napis "(Clone)"
+        shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+        nearestField = Functions.instance.FindingField(lastSelected);
+        fieldName = nearestField.name;
+        string name = lastSelected.name;
+        shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
+
+        if (shipRotation == 0)
+        {
+            int a = Functions.instance.ValidMove(size, fieldName, shipRotation, GameManagment.instance.occupiedFields, shipID, 'W');
+            if (a == 1)
+                movment = new Vector3(1, 0, 0);
+            else
+                movment = new Vector3(0, 0, 0);
+        }
+            
+        else if (shipRotation == -90 || shipRotation == 270)
+            movment = new Vector3 (0, 0, 1);
+        else if (shipRotation == 180 || shipRotation == -180)
+            movment = new Vector3 (-1, 0, 0);
+        else if (shipRotation == 90)
+            movment = new Vector3 (0, 0, -1);
+        //validPosition = Functions.instance.ValidPosition(size, )
+        lastSelected.transform.position += movment;
+        SaveInfo(movesUsed + 1);
+    }
+
+    void MoveBackward()
+    {
+        shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+        if (shipRotation == 0)
+            movment = new Vector3(-1, 0, 0);
+        else if (shipRotation == -90 || shipRotation == 270)
+            movment = new Vector3(0, 0, -1);
+        else if (shipRotation == 180 || shipRotation == -180)
+            movment = new Vector3(1, 0, 0);
+        else if (shipRotation == 90)
+            movment = new Vector3(0, 0, 1);
+        lastSelected.transform.position += movment;
+        SaveInfo(2);
+    }
+
+    void SaveInfo(int moveUsed)
+    {
+        PlayerPrefs.SetInt("PossibleMovement" + lastSelected.name + sceneIndex, moveUsed);      // zapisanie ze dany statek dokonal ruchu
+        name = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);                       // 7 zeby usunac napis "(Clone)"
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         PlayerPrefs.SetFloat(name + sceneIndex + "Rotation", shipRotation);
         PlayerPrefs.SetFloat(name + sceneIndex + "X", lastSelected.transform.position.x);
@@ -180,7 +241,7 @@ public class ReyCastSelecter : MonoBehaviour
 
     void Rotate(char direction, int shipID)       // rotowanie statku
     {
-        if (direction == 'E')
+        if (direction == 'A')
         {
             lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
         }

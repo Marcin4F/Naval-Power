@@ -64,15 +64,35 @@ public class Functions : MonoBehaviour
                      .Any(row => Enumerable.Range(0, GameManagment.instance.maxSize)        // Iterujemy po kolumnach w danym wierszu
                      .Any(col => occupiedFields[row, col] == newField)))                    // Sprawdzamy, czy newField istnieje
                     {
-                        return 0;                                                       // Jeœli znaleziono newField w innym wierszu, zwracamy false
+                        return 0;                                                           // Jeœli znaleziono newField w innym wierszu, zwracamy false
                     }
                 }
                 shipFields[i] = newField;
             }
             return wynik;
         }
-
     }
+
+    public int ValidMove(int size, string nazwaPola, float rotacja, string[,] occupiedFields, int shipID, char direction)
+    {
+        int numer = int.Parse(nazwaPola.Substring(1));
+        char litera = nazwaPola[0];
+        int polowaRozmiaru = size / 2;
+
+        if (rotacja == 0)
+        {
+            if (direction == 'W')
+            {
+                int numerPola = numer + polowaRozmiaru + 1;
+                if (numerPola < 1 || numerPola > 16)
+                {
+                    return 0;
+                }
+            }
+        }
+        return 1;
+    }
+
     public Collider FindingField(Transform Object)
     {
         Collider[] nearbyFields;
