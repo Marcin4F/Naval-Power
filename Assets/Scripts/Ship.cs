@@ -117,13 +117,13 @@ public class Ship : MonoBehaviour
         {
             transform.position = MouseWorldPosition() + offset;     // zmiana pozycji obiektu: aktualna pozycja myszy + wyliczony offset
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 shipRotation = transform.rotation.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 shipRotation = transform.rotation.eulerAngles.y;
                 transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);

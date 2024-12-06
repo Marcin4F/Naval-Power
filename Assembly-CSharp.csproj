@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\UI\InGameUI.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
     <Compile Include="Assets\Scripts\UI\ScenesManager.cs" />
+    <Compile Include="Assets\Scripts\Attack.cs" />
     <Compile Include="Assets\Scripts\Statki\Niszczyciel.cs" />
   </ItemGroup>
   <ItemGroup>
