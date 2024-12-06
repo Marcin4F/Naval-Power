@@ -13,7 +13,7 @@ public class ReyCastSelecter : MonoBehaviour
     protected int sceneIndex, validPosition, gameState, tmp, size, halfSize;
     protected float shipRotation;
     protected string key, fieldName;
-    Vector3 movment;
+    protected Vector3 movment;
 
     protected Collider nearestField;
     protected Collider[] childColliders;
@@ -56,6 +56,7 @@ public class ReyCastSelecter : MonoBehaviour
                     {
                         lastSelected.Translate(0, -1, 0);
                         isSelected = false;
+                        Attack.instance.QuitAttacking();
                     }
                     var rayPos = raycastHit.transform;      // uzyskanie pozycji statku
                     lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
@@ -68,6 +69,7 @@ public class ReyCastSelecter : MonoBehaviour
                     lastSelected.Translate(0, -1, 0);
                     lastSelected = null;
                     isSelected = false;
+                    Attack.instance.QuitAttacking();
                 }
             }
 
@@ -76,6 +78,7 @@ public class ReyCastSelecter : MonoBehaviour
                 lastSelected.Translate(0, -1, 0);
                 lastSelected = null;
                 isSelected = false;
+                Attack.instance.QuitAttacking();
             }
         }
 
@@ -86,17 +89,17 @@ public class ReyCastSelecter : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.A))
                 {
-                    TryRotation('A');
+                    Movement.instance.TryRotation('A', lastSelected, shipsID);
                 }
 
                 if (Input.GetKeyDown(KeyCode.D))
                 {
-                    TryRotation('D');
+                    Movement.instance.TryRotation('D', lastSelected, shipsID);
                 }
 
                 if (Input.GetKeyDown(KeyCode.S))
                 {
-                    MoveBackward();
+                    Movement.instance.MoveBackward(lastSelected, shipsID);
                 }
             }
             
@@ -104,13 +107,18 @@ public class ReyCastSelecter : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.W))
                 {
-                    MoveForward(movesUsed);
+                    Movement.instance.MoveForward(movesUsed, lastSelected, shipsID);
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Attack.instance.Attacking();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Attack.instance.QuitAttacking();
             }
         }
 
@@ -122,212 +130,7 @@ public class ReyCastSelecter : MonoBehaviour
         }
     }
 
-    void TryRotation(char direction)       // proba dokonania rotacji statku
-    {
-        nearestField = Functions.instance.FindingField(lastSelected);
-
-        shipRotation = lastSelected.transform.rotation.eulerAngles.y;
-        fieldName = nearestField.name;
-
-        size = GetSize(lastSelected);
-        halfSize = size / 2;
-
-        string name = lastSelected.name;
-        shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
-
-        if (direction == 'A')           // sprawdzenie czy dokonanie rotacji we wskazanym kierunku jest mozliwe
-        {
-            validPosition = Functions.instance.ValidPosition(size, fieldName, shipRotation - 90, GameManagment.instance.occupiedFields, shipID);
-        }
-        else
-        {
-            validPosition = Functions.instance.ValidPosition(size, fieldName, shipRotation + 90, GameManagment.instance.occupiedFields, shipID);
-        }
-
-        if (validPosition == 2)         // wykonanie rotacji
-        {
-            Rotate(direction, shipID);
-            SaveInfo(2);
-        }
-
-        else if (validPosition == 1)        // jezeli aktualna pozycja nie jest wlasciwa dokonujemy przesuniecia statku o odpowiednia wartosc w odopwiednim kierunku, tak aby miescil sie na mapie
-        {
-            Rotate(direction, shipID);
-
-            if (fieldName[0] < 'C')
-            {
-                Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z - (halfSize + 65 - (int)fieldName[0]));
-            }
-            else if (fieldName[0] > 'N')
-            {
-                Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x, lastPosition.y, lastPosition.z + (halfSize - 80 + (int)fieldName[0]));
-            }
-            else if (fieldName.Length != 3 && fieldName[1] < '3')
-            {
-                Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x + (halfSize + 49 - (int)fieldName[1]), lastPosition.y, lastPosition.z);
-            }
-            else
-            {
-                Vector3 lastPosition = lastSelected.transform.position;
-                lastSelected.transform.position = new Vector3(lastPosition.x - (halfSize - 54 + (int)fieldName[2]), lastPosition.y, lastPosition.z);
-            }
-
-            nearestField = Functions.instance.FindingField(lastSelected);
-            fieldName = nearestField.name;
-            shipRotation = lastSelected.transform.rotation.eulerAngles.y;
-            Functions.instance.ValidPosition(size, fieldName, shipRotation, GameManagment.instance.occupiedFields, shipID);
-            for (int i = 0; i < Functions.instance.shipFields.Length; i++)
-            {
-                GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
-            }
-            SaveInfo(2);
-        }
-    }
-
-    void MoveForward(int movesUsed)
-    {
-        shipRotation = lastSelected.transform.rotation.eulerAngles.y;
-        size = GetSize(lastSelected);
-
-        nearestField = Functions.instance.FindingField(lastSelected);
-        fieldName = nearestField.name;
-        char litera = fieldName[0];
-        int numer = int.Parse(fieldName.Substring(1));
-        string newField;
-
-        string name = lastSelected.name;
-        shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
-
-        if (shipRotation == 0)
-        {
-            numer++;
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-            
-            if (validPosition == 2)
-                movment = new Vector3(1, 0, 0);
-            else
-                return;
-        }
-            
-        else if (shipRotation == -90 || shipRotation == 270)
-        {
-            litera = (char)(litera - 1);
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-
-            if (validPosition == 2)
-                movment = new Vector3(0, 0, 1);
-            else
-                return;
-        }
-
-        else if (shipRotation == 180 || shipRotation == -180)
-        {
-            numer--;
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-
-            if (validPosition == 2)
-                movment = new Vector3(-1, 0, 0);
-            else
-                return;
-        }
-
-        else if (shipRotation == 90)
-        {
-            litera = (char)(litera + 1);
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-
-            if (validPosition == 2)
-                movment = new Vector3(0, 0, -1);
-            else
-                return;
-        }
-
-        for (int i = 0; i < Functions.instance.shipFields.Length; i++)
-        {
-            GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
-        }
-        lastSelected.transform.position += movment;
-        SaveInfo(movesUsed + 1);
-    }
-
-    void MoveBackward()
-    {
-        shipRotation = lastSelected.transform.rotation.eulerAngles.y;
-        size = GetSize(lastSelected);
-
-        nearestField = Functions.instance.FindingField(lastSelected);
-        fieldName = nearestField.name;
-        char litera = fieldName[0];
-        int numer = int.Parse(fieldName.Substring(1));
-        string newField;
-
-        string name = lastSelected.name;
-        shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
-
-        if (shipRotation == 0)
-        {
-            numer--;
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-
-            if (validPosition == 2)
-                movment = new Vector3(-1, 0, 0);
-            else
-                return;
-        }
-
-        else if (shipRotation == -90 || shipRotation == 270)
-        {
-            litera = (char)(litera + 1);
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-
-            if (validPosition == 2)
-                movment = new Vector3(0, 0, -1);
-            else
-                return;
-        }
-
-        else if (shipRotation == 180 || shipRotation == -180)
-        {
-            numer++;
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-
-            if (validPosition == 2)
-                movment = new Vector3(1, 0, 0);
-            else
-                return;
-        }
-
-        else if (shipRotation == 90)
-        {
-            litera = (char)(litera - 1);
-            newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
-
-            if (validPosition == 2)
-                movment = new Vector3(0, 0, 1);
-            else
-                return;
-        }
-
-        for (int i = 0; i < Functions.instance.shipFields.Length; i++)
-        {
-            GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
-        }
-        lastSelected.transform.position += movment;
-        SaveInfo(2);
-    }
-
-    void SaveInfo(int moveUsed)
+    public void SaveInfo(int moveUsed)
     {
         PlayerPrefs.SetInt("PossibleMovement" + lastSelected.name + sceneIndex, moveUsed);      // zapisanie ze dany statek dokonal ruchu
         name = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);                       // 7 zeby usunac napis "(Clone)"
@@ -337,7 +140,7 @@ public class ReyCastSelecter : MonoBehaviour
         PlayerPrefs.SetFloat(name + sceneIndex + "Z", lastSelected.transform.position.z);
     }
 
-    int GetSize(Transform lastSelected)
+    public int GetSize(Transform lastSelected)
     {
         childColliders = lastSelected.GetComponentsInChildren<Collider>();
         childFieldColliders = childColliders
@@ -345,22 +148,5 @@ public class ReyCastSelecter : MonoBehaviour
             .ToArray();
         size = childColliders.Length - 1;           // nie wiadomo czemu musi byc -1
         return size;
-    }
-
-    void Rotate(char direction, int shipID)       // rotowanie statku
-    {
-        if (direction == 'A')
-        {
-            lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
-        }
-        else
-        {
-            lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
-        }
-
-        for (int i = 0; i < Functions.instance.shipFields.Length; i++)
-        {
-            GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
-        }
     }
 }

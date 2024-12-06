@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Functions.cs" />
     <Compile Include="Assets\Scripts\Statki\Pancernik.cs" />
     <Compile Include="Assets\Scripts\ReyCastSelecter.cs" />
+    <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\UI\InGameUI.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
     <Compile Include="Assets\Scripts\UI\ScenesManager.cs" />

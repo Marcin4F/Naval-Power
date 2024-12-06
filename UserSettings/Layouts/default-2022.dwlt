@@ -293,8 +293,8 @@ MonoBehaviour:
     y: 0
     width: 379
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -372,9 +372,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: aafdfcff
-      m_LastClickedID: -197206
-      m_ExpandedIDs: aefdfcff24fefcff2c8effff30fbffff
+      m_SelectedIDs: 444b0100
+      m_LastClickedID: 0
+      m_ExpandedIDs: ecb8feff30fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -934,11 +934,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.32462627, y: -0.14309041, z: 0.049764287, w: -0.9335731}
     speed: 2
-    m_Value: {x: -0.32456872, y: -0.1444984, z: 0.050253876, w: -0.9334077}
+    m_Value: {x: -0.32464373, y: -0.14309812, z: 0.049766965, w: -0.9336234}
   m_Size:
-    m_Target: 55.643307
+    m_Target: 62.730648
     speed: 2
-    m_Value: 55.643307
+    m_Value: 62.730648
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1106,7 +1106,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1114,16 +1114,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\studia\semestr 3\Programowanie obiektowe\Statki 2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 66650000
-    m_LastClickedID: 25958
-    m_ExpandedIDs: 000000005e65000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 3e730000
+    m_LastClickedID: 29502
+    m_ExpandedIDs: 000000003273000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005e650000
+    m_ExpandedIDs: 0000000032730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

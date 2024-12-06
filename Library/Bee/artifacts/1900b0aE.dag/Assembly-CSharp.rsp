@@ -355,6 +355,7 @@
 "Assets/Scripts/Attack.cs"
 "Assets/Scripts/Functions.cs"
 "Assets/Scripts/GameManagment.cs"
+"Assets/Scripts/Movement.cs"
 "Assets/Scripts/ReyCastSelecter.cs"
 "Assets/Scripts/Ship.cs"
 "Assets/Scripts/Statki/Niszczyciel.cs"
