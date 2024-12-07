@@ -7,10 +7,13 @@ public class Functions : MonoBehaviour
 {
     public string[] shipFields;
     public static Functions instance;
+    private int shipsNumber, maxSize;
 
     private void Awake()
     {
         instance = this;
+        shipsNumber = GameManagment.instance.shipsNumber;
+        maxSize = GameManagment.instance.maxSize;
     }
     public int ValidPosition(int size, string nazwaPola, float rotacja, string[,] occupiedFields, int shipID)       // zwracane wartosci: 0 -> nie mozna wykonac ruchu, inny statek na drodze
                                                                                                                     // 1 -> nie mo¿na wykonaæ ruchu, wyjscie poza krawedz mapy
@@ -35,9 +38,9 @@ public class Functions : MonoBehaviour
                 newField = $"{litera}{numerPola}";
                 if (occupiedFields != null)
                 {
-                    if (Enumerable.Range(0, GameManagment.instance.shipsNumber)             // Iterujemy po wszystkich wierszach
+                    if (Enumerable.Range(0, shipsNumber)                                    // Iterujemy po wszystkich wierszach
                      .Where(row => row != shipID)                                           // Pomijamy wiersz shipId
-                     .Any(row => Enumerable.Range(0, GameManagment.instance.maxSize)        // Iterujemy po kolumnach w danym wierszu
+                     .Any(row => Enumerable.Range(0, maxSize)        // Iterujemy po kolumnach w danym wierszu
                      .Any(col => occupiedFields[row, col] == newField)))                    // Sprawdzamy, czy newField istnieje
                     {
                         return 0;                                                           // Jeœli znaleziono newField w innym wierszu, zwracamy false
@@ -59,9 +62,9 @@ public class Functions : MonoBehaviour
                 newField = $"{literaPola}{numer}";
                 if (occupiedFields != null)
                 {
-                    if (Enumerable.Range(0, GameManagment.instance.shipsNumber)             // Iterujemy po wszystkich wierszach
+                    if (Enumerable.Range(0, shipsNumber)             // Iterujemy po wszystkich wierszach
                      .Where(row => row != shipID)                                           // Pomijamy wiersz shipId
-                     .Any(row => Enumerable.Range(0, GameManagment.instance.maxSize)        // Iterujemy po kolumnach w danym wierszu
+                     .Any(row => Enumerable.Range(0, maxSize)        // Iterujemy po kolumnach w danym wierszu
                      .Any(col => occupiedFields[row, col] == newField)))                    // Sprawdzamy, czy newField istnieje
                     {
                         return 0;                                                           // Jeœli znaleziono newField w innym wierszu, zwracamy false
@@ -93,12 +96,12 @@ public class Functions : MonoBehaviour
         return nearestField;
     }
 
-    public string ArrayToString(string[,] array)        // zamiana tablicy na zmienna string. Znak ';' oddziela pola danego wiersza, znak '?' oddziela kolejne wiersze
+    public string ArrayToString(string[,] array, int size2)        // zamiana tablicy na zmienna string. Znak ';' oddziela pola danego wiersza, znak '?' oddziela kolejne wiersze
     {
         string changed = "";
-        for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+        for (int i = 0; i < shipsNumber; i++)
         {
-            for (int j = 0; j < GameManagment.instance.maxSize; j++)
+            for (int j = 0; j < size2; j++)
             {
                 changed = changed + array[i, j] + ";";
             }
@@ -111,13 +114,13 @@ public class Functions : MonoBehaviour
     public string[,] StringToArray(string changed)      // zamiana zmiennej string na tablice
     {
         string[,] occupiedFields;
-        occupiedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
+        occupiedFields = new string[shipsNumber, maxSize];
         string[] tmp = changed.Split('?');
 
-        for(int i = 0; i < GameManagment.instance.shipsNumber; i++)
+        for(int i = 0; i < shipsNumber; i++)
         {
             string[] tmp2 = tmp[i].Split(';');
-            for (int j = 0; j < GameManagment.instance.maxSize; j++)
+            for (int j = 0; j < maxSize; j++)
             {
                 occupiedFields[i,j] = tmp2[j];
             }

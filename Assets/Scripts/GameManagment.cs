@@ -11,7 +11,7 @@ public class GameManagment : MonoBehaviour
     public int gameState = 0;           // faza gry
     public int shipsNumber = 2;         // ilosc statkow w grze
     public int maxSize = 5;
-    public string[,] occupiedFields;
+    public string[,] occupiedFields, attackFields;
 
     // Start is called before the first frame update
     void Awake()

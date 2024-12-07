@@ -10,6 +10,7 @@ using System.Linq;
 public class ReyCastSelecter : MonoBehaviour
 {
     protected bool isSelected = false;
+    public bool isAttacking = false;
     protected int sceneIndex, validPosition, gameState, tmp, size, halfSize;
     protected float shipRotation;
     protected string key, fieldName;
@@ -26,6 +27,8 @@ public class ReyCastSelecter : MonoBehaviour
     {
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         gameState = GameManagment.instance.gameState;
+
+        GameManagment.instance.attackFields = new string[GameManagment.instance.shipsNumber, 1];
 
         // UWAGA shipsNames wypelnic w kolejnosci wartosci shipID z klas statkow
         string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury PRZENIESC NA FAZE KONCOWA
@@ -62,6 +65,11 @@ public class ReyCastSelecter : MonoBehaviour
                     lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
                     rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
                     isSelected = true;
+                }
+
+                else if(raycastHit.transform.CompareTag("FieldMapaWyb"))
+                {
+                    Attack.instance.ChooseAttackField(raycastHit.transform.name, lastSelected, shipsID, raycastHit.transform.position);
                 }
 
                 else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
@@ -111,12 +119,12 @@ public class ReyCastSelecter : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && isAttacking == false)
             {
                 Attack.instance.Attacking();
             }
 
-            if (Input.GetKeyDown(KeyCode.Q))
+            else if (Input.GetKeyDown(KeyCode.E) && isAttacking == true)
             {
                 Attack.instance.QuitAttacking();
             }

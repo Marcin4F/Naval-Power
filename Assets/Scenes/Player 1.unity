@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c21f645cc1a2fb47bbca2d92d12e674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttacking: 0
 --- !u!114 &41379267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapa: {fileID: 5804287970053686005, guid: f0cd53bb3044dcf4193fda6e3ac98c54, type: 3}
+  znacznik: {fileID: 3878178356251599098, guid: d26c6782736905342860755f2e006204, type: 3}
 --- !u!114 &41379274
 MonoBehaviour:
   m_ObjectHideFlags: 0

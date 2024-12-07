@@ -9,6 +9,7 @@ TagManager:
   - MainCollider
   - MenuWyboru
   - FieldCollider
+  - FieldMapaWyb
   layers:
   - Default
   - TransparentFX

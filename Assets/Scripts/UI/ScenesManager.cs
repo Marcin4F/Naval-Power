@@ -39,9 +39,12 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 
         if (index == 1)
         {
-            string positions;
-            positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields);
+            string positions, attackedFields;
+            positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
             PlayerPrefs.SetString("Positions1", positions);
+
+            attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
+
             direction = 1;
             PlayerPrefs.SetInt("Direction", direction);
             SceneManager.LoadScene(index + 1);
@@ -49,7 +52,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
         else if (index == 3)
         {
             string positions;
-            positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields);
+            positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
             PlayerPrefs.SetString("Positions3", positions);
             direction = -1;
             PlayerPrefs.SetInt("Direction", direction);
