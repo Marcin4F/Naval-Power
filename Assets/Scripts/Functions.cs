@@ -111,21 +111,21 @@ public class Functions : MonoBehaviour
         return changed;
     }
 
-    public string[,] StringToArray(string changed)      // zamiana zmiennej string na tablice
+    public string[,] StringToArray(string changed, int size2)      // zamiana zmiennej string na tablice
     {
-        string[,] occupiedFields;
-        occupiedFields = new string[shipsNumber, maxSize];
+        string[,] array;
+        array = new string[shipsNumber, size2];
         string[] tmp = changed.Split('?');
 
         for(int i = 0; i < shipsNumber; i++)
         {
             string[] tmp2 = tmp[i].Split(';');
-            for (int j = 0; j < maxSize; j++)
+            for (int j = 0; j < size2; j++)
             {
-                occupiedFields[i,j] = tmp2[j];
+                array[i,j] = tmp2[j];
             }
         }
 
-        return occupiedFields;
+        return array;
     }
 }

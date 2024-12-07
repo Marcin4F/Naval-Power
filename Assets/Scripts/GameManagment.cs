@@ -8,27 +8,34 @@ public class GameManagment : MonoBehaviour
     public static GameManagment instance;
     public GameObject pancernik;
     public GameObject niszczyciel;
-    public int gameState = 0;           // faza gry
-    public int shipsNumber = 2;         // ilosc statkow w grze
-    public int maxSize = 5;
-    public string[,] occupiedFields, attackFields;
+    public int gameState = 0, shipsNumber = 2, maxSize = 5;           // faza gry
+    public string[,] occupiedFields, attackFields, fieldsUnderAttack;
 
     // Start is called before the first frame update
     void Awake()
     {
         instance = this;
-        gameState = PlayerPrefs.GetInt("gameState" + SceneManager.GetActiveScene().buildIndex);       // faza gry: 0 - pierwsza tura, nie wczytujemy pozycji statkow, 1 - kolejne tury wczytujemy pozycje z plikow
+        int index = SceneManager.GetActiveScene().buildIndex;
+        gameState = PlayerPrefs.GetInt("gameState" + index);       // faza gry: 0 - pierwsza tura, nie wczytujemy pozycji statkow, 1 - kolejne tury wczytujemy pozycje z plikow
         if (gameState == 0)
         {
-            PlayerPrefs.SetInt("gameState" + SceneManager.GetActiveScene().buildIndex, 1);
+            PlayerPrefs.SetInt("gameState" + index, 1);
         }
         else
         {
-            occupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions" + SceneManager.GetActiveScene().buildIndex));
+            occupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions" + index), maxSize);
+            if (index == 1)
+            {
+                fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields3"), 1);
+            }
+            else if (index == 3)
+            {
+                fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields1"), 1);
+            }
         }
 
         // inicjalizacja statkow
-        int index = SceneManager.GetActiveScene().buildIndex;
+        
         if (index == 1)
         {
             GameObject pancernik1 = Instantiate(pancernik);

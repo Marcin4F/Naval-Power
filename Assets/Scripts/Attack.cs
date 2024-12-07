@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -58,8 +59,11 @@ public class Attack : MonoBehaviour
             znaczniki[shipID] = Instantiate(znacznik);
         }
         
-        znaczniki[shipID].transform.position = position;
-        positions[shipID] = position;
-        GameManagment.instance.attackFields[shipID, 0] = fieldName;
+        if (!positions.Contains(position))
+        {
+            znaczniki[shipID].transform.position = position;
+            positions[shipID] = position;
+            GameManagment.instance.attackFields[shipID, 0] = fieldName;
+        }
     }
 }

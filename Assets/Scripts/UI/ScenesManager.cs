@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCEN
 {
     public static ScenesManager instance;           // pozwala odwolac sie do tej klasy z kazdego skryptu bez potrzeby inicjalizowania refernecji do tego skryptu
+    private string positions, attackedFields;
+
 
     private void Awake()        // przypisanie zmiennej instance, tej klasy, czyli ScenesManager
     {
@@ -18,7 +20,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
     {
         MainMenu,
         Player1,
-        Waitnig,
+        Middle,
         Player2
     }
 
@@ -39,24 +41,28 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 
         if (index == 1)
         {
-            string positions, attackedFields;
             positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
             PlayerPrefs.SetString("Positions1", positions);
 
             attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
+            PlayerPrefs.SetString("AttackedFields1", attackedFields);
+
 
             direction = 1;
             PlayerPrefs.SetInt("Direction", direction);
-            SceneManager.LoadScene(index + 1);
+            LoadScene(Scene.Middle);
         }
         else if (index == 3)
         {
-            string positions;
             positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
             PlayerPrefs.SetString("Positions3", positions);
+
+            attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
+            PlayerPrefs.SetString("AttackedFields3", attackedFields);
+
             direction = -1;
             PlayerPrefs.SetInt("Direction", direction);
-            SceneManager.LoadScene(index - 1);
+            LoadScene(Scene.Middle);
         }
         else if (index == 2)
         {
