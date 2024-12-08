@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5783b5a4036cc8d49846a0b22530c892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 0
   name: 
   size: 0
 --- !u!114 &41379269
@@ -212,11 +213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c81331e86a3b34ebcb8ca2700c78db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
-  niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
   gameState: 0
   shipsNumber: 2
   maxSize: 5
+  pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
+  niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
+  zniszczony: {fileID: 2100000, guid: 2ba30d0a99424aa429c1e46020cbf9ee, type: 2}
 --- !u!114 &41379272
 MonoBehaviour:
   m_ObjectHideFlags: 0

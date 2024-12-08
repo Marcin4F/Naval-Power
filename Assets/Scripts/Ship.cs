@@ -10,7 +10,7 @@ public class Ship : MonoBehaviour
 {
     // zmienne podstawowe dla statków
     protected int move;
-    protected int hp; // zycie
+    public int hp; // zycie
     protected int zanurzenie;
     public new string name;
     public int size;

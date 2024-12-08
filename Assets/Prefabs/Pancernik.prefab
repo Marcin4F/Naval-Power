@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34745365e981f2447b754511547deb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 5
   name: 
   size: 5
 --- !u!1 &3320062566890369672
