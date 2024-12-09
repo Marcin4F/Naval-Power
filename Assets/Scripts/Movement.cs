@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -33,7 +32,7 @@ public class Movement : MonoBehaviour
         string newField;
 
         string name = lastSelected.name;
-        shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
+        shipsID.TryGetValue(name, out int shipID); // Uzyskanie indeksu wybranego statku
 
         if (shipRotation == 0)
         {
@@ -46,7 +45,6 @@ public class Movement : MonoBehaviour
             else
                 return;
         }
-
         else if (shipRotation == -90 || shipRotation == 270)
         {
             litera = (char)(litera - 1);
@@ -58,7 +56,6 @@ public class Movement : MonoBehaviour
             else
                 return;
         }
-
         else if (shipRotation == 180 || shipRotation == -180)
         {
             numer--;
@@ -70,7 +67,6 @@ public class Movement : MonoBehaviour
             else
                 return;
         }
-
         else if (shipRotation == 90)
         {
             litera = (char)(litera + 1);
@@ -87,11 +83,16 @@ public class Movement : MonoBehaviour
         {
             GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
         }
-        lastSelected.transform.position += movement;
+
+        // Uruchom korutyne do plynnego ruchu
+        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f));
+
         reyCastSelecter.SaveInfo(movesUsed + 1);
     }
 
-    public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID)
+
+
+public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID)
     {
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         size = reyCastSelecter.GetSize(lastSelected);
@@ -157,8 +158,26 @@ public class Movement : MonoBehaviour
         {
             GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
         }
-        lastSelected.transform.position += movement;
+
+        // Uruchom korutyne do plynnego ruchu
+        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f));
+
         reyCastSelecter.SaveInfo(2);
+    }
+
+    private IEnumerator MoveObjectSmoothly(Transform target, Vector3 start, Vector3 end, float duration)
+    {
+        float elapsedTime = 0;
+
+        while (elapsedTime < duration)
+        {
+            target.position = Vector3.Lerp(start, end, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // Upewnij sie, ze koncowa pozycja jest precyzyjnie ustawiona
+        target.position = end;
     }
 
     public void TryRotation(char direction, Transform lastSelected, Dictionary<string, int> shipsID)       // proba dokonania rotacji statku

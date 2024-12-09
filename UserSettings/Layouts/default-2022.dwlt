@@ -257,7 +257,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -266,14 +266,14 @@ MonoBehaviour:
     y: 566.5
     width: 1156
     height: 193.5
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
-  m_ActualView: {fileID: 17}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 17}
   - {fileID: 13}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -372,9 +372,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3c5a0000
+      m_SelectedIDs: 0c080000
       m_LastClickedID: 0
-      m_ExpandedIDs: 30fbffffa2590000
+      m_ExpandedIDs: 80edffffe0edfffff0f9ffff30fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -884,9 +884,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 960.9013, y: 556.35187, z: -284.80637}
+    m_Target: {x: -4.965437, y: -6.9714303, z: 16.673111}
     speed: 2
-    m_Value: {x: 960.9013, y: 556.35187, z: -284.80637}
+    m_Value: {x: -4.965437, y: -6.9714303, z: 16.673111}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -932,13 +932,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.033818286, y: -0.06350455, z: 0.0021662607, w: -0.9973197}
+    m_Target: {x: -0.20039074, y: 0.033946566, z: -0.0069467085, w: -0.9790175}
     speed: 2
-    m_Value: {x: -0.0338212, y: -0.063510016, z: 0.0021664472, w: -0.9974056}
+    m_Value: {x: -0.20040755, y: 0.033949412, z: -0.006947291, w: -0.97909963}
   m_Size:
-    m_Target: 128.3479
+    m_Target: 10
     speed: 2
-    m_Value: 128.3479
+    m_Value: 10
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1106,7 +1106,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1114,16 +1114,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\marko\Studia\Programowanie obiektowe\statki
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 60}
-    m_SelectedIDs: 145a0000
-    m_LastClickedID: 23060
-    m_ExpandedIDs: 000000000a5a0000165a000000ca9a3bffffff7f
+    m_SelectedIDs: 2e5a0000
+    m_LastClickedID: 23086
+    m_ExpandedIDs: 00000000225a000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000000a5a0000
+    m_ExpandedIDs: 00000000225a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1176,8 +1176,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 0c080000
+    m_LastClickedInstanceID: 2060
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
