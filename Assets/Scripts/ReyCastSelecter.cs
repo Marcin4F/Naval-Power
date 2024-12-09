@@ -43,36 +43,47 @@ public class ReyCastSelecter : MonoBehaviour
             }
 
             shipsID[shipName] = tmp++;          // uzupelnienie slownika
-        }    
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && gameState == 1) 
+        if (Movement.instance.isMoving == false)
         {
-            var ray = GetRay();
-            if (Physics.Raycast(ray, out var raycastHit))       // sprawdzenie czy promien trafil w jakis obiekt
+            if (Input.GetKeyDown(KeyCode.Mouse0) && gameState == 1)
             {
-                if (raycastHit.transform.CompareTag("Ship"))    // sprawdzenie czy trafiony obiekt to statek
+                var ray = GetRay();
+                if (Physics.Raycast(ray, out var raycastHit))       // sprawdzenie czy promien trafil w jakis obiekt
                 {
-                    if (lastSelected != null)                   // odznaczenie ostatnio wybranego statku
+                    if (raycastHit.transform.CompareTag("Ship"))    // sprawdzenie czy trafiony obiekt to statek
+                    {
+                        if (lastSelected != null)                   // odznaczenie ostatnio wybranego statku
+                        {
+                            lastSelected.Translate(0, -1, 0);
+                            isSelected = false;
+                            Attack.instance.QuitAttacking();
+                        }
+                        var rayPos = raycastHit.transform;      // uzyskanie pozycji statku
+                        lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
+                        rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
+                        isSelected = true;
+                    }
+
+                    else if (raycastHit.transform.CompareTag("FieldMapaWyb"))
+                    {
+                        Attack.instance.ChooseAttackField(raycastHit.transform.name, lastSelected, shipsID, raycastHit.transform.position);
+                    }
+
+                    else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
                     {
                         lastSelected.Translate(0, -1, 0);
+                        lastSelected = null;
                         isSelected = false;
                         Attack.instance.QuitAttacking();
                     }
-                    var rayPos = raycastHit.transform;      // uzyskanie pozycji statku
-                    lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
-                    rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
-                    isSelected = true;
                 }
 
-                else if(raycastHit.transform.CompareTag("FieldMapaWyb"))
-                {
-                    Attack.instance.ChooseAttackField(raycastHit.transform.name, lastSelected, shipsID, raycastHit.transform.position);
-                }
-
-                else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
+                else if (lastSelected != null)               // jezeli promien w nic nie trafil odznaczamy ostatnio wybrany statek
                 {
                     lastSelected.Translate(0, -1, 0);
                     lastSelected = null;
@@ -81,55 +92,46 @@ public class ReyCastSelecter : MonoBehaviour
                 }
             }
 
-            else if (lastSelected != null)               // jezeli promien w nic nie trafil odznaczamy ostatnio wybrany statek
+            if (isSelected)
             {
-                lastSelected.Translate(0, -1, 0);
-                lastSelected = null;
-                isSelected = false;
-                Attack.instance.QuitAttacking();
+                int movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
+                if (movesUsed == 0)
+                {
+                    if (Input.GetKeyDown(KeyCode.A))
+                    {
+                        Movement.instance.TryRotation('A', lastSelected, shipsID);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.D))
+                    {
+                        Movement.instance.TryRotation('D', lastSelected, shipsID);
+                    }
+
+                    if (Input.GetKeyDown(KeyCode.S))
+                    {
+                        Movement.instance.MoveBackward(lastSelected, shipsID);
+                    }
+                }
+
+                if (movesUsed != 2)
+                {
+                    if (Input.GetKeyDown(KeyCode.W))
+                    {
+                        Movement.instance.MoveForward(movesUsed, lastSelected, shipsID);
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.E) && isAttacking == false)
+                {
+                    Attack.instance.Attacking();
+                }
+
+                else if (Input.GetKeyDown(KeyCode.E) && isAttacking == true)
+                {
+                    Attack.instance.QuitAttacking();
+                }
             }
         }
-
-        if(isSelected)
-        {
-            int movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
-            if (movesUsed == 0)
-            {
-                if (Input.GetKeyDown(KeyCode.A))
-                {
-                    Movement.instance.TryRotation('A', lastSelected, shipsID);
-                }
-
-                if (Input.GetKeyDown(KeyCode.D))
-                {
-                    Movement.instance.TryRotation('D', lastSelected, shipsID);
-                }
-
-                if (Input.GetKeyDown(KeyCode.S))
-                {
-                    Movement.instance.MoveBackward(lastSelected, shipsID);
-                }
-            }
-            
-            if (movesUsed != 2)
-            {
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    Movement.instance.MoveForward(movesUsed, lastSelected, shipsID);
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.E) && isAttacking == false)
-            {
-                Attack.instance.Attacking();
-            }
-
-            else if (Input.GetKeyDown(KeyCode.E) && isAttacking == true)
-            {
-                Attack.instance.QuitAttacking();
-            }
-        }
-
 
         static Ray GetRay()         // stworzenie promienia od kursora
         {

@@ -216,6 +216,7 @@ MonoBehaviour:
   gameState: 0
   shipsNumber: 2
   maxSize: 5
+  shipsLeft: 2
   pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
   niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
   zniszczony: {fileID: 2100000, guid: 2ba30d0a99424aa429c1e46020cbf9ee, type: 2}
@@ -246,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapa: {fileID: 5804287970053686005, guid: f0cd53bb3044dcf4193fda6e3ac98c54, type: 3}
   znacznik: {fileID: 3878178356251599098, guid: d26c6782736905342860755f2e006204, type: 3}
+  znacznik2: {fileID: 3878178356251599098, guid: 71da48b0c6be83d46a9aeb2f8abd816b, type: 3}
 --- !u!114 &41379274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -258,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40012f0d997c4fd429068c0536941f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMoving: 0
 --- !u!1 &116517993
 GameObject:
   m_ObjectHideFlags: 0

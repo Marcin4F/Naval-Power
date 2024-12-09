@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour
     private int size, validPosition, halfSize;
     private string fieldName;
     private Vector3 movement;
+    public bool isMoving = false;
 
     protected Collider nearestField;
 
@@ -33,6 +34,7 @@ public class Movement : MonoBehaviour
 
         string name = lastSelected.name;
         shipsID.TryGetValue(name, out int shipID); // Uzyskanie indeksu wybranego statku
+        isMoving = true;
 
         if (shipRotation == 0)
         {
@@ -85,6 +87,7 @@ public class Movement : MonoBehaviour
         }
 
         // Uruchom korutyne do plynnego ruchu
+
         StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f));
 
         reyCastSelecter.SaveInfo(movesUsed + 1);
@@ -102,6 +105,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         char litera = fieldName[0];
         int numer = int.Parse(fieldName.Substring(1));
         string newField;
+        isMoving = true;
 
         string name = lastSelected.name;
         shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
@@ -178,6 +182,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
 
         // Upewnij sie, ze koncowa pozycja jest precyzyjnie ustawiona
         target.position = end;
+        isMoving = false;
     }
 
     public void TryRotation(char direction, Transform lastSelected, Dictionary<string, int> shipsID)       // proba dokonania rotacji statku
