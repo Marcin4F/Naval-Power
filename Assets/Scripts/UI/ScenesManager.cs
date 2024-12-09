@@ -31,7 +31,8 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 
     public void NewGame()                   // zaczecie nowej gry
     {
-        // DO DODANIA: zaczecie nowej gry
+        Debug.Log("aA");
+        LoadScene(Scene.Player1);
     }
 
     public void EndTurn()                   // konczenie tury i przejscie do drugiego gracza
@@ -72,6 +73,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 
     public void MainMenu()                  // wyjscie do menu glownego, dodac pozniej pause menu pod ESC w skrypcie InGameUI
     {
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(Scene.MainMenu.ToString());
     }
 }
