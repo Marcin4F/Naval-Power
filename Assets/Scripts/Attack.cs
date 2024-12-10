@@ -11,8 +11,8 @@ public class Attack : MonoBehaviour
     private ReyCastSelecter reyCastSelecter;
 
     private int shipsNumber, indeks;
-    private Vector3[] positions;
-    public GameObject mapa, znacznik, znacznik2;
+    public Vector3[] positions;
+    public GameObject mapa, znacznik, znacznik2, znacznik3; 
     private GameObject mapa1;
     private GameObject[] znaczniki, znaczniki2;
 
@@ -25,8 +25,6 @@ public class Attack : MonoBehaviour
         znaczniki2 = new GameObject[shipsNumber];
         positions = new Vector3[shipsNumber];
         indeks = SceneManager.GetActiveScene().buildIndex;
-        //MarkFields();
-
     }
 
     public void Attacking()
@@ -38,16 +36,25 @@ public class Attack : MonoBehaviour
             if (PlayerPrefs.HasKey("ZnacznikiX" + indeks + i))
             {
                 Vector3 pos = new Vector3(PlayerPrefs.GetFloat("ZnacznikiX" + indeks + i), PlayerPrefs.GetFloat("ZnacznikiY" + indeks + i), PlayerPrefs.GetFloat("ZnacznikiZ" + indeks + i));
-                znaczniki2[i] = Instantiate(znacznik2);
+                int type = 0;
+                if(indeks == 1)
+                {
+                    type = PlayerPrefs.GetInt("Znacznik2" + 3 + i);
+                }
+                else if (i == 3)
+                {
+                    type = PlayerPrefs.GetInt("Znacznik2" + 1 + i);
+                }
+                if(type == 0)
+                    znaczniki2[i] = Instantiate(znacznik2);
+                else
+                    znaczniki2[i] = Instantiate(znacznik3);
                 znaczniki2[i].transform.position = pos;
             }
             if (GameManagment.instance.attackFields[i, 0] != null)
             {
                 znaczniki[i] = Instantiate(znacznik);
                 znaczniki[i].transform.position = positions[i];
-                PlayerPrefs.SetFloat("ZnacznikiX" + indeks + i, positions[i].x);
-                PlayerPrefs.SetFloat("ZnacznikiY" + indeks + i, positions[i].y);
-                PlayerPrefs.SetFloat("ZnacznikiZ" + indeks + i, positions[i].z);
             }
         }
     }
@@ -75,12 +82,8 @@ public class Attack : MonoBehaviour
         
         if (!positions.Contains(position))
         {
-            Destroy(znaczniki2[shipID]);
             znaczniki[shipID].transform.position = position;
             positions[shipID] = position;
-            PlayerPrefs.SetFloat("ZnacznikiX" + indeks + shipID, positions[shipID].x);
-            PlayerPrefs.SetFloat("ZnacznikiY" + indeks + shipID, positions[shipID].y);
-            PlayerPrefs.SetFloat("ZnacznikiZ" + indeks + shipID, positions[shipID].z);
             GameManagment.instance.attackFields[shipID, 0] = fieldName;
         }
     }

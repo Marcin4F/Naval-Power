@@ -85,8 +85,10 @@ public class GameManagment : MonoBehaviour
                 fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields1"), 1);
             }
 
-            foreach (string field in fieldsUnderAttack)
+            for(int k = 0; k < fieldsUnderAttack.Length; k++)
             {
+                string field = fieldsUnderAttack[k, 0];
+                int tmp = 0;
                 for (int i = 0; i < shipsNumber; i++)
                 {
                     for (int j = 0; j < maxSize; j++)
@@ -94,10 +96,17 @@ public class GameManagment : MonoBehaviour
                         if (field != "" && field == occupiedFields[i, j])
                         {
                             TakeDamage(i);
+                            PlayerPrefs.SetInt("Znacznik2" + index + k, 1);
+                            tmp = 1;
                         }
+                    }
+                    if (tmp == 0)
+                    {
+                        PlayerPrefs.SetInt("Znacznik2" + index + k, 0);
                     }
                 }
             }
+
             SaveHP();
             if (shipsLeft <= 0)
             {

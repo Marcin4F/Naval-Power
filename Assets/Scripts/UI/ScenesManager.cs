@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCEN
 {
     public static ScenesManager instance;           // pozwala odwolac sie do tej klasy z kazdego skryptu bez potrzeby inicjalizowania refernecji do tego skryptu
+    private Attack attack;
     private string positions, attackedFields;
 
 
@@ -14,6 +16,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
         instance = this;
         if (!PlayerPrefs.HasKey("Direction"))
             PlayerPrefs.SetInt("Direction", 1);
+        attack = GetComponent<Attack>();
     }
 
     public enum Scene           // lista stalych nazw scen, WAZNA JEST KOLEJNOSC, nazwy NIE musza byc identyczne z nazwami w unity liczy sie tylko kolejnosc
@@ -48,6 +51,12 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
             attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
             PlayerPrefs.SetString("AttackedFields1", attackedFields);
 
+            for(int i = 0; i < GameManagment.instance.shipsNumber; i++)
+            {
+                PlayerPrefs.SetFloat("ZnacznikiX" + index + i, attack.positions[i].x);
+                PlayerPrefs.SetFloat("ZnacznikiY" + index + i, attack.positions[i].y);
+                PlayerPrefs.SetFloat("ZnacznikiZ" + index + i, attack.positions[i].z);
+            }
 
             direction = 1;
             PlayerPrefs.SetInt("Direction", direction);
@@ -60,6 +69,14 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 
             attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
             PlayerPrefs.SetString("AttackedFields3", attackedFields);
+
+            for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+            {
+                PlayerPrefs.SetFloat("ZnacznikiX" + index + i, attack.positions[i].x);
+                PlayerPrefs.SetFloat("ZnacznikiY" + index + i, attack.positions[i].y);
+                PlayerPrefs.SetFloat("ZnacznikiZ" + index + i, attack.positions[i].z);
+            }
+
 
             direction = -1;
             PlayerPrefs.SetInt("Direction", direction);

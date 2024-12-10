@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -245,9 +245,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc578d8796fbb0448b47845313fd5990, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positions: []
   mapa: {fileID: 5804287970053686005, guid: f0cd53bb3044dcf4193fda6e3ac98c54, type: 3}
   znacznik: {fileID: 3878178356251599098, guid: d26c6782736905342860755f2e006204, type: 3}
   znacznik2: {fileID: 3878178356251599098, guid: 71da48b0c6be83d46a9aeb2f8abd816b, type: 3}
+  znacznik3: {fileID: 3878178356251599098, guid: 2a0e8fbf406f78e4ab7ec8fc548b976e, type: 3}
 --- !u!114 &41379274
 MonoBehaviour:
   m_ObjectHideFlags: 0
