@@ -91,6 +91,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
     public void MainMenu()                  // wyjscie do menu glownego, dodac pozniej pause menu pod ESC w skrypcie InGameUI
     {
         PlayerPrefs.DeleteAll();
+        InGameUI.isPaused = false;
         SceneManager.LoadScene(Scene.MainMenu.ToString());
     }
 }

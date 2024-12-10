@@ -27,7 +27,7 @@ public class Ship : MonoBehaviour
     protected float rotacja, shipRotation;
     protected string nazwaPola;
 
-    protected InGameUI inGameUI;
+    private InGameUI inGameUI;
 
     protected void Start()
     {
@@ -60,7 +60,7 @@ public class Ship : MonoBehaviour
     // funkcje ship drag
     protected void OnMouseDown()      // klikniecie LPM
     {
-        if (GameManagment.instance.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
+        if (GameManagment.instance.gameState == 0 && InGameUI.isPaused == false)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
             lastSelectedPosition = transform.position;
             lastSelectedRotation = transform.eulerAngles;
@@ -70,7 +70,7 @@ public class Ship : MonoBehaviour
 
     protected void OnMouseUp()        // puszczanie LPM
     {
-        if (GameManagment.instance.gameState == 0)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
+        if (GameManagment.instance.gameState == 0 && InGameUI.isPaused == false)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
             nearbyFields = Physics.OverlapSphere(mainCollider.transform.position, 1f)       // tworzymy sfere wokol mainCollider z promieniem 1f i znajdujemy wszystkie pola Fields
              .Where(collider => collider.CompareTag("Field"))
@@ -113,7 +113,7 @@ public class Ship : MonoBehaviour
 
     protected void OnMouseDrag()          // gdy trzymany jest LMP
     {
-        if (GameManagment.instance.gameState == 0)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
+        if (GameManagment.instance.gameState == 0 && InGameUI.isPaused == false)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
             transform.position = MouseWorldPosition() + offset;     // zmiana pozycji obiektu: aktualna pozycja myszy + wyliczony offset
 

@@ -8,13 +8,18 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
+    public static bool isPaused = false;
 
-    [SerializeField] Button endTurn;        // inicjalizacja przyciskow na scenie
+    public Button endTurn, continueGame, quit;        // inicjalizacja przyciskow na scenie
+    public GameObject pauseMenu;
 
     // Start is called before the first frame update
     void Awake()
     {
         endTurn.onClick.AddListener(EndingTurn);        // dodanie "sluchacza" na przycisku, aktywuje sie w momencie klikniecia
+        continueGame.onClick.AddListener(ResumeGame);
+        quit.onClick.AddListener(ScenesManager.instance.MainMenu);
+        pauseMenu.SetActive(false);
         if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
         {
             endTurn.interactable = false;               // wylaczenie przycisku konca tury na poczatku gry
@@ -34,8 +39,30 @@ public class InGameUI : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            ScenesManager.instance.MainMenu();
+            if(!isPaused)
+            {
+                PauseMenu();
+            }
+            else
+            {
+                ResumeGame();
+            }
+            //ScenesManager.instance.MainMenu();
         }
+    }
+
+    void PauseMenu()
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
+    }
+
+    void ResumeGame()
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1.0f;
+        isPaused = false;
     }
 
     private void OnApplicationQuit()
