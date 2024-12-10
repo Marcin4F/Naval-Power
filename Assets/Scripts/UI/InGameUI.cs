@@ -9,17 +9,24 @@ public class InGameUI : MonoBehaviour
 {
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
     public static bool isPaused = false;
+    private bool isEndTurn = false;
 
     public Button endTurn, continueGame, quit;        // inicjalizacja przyciskow na scenie
     public GameObject pauseMenu;
+    private Ship ship;
 
     // Start is called before the first frame update
     void Awake()
     {
+        ship = FindObjectOfType<Ship>();
+
         endTurn.onClick.AddListener(EndingTurn);        // dodanie "sluchacza" na przycisku, aktywuje sie w momencie klikniecia
-        continueGame.onClick.AddListener(ResumeGame);
-        quit.onClick.AddListener(ScenesManager.instance.MainMenu);
-        pauseMenu.SetActive(false);
+        if(SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            continueGame.onClick.AddListener(ResumeGame);
+            quit.onClick.AddListener(ScenesManager.instance.MainMenu);
+            pauseMenu.SetActive(false);
+        }
         if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
         {
             endTurn.interactable = false;               // wylaczenie przycisku konca tury na poczatku gry
@@ -33,9 +40,11 @@ public class InGameUI : MonoBehaviour
 
     private void Update()
     {
-        if (GameManagment.instance.gameState == 0 && shipPlaced == GameManagment.instance.shipsNumber)        // jezeli wszystkie statki zostaly umieszczone na planszy to umozliwiamy zakonczenie pierwszej tury, UWAGA ZMIENIC 2 NA ILOSC STATKOW W GRZE
+        if (GameManagment.instance.gameState == 0 && shipPlaced == GameManagment.instance.shipsNumber && isPaused == false)        // jezeli wszystkie statki zostaly umieszczone na planszy to umozliwiamy zakonczenie pierwszej tury, UWAGA ZMIENIC 2 NA ILOSC STATKOW W GRZE
+        {
             endTurn.interactable = true;
-
+            isEndTurn = true;
+        }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -56,13 +65,23 @@ public class InGameUI : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
+        endTurn.enabled = false;
     }
 
     void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        Canvas.ForceUpdateCanvases();
         Time.timeScale = 1.0f;
         isPaused = false;
+        if (isEndTurn)
+        {
+            endTurn.enabled = true;
+        }
+        if (ship.isDraged)
+        {
+            ship.OnMouseUp();
+        }
     }
 
     private void OnApplicationQuit()

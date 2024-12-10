@@ -515,6 +515,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipPlaced: 0
   endTurn: {fileID: 265552696}
+  continueGame: {fileID: 1264712421}
+  quit: {fileID: 863890338}
   pauseMenu: {fileID: 239623752}
 --- !u!1 &239623752
 GameObject:

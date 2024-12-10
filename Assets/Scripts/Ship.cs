@@ -21,11 +21,12 @@ public class Ship : MonoBehaviour
     protected Collider mainCollider;
     protected Collider[] nearbyFields;
     protected Collider nearestField;
-    protected Vector3 lastSelectedPosition, lastSelectedRotation, offset;
+    public Vector3 lastSelectedPosition, lastSelectedRotation, offset;
 
     protected int validPosition;
     protected float rotacja, shipRotation;
     protected string nazwaPola;
+    public bool isDraged = false;
 
     private InGameUI inGameUI;
 
@@ -65,10 +66,11 @@ public class Ship : MonoBehaviour
             lastSelectedPosition = transform.position;
             lastSelectedRotation = transform.eulerAngles;
             offset = transform.position - MouseWorldPosition();     // wyliczenie offsetu
+            isDraged = true;
         }
     }
 
-    protected void OnMouseUp()        // puszczanie LPM
+    public void OnMouseUp()        // puszczanie LPM
     {
         if (GameManagment.instance.gameState == 0 && InGameUI.isPaused == false)       // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
@@ -108,6 +110,7 @@ public class Ship : MonoBehaviour
             PlayerPrefs.SetFloat(name + "X", transform.position.x);         // zapisanie pozycji statku do plikow
             PlayerPrefs.SetFloat(name + "Z", transform.position.z);
             PlayerPrefs.SetFloat(name + "Rotation", transform.eulerAngles.y);
+            isDraged = false;
         }
     }
 
