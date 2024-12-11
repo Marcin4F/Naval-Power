@@ -26,7 +26,6 @@ public class Ship : MonoBehaviour
     protected int validPosition;
     protected float rotacja, shipRotation;
     protected string nazwaPola;
-    public bool isDraged = false;
 
     private InGameUI inGameUI;
 
@@ -66,7 +65,7 @@ public class Ship : MonoBehaviour
             lastSelectedPosition = transform.position;
             lastSelectedRotation = transform.eulerAngles;
             offset = transform.position - MouseWorldPosition();     // wyliczenie offsetu
-            isDraged = true;
+            inGameUI.isDraged = true;
         }
     }
 
@@ -110,7 +109,7 @@ public class Ship : MonoBehaviour
             PlayerPrefs.SetFloat(name + "X", transform.position.x);         // zapisanie pozycji statku do plikow
             PlayerPrefs.SetFloat(name + "Z", transform.position.z);
             PlayerPrefs.SetFloat(name + "Rotation", transform.eulerAngles.y);
-            isDraged = false;
+            inGameUI.isDraged = false;
         }
     }
 

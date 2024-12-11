@@ -10,6 +10,7 @@ public class InGameUI : MonoBehaviour
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
     public static bool isPaused = false;
     private bool isEndTurn = false;
+    public bool isDraged;
 
     public Button endTurn, continueGame, quit;        // inicjalizacja przyciskow na scenie
     public GameObject pauseMenu;
@@ -65,20 +66,19 @@ public class InGameUI : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         isPaused = true;
-        endTurn.enabled = false;
+        endTurn.interactable = false;
     }
 
     void ResumeGame()
     {
         pauseMenu.SetActive(false);
-        Canvas.ForceUpdateCanvases();
         Time.timeScale = 1.0f;
         isPaused = false;
         if (isEndTurn)
         {
-            endTurn.enabled = true;
+            endTurn.interactable = true;
         }
-        if (ship.isDraged)
+        if (isDraged)
         {
             ship.OnMouseUp();
         }
