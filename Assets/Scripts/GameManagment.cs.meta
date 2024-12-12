@@ -6,6 +6,10 @@ MonoImporter:
   defaultReferences:
   - pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
   - niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
+  - ciezkiKrazownik: {fileID: 478419043020890573, guid: e49b2d9d9a13a704780b6ed472ab5429, type: 3}
+  - korweta: {fileID: 852160811187606189, guid: 02f1102807ed2d948b0123493f4c1411, type: 3}
+  - lekkiKrazownik: {fileID: 852160811187606189, guid: a9c79f0682b6c6e4abbdd8327a921d5e, type: 3}
+  - zniszczony: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

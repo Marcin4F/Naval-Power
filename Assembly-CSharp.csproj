@@ -66,8 +66,11 @@
     <Compile Include="Assets\Scripts\Statki\Pancernik.cs" />
     <Compile Include="Assets\Scripts\ReyCastSelecter.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
+    <Compile Include="Assets\Scripts\Statki\CiezkiKrazownik.cs" />
     <Compile Include="Assets\Scripts\UI\InGameUI.cs" />
+    <Compile Include="Assets\Scripts\Statki\LekkiKrazownik.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
+    <Compile Include="Assets\Scripts\Statki\Korweta.cs" />
     <Compile Include="Assets\Scripts\UI\ScenesManager.cs" />
     <Compile Include="Assets\Scripts\Attack.cs" />
     <Compile Include="Assets\Scripts\Statki\Niszczyciel.cs" />

@@ -31,7 +31,7 @@ public class ReyCastSelecter : MonoBehaviour
         GameManagment.instance.attackFields = new string[GameManagment.instance.shipsNumber, 1];
 
         // UWAGA shipsNames wypelnic w kolejnosci wartosci shipID z klas statkow
-        string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury PRZENIESC NA FAZE KONCOWA
+        string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)", "CiezkiKrazownik(Clone)", "Korweta(Clone)", "LekkiKrazownik(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury PRZENIESC NA FAZE KONCOWA
 
         tmp = 0;
         foreach (string shipName in shipsNames)

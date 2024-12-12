@@ -201,6 +201,9 @@ MonoBehaviour:
   hp: 0
   name: 
   size: 0
+  lastSelectedPosition: {x: 0, y: 0, z: 0}
+  lastSelectedRotation: {x: 0, y: 0, z: 0}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!114 &41379269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,12 +217,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
-  shipsNumber: 2
+  shipsNumber: 5
   maxSize: 5
-  shipsLeft: 2
+  shipsLeft: 5
   pancernik: {fileID: 478419043020890573, guid: dc224f894b6e844428f2c24eefb484ea, type: 3}
   niszczyciel: {fileID: 852160811187606189, guid: b14807d490417fd43bc6552eeb031802, type: 3}
-  zniszczony: {fileID: 2100000, guid: 2ba30d0a99424aa429c1e46020cbf9ee, type: 2}
+  ciezkiKrazownik: {fileID: 478419043020890573, guid: e49b2d9d9a13a704780b6ed472ab5429, type: 3}
+  korweta: {fileID: 852160811187606189, guid: 02f1102807ed2d948b0123493f4c1411, type: 3}
+  lekkiKrazownik: {fileID: 852160811187606189, guid: a9c79f0682b6c6e4abbdd8327a921d5e, type: 3}
+  zniszczony: {fileID: 0}
 --- !u!114 &41379272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,6 +520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipPlaced: 0
+  isDraged: 0
   endTurn: {fileID: 265552696}
   continueGame: {fileID: 1264712421}
   quit: {fileID: 863890338}

@@ -9,14 +9,17 @@ public class GameManagment : MonoBehaviour
 {
     public static GameManagment instance;
 
-    public int gameState = 0, shipsNumber = 2, maxSize = 5, shipsLeft = 2;           // faza gry
+    public int gameState = 0, shipsNumber = 5, maxSize = 5, shipsLeft = 5;           // faza gry
     private int index;
     public string[,] occupiedFields, attackFields, fieldsUnderAttack;
 
-    public GameObject pancernik, niszczyciel;
-    private GameObject pancernik1, niszczyciel1;
-    Pancernik pancernikComponent1;
-    Niszczyciel niszczycielComponent1;
+    public GameObject pancernik, niszczyciel, ciezkiKrazownik, korweta, lekkiKrazownik;
+    private GameObject pancernik1, niszczyciel1, ciezkiKrazownik1, korweta1, lekkiKrazownik1;
+    private Pancernik pancernikComponent1;
+    private Niszczyciel niszczycielComponent1;
+    private CiezkiKrazownik ciezkiKrazownikComponent1;
+    private Korweta korwetaComponent1;
+    private LekkiKrazownik lekkiKrazownikComponent1;
     public Material zniszczony;
 
     // Start is called before the first frame update
@@ -36,6 +39,19 @@ public class GameManagment : MonoBehaviour
             niszczyciel1 = Instantiate(niszczyciel);
             niszczycielComponent1 = niszczyciel1.GetComponent<Niszczyciel>();
             niszczycielComponent1.name = "Niszczyciel1";
+
+            ciezkiKrazownik1 = Instantiate(ciezkiKrazownik);
+            ciezkiKrazownikComponent1 = ciezkiKrazownik1.GetComponent<CiezkiKrazownik>();
+            ciezkiKrazownikComponent1.name = "CiezkiKrazownik1";
+
+            korweta1 = Instantiate(korweta);
+            korwetaComponent1 = korweta1.GetComponent<Korweta>();
+            korwetaComponent1.name = "Korweta1";
+
+            lekkiKrazownik1 = Instantiate(lekkiKrazownik);
+            lekkiKrazownikComponent1 = lekkiKrazownik1.GetComponent<LekkiKrazownik>();
+            lekkiKrazownikComponent1.name = "LekkiKrazownik1";
+
         }
         else if (index == 3)
         {
@@ -47,6 +63,18 @@ public class GameManagment : MonoBehaviour
             niszczyciel1 = Instantiate(niszczyciel);
             niszczycielComponent1 = niszczyciel1.GetComponent<Niszczyciel>();
             niszczycielComponent1.name = "Niszczyciel3";
+
+            ciezkiKrazownik1 = Instantiate(ciezkiKrazownik);
+            ciezkiKrazownikComponent1 = ciezkiKrazownik1.GetComponent<CiezkiKrazownik>();
+            ciezkiKrazownikComponent1.name = "CiezkiKrazownik3";
+
+            korweta1 = Instantiate(korweta);
+            korwetaComponent1 = korweta1.GetComponent<Korweta>();
+            korwetaComponent1.name = "Korweta3";
+
+            lekkiKrazownik1 = Instantiate(lekkiKrazownik);
+            lekkiKrazownikComponent1 = lekkiKrazownik1.GetComponent<LekkiKrazownik>();
+            lekkiKrazownikComponent1.name = "LekkiKrazownik3";
         }
 
         gameState = PlayerPrefs.GetInt("gameState" + index);       // faza gry: 0 - pierwsza tura, nie wczytujemy pozycji statkow, 1 - kolejne tury wczytujemy pozycje z plikow
@@ -73,6 +101,24 @@ public class GameManagment : MonoBehaviour
             {
                 niszczyciel1.transform.tag = "Destroyed";
                 var renderer = niszczyciel1.GetComponent<Renderer>();
+                renderer.material = zniszczony;
+            }
+            if (ciezkiKrazownikComponent1.hp == 0)
+            {
+                ciezkiKrazownik1.transform.tag = "Destroyed";
+                var renderer = ciezkiKrazownik1.GetComponent<Renderer>();
+                renderer.material = zniszczony;
+            }
+            if (korwetaComponent1.hp == 0)
+            {
+                korweta1.transform.tag = "Destroyed";
+                var renderer = korweta1.GetComponent<Renderer>();
+                renderer.material = zniszczony;
+            }
+            if (lekkiKrazownikComponent1.hp == 0)
+            {
+                lekkiKrazownik1.transform.tag = "Destroyed";
+                var renderer = lekkiKrazownik1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
 
@@ -140,6 +186,36 @@ public class GameManagment : MonoBehaviour
                     renderer.material = zniszczony;
                 }
                 break;
+            case 2:
+                ciezkiKrazownikComponent1.hp -= 1;
+                if (ciezkiKrazownikComponent1.hp <= 0)
+                {
+                    ciezkiKrazownik1.transform.tag = "Destroyed";
+                    shipsLeft -= 1;
+                    var renderer = ciezkiKrazownik1.GetComponent<Renderer>();
+                    renderer.material = zniszczony;
+                }
+                break;
+            case 3:
+                korwetaComponent1.hp -= 1;
+                if (korwetaComponent1.hp <= 0)
+                {
+                    korweta1.transform.tag = "Destroyed";
+                    shipsLeft -= 1;
+                    var renderer = korweta1.GetComponent<Renderer>();
+                    renderer.material = zniszczony;
+                }
+                break;
+            case 4:
+                lekkiKrazownikComponent1.hp -= 1;
+                if (lekkiKrazownikComponent1.hp <= 0)
+                {
+                    lekkiKrazownik1.transform.tag = "Destroyed";
+                    shipsLeft -= 1;
+                    var renderer = lekkiKrazownik1.GetComponent<Renderer>();
+                    renderer.material = zniszczony;
+                }
+                break;
         }
     }
 
@@ -147,6 +223,9 @@ public class GameManagment : MonoBehaviour
     {
         PlayerPrefs.SetInt("PancernikHP" + index, pancernikComponent1.hp);
         PlayerPrefs.SetInt("NiszczycielHP" + index, niszczycielComponent1.hp);
+        PlayerPrefs.SetInt("CiezkiKrazownikHP" + index, ciezkiKrazownikComponent1.hp);
+        PlayerPrefs.SetInt("KoretaHP" + index, korwetaComponent1.hp);
+        PlayerPrefs.SetInt("LekkiKrazowniklHP" + index, lekkiKrazownikComponent1.hp);
         PlayerPrefs.SetInt("ShipsLeft" + index, shipsLeft);
     }
 }
