@@ -6,13 +6,20 @@ using UnityEngine.UI;
 public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] Button quit;
-    [SerializeField] Button play;
+    [SerializeField] Button playHotSeat;
+    [SerializeField] Button playPvE;
+    [SerializeField] Button options;
+    [SerializeField] Button goBack;
+    public GameObject mainMenuPanel, optionsPanel;
 
     // Start is called before the first frame update
     void Start()
     {
         quit.onClick.AddListener(Quitting);
-        play.onClick.AddListener(StartPlay);
+        playHotSeat.onClick.AddListener(StartPlayHotSeat);
+        options.onClick.AddListener(OpenOptions);
+        goBack.onClick.AddListener(CloseOptions);
+        optionsPanel.SetActive(false);
     }
 
     private void Quitting()
@@ -22,8 +29,20 @@ public class MainMenuUI : MonoBehaviour
         Application.Quit();
     }
 
-    private void StartPlay()
+    private void StartPlayHotSeat()
     {
-        ScenesManager.instance.NewGame();
+        ScenesManager.instance.NewGameHotSeat();
+    }
+
+    private void OpenOptions()
+    {
+        mainMenuPanel.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
+
+    private void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
     }
 }

@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     private ReyCastSelecter reyCastSelecter;
 
     private float shipRotation;
-    private int size, validPosition, halfSize;
+    private int size, validPosition, halfSize, shipRotationInt;
     private string fieldName;
     private Vector3 movement;
     public bool isMoving = false;
@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour
     public void MoveForward(int movesUsed, Transform lastSelected, Dictionary<string, int> shipsID)
     {
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+        shipRotationInt = (int)shipRotation;
         size = reyCastSelecter.GetSize(lastSelected);
 
         nearestField = Functions.instance.FindingField(lastSelected);
@@ -36,44 +37,44 @@ public class Movement : MonoBehaviour
         shipsID.TryGetValue(name, out int shipID); // Uzyskanie indeksu wybranego statku
         isMoving = true;
 
-        if (shipRotation == 0)
+        if (shipRotationInt == 0)
         {
             numer++;
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(1, 0, 0);
             else
                 return;
         }
-        else if (shipRotation == -90 || shipRotation == 270)
+        else if (shipRotationInt == -90 || shipRotationInt == 270)
         {
             litera = (char)(litera - 1);
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(0, 0, 1);
             else
                 return;
         }
-        else if (shipRotation == 180 || shipRotation == -180)
+        else if (shipRotationInt == 180 || shipRotationInt == -180)
         {
             numer--;
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(-1, 0, 0);
             else
                 return;
         }
-        else if (shipRotation == 90)
+        else if (shipRotationInt == 90)
         {
             litera = (char)(litera + 1);
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(0, 0, -1);
@@ -98,6 +99,7 @@ public class Movement : MonoBehaviour
 public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID)
     {
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+        shipRotationInt = (int) shipRotation;
         size = reyCastSelecter.GetSize(lastSelected);
 
         nearestField = Functions.instance.FindingField(lastSelected);
@@ -110,11 +112,11 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         string name = lastSelected.name;
         shipsID.TryGetValue(name, out int shipID);      // uzyskanie indeksu wybranego statku
 
-        if (shipRotation == 0)
+        if (shipRotationInt == 0)
         {
             numer--;
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(-1, 0, 0);
@@ -122,11 +124,11 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
                 return;
         }
 
-        else if (shipRotation == -90 || shipRotation == 270)
+        else if (shipRotationInt == -90 || shipRotationInt == 270)
         {
             litera = (char)(litera + 1);
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(0, 0, -1);
@@ -134,11 +136,11 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
                 return;
         }
 
-        else if (shipRotation == 180 || shipRotation == -180)
+        else if (shipRotationInt == 180 || shipRotationInt == -180)
         {
             numer++;
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(1, 0, 0);
@@ -146,11 +148,11 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
                 return;
         }
 
-        else if (shipRotation == 90)
+        else if (shipRotationInt == 90)
         {
             litera = (char)(litera - 1);
             newField = $"{litera}{numer}";
-            validPosition = Functions.instance.ValidPosition(size, newField, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, newField, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
 
             if (validPosition == 2)
                 movement = new Vector3(0, 0, 1);
@@ -190,6 +192,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         nearestField = Functions.instance.FindingField(lastSelected);
 
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
+        shipRotationInt = (int) shipRotation;
         fieldName = nearestField.name;
 
         size = reyCastSelecter.GetSize(lastSelected);
@@ -200,11 +203,11 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
 
         if (direction == 'A')           // sprawdzenie czy dokonanie rotacji we wskazanym kierunku jest mozliwe
         {
-            validPosition = Functions.instance.ValidPosition(size, fieldName, shipRotation - 90, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, fieldName, shipRotationInt - 90, GameManagment.instance.occupiedFields, shipID);
         }
         else
         {
-            validPosition = Functions.instance.ValidPosition(size, fieldName, shipRotation + 90, GameManagment.instance.occupiedFields, shipID);
+            validPosition = Functions.instance.ValidPosition(size, fieldName, shipRotationInt + 90, GameManagment.instance.occupiedFields, shipID);
         }
 
         if (validPosition == 2)         // wykonanie rotacji
@@ -241,7 +244,8 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             nearestField = Functions.instance.FindingField(lastSelected);
             fieldName = nearestField.name;
             shipRotation = lastSelected.transform.rotation.eulerAngles.y;
-            Functions.instance.ValidPosition(size, fieldName, shipRotation, GameManagment.instance.occupiedFields, shipID);
+            shipRotationInt = (int) shipRotation;
+            Functions.instance.ValidPosition(size, fieldName, shipRotationInt, GameManagment.instance.occupiedFields, shipID);
             for (int i = 0; i < Functions.instance.shipFields.Length; i++)
             {
                 GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
@@ -254,11 +258,11 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
     {
         if (direction == 'A')
         {
-            lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation - 90, 0);
+            lastSelected.transform.rotation = Quaternion.Euler(0, shipRotationInt - 90, 0);
         }
         else
         {
-            lastSelected.transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
+            lastSelected.transform.rotation = Quaternion.Euler(0, shipRotationInt + 90, 0);
         }
 
         for (int i = 0; i < Functions.instance.shipFields.Length; i++)

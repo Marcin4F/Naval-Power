@@ -32,9 +32,8 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
         SceneManager.LoadScene (scene.ToString());
     }
 
-    public void NewGame()                   // zaczecie nowej gry
+    public void NewGameHotSeat()                   // zaczecie nowej gry
     {
-        Debug.Log("aA");
         LoadScene(Scene.Player1);
     }
 

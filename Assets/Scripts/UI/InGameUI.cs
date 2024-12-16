@@ -47,7 +47,7 @@ public class InGameUI : MonoBehaviour
             isEndTurn = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isDraged)
         {
             if(!isPaused)
             {
@@ -57,7 +57,6 @@ public class InGameUI : MonoBehaviour
             {
                 ResumeGame();
             }
-            //ScenesManager.instance.MainMenu();
         }
     }
 
@@ -77,10 +76,6 @@ public class InGameUI : MonoBehaviour
         if (isEndTurn)
         {
             endTurn.interactable = true;
-        }
-        if (isDraged)
-        {
-            ship.OnMouseUp();
         }
     }
 

@@ -15,14 +15,24 @@ public class Functions : MonoBehaviour
         shipsNumber = GameManagment.instance.shipsNumber;
         maxSize = GameManagment.instance.maxSize;
     }
-    public int ValidPosition(int size, string nazwaPola, float rotacja, string[,] occupiedFields, int shipID)       // zwracane wartosci: 0 -> nie mozna wykonac ruchu, inny statek na drodze
+    public int ValidPosition(int size, string nazwaPola, int rotacja, string[,] occupiedFields, int shipID)         // zwracane wartosci: 0 -> nie mozna wykonac ruchu, inny statek na drodze
                                                                                                                     // 1 -> nie mo¿na wykonaæ ruchu, wyjscie poza krawedz mapy
                                                                                                                     // 2 -> mozna wykonac ruch
     {
         int numer = int.Parse(nazwaPola.Substring(1));
         int wynik = 2;
+        int polowaRozmiaru;
         char litera = nazwaPola[0];
-        int polowaRozmiaru = size / 2;
+        if(size % 2 == 0 && (rotacja == 0 || rotacja == 360 || rotacja == 90))
+        {
+            polowaRozmiaru = 0;
+        }
+        else if(size % 2 == 0 && (rotacja == -90 || rotacja == 270 || rotacja == 180 || rotacja == - 180))
+        {
+            polowaRozmiaru = 1;
+        }
+        else
+            polowaRozmiaru = size / 2;
         string newField;
         shipFields = new string[size];
 
@@ -36,11 +46,12 @@ public class Functions : MonoBehaviour
                     wynik = 1;
                 }
                 newField = $"{litera}{numerPola}";
+
                 if (occupiedFields != null)
                 {
                     if (Enumerable.Range(0, shipsNumber)                                    // Iterujemy po wszystkich wierszach
                      .Where(row => row != shipID)                                           // Pomijamy wiersz shipId
-                     .Any(row => Enumerable.Range(0, maxSize)        // Iterujemy po kolumnach w danym wierszu
+                     .Any(row => Enumerable.Range(0, maxSize)                               // Iterujemy po kolumnach w danym wierszu
                      .Any(col => occupiedFields[row, col] == newField)))                    // Sprawdzamy, czy newField istnieje
                     {
                         return 0;                                                           // Jeœli znaleziono newField w innym wierszu, zwracamy false
@@ -60,11 +71,12 @@ public class Functions : MonoBehaviour
                     wynik = 1;
                 }
                 newField = $"{literaPola}{numer}";
+
                 if (occupiedFields != null)
                 {
-                    if (Enumerable.Range(0, shipsNumber)             // Iterujemy po wszystkich wierszach
+                    if (Enumerable.Range(0, shipsNumber)                                    // Iterujemy po wszystkich wierszach
                      .Where(row => row != shipID)                                           // Pomijamy wiersz shipId
-                     .Any(row => Enumerable.Range(0, maxSize)        // Iterujemy po kolumnach w danym wierszu
+                     .Any(row => Enumerable.Range(0, maxSize)                               // Iterujemy po kolumnach w danym wierszu
                      .Any(col => occupiedFields[row, col] == newField)))                    // Sprawdzamy, czy newField istnieje
                     {
                         return 0;                                                           // Jeœli znaleziono newField w innym wierszu, zwracamy false

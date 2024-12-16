@@ -3,7 +3,15 @@
   "WorkspaceRootPath": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|e:\\studia\\iii semestr\\programowanie obiektowe\\projekt\\statki\\assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,48 +19,44 @@
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\ciezkikrazownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\ciezkikrazownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|e:\\studia\\iii semestr\\programowanie obiektowe\\projekt\\statki\\assets\\scripts\\statki\\korweta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\korweta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\korweta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|e:\\studia\\iii semestr\\programowanie obiektowe\\projekt\\statki\\assets\\scripts\\statki\\ciezkikrazownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\ciezkikrazownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|e:\\studia\\iii semestr\\programowanie obiektowe\\projekt\\statki\\assets\\scripts\\statki\\lekkikrazownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\lekkikrazownik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\niszczyciel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ui\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\functions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ui\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,11 +66,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "LekkiKrazownik.cs",
+              "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\LekkiKrazownik.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\LekkiKrazownik.cs",
+              "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\LekkiKrazownik.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Statki\\LekkiKrazownik.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T16:31:19.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Korweta.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\Korweta.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Korweta.cs",
@@ -79,7 +96,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Niszczyciel.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\Niszczyciel.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Niszczyciel.cs",
@@ -92,7 +109,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "CiezkiKrazownik.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\CiezkiKrazownik.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\CiezkiKrazownik.cs",
@@ -105,7 +122,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "Pancernik.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Statki\\Pancernik.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Statki\\Pancernik.cs",
@@ -113,18 +130,17 @@
               "RelativeToolTip": "Assets\\Scripts\\Statki\\Pancernik.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T07:58:20.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-04T07:58:20.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GameManagment.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\GameManagment.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManagment.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\GameManagment.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManagment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOMAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T11:33:04.361Z",
               "EditorCaption": ""
@@ -137,9 +153,10 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ship.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Ship.cs",
               "RelativeToolTip": "Assets\\Scripts\\Ship.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAIwGMAAABrAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-03T13:44:56.277Z"
+              "WhenOpened": "2024-11-03T13:44:56.277Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -149,38 +166,40 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Movement.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Movement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Movement.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAuwIoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T11:50:09.762Z"
+              "WhenOpened": "2024-12-09T11:50:09.762Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ReyCastSelecter.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\ReyCastSelecter.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ReyCastSelecter.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\ReyCastSelecter.cs",
               "RelativeToolTip": "Assets\\Scripts\\ReyCastSelecter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-13T13:39:31.613Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 1,
               "Title": "Functions.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Functions.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Functions.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Functions.cs",
               "RelativeToolTip": "Assets\\Scripts\\Functions.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAswHcAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-02T07:46:47.616Z"
+              "WhenOpened": "2024-12-02T07:46:47.616Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "ScenesManager.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\UI\\ScenesManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ScenesManager.cs",
@@ -192,19 +211,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "InGameUI.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\UI\\InGameUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\InGameUI.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\UI\\InGameUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\InGameUI.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAkwFAAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T14:32:11.194Z"
+              "WhenOpened": "2024-12-04T14:32:11.194Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "MainMenuUI.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\UI\\MainMenuUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MainMenuUI.cs",
@@ -216,13 +236,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "Attack.cs",
               "DocumentMoniker": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Attack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Attack.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\Scripts\\Attack.cs",
               "RelativeToolTip": "Assets\\Scripts\\Attack.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwDEAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-10T12:07:26.077Z",
               "EditorCaption": ""

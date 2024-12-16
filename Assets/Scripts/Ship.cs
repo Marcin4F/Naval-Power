@@ -23,7 +23,7 @@ public class Ship : MonoBehaviour
     protected Collider nearestField;
     public Vector3 lastSelectedPosition, lastSelectedRotation, offset;
 
-    protected int validPosition;
+    protected int validPosition, rotacjaint;
     protected float rotacja, shipRotation;
     protected string nazwaPola;
 
@@ -34,7 +34,7 @@ public class Ship : MonoBehaviour
         inGameUI = FindObjectOfType<InGameUI>();
 
         childColliders = GetComponentsInChildren<Collider>();
-        mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znaleznie MainCollider
+        mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znalezienie MainCollider
 
         //zapisywanie pozycji statków do pliku
         if (GameManagment.instance.gameState == 0)
@@ -47,7 +47,7 @@ public class Ship : MonoBehaviour
         else
         {
             transform.position = new Vector3(PlayerPrefs.GetFloat(name + "X"), 0.5f, PlayerPrefs.GetFloat(name + "Z"));     // wczytanie pozycji z plikow
-            transform.rotation = Quaternion.Euler(0, PlayerPrefs.GetFloat(name + "Rotation"), 0); 
+            transform.rotation = Quaternion.Euler(0, PlayerPrefs.GetFloat(name + "Rotation"), 0);
         }
     }
 
@@ -64,7 +64,7 @@ public class Ship : MonoBehaviour
         {
             lastSelectedPosition = transform.position;
             lastSelectedRotation = transform.eulerAngles;
-            offset = transform.position - MouseWorldPosition();     // wyliczenie offsetu
+            offset = mainCollider.transform.position - MouseWorldPosition();     // wyliczenie offsetu wzgledem MainCollider
             inGameUI.isDraged = true;
         }
     }
@@ -86,14 +86,16 @@ public class Ship : MonoBehaviour
             {
                 nearestField = nearbyFields.OrderBy(field => Vector3.Distance(mainCollider.transform.position, field.transform.position))   // znalezienie najblizszego pola (sortujemy po dystansie mainCollider i danego pola
                  .FirstOrDefault();
-                
+
                 rotacja = transform.rotation.eulerAngles.y;
+                rotacjaint = (int)rotacja;
                 nazwaPola = nearestField.name;
-                validPosition = Functions.instance.ValidPosition(size, nazwaPola, rotacja, GameManagment.instance.occupiedFields, shipID);
-                
+                validPosition = Functions.instance.ValidPosition(size, nazwaPola, rotacjaint, GameManagment.instance.occupiedFields, shipID);
+
                 if (validPosition == 2)
                 {
-                    transform.position = new Vector3(nearestField.transform.position.x, transform.position.y, nearestField.transform.position.z);       // zmieniamy pozycje statku na pozycje najblizszego pola
+                    Vector3 positionOffset = transform.position - mainCollider.transform.position; // roznica miedzy pozycja obiektu a MainCollider
+                    transform.position = nearestField.transform.position + positionOffset;       // zmieniamy pozycje obiektu z uwzglednieniem offsetu
                     inGameUI.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
                     for (int i = 0; i < size; i++)
                     {
@@ -117,7 +119,9 @@ public class Ship : MonoBehaviour
     {
         if (GameManagment.instance.gameState == 0 && InGameUI.isPaused == false)                   // sprawdzenie czy wybrany jest odpowiedni tryb w skrypcie GameManagement
         {
-            transform.position = MouseWorldPosition() + offset;     // zmiana pozycji obiektu: aktualna pozycja myszy + wyliczony offset
+            Vector3 newPosition = MouseWorldPosition() + offset; // nowa pozycja obiektu bazujaca na pozycji myszy i offsetu wzgledem MainCollider
+            Vector3 positionOffset = mainCollider.transform.position - transform.position; // uwzglednienie przesuniecia
+            transform.position = newPosition - positionOffset;
 
             if (Input.GetKeyDown(KeyCode.A))
             {
@@ -131,7 +135,7 @@ public class Ship : MonoBehaviour
                 transform.rotation = Quaternion.Euler(0, shipRotation + 90, 0);
             }
         }
-            
+
     }
 
     Vector3 MouseWorldPosition()        // uzyskanie pozycji myszy
@@ -142,4 +146,3 @@ public class Ship : MonoBehaviour
     }
     // koniec funkcji ship drag
 }
-
