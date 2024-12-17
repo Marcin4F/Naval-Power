@@ -27,12 +27,8 @@ public class Ship : MonoBehaviour
     protected float rotacja, shipRotation;
     protected string nazwaPola;
 
-    private InGameUI inGameUI;
-
     protected void Start()
     {
-        inGameUI = FindObjectOfType<InGameUI>();
-
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znalezienie MainCollider
 
@@ -65,7 +61,7 @@ public class Ship : MonoBehaviour
             lastSelectedPosition = transform.position;
             lastSelectedRotation = transform.eulerAngles;
             offset = mainCollider.transform.position - MouseWorldPosition();     // wyliczenie offsetu wzgledem MainCollider
-            inGameUI.isDraged = true;
+            InGameUI.instance.isDraged = true;
         }
     }
 
@@ -96,7 +92,7 @@ public class Ship : MonoBehaviour
                 {
                     Vector3 positionOffset = transform.position - mainCollider.transform.position; // roznica miedzy pozycja obiektu a MainCollider
                     transform.position = nearestField.transform.position + positionOffset;       // zmieniamy pozycje obiektu z uwzglednieniem offsetu
-                    inGameUI.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
+                    InGameUI.instance.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
                     for (int i = 0; i < size; i++)
                     {
                         GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
@@ -111,7 +107,7 @@ public class Ship : MonoBehaviour
             PlayerPrefs.SetFloat(name + "X", transform.position.x);         // zapisanie pozycji statku do plikow
             PlayerPrefs.SetFloat(name + "Z", transform.position.z);
             PlayerPrefs.SetFloat(name + "Rotation", transform.eulerAngles.y);
-            inGameUI.isDraged = false;
+            InGameUI.instance.isDraged = false;
         }
     }
 

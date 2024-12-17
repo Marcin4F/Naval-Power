@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,13 +13,18 @@ public class InGameUI : MonoBehaviour
     private bool isEndTurn = false;
     public bool isDraged;
 
-    public Button endTurn, continueGame, quit;        // inicjalizacja przyciskow na scenie
-    public GameObject pauseMenu;
+    public Button endTurn, continueGame, quit, options, goBack;        // inicjalizacja przyciskow na scenie
+    public TMP_Text nazwa;
+
+    public GameObject pauseMenu, optionsPanel, statekPanel;
+    
     private Ship ship;
+    public static InGameUI instance;
 
     // Start is called before the first frame update
     void Awake()
     {
+        instance = this;
         ship = FindObjectOfType<Ship>();
 
         endTurn.onClick.AddListener(EndingTurn);        // dodanie "sluchacza" na przycisku, aktywuje sie w momencie klikniecia
@@ -26,7 +32,11 @@ public class InGameUI : MonoBehaviour
         {
             continueGame.onClick.AddListener(ResumeGame);
             quit.onClick.AddListener(ScenesManager.instance.MainMenu);
+            options.onClick.AddListener(OpenOptions);
+            goBack.onClick.AddListener(CloseOptions);
             pauseMenu.SetActive(false);
+            optionsPanel.SetActive(false);
+            statekPanel.SetActive(false);
         }
         if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
         {
@@ -82,5 +92,28 @@ public class InGameUI : MonoBehaviour
     private void OnApplicationQuit()
     {
         PlayerPrefs.DeleteAll();
+    }
+
+    private void OpenOptions()
+    {
+        pauseMenu.SetActive(false);
+        optionsPanel.SetActive(true);
+    }
+
+    private void CloseOptions()
+    {
+        optionsPanel.SetActive(false);
+        pauseMenu.SetActive(true);
+    }
+
+    public void SetActive(string shipName)
+    {
+        statekPanel.SetActive(true);
+        nazwa.SetText(shipName);
+    }
+
+    public void DeActive()
+    {
+        statekPanel.SetActive(false);
     }
 }

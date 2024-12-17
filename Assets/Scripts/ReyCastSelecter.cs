@@ -13,7 +13,7 @@ public class ReyCastSelecter : MonoBehaviour
     public bool isAttacking = false;
     protected int sceneIndex, validPosition, gameState, tmp, size, halfSize;
     protected float shipRotation;
-    protected string key, fieldName;
+    protected string key, fieldName, selectedName;
     protected Vector3 movment;
 
     protected Collider nearestField;
@@ -62,11 +62,14 @@ public class ReyCastSelecter : MonoBehaviour
                             lastSelected.Translate(0, -1, 0);
                             isSelected = false;
                             Attack.instance.QuitAttacking();
+                            InGameUI.instance.DeActive();
                         }
                         var rayPos = raycastHit.transform;      // uzyskanie pozycji statku
                         lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
                         rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
                         isSelected = true;
+                        selectedName = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);
+                        InGameUI.instance.SetActive(selectedName);
                     }
 
                     else if (raycastHit.transform.CompareTag("FieldMapaWyb"))
@@ -80,6 +83,7 @@ public class ReyCastSelecter : MonoBehaviour
                         lastSelected = null;
                         isSelected = false;
                         Attack.instance.QuitAttacking();
+                        InGameUI.instance.DeActive();
                     }
                 }
 
@@ -89,6 +93,7 @@ public class ReyCastSelecter : MonoBehaviour
                     lastSelected = null;
                     isSelected = false;
                     Attack.instance.QuitAttacking();
+                    InGameUI.instance.DeActive();
                 }
             }
 
