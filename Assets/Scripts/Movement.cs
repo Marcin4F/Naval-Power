@@ -46,7 +46,10 @@ public class Movement : MonoBehaviour
             if (validPosition == 2)
                 movement = new Vector3(1, 0, 0);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
         else if (shipRotationInt == -90 || shipRotationInt == 270)
         {
@@ -57,7 +60,10 @@ public class Movement : MonoBehaviour
             if (validPosition == 2)
                 movement = new Vector3(0, 0, 1);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
         else if (shipRotationInt == 180 || shipRotationInt == -180)
         {
@@ -68,7 +74,10 @@ public class Movement : MonoBehaviour
             if (validPosition == 2)
                 movement = new Vector3(-1, 0, 0);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
         else if (shipRotationInt == 90)
         {
@@ -79,7 +88,10 @@ public class Movement : MonoBehaviour
             if (validPosition == 2)
                 movement = new Vector3(0, 0, -1);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
 
         for (int i = 0; i < Functions.instance.shipFields.Length; i++)
@@ -89,9 +101,7 @@ public class Movement : MonoBehaviour
 
         // Uruchom korutyne do plynnego ruchu
 
-        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f));
-
-        reyCastSelecter.SaveInfo(movesUsed + 1);
+        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, movesUsed + 1));
     }
 
 
@@ -121,7 +131,10 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             if (validPosition == 2)
                 movement = new Vector3(-1, 0, 0);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
 
         else if (shipRotationInt == -90 || shipRotationInt == 270)
@@ -133,7 +146,10 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             if (validPosition == 2)
                 movement = new Vector3(0, 0, -1);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
 
         else if (shipRotationInt == 180 || shipRotationInt == -180)
@@ -145,7 +161,10 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             if (validPosition == 2)
                 movement = new Vector3(1, 0, 0);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
 
         else if (shipRotationInt == 90)
@@ -157,7 +176,10 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             if (validPosition == 2)
                 movement = new Vector3(0, 0, 1);
             else
+            {
+                isMoving = false;
                 return;
+            }
         }
 
         for (int i = 0; i < Functions.instance.shipFields.Length; i++)
@@ -166,12 +188,10 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         }
 
         // Uruchom korutyne do plynnego ruchu
-        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f));
-
-        reyCastSelecter.SaveInfo(2);
+        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, 2));
     }
 
-    private IEnumerator MoveObjectSmoothly(Transform target, Vector3 start, Vector3 end, float duration)
+    private IEnumerator MoveObjectSmoothly(Transform target, Vector3 start, Vector3 end, float duration, int usedMovesFunction)
     {
         float elapsedTime = 0;
 
@@ -185,6 +205,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         // Upewnij sie, ze koncowa pozycja jest precyzyjnie ustawiona
         target.position = end;
         isMoving = false;
+        reyCastSelecter.SaveInfo(usedMovesFunction);
     }
 
     public void TryRotation(char direction, Transform lastSelected, Dictionary<string, int> shipsID)       // proba dokonania rotacji statku

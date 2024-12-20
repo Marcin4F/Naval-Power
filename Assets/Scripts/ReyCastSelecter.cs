@@ -11,7 +11,7 @@ public class ReyCastSelecter : MonoBehaviour
 {
     protected bool isSelected = false;
     public bool isAttacking = false;
-    protected int sceneIndex, validPosition, gameState, tmp, size, halfSize;
+    protected int sceneIndex, validPosition, gameState, tmp, size, halfSize, movesUsed;
     protected float shipRotation;
     protected string key, fieldName, selectedName;
     protected Vector3 movment;
@@ -68,8 +68,10 @@ public class ReyCastSelecter : MonoBehaviour
                         lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
                         rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
                         isSelected = true;
+                        
                         selectedName = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);
-                        InGameUI.instance.SetActive(selectedName);
+                        movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
+                        InGameUI.instance.SetActive(selectedName, movesUsed);
                     }
 
                     else if (raycastHit.transform.CompareTag("FieldMapaWyb"))
@@ -99,21 +101,24 @@ public class ReyCastSelecter : MonoBehaviour
 
             if (isSelected)
             {
-                int movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
+                movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
                 if (movesUsed == 0)
                 {
                     if (Input.GetKeyDown(KeyCode.A))
                     {
+                        InGameUI.instance.SetMovementValue(movesUsed + 2);
                         Movement.instance.TryRotation('A', lastSelected, shipsID);
                     }
 
                     if (Input.GetKeyDown(KeyCode.D))
                     {
+                        InGameUI.instance.SetMovementValue(movesUsed + 2);
                         Movement.instance.TryRotation('D', lastSelected, shipsID);
                     }
 
                     if (Input.GetKeyDown(KeyCode.S))
                     {
+                        InGameUI.instance.SetMovementValue(movesUsed + 2);
                         Movement.instance.MoveBackward(lastSelected, shipsID);
                     }
                 }
@@ -122,6 +127,7 @@ public class ReyCastSelecter : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.W))
                     {
+                        InGameUI.instance.SetMovementValue(movesUsed + 1);
                         Movement.instance.MoveForward(movesUsed, lastSelected, shipsID);
                     }
                 }

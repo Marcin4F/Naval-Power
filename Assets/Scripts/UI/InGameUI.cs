@@ -9,12 +9,13 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
+    private int displayMoveUsed;
     public static bool isPaused = false;
     private bool isEndTurn = false;
     public bool isDraged;
 
     public Button endTurn, continueGame, quit, options, goBack;        // inicjalizacja przyciskow na scenie
-    public TMP_Text nazwa;
+    public TMP_Text nazwa, hpStatku, ruchyStatku;
 
     public GameObject pauseMenu, optionsPanel, statekPanel;
     
@@ -70,6 +71,7 @@ public class InGameUI : MonoBehaviour
         }
     }
 
+    // pauzowanie gry
     void PauseMenu()
     {
         pauseMenu.SetActive(true);
@@ -78,6 +80,7 @@ public class InGameUI : MonoBehaviour
         endTurn.interactable = false;
     }
 
+    // wznawianie gry
     void ResumeGame()
     {
         pauseMenu.SetActive(false);
@@ -89,31 +92,44 @@ public class InGameUI : MonoBehaviour
         }
     }
 
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteAll();
-    }
-
+    // otwarcie okienka opcji
     private void OpenOptions()
     {
         pauseMenu.SetActive(false);
         optionsPanel.SetActive(true);
     }
 
+    // zamkniecie okienka opcji
     private void CloseOptions()
     {
         optionsPanel.SetActive(false);
         pauseMenu.SetActive(true);
     }
 
-    public void SetActive(string shipName)
+    // aktywowanie panelu z informacjami o statku
+    public void SetActive(string shipName, int movesUsed)
     {
         statekPanel.SetActive(true);
         nazwa.SetText(shipName);
+        hpStatku.SetText("ShipHP");
+        SetMovementValue(movesUsed);
     }
 
+    public void SetMovementValue(int movesUsed)
+    {
+        displayMoveUsed = 2 - movesUsed;
+        ruchyStatku.SetText(displayMoveUsed.ToString() + " / 2");
+    }
+
+    // dezaktywowanie panelu z informacjami o statku
     public void DeActive()
     {
         statekPanel.SetActive(false);
+    }
+
+    // wyczyszczenie wszystkiego przy wyjsciu z gry
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
