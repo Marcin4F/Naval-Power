@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\GameManagment.cs" />
     <Compile Include="Assets\Scripts\Functions.cs" />
+    <Compile Include="Assets\Scripts\UI\FadeAway.cs" />
     <Compile Include="Assets\Scripts\Statki\Pancernik.cs" />
     <Compile Include="Assets\Scripts\ReyCastSelecter.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />

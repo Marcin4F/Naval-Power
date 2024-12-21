@@ -10,7 +10,9 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] Button playPvE;
     [SerializeField] Button options;
     [SerializeField] Button goBack;
-    public GameObject mainMenuPanel, optionsPanel;
+    [SerializeField] Button tutorial;
+    [SerializeField] Button tutorialBack;
+    public GameObject mainMenuPanel, optionsPanel, tutorialPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +21,10 @@ public class MainMenuUI : MonoBehaviour
         playHotSeat.onClick.AddListener(StartPlayHotSeat);
         options.onClick.AddListener(OpenOptions);
         goBack.onClick.AddListener(CloseOptions);
+        tutorial.onClick.AddListener(OpenTutorial);
+        tutorialBack.onClick.AddListener(CloseTutorial);
         optionsPanel.SetActive(false);
+        tutorialPanel.SetActive(false);
     }
 
     private void Quitting()
@@ -43,6 +48,18 @@ public class MainMenuUI : MonoBehaviour
     private void CloseOptions()
     {
         optionsPanel.SetActive(false);
+        mainMenuPanel.SetActive(true);
+    }
+
+    private void OpenTutorial()
+    {
+        mainMenuPanel.SetActive(false);
+        tutorialPanel.SetActive(true);
+    }
+
+    private void CloseTutorial()
+    {
+        tutorialPanel.SetActive(false);
         mainMenuPanel.SetActive(true);
     }
 }

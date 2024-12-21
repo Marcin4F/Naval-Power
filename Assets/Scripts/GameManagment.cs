@@ -103,18 +103,21 @@ public class GameManagment : MonoBehaviour
                 var renderer = niszczyciel1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
+            ciezkiKrazownikComponent1.hp = PlayerPrefs.GetInt("CiezkiKrazownikHP" + index);
             if (ciezkiKrazownikComponent1.hp == 0)
             {
                 ciezkiKrazownik1.transform.tag = "Destroyed";
                 var renderer = ciezkiKrazownik1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
+            korwetaComponent1.hp = PlayerPrefs.GetInt("KorwetaHP" + index);
             if (korwetaComponent1.hp == 0)
             {
                 korweta1.transform.tag = "Destroyed";
                 var renderer = korweta1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
+            lekkiKrazownikComponent1.hp = PlayerPrefs.GetInt("LekkiKrazownikHP" + index);
             if (lekkiKrazownikComponent1.hp == 0)
             {
                 lekkiKrazownik1.transform.tag = "Destroyed";
@@ -156,7 +159,10 @@ public class GameManagment : MonoBehaviour
             SaveHP();
             if (shipsLeft <= 0)
             {
-                // UWAGA DODAC ZAKONCZENIE GRY
+                gameState = 2;
+                PlayerPrefs.SetInt("Loser", index);
+                PlayerPrefs.SetInt("gameState1", gameState);
+                PlayerPrefs.SetInt("gameState3", gameState);
                 Debug.Log("KONIEC GRY");
             }
         }
@@ -224,8 +230,8 @@ public class GameManagment : MonoBehaviour
         PlayerPrefs.SetInt("PancernikHP" + index, pancernikComponent1.hp);
         PlayerPrefs.SetInt("NiszczycielHP" + index, niszczycielComponent1.hp);
         PlayerPrefs.SetInt("CiezkiKrazownikHP" + index, ciezkiKrazownikComponent1.hp);
-        PlayerPrefs.SetInt("KoretaHP" + index, korwetaComponent1.hp);
-        PlayerPrefs.SetInt("LekkiKrazowniklHP" + index, lekkiKrazownikComponent1.hp);
+        PlayerPrefs.SetInt("KorwetaHP" + index, korwetaComponent1.hp);
+        PlayerPrefs.SetInt("LekkiKrazownikHP" + index, lekkiKrazownikComponent1.hp);
         PlayerPrefs.SetInt("ShipsLeft" + index, shipsLeft);
     }
 }

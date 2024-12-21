@@ -363,6 +363,7 @@
 "Assets/Scripts/Statki/LekkiKrazownik.cs"
 "Assets/Scripts/Statki/Niszczyciel.cs"
 "Assets/Scripts/Statki/Pancernik.cs"
+"Assets/Scripts/UI/FadeAway.cs"
 "Assets/Scripts/UI/InGameUI.cs"
 "Assets/Scripts/UI/MainMenuUI.cs"
 "Assets/Scripts/UI/ScenesManager.cs"

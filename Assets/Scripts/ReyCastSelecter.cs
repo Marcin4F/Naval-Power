@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Linq;
+using System;
 
 public class ReyCastSelecter : MonoBehaviour
 {
@@ -71,7 +72,8 @@ public class ReyCastSelecter : MonoBehaviour
                         
                         selectedName = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);
                         movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
-                        InGameUI.instance.SetActive(selectedName, movesUsed);
+                        size = GetSize(lastSelected);
+                        InGameUI.instance.SetActive(selectedName, movesUsed, size);
                     }
 
                     else if (raycastHit.transform.CompareTag("FieldMapaWyb"))
@@ -141,6 +143,11 @@ public class ReyCastSelecter : MonoBehaviour
                 {
                     Attack.instance.QuitAttacking();
                 }
+            }
+            // do debugowania POZNIEJ USUNAC
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                PlayerPrefs.SetInt("ShipsLeft3", 0);
             }
         }
 

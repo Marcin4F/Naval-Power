@@ -9,16 +9,25 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
-    private int displayMoveUsed;
+    private int displayMoveUsed, index, displayHP, loser;
     public static bool isPaused = false;
-    private bool isEndTurn = false;
+    private bool isEndTurn = true;
     public bool isDraged;
+    private string displayName;
 
-    public Button endTurn, continueGame, quit, options, goBack;        // inicjalizacja przyciskow na scenie
-    public TMP_Text nazwa, hpStatku, ruchyStatku;
+    public Button endTurn, continueGame, quit, options, goBack, quitGame;        // inicjalizacja przyciskow na scenie
+    public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText;
 
-    public GameObject pauseMenu, optionsPanel, statekPanel;
-    
+    public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel;
+    Dictionary<string, string> names = new Dictionary<string, string>
+    {
+        ["Pancernik"] = "Pancernik",
+        ["CiezkiKrazownik"] = "Ciê¿ki kr¹¿ownik",
+        ["Niszczyciel"] = "Niszczyciel",
+        ["LekkiKrazownik"] = "Lekki kr¹¿ownik",
+        ["Korweta"] = "Korweta"
+    };
+
     private Ship ship;
     public static InGameUI instance;
 
@@ -27,6 +36,7 @@ public class InGameUI : MonoBehaviour
     {
         instance = this;
         ship = FindObjectOfType<Ship>();
+        index = SceneManager.GetActiveScene().buildIndex;
 
         endTurn.onClick.AddListener(EndingTurn);        // dodanie "sluchacza" na przycisku, aktywuje sie w momencie klikniecia
         if(SceneManager.GetActiveScene().buildIndex != 2)
@@ -38,17 +48,37 @@ public class InGameUI : MonoBehaviour
             pauseMenu.SetActive(false);
             optionsPanel.SetActive(false);
             statekPanel.SetActive(false);
+            if (GameManagment.instance.gameState != 2)
+            {
+                gameOverPanel.SetActive(false);
+                quitGamePanel.SetActive(false);
+            }
+            else
+            {
+                quitGame.onClick.AddListener(ScenesManager.instance.MainMenu);
+                loser = PlayerPrefs.GetInt("Loser");
+                if (loser == 1)
+                {
+                    winnerText.SetText("Player 2 won!");
+                }
+                else
+                    winnerText.SetText("Player 1 won!");
+            }
         }
+        
         if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
         {
+            isEndTurn = false;
             endTurn.interactable = false;               // wylaczenie przycisku konca tury na poczatku gry
+        }
+
+        else if (GameManagment.instance.gameState == 2)
+        {
+            endTurnText.SetText("Check other player's board");
         }
     }
 
-    private void EndingTurn()       // odwolanie do skryptu ScenesManager i wywolanie odpowiedniej funkcji
-    {
-        ScenesManager.instance.EndTurn();       // NA PRZYSZLOSC: jezeli chcemy odwolac sie do innej sceny to: ScenesManager.instance.LoadScene(ScenesManager.Scene.'Nazwa z enum');
-    }
+
 
     private void Update()
     {
@@ -69,6 +99,10 @@ public class InGameUI : MonoBehaviour
                 ResumeGame();
             }
         }
+    }
+    private void EndingTurn()       // odwolanie do skryptu ScenesManager i wywolanie odpowiedniej funkcji
+    {
+        ScenesManager.instance.EndTurn();       // NA PRZYSZLOSC: jezeli chcemy odwolac sie do innej sceny to: ScenesManager.instance.LoadScene(ScenesManager.Scene.'Nazwa z enum');
     }
 
     // pauzowanie gry
@@ -107,11 +141,13 @@ public class InGameUI : MonoBehaviour
     }
 
     // aktywowanie panelu z informacjami o statku
-    public void SetActive(string shipName, int movesUsed)
+    public void SetActive(string shipName, int movesUsed, int shipSize)
     {
         statekPanel.SetActive(true);
-        nazwa.SetText(shipName);
-        hpStatku.SetText("ShipHP");
+        names.TryGetValue(shipName, out displayName);
+        nazwa.SetText(displayName);
+        displayHP = PlayerPrefs.GetInt(shipName + "HP" + index);
+        hpStatku.SetText(displayHP.ToString() + " / " + shipSize.ToString());
         SetMovementValue(movesUsed);
     }
 

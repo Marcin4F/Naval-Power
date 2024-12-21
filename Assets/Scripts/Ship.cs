@@ -26,6 +26,7 @@ public class Ship : MonoBehaviour
     protected int validPosition, rotacjaint;
     protected float rotacja, shipRotation;
     protected string nazwaPola;
+    protected bool[] shipPlaced;
 
     protected void Start()
     {
@@ -39,6 +40,11 @@ public class Ship : MonoBehaviour
             PlayerPrefs.DeleteKey(name + "Z");
             PlayerPrefs.DeleteKey(name + "Rotation");
             GameManagment.instance.occupiedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
+            shipPlaced = new bool[GameManagment.instance.shipsNumber];
+            for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+            {
+                shipPlaced[i] = false;
+            }
         }
         else
         {
@@ -92,7 +98,11 @@ public class Ship : MonoBehaviour
                 {
                     Vector3 positionOffset = transform.position - mainCollider.transform.position; // roznica miedzy pozycja obiektu a MainCollider
                     transform.position = nearestField.transform.position + positionOffset;       // zmieniamy pozycje obiektu z uwzglednieniem offsetu
-                    InGameUI.instance.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
+                    if (shipPlaced[shipID] == false)
+                    {
+                        InGameUI.instance.shipPlaced++;              // zwiekszenie ilosci postawionych statkow na planszy
+                        shipPlaced[shipID] = true;
+                    }
                     for (int i = 0; i < size; i++)
                     {
                         GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];

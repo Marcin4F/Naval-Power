@@ -21,18 +21,8 @@ public class Functions : MonoBehaviour
     {
         int numer = int.Parse(nazwaPola.Substring(1));
         int wynik = 2;
-        int polowaRozmiaru;
+        int polowaRozmiaru = size / 2;
         char litera = nazwaPola[0];
-        if(size % 2 == 0 && (rotacja == 0 || rotacja == 360 || rotacja == 90))
-        {
-            polowaRozmiaru = 0;
-        }
-        else if(size % 2 == 0 && (rotacja == -90 || rotacja == 270 || rotacja == 180 || rotacja == - 180))
-        {
-            polowaRozmiaru = 1;
-        }
-        else
-            polowaRozmiaru = size / 2;
         string newField;
         shipFields = new string[size];
 

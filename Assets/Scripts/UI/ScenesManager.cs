@@ -42,49 +42,64 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
         int index = SceneManager.GetActiveScene().buildIndex;
         int direction = PlayerPrefs.GetInt("Direction");
 
-        if (index == 1)
+        if (GameManagment.instance.gameState != 2)
         {
-            positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
-            PlayerPrefs.SetString("Positions1", positions);
-
-            attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
-            PlayerPrefs.SetString("AttackedFields1", attackedFields);
-
-            for(int i = 0; i < GameManagment.instance.shipsNumber; i++)
+            if (index == 1)
             {
-                PlayerPrefs.SetFloat("ZnacznikiX" + index + i, attack.positions[i].x);
-                PlayerPrefs.SetFloat("ZnacznikiY" + index + i, attack.positions[i].y);
-                PlayerPrefs.SetFloat("ZnacznikiZ" + index + i, attack.positions[i].z);
+                positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
+                PlayerPrefs.SetString("Positions1", positions);
+
+                attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
+                PlayerPrefs.SetString("AttackedFields1", attackedFields);
+
+                for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+                {
+                    PlayerPrefs.SetFloat("ZnacznikiX" + index + i, attack.positions[i].x);
+                    PlayerPrefs.SetFloat("ZnacznikiY" + index + i, attack.positions[i].y);
+                    PlayerPrefs.SetFloat("ZnacznikiZ" + index + i, attack.positions[i].z);
+                }
+
+                direction = 1;
+                PlayerPrefs.SetInt("Direction", direction);
+                LoadScene(Scene.Middle);
             }
-
-            direction = 1;
-            PlayerPrefs.SetInt("Direction", direction);
-            LoadScene(Scene.Middle);
-        }
-        else if (index == 3)
-        {
-            positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
-            PlayerPrefs.SetString("Positions3", positions);
-
-            attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
-            PlayerPrefs.SetString("AttackedFields3", attackedFields);
-
-            for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+            else if (index == 3)
             {
-                PlayerPrefs.SetFloat("ZnacznikiX" + index + i, attack.positions[i].x);
-                PlayerPrefs.SetFloat("ZnacznikiY" + index + i, attack.positions[i].y);
-                PlayerPrefs.SetFloat("ZnacznikiZ" + index + i, attack.positions[i].z);
+                positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
+                PlayerPrefs.SetString("Positions3", positions);
+
+                attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
+                PlayerPrefs.SetString("AttackedFields3", attackedFields);
+
+                for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
+                {
+                    PlayerPrefs.SetFloat("ZnacznikiX" + index + i, attack.positions[i].x);
+                    PlayerPrefs.SetFloat("ZnacznikiY" + index + i, attack.positions[i].y);
+                    PlayerPrefs.SetFloat("ZnacznikiZ" + index + i, attack.positions[i].z);
+                }
+
+
+                direction = -1;
+                PlayerPrefs.SetInt("Direction", direction);
+                LoadScene(Scene.Middle);
             }
-
-
-            direction = -1;
-            PlayerPrefs.SetInt("Direction", direction);
-            LoadScene(Scene.Middle);
+            else if (index == 2)
+            {
+                SceneManager.LoadScene(index + direction);
+            }
         }
-        else if (index == 2)
+        else
         {
-            SceneManager.LoadScene(index + direction);
+            if (index == 1)
+            {
+                LoadScene(Scene.Player2);
+            }
+            else
+            {
+                LoadScene(Scene.Player1);
+            }
         }
+        
     }
 
     public void MainMenu()                  // wyjscie do menu glownego, dodac pozniej pause menu pod ESC w skrypcie InGameUI

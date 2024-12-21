@@ -8,9 +8,9 @@ public class Korweta : Ship
     public Korweta() //konstruktor
     {
         move = 4;
-        hp = 2;
+        hp = 3;
         zanurzenie = 1;
-        size = 2;
+        size = 3;
         shipID = 3;
     }
 }
