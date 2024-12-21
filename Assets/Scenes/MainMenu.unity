@@ -1501,28 +1501,29 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You can choose ship by clicking it with LMB. After that you can move ship
-    and choose field that ship will attack.
+  m_text: 'You can choose a ship by clicking it with LMB. After that you can move
+    a ship and choose a field that the ship will attack.
 
 
     Movement:
 
-    - To move forward
-    press ''W''. It costs 1 move point.
+    - To
+    move forward press ''W''. It costs 1 move point.
 
-    - To move backward press ''S''. It costs
-    2 move points.
+    - To move backward press
+    ''S''. It costs 2 move points.
 
-    - To rotate press ''A'' (rotate to the left) or ''D'' (rotate
-    to the right). It costs 2 move points.
-
-
-    To attack press ''E'' after selecting
-    ship. Tactical map will open. Then choose field to attack by clicking it with
-    LMB.
+    - To rotate press ''A'' (rotate to the left)
+    or ''D'' (rotate to the right). It costs 2 move points.
 
 
-    Remember that all your ships can attack simultaneously each turn.'
+    To attack press
+    ''E'' after selecting a ship. Tactical map will open. Then choose a field to
+    attack by clicking it with LMB.
+
+
+    Remember that all your ships can attack
+    simultaneously each turn.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

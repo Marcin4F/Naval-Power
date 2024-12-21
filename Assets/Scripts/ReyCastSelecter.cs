@@ -10,7 +10,7 @@ using System;
 
 public class ReyCastSelecter : MonoBehaviour
 {
-    protected bool isSelected = false;
+    protected bool isSelected = false, movementPossible;
     public bool isAttacking = false;
     protected int sceneIndex, validPosition, gameState, tmp, size, halfSize, movesUsed;
     protected float shipRotation;
@@ -108,20 +108,23 @@ public class ReyCastSelecter : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.A))
                     {
-                        InGameUI.instance.SetMovementValue(movesUsed + 2);
-                        Movement.instance.TryRotation('A', lastSelected, shipsID);
+                        movementPossible = Movement.instance.TryRotation('A', lastSelected, shipsID);
+                        if (movementPossible)
+                            InGameUI.instance.SetMovementValue(movesUsed + 2);
                     }
 
                     if (Input.GetKeyDown(KeyCode.D))
                     {
-                        InGameUI.instance.SetMovementValue(movesUsed + 2);
-                        Movement.instance.TryRotation('D', lastSelected, shipsID);
+                        movementPossible = Movement.instance.TryRotation('D', lastSelected, shipsID);
+                        if (movementPossible)
+                            InGameUI.instance.SetMovementValue(movesUsed + 2);
                     }
 
                     if (Input.GetKeyDown(KeyCode.S))
                     {
-                        InGameUI.instance.SetMovementValue(movesUsed + 2);
-                        Movement.instance.MoveBackward(lastSelected, shipsID);
+                        movementPossible = Movement.instance.MoveBackward(lastSelected, shipsID);
+                        if (movementPossible)
+                            InGameUI.instance.SetMovementValue(movesUsed + 2);
                     }
                 }
 
@@ -129,8 +132,9 @@ public class ReyCastSelecter : MonoBehaviour
                 {
                     if (Input.GetKeyDown(KeyCode.W))
                     {
-                        InGameUI.instance.SetMovementValue(movesUsed + 1);
-                        Movement.instance.MoveForward(movesUsed, lastSelected, shipsID);
+                        movementPossible = Movement.instance.MoveForward(movesUsed, lastSelected, shipsID);
+                        if (movementPossible)
+                            InGameUI.instance.SetMovementValue(movesUsed + 1);
                     }
                 }
 

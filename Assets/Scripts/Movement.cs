@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
         reyCastSelecter = GetComponent<ReyCastSelecter>();
     }
 
-    public void MoveForward(int movesUsed, Transform lastSelected, Dictionary<string, int> shipsID)
+    public bool MoveForward(int movesUsed, Transform lastSelected, Dictionary<string, int> shipsID)
     {
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         shipRotationInt = (int)shipRotation;
@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
         else if (shipRotationInt == -90 || shipRotationInt == 270)
@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
         else if (shipRotationInt == 180 || shipRotationInt == -180)
@@ -76,7 +76,7 @@ public class Movement : MonoBehaviour
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
         else if (shipRotationInt == 90)
@@ -90,7 +90,7 @@ public class Movement : MonoBehaviour
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
 
@@ -102,11 +102,12 @@ public class Movement : MonoBehaviour
         // Uruchom korutyne do plynnego ruchu
 
         StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, movesUsed + 1));
+        return true;
     }
 
 
 
-public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID)
+public bool MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID)
     {
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         shipRotationInt = (int) shipRotation;
@@ -133,7 +134,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
 
@@ -148,7 +149,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
 
@@ -163,7 +164,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
 
@@ -178,7 +179,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             else
             {
                 isMoving = false;
-                return;
+                return false;
             }
         }
 
@@ -189,6 +190,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
 
         // Uruchom korutyne do plynnego ruchu
         StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, 2));
+        return true;
     }
 
     private IEnumerator MoveObjectSmoothly(Transform target, Vector3 start, Vector3 end, float duration, int usedMovesFunction)
@@ -208,7 +210,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         reyCastSelecter.SaveInfo(usedMovesFunction);
     }
 
-    public void TryRotation(char direction, Transform lastSelected, Dictionary<string, int> shipsID)       // proba dokonania rotacji statku
+    public bool TryRotation(char direction, Transform lastSelected, Dictionary<string, int> shipsID)       // proba dokonania rotacji statku
     {
         nearestField = Functions.instance.FindingField(lastSelected);
 
@@ -235,6 +237,7 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         {
             Rotate(direction, shipID, lastSelected);
             reyCastSelecter.SaveInfo(2);
+            return true;
         }
 
         else if (validPosition == 1)        // jezeli aktualna pozycja nie jest wlasciwa dokonujemy przesuniecia statku o odpowiednia wartosc w odopwiednim kierunku, tak aby miescil sie na mapie
@@ -272,7 +275,9 @@ public void MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
                 GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
             }
             reyCastSelecter.SaveInfo(2);
+            return true;
         }
+        return false;
     }
 
     public void Rotate(char direction, int shipID, Transform lastSelected)       // rotowanie statku

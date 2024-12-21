@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class FadeAway : MonoBehaviour
 {
     private float alphaValue, fadeAwayPerSecond, fadeTime, waitTime;
+    private int index;
     private TextMeshProUGUI fadeAwayText;
 
     // Start is called before the first frame update
     void Start()
     {
+        index = SceneManager.GetActiveScene().buildIndex;
+
         if (GameManagment.instance.gameState != 2)
         {
             fadeTime = 3.0f;
@@ -21,7 +25,16 @@ public class FadeAway : MonoBehaviour
             fadeTime = 0.000000001f;
             waitTime = 0;
         }
+
         fadeAwayText = GetComponent<TextMeshProUGUI>();
+        if (index == 1)
+        {
+            fadeAwayText.SetText("Player 1");
+        }
+        else
+        {
+            fadeAwayText.SetText("Player 2");
+        }
         fadeAwayPerSecond = 1 / fadeTime;
         alphaValue = fadeAwayText.color.a;
     }

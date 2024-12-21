@@ -18,14 +18,14 @@ public class InGameUI : MonoBehaviour
     public Button endTurn, continueGame, quit, options, goBack, quitGame;        // inicjalizacja przyciskow na scenie
     public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText;
 
-    public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel;
+    public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel, shipsNamesDisplayPanel;
     Dictionary<string, string> names = new Dictionary<string, string>
     {
-        ["Pancernik"] = "Pancernik",
-        ["CiezkiKrazownik"] = "Ciê¿ki kr¹¿ownik",
-        ["Niszczyciel"] = "Niszczyciel",
-        ["LekkiKrazownik"] = "Lekki kr¹¿ownik",
-        ["Korweta"] = "Korweta"
+        ["Pancernik"] = "Battleship",
+        ["CiezkiKrazownik"] = "Heavy cruiser",
+        ["Niszczyciel"] = "Destroyer",
+        ["LekkiKrazownik"] = "Light cruiser",
+        ["Korweta"] = "Corvette"
     };
 
     private Ship ship;
@@ -52,6 +52,8 @@ public class InGameUI : MonoBehaviour
             {
                 gameOverPanel.SetActive(false);
                 quitGamePanel.SetActive(false);
+                if(GameManagment.instance.gameState == 1)
+                    shipsNamesDisplayPanel.SetActive(false);
             }
             else
             {
