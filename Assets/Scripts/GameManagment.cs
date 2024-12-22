@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
-using System;
 
 public class GameManagment : MonoBehaviour
 {
     public static GameManagment instance;
 
     public int gameState = 0, shipsNumber = 5, maxSize = 5, shipsLeft = 5;           // faza gry
-    private int index;
+    private int index, shipsHit = 0, test = 0, tmp;
     public string[,] occupiedFields, attackFields, fieldsUnderAttack;
+    private string field;
+    private string[] hitFields, missFields;
+    public bool animationPlaying;
 
-    public GameObject pancernik, niszczyciel, ciezkiKrazownik, korweta, lekkiKrazownik;
+    public GameObject pancernik, niszczyciel, ciezkiKrazownik, korweta, lekkiKrazownik, hitParticleHolder, missParticleHolder;
     private GameObject pancernik1, niszczyciel1, ciezkiKrazownik1, korweta1, lekkiKrazownik1;
+    private GameObject[] hitParticleHolder1, missParticleHolder1;
     private Pancernik pancernikComponent1;
     private Niszczyciel niszczycielComponent1;
     private CiezkiKrazownik ciezkiKrazownikComponent1;
@@ -27,6 +30,7 @@ public class GameManagment : MonoBehaviour
     {
         instance = this;
         index = SceneManager.GetActiveScene().buildIndex;
+        animationPlaying = true;
 
         // inicjalizacja statkow
 
@@ -83,7 +87,7 @@ public class GameManagment : MonoBehaviour
             PlayerPrefs.SetInt("gameState" + index, 1);
             SaveHP();
         }
-        else
+        else if (gameState == 1)
         {
             // wczytanie pozycji statkow oraz sprawdzenie czy statki otrzymaly obrazenia
             occupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions" + index), maxSize);
@@ -125,6 +129,7 @@ public class GameManagment : MonoBehaviour
                 renderer.material = zniszczony;
             }
 
+            // wczytanie pol ktore sa atakowane przez przeciwnika
             if (index == 1)
             {
                 fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields3"), 1);
@@ -134,17 +139,24 @@ public class GameManagment : MonoBehaviour
                 fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields1"), 1);
             }
 
-            for(int k = 0; k < fieldsUnderAttack.Length; k++)
+            // sprawdzenie czy przeciwnik trafil, przechodzimy po wszystkich atakowanych polach
+            for (int k = 0; k < fieldsUnderAttack.Length; k++)
             {
-                string field = fieldsUnderAttack[k, 0];
-                int tmp = 0;
+                field = fieldsUnderAttack[k, 0];
+                if (field != "")
+                    test += 1;
+                tmp = 0;
+                
+                // przechodzimy po wszystkich polach zajmowanych przez statki
                 for (int i = 0; i < shipsNumber; i++)
                 {
                     for (int j = 0; j < maxSize; j++)
                     {
+                        // jezeli dane pole jest zajete odpowiedni statek odnosi obrazenia
                         if (field != "" && field == occupiedFields[i, j])
                         {
                             TakeDamage(i);
+                            shipsHit += 1;
                             PlayerPrefs.SetInt("Znacznik2" + index + k, 1);
                             tmp = 1;
                         }
@@ -155,16 +167,12 @@ public class GameManagment : MonoBehaviour
                     }
                 }
             }
-
+            // zapis hp statkow
             SaveHP();
-            if (shipsLeft <= 0)
-            {
-                gameState = 2;
-                PlayerPrefs.SetInt("Loser", index);
-                PlayerPrefs.SetInt("gameState1", gameState);
-                PlayerPrefs.SetInt("gameState3", gameState);
-                Debug.Log("KONIEC GRY");
-            }
+            hitParticleHolder1 = new GameObject[shipsHit];
+            missParticleHolder1 = new GameObject[test - shipsHit];
+            // zaczecie animacji ostrzalu
+            StartCoroutine(StartAnimation());
         }
     }
 
@@ -225,6 +233,34 @@ public class GameManagment : MonoBehaviour
         }
     }
 
+    IEnumerator StartAnimation()
+    {
+        //Debug.Log("start");
+        for (int i = 0; i < shipsHit; i++)
+        {
+            hitParticleHolder1[i] = Instantiate(hitParticleHolder);
+            yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
+        }
+        for (int i = 0; i < test - shipsHit; i++)
+        {
+            missParticleHolder1[i] = Instantiate(missParticleHolder);
+            yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
+        }
+
+        //Debug.Log("koniec");
+        animationPlaying = false;
+        if (shipsLeft <= 0)
+        {
+            gameState = 2;
+            InGameUI.instance.gameOver();
+            PlayerPrefs.SetInt("Loser", index);
+            PlayerPrefs.SetInt("gameState1", gameState);
+            PlayerPrefs.SetInt("gameState3", gameState);
+            Debug.Log("KONIEC GRY");
+        }
+    }
+
+    // zapis hp statkow do player prefsow
     void SaveHP()
     {
         PlayerPrefs.SetInt("PancernikHP" + index, pancernikComponent1.hp);

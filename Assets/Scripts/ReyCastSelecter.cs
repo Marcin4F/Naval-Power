@@ -49,7 +49,7 @@ public class ReyCastSelecter : MonoBehaviour
 
     void Update()
     {
-        if (Movement.instance.isMoving == false && InGameUI.isPaused == false)
+        if (!Movement.instance.isMoving && !InGameUI.isPaused && !GameManagment.instance.animationPlaying)
         {
             if (Input.GetKeyDown(KeyCode.Mouse0) && gameState == 1)
             {

@@ -18,7 +18,7 @@ public class InGameUI : MonoBehaviour
     public Button endTurn, continueGame, quit, options, goBack, quitGame;        // inicjalizacja przyciskow na scenie
     public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText;
 
-    public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel, shipsNamesDisplayPanel;
+    public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel, shipsNamesDisplayPanel, animationBlocker;
     Dictionary<string, string> names = new Dictionary<string, string>
     {
         ["Pancernik"] = "Battleship",
@@ -48,35 +48,20 @@ public class InGameUI : MonoBehaviour
             pauseMenu.SetActive(false);
             optionsPanel.SetActive(false);
             statekPanel.SetActive(false);
-            if (GameManagment.instance.gameState != 2)
-            {
-                gameOverPanel.SetActive(false);
-                quitGamePanel.SetActive(false);
-                if(GameManagment.instance.gameState == 1)
-                    shipsNamesDisplayPanel.SetActive(false);
-            }
+            gameOverPanel.SetActive(false);
+            quitGamePanel.SetActive(false);
+            if (GameManagment.instance.gameState == 1)
+                shipsNamesDisplayPanel.SetActive(false);
+            else if (GameManagment.instance.gameState == 0)
+                animationBlocker.SetActive(false);
             else
-            {
-                quitGame.onClick.AddListener(ScenesManager.instance.MainMenu);
-                loser = PlayerPrefs.GetInt("Loser");
-                if (loser == 1)
-                {
-                    winnerText.SetText("Player 2 won!");
-                }
-                else
-                    winnerText.SetText("Player 1 won!");
-            }
+                gameOver();
         }
         
         if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
         {
             isEndTurn = false;
             endTurn.interactable = false;               // wylaczenie przycisku konca tury na poczatku gry
-        }
-
-        else if (GameManagment.instance.gameState == 2)
-        {
-            endTurnText.SetText("Check other player's board");
         }
     }
 
@@ -88,6 +73,10 @@ public class InGameUI : MonoBehaviour
         {
             endTurn.interactable = true;
             isEndTurn = true;
+        }
+        else if(GameManagment.instance.gameState == 1 && index != 2 && !GameManagment.instance.animationPlaying)
+        {
+            animationBlocker.SetActive(false);
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && !isDraged)
@@ -126,6 +115,22 @@ public class InGameUI : MonoBehaviour
         {
             endTurn.interactable = true;
         }
+    }
+
+    public void gameOver()
+    {
+        animationBlocker.SetActive(false);
+        gameOverPanel.SetActive(true);
+        quitGamePanel.SetActive(true);
+        endTurnText.SetText("Check other player's board");
+        quitGame.onClick.AddListener(ScenesManager.instance.MainMenu);
+        loser = PlayerPrefs.GetInt("Loser");
+        if (loser == 1)
+        {
+            winnerText.SetText("Player 2 won!");
+        }
+        else
+            winnerText.SetText("Player 1 won!");
     }
 
     // otwarcie okienka opcji

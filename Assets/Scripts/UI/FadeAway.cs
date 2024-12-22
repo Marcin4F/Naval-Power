@@ -17,8 +17,8 @@ public class FadeAway : MonoBehaviour
 
         if (GameManagment.instance.gameState != 2)
         {
-            fadeTime = 3.0f;
-            waitTime = 2.0f;
+            fadeTime = 2.0f;
+            waitTime = 1.0f;
         }
         else
         {
