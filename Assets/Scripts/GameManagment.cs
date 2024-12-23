@@ -12,7 +12,7 @@ public class GameManagment : MonoBehaviour
     private int index, hitShots = 0, missedShots = 0, tmp, hitFieldsIndex = 0, missFieldsIndex = 0;     // index - indeks sceny, hitShots - ilosc trafien, missedShots - iosc strzalow nietrafionych, tmp - zmienna pomocnicza
                                                                                                         // przy sprawdzaniu trafienia, hitFieldsIndex - indeks zapisu do tablicy hitFields, missFieldsIndex - indeks zapisu do
                                                                                                         // tablicy missFields
-    public string[,] occupiedFields, attackFields, fieldsUnderAttack;                                   // occupiedFields - pola zajmowanie przez statki, attackFields - pola ktore gracz chce atakowac, fieldsUnderAttack -
+    public string[,] occupiedFields, enemyOccupiedFields, attackFields, fieldsUnderAttack;              // occupiedFields - pola zajmowanie przez statki, attackFields - pola ktore gracz chce atakowac, fieldsUnderAttack -
                                                                                                         // pola gracza atakowane przez przeciwnika
     private string field;
     private string[] hitFields, missFields;
@@ -22,7 +22,7 @@ public class GameManagment : MonoBehaviour
     public GameObject pancernik, niszczyciel, ciezkiKrazownik, korweta, lekkiKrazownik, mapa;
     public ParticleSystem hitParticleHolder, missParticleHolder;
     private GameObject pancernik1, niszczyciel1, ciezkiKrazownik1, korweta1, lekkiKrazownik1, mapa1;
-    private ParticleSystem[] hitParticleHolder1, missParticleHolder1;
+    private ParticleSystem[] hitParticleHolder1, missParticleHolder1, attackHitParticle1, attackMissParticle1;
     private Pancernik pancernikComponent1;
     private Niszczyciel niszczycielComponent1;
     private CiezkiKrazownik ciezkiKrazownikComponent1;
@@ -278,13 +278,51 @@ public class GameManagment : MonoBehaviour
     {
         animationPlaying = true;
         mapa1 = Instantiate(mapa);
+        attackHitParticle1 = new ParticleSystem[shipsNumber];
+        attackMissParticle1 = new ParticleSystem[shipsNumber];
+        if (index == 1)
+            enemyOccupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions3"), maxSize);
+        else
+            enemyOccupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions1"), maxSize);
         StartCoroutine(EndAnimation());
     }
 
     IEnumerator EndAnimation()
     {
+        for (int i = 0; i < attackFields.Length; i++)
+        {
+            field = attackFields[i, 0];
+            tmp = 0;
 
-        yield return new WaitForSeconds(2f);
+            if (field != "" && field != null)
+            {
+                for (int j = 0; j < shipsNumber; j++)
+                {
+                    for (int k = 0; k < maxSize; k++)
+                    {
+                        if (field == enemyOccupiedFields[j, k])
+                        {
+                            tmp = 1;
+                            particlePosition = Functions.instance.FieldToWorldPosition(field);
+                            attackHitParticle1[i] = Instantiate(hitParticleHolder);
+                            attackHitParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                            attackHitParticle1[i].Play();
+                            yield return new WaitForSeconds(Random.Range(0.6f, 1.2f));
+                        }
+                    }
+                }
+                if (tmp == 0)
+                {
+                    particlePosition = Functions.instance.FieldToWorldPosition(field);
+                    attackMissParticle1[i] = Instantiate(missParticleHolder);
+                    
+                    attackMissParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                    attackMissParticle1[i].Play();
+                    yield return new WaitForSeconds(Random.Range(0.6f, 1.2f));
+                }
+            }
+        }
+        yield return new WaitForSeconds(1f);
         ScenesManager.instance.EndTurn();
     }
 
