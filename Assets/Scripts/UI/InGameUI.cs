@@ -55,7 +55,10 @@ public class InGameUI : MonoBehaviour
             else if (GameManagment.instance.gameState == 0)
                 animationBlocker.SetActive(false);
             else
+            {
+                shipsNamesDisplayPanel.SetActive(false);
                 gameOver();
+            }
         }
         
         if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
@@ -93,7 +96,13 @@ public class InGameUI : MonoBehaviour
     }
     private void EndingTurn()       // odwolanie do skryptu ScenesManager i wywolanie odpowiedniej funkcji
     {
-        ScenesManager.instance.EndTurn();       // NA PRZYSZLOSC: jezeli chcemy odwolac sie do innej sceny to: ScenesManager.instance.LoadScene(ScenesManager.Scene.'Nazwa z enum');
+        if (index != 2 && GameManagment.instance.gameState == 1)
+        {
+            endTurnText.SetText("");
+            GameManagment.instance.EndAnimationStarter();
+        }
+        else
+            ScenesManager.instance.EndTurn();
     }
 
     // pauzowanie gry

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using JetBrains.Annotations;
 
 public class Functions : MonoBehaviour
 {
@@ -129,5 +130,21 @@ public class Functions : MonoBehaviour
         }
 
         return array;
+    }
+
+    public float[] FieldToWorldPosition(string field)
+    {
+        float xPosition = -8.5f, zPosition = 7.5f;
+        float[] returnValue = new float[2];
+        char litera = field[0];
+        int numer = int.Parse(field.Substring(1));
+
+        xPosition += numer;
+        zPosition = zPosition + 65 - (int)litera;
+
+        returnValue[0] = xPosition;
+        returnValue[1] = zPosition;
+
+        return returnValue;
     }
 }

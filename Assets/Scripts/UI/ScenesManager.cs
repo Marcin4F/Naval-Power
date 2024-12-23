@@ -20,6 +20,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
     }
 
     public enum Scene           // lista stalych nazw scen, WAZNA JEST KOLEJNOSC, nazwy NIE musza byc identyczne z nazwami w unity liczy sie tylko kolejnosc
+                                // NA PRZYSZLOSC: jezeli chcemy odwolac sie do innej sceny to: ScenesManager.instance.LoadScene(ScenesManager.Scene.'Nazwa z enum');
     {
         MainMenu,
         Player1,

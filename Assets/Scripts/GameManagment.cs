@@ -8,16 +8,21 @@ public class GameManagment : MonoBehaviour
 {
     public static GameManagment instance;
 
-    public int gameState = 0, shipsNumber = 5, maxSize = 5, shipsLeft = 5;           // faza gry
-    private int index, shipsHit = 0, test = 0, tmp;
-    public string[,] occupiedFields, attackFields, fieldsUnderAttack;
+    public int gameState = 0, shipsNumber = 5, maxSize = 5, shipsLeft = 5;                              // gameState - faza gry, shipsNumber - ilosc statkow, maxSize - maksymalny rozmiar statku, shipsLeft - ile statkow pozostalo
+    private int index, hitShots = 0, missedShots = 0, tmp, hitFieldsIndex = 0, missFieldsIndex = 0;     // index - indeks sceny, hitShots - ilosc trafien, missedShots - iosc strzalow nietrafionych, tmp - zmienna pomocnicza
+                                                                                                        // przy sprawdzaniu trafienia, hitFieldsIndex - indeks zapisu do tablicy hitFields, missFieldsIndex - indeks zapisu do
+                                                                                                        // tablicy missFields
+    public string[,] occupiedFields, attackFields, fieldsUnderAttack;                                   // occupiedFields - pola zajmowanie przez statki, attackFields - pola ktore gracz chce atakowac, fieldsUnderAttack -
+                                                                                                        // pola gracza atakowane przez przeciwnika
     private string field;
     private string[] hitFields, missFields;
+    private float[] particlePosition;
     public bool animationPlaying;
 
-    public GameObject pancernik, niszczyciel, ciezkiKrazownik, korweta, lekkiKrazownik, hitParticleHolder, missParticleHolder;
-    private GameObject pancernik1, niszczyciel1, ciezkiKrazownik1, korweta1, lekkiKrazownik1;
-    private GameObject[] hitParticleHolder1, missParticleHolder1;
+    public GameObject pancernik, niszczyciel, ciezkiKrazownik, korweta, lekkiKrazownik, mapa;
+    public ParticleSystem hitParticleHolder, missParticleHolder;
+    private GameObject pancernik1, niszczyciel1, ciezkiKrazownik1, korweta1, lekkiKrazownik1, mapa1;
+    private ParticleSystem[] hitParticleHolder1, missParticleHolder1;
     private Pancernik pancernikComponent1;
     private Niszczyciel niszczycielComponent1;
     private CiezkiKrazownik ciezkiKrazownikComponent1;
@@ -31,6 +36,8 @@ public class GameManagment : MonoBehaviour
         instance = this;
         index = SceneManager.GetActiveScene().buildIndex;
         animationPlaying = true;
+        hitFields = new string[shipsNumber];
+        missFields = new string[shipsNumber];
 
         // inicjalizacja statkow
 
@@ -143,8 +150,6 @@ public class GameManagment : MonoBehaviour
             for (int k = 0; k < fieldsUnderAttack.Length; k++)
             {
                 field = fieldsUnderAttack[k, 0];
-                if (field != "")
-                    test += 1;
                 tmp = 0;
                 
                 // przechodzimy po wszystkich polach zajmowanych przez statki
@@ -156,21 +161,24 @@ public class GameManagment : MonoBehaviour
                         if (field != "" && field == occupiedFields[i, j])
                         {
                             TakeDamage(i);
-                            shipsHit += 1;
+                            hitShots++;
+                            hitFields[hitFieldsIndex++] = field;
                             PlayerPrefs.SetInt("Znacznik2" + index + k, 1);
                             tmp = 1;
                         }
                     }
-                    if (tmp == 0)
-                    {
-                        PlayerPrefs.SetInt("Znacznik2" + index + k, 0);
-                    }
+                }
+                if (tmp == 0 && field != "")
+                {
+                    PlayerPrefs.SetInt("Znacznik2" + index + k, 0);
+                    missedShots++;
+                    missFields[missFieldsIndex++] = field;
                 }
             }
             // zapis hp statkow
             SaveHP();
-            hitParticleHolder1 = new GameObject[shipsHit];
-            missParticleHolder1 = new GameObject[test - shipsHit];
+            hitParticleHolder1 = new ParticleSystem[hitShots];
+            missParticleHolder1 = new ParticleSystem[missedShots];
             // zaczecie animacji ostrzalu
             StartCoroutine(StartAnimation());
         }
@@ -236,15 +244,21 @@ public class GameManagment : MonoBehaviour
     IEnumerator StartAnimation()
     {
         //Debug.Log("start");
-        for (int i = 0; i < shipsHit; i++)
+        for (int i = 0; i < hitShots; i++)
         {
+            particlePosition = Functions.instance.FieldToWorldPosition(hitFields[i]);
             hitParticleHolder1[i] = Instantiate(hitParticleHolder);
-            yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
+            hitParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 1.5f, particlePosition[1]);
+            hitParticleHolder1[i].Play();
+            yield return new WaitForSeconds(Random.Range(0.6f, 1.2f));
         }
-        for (int i = 0; i < test - shipsHit; i++)
+        for (int i = 0; i < missedShots; i++)
         {
+            particlePosition = Functions.instance.FieldToWorldPosition(missFields[i]);
             missParticleHolder1[i] = Instantiate(missParticleHolder);
-            yield return new WaitForSeconds(Random.Range(0.2f, 0.5f));
+            missParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 0, particlePosition[1]);
+            missParticleHolder1[i].Play();
+            yield return new WaitForSeconds(Random.Range(0.6f, 1.2f));
         }
 
         //Debug.Log("koniec");
@@ -258,6 +272,20 @@ public class GameManagment : MonoBehaviour
             PlayerPrefs.SetInt("gameState3", gameState);
             Debug.Log("KONIEC GRY");
         }
+    }
+
+    public void EndAnimationStarter()
+    {
+        animationPlaying = true;
+        mapa1 = Instantiate(mapa);
+        StartCoroutine(EndAnimation());
+    }
+
+    IEnumerator EndAnimation()
+    {
+
+        yield return new WaitForSeconds(2f);
+        ScenesManager.instance.EndTurn();
     }
 
     // zapis hp statkow do player prefsow

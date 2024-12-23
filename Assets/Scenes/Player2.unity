@@ -435,8 +435,9 @@ MonoBehaviour:
   ciezkiKrazownik: {fileID: 478419043020890573, guid: e49b2d9d9a13a704780b6ed472ab5429, type: 3}
   korweta: {fileID: 852160811187606189, guid: 460fcf4795144bf40ad8855af187db7f, type: 3}
   lekkiKrazownik: {fileID: 852160811187606189, guid: a9c79f0682b6c6e4abbdd8327a921d5e, type: 3}
-  hitParticleHolder: {fileID: 8888728967274647327, guid: ebb01e49cd252fe448f312bc1a8248af, type: 3}
-  missParticleHolder: {fileID: 8888728967274647327, guid: 656dc64c68d8f3047bda64779fa096e1, type: 3}
+  mapa: {fileID: 5804287970053686005, guid: f0cd53bb3044dcf4193fda6e3ac98c54, type: 3}
+  hitParticleHolder: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
+  missParticleHolder: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa, type: 3}
   zniszczony: {fileID: 2100000, guid: 2ba30d0a99424aa429c1e46020cbf9ee, type: 2}
 --- !u!114 &41379272
 MonoBehaviour:
