@@ -21,7 +21,7 @@ public class Movement : MonoBehaviour
         reyCastSelecter = GetComponent<ReyCastSelecter>();
     }
 
-    public bool MoveForward(int movesUsed, Transform lastSelected, Dictionary<string, int> shipsID)
+    public bool MoveForward(int movesLeft, Transform lastSelected, Dictionary<string, int> shipsID)
     {
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         shipRotationInt = (int)shipRotation;
@@ -101,13 +101,13 @@ public class Movement : MonoBehaviour
 
         // Uruchom korutyne do plynnego ruchu
 
-        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, movesUsed + 1));
+        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, movesLeft - 1));
         return true;
     }
 
 
 
-public bool MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID)
+public bool MoveBackward(int movesLeft, Transform lastSelected, Dictionary<string, int> shipsID)
     {
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         shipRotationInt = (int) shipRotation;
@@ -189,11 +189,11 @@ public bool MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         }
 
         // Uruchom korutyne do plynnego ruchu
-        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, 2));
+        StartCoroutine(MoveObjectSmoothly(lastSelected, lastSelected.position, lastSelected.position + movement, 0.5f, movesLeft - 2));
         return true;
     }
 
-    private IEnumerator MoveObjectSmoothly(Transform target, Vector3 start, Vector3 end, float duration, int usedMovesFunction)
+    private IEnumerator MoveObjectSmoothly(Transform target, Vector3 start, Vector3 end, float duration, int movesLeftFunct)
     {
         float elapsedTime = 0;
 
@@ -207,10 +207,10 @@ public bool MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         // Upewnij sie, ze koncowa pozycja jest precyzyjnie ustawiona
         target.position = end;
         isMoving = false;
-        reyCastSelecter.SaveInfo(usedMovesFunction);
+        reyCastSelecter.SaveInfo(movesLeftFunct);
     }
 
-    public bool TryRotation(char direction, Transform lastSelected, Dictionary<string, int> shipsID)       // proba dokonania rotacji statku
+    public bool TryRotation(int movesLeft, char direction, Transform lastSelected, Dictionary<string, int> shipsID)       // proba dokonania rotacji statku
     {
         nearestField = Functions.instance.FindingField(lastSelected);
 
@@ -236,7 +236,7 @@ public bool MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
         if (validPosition == 2)         // wykonanie rotacji
         {
             Rotate(direction, shipID, lastSelected);
-            reyCastSelecter.SaveInfo(2);
+            reyCastSelecter.SaveInfo(movesLeft - 2);
             return true;
         }
 
@@ -274,7 +274,7 @@ public bool MoveBackward(Transform lastSelected, Dictionary<string, int> shipsID
             {
                 GameManagment.instance.occupiedFields[shipID, i] = Functions.instance.shipFields[i];
             }
-            reyCastSelecter.SaveInfo(2);
+            reyCastSelecter.SaveInfo(movesLeft - 2);
             return true;
         }
         return false;

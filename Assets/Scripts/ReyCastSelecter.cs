@@ -12,7 +12,7 @@ public class ReyCastSelecter : MonoBehaviour
 {
     protected bool isSelected = false, movementPossible;
     public bool isAttacking = false;
-    protected int sceneIndex, validPosition, gameState, tmp, size, halfSize, movesUsed;
+    protected int sceneIndex, validPosition, gameState, tmp, size, halfSize, movesLeft;
     protected float shipRotation;
     protected string key, fieldName, selectedName;
     protected Vector3 movment;
@@ -32,15 +32,19 @@ public class ReyCastSelecter : MonoBehaviour
         GameManagment.instance.attackFields = new string[GameManagment.instance.shipsNumber, 1];
 
         // UWAGA shipsNames wypelnic w kolejnosci wartosci shipID z klas statkow
-        string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)", "CiezkiKrazownik(Clone)", "Korweta(Clone)", "LekkiKrazownik(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury PRZENIESC NA FAZE KONCOWA
+        string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)", "CiezkiKrazownik(Clone)", "Korweta(Clone)", "LekkiKrazownik(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury
 
         tmp = 0;
         foreach (string shipName in shipsNames)
         {
             key = "PossibleMovement" + shipName + sceneIndex;
-            if (PlayerPrefs.HasKey(key))
+            if (shipName != "Korweta(Clone)")
             {
-                PlayerPrefs.DeleteKey(key);
+                PlayerPrefs.SetInt(key, 2);
+            }
+            else if (shipName == "Korweta(Clone)")
+            {
+                PlayerPrefs.SetInt(key, 4);
             }
 
             shipsID[shipName] = tmp++;          // uzupelnienie slownika
@@ -71,9 +75,9 @@ public class ReyCastSelecter : MonoBehaviour
                         isSelected = true;
                         
                         selectedName = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);
-                        movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
+                        movesLeft = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
                         size = GetSize(lastSelected);
-                        InGameUI.instance.SetActive(selectedName, movesUsed, size);
+                        InGameUI.instance.SetActive(selectedName, movesLeft, size);
                     }
 
                     else if (raycastHit.transform.CompareTag("FieldMapaWyb"))
@@ -103,38 +107,38 @@ public class ReyCastSelecter : MonoBehaviour
 
             if (isSelected)
             {
-                movesUsed = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
-                if (movesUsed == 0)
+                movesLeft = PlayerPrefs.GetInt("PossibleMovement" + lastSelected.name + sceneIndex);
+                if (movesLeft >= 2)
                 {
                     if (Input.GetKeyDown(KeyCode.A))
                     {
-                        movementPossible = Movement.instance.TryRotation('A', lastSelected, shipsID);
+                        movementPossible = Movement.instance.TryRotation(movesLeft, 'A', lastSelected, shipsID);
                         if (movementPossible)
-                            InGameUI.instance.SetMovementValue(movesUsed + 2);
+                            InGameUI.instance.SetMovementValue(movesLeft - 2, lastSelected.name);
                     }
 
                     if (Input.GetKeyDown(KeyCode.D))
                     {
-                        movementPossible = Movement.instance.TryRotation('D', lastSelected, shipsID);
+                        movementPossible = Movement.instance.TryRotation(movesLeft, 'D', lastSelected, shipsID);
                         if (movementPossible)
-                            InGameUI.instance.SetMovementValue(movesUsed + 2);
+                            InGameUI.instance.SetMovementValue(movesLeft - 2, lastSelected.name);
                     }
 
                     if (Input.GetKeyDown(KeyCode.S))
                     {
-                        movementPossible = Movement.instance.MoveBackward(lastSelected, shipsID);
+                        movementPossible = Movement.instance.MoveBackward(movesLeft, lastSelected, shipsID);
                         if (movementPossible)
-                            InGameUI.instance.SetMovementValue(movesUsed + 2);
+                            InGameUI.instance.SetMovementValue(movesLeft - 2, lastSelected.name);
                     }
                 }
 
-                if (movesUsed != 2)
+                if (movesLeft > 0)
                 {
                     if (Input.GetKeyDown(KeyCode.W))
                     {
-                        movementPossible = Movement.instance.MoveForward(movesUsed, lastSelected, shipsID);
+                        movementPossible = Movement.instance.MoveForward(movesLeft, lastSelected, shipsID);
                         if (movementPossible)
-                            InGameUI.instance.SetMovementValue(movesUsed + 1);
+                            InGameUI.instance.SetMovementValue(movesLeft - 1, lastSelected.name);
                     }
                 }
 
@@ -162,9 +166,9 @@ public class ReyCastSelecter : MonoBehaviour
         }
     }
 
-    public void SaveInfo(int moveUsed)
+    public void SaveInfo(int moveLeft)
     {
-        PlayerPrefs.SetInt("PossibleMovement" + lastSelected.name + sceneIndex, moveUsed);      // zapisanie ze dany statek dokonal ruchu
+        PlayerPrefs.SetInt("PossibleMovement" + lastSelected.name + sceneIndex, moveLeft);      // zapisanie ze dany statek dokonal ruchu
         name = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);                       // 7 zeby usunac napis "(Clone)"
         shipRotation = lastSelected.transform.rotation.eulerAngles.y;
         PlayerPrefs.SetFloat(name + sceneIndex + "Rotation", shipRotation);

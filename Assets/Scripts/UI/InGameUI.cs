@@ -164,13 +164,16 @@ public class InGameUI : MonoBehaviour
         nazwa.SetText(displayName);
         displayHP = PlayerPrefs.GetInt(shipName + "HP" + index);
         hpStatku.SetText(displayHP.ToString() + " / " + shipSize.ToString());
-        SetMovementValue(movesUsed);
+        SetMovementValue(movesUsed, shipName);
     }
 
-    public void SetMovementValue(int movesUsed)
+    public void SetMovementValue(int movesLeft, string shipName)
     {
-        displayMoveUsed = 2 - movesUsed;
-        ruchyStatku.SetText(displayMoveUsed.ToString() + " / 2");
+        displayMoveUsed = movesLeft;
+        if (shipName != "Korweta" && shipName != "Korweta(Clone)")
+            ruchyStatku.SetText(displayMoveUsed.ToString() + " / 2");
+        else
+            ruchyStatku.SetText(displayMoveUsed.ToString() + " / 4");
     }
 
     // dezaktywowanie panelu z informacjami o statku
