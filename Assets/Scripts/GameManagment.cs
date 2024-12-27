@@ -9,9 +9,10 @@ public class GameManagment : MonoBehaviour
     public static GameManagment instance;
 
     public int gameState = 0, shipsNumber = 5, maxSize = 5, shipsLeft = 5;                              // gameState - faza gry, shipsNumber - ilosc statkow, maxSize - maksymalny rozmiar statku, shipsLeft - ile statkow pozostalo
-    private int index, hitShots = 0, missedShots = 0, tmp, hitFieldsIndex = 0, missFieldsIndex = 0;     // index - indeks sceny, hitShots - ilosc trafien, missedShots - iosc strzalow nietrafionych, tmp - zmienna pomocnicza
+    private int index, hitShots = 0, missedShots = 0, tmp, hitFieldsIndex = 0, missFieldsIndex = 0, isHit;     
+                                                                                                        // index - indeks sceny, hitShots - ilosc trafien, missedShots - iosc strzalow nietrafionych, tmp - zmienna pomocnicza
                                                                                                         // przy sprawdzaniu trafienia, hitFieldsIndex - indeks zapisu do tablicy hitFields, missFieldsIndex - indeks zapisu do
-                                                                                                        // tablicy missFields
+                                                                                                        // tablicy missFields, isHit - czy pancernik zostal trafiony
     public string[,] occupiedFields, enemyOccupiedFields, attackFields, fieldsUnderAttack, destroyedFields, enemyDestroyedFields;
                                                                                                         // occupiedFields - pola zajmowanie przez statki, attackFields - pola ktore gracz chce atakowac, fieldsUnderAttack -
                                                                                                         // pola gracza atakowane przez przeciwnika, destroyedFields - pola zajmowane przez zniszczone statki
@@ -106,35 +107,35 @@ public class GameManagment : MonoBehaviour
             shipsLeft = PlayerPrefs.GetInt("ShipsLeft" + index);
 
             pancernikComponent1.hp = PlayerPrefs.GetInt("PancernikHP" + index);
-            if (pancernikComponent1.hp == 0)
+            if (pancernikComponent1.hp <= 0)
             {
                 pancernik1.transform.tag = "Destroyed";
                 var renderer = pancernik1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
             niszczycielComponent1.hp = PlayerPrefs.GetInt("NiszczycielHP" + index);
-            if (niszczycielComponent1.hp == 0)
+            if (niszczycielComponent1.hp <= 0)
             {
                 niszczyciel1.transform.tag = "Destroyed";
                 var renderer = niszczyciel1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
             ciezkiKrazownikComponent1.hp = PlayerPrefs.GetInt("CiezkiKrazownikHP" + index);
-            if (ciezkiKrazownikComponent1.hp == 0)
+            if (ciezkiKrazownikComponent1.hp <= 0)
             {
                 ciezkiKrazownik1.transform.tag = "Destroyed";
                 var renderer = ciezkiKrazownik1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
             korwetaComponent1.hp = PlayerPrefs.GetInt("KorwetaHP" + index);
-            if (korwetaComponent1.hp == 0)
+            if (korwetaComponent1.hp <= 0)
             {
                 korweta1.transform.tag = "Destroyed";
                 var renderer = korweta1.GetComponent<Renderer>();
                 renderer.material = zniszczony;
             }
             lekkiKrazownikComponent1.hp = PlayerPrefs.GetInt("LekkiKrazownikHP" + index);
-            if (lekkiKrazownikComponent1.hp == 0)
+            if (lekkiKrazownikComponent1.hp <= 0)
             {
                 lekkiKrazownik1.transform.tag = "Destroyed";
                 var renderer = lekkiKrazownik1.GetComponent<Renderer>();
@@ -199,7 +200,11 @@ public class GameManagment : MonoBehaviour
         switch(shipID)
         {
             case 0:
-                pancernikComponent1.hp -= 1;
+                isHit = Random.Range(0, 100);
+                if (isHit < 70)
+                {
+                    pancernikComponent1.hp -= 1;
+                }
                 if (pancernikComponent1.hp <= 0)
                 {
                     pancernik1.transform.tag = "Destroyed";

@@ -34,7 +34,6 @@ public class Attack : MonoBehaviour
     public void Attacking()
     {
         mapa1 = Instantiate(mapa);
-        reyCastSelecter.isAttacking = true;
         for (int i = 0; i < shipsNumber; i++)
         {
             if (PlayerPrefs.HasKey("ZnacznikiX" + indeks + i))
@@ -86,35 +85,23 @@ public class Attack : MonoBehaviour
         }
         mapa1 = null;
         reyCastSelecter.isAttacking = false;
+        reyCastSelecter.isUsingAbility = false;
     }
 
     public void ChooseAttackField(string fieldName, Transform lastSelected, Dictionary<string, int> shipsID, Vector3 position)
     {
         string name = lastSelected.name;
         shipsID.TryGetValue(name, out int shipID);
-        if(GameManagment.instance.attackFields[shipID, 0] == null)
+        if (GameManagment.instance.attackFields[shipID, 0] == null)
         {
             znaczniki[shipID] = Instantiate(znacznik);
         }
-        
+
         if (!positions.Contains(position))
         {
             znaczniki[shipID].transform.position = position;
             positions[shipID] = position;
             GameManagment.instance.attackFields[shipID, 0] = fieldName;
-        }
-    }
-
-    public void MarkFields()
-    {
-        for (int i = 0; i < shipsNumber; i++)
-        {
-            if (PlayerPrefs.HasKey("ZnacznikiX" + indeks + i))
-            {
-                Vector3 pos = new Vector3(PlayerPrefs.GetFloat("ZnacznikiX" + indeks + i), PlayerPrefs.GetFloat("ZnacznikiY" + indeks + i), PlayerPrefs.GetFloat("ZnacznikiZ" + indeks + i));
-                znaczniki2[i] = Instantiate(znacznik2);
-                znaczniki2[i].transform.position = pos;
-            }
         }
     }
 }

@@ -11,7 +11,7 @@ using System;
 public class ReyCastSelecter : MonoBehaviour
 {
     protected bool isSelected = false, movementPossible;
-    public bool isAttacking = false;
+    public bool isAttacking = false, isUsingAbility = false;
     protected int sceneIndex, validPosition, gameState, tmp, size, halfSize, movesLeft;
     protected float shipRotation;
     protected string key, fieldName, selectedName;
@@ -21,6 +21,8 @@ public class ReyCastSelecter : MonoBehaviour
     protected Collider[] childColliders;
     protected Collider[] childFieldColliders;   // lista wlasciwych colliderow odpowiadajacych za rozmiar
     private Transform lastSelected;
+
+    private Pancernik pancernik;
 
     Dictionary<string, int> shipsID = new Dictionary<string, int>();        // slownik z nazwami statkow i odpowiadajacymi im indeksami
 
@@ -82,7 +84,10 @@ public class ReyCastSelecter : MonoBehaviour
 
                     else if (raycastHit.transform.CompareTag("FieldMapaWyb"))
                     {
-                        Attack.instance.ChooseAttackField(raycastHit.transform.name, lastSelected, shipsID, raycastHit.transform.position);
+                        if (isAttacking)
+                            Attack.instance.ChooseAttackField(raycastHit.transform.name, lastSelected, shipsID, raycastHit.transform.position);
+                        else if (isUsingAbility)
+                            pancernik.UsingAbility(raycastHit.transform.position);
                     }
 
                     else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
@@ -117,14 +122,14 @@ public class ReyCastSelecter : MonoBehaviour
                             InGameUI.instance.SetMovementValue(movesLeft - 2, lastSelected.name);
                     }
 
-                    if (Input.GetKeyDown(KeyCode.D))
+                    else if (Input.GetKeyDown(KeyCode.D))
                     {
                         movementPossible = Movement.instance.TryRotation(movesLeft, 'D', lastSelected, shipsID);
                         if (movementPossible)
                             InGameUI.instance.SetMovementValue(movesLeft - 2, lastSelected.name);
                     }
 
-                    if (Input.GetKeyDown(KeyCode.S))
+                    else if (Input.GetKeyDown(KeyCode.S))
                     {
                         movementPossible = Movement.instance.MoveBackward(movesLeft, lastSelected, shipsID);
                         if (movementPossible)
@@ -142,15 +147,38 @@ public class ReyCastSelecter : MonoBehaviour
                     }
                 }
 
-                if (Input.GetKeyDown(KeyCode.E) && isAttacking == false)
+                if (Input.GetKeyDown(KeyCode.E) && !isAttacking && !isUsingAbility)
                 {
+                    isAttacking = true;
                     Attack.instance.Attacking();
                 }
 
-                else if (Input.GetKeyDown(KeyCode.E) && isAttacking == true)
+                else if (Input.GetKeyDown(KeyCode.E) && isAttacking)
                 {
+                   isAttacking = false;
                     Attack.instance.QuitAttacking();
                 }
+
+                else if (Input.GetKeyDown(KeyCode.Space) && !isUsingAbility && !isAttacking)
+                {
+                    if (lastSelected.name == "Pancernik(Clone)")
+                    {
+                        isUsingAbility = true;
+                        pancernik = lastSelected.GetComponent<Pancernik>();
+                        pancernik.Ability();
+                    }
+                }
+
+                else if (Input.GetKeyDown(KeyCode.Space) && isUsingAbility)
+                {
+                    if (lastSelected.name == "Pancernik(Clone)")
+                    {
+                        isUsingAbility = false;
+                        pancernik = lastSelected.GetComponent<Pancernik>();
+                        pancernik.StopAbility();
+                    }
+                }
+
             }
             // do debugowania POZNIEJ USUNAC
             if (Input.GetKeyDown(KeyCode.P))
