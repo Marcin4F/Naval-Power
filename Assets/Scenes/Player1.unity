@@ -469,6 +469,7 @@ MonoBehaviour:
   znacznik: {fileID: 3878178356251599098, guid: d26c6782736905342860755f2e006204, type: 3}
   znacznik2: {fileID: 3878178356251599098, guid: 71da48b0c6be83d46a9aeb2f8abd816b, type: 3}
   znacznik3: {fileID: 3878178356251599098, guid: 2a0e8fbf406f78e4ab7ec8fc548b976e, type: 3}
+  znacznikZniszczonych: {fileID: 3878178356251599098, guid: 4355f082cb8de694ba6ac1b66e1ae96a, type: 3}
 --- !u!114 &41379274
 MonoBehaviour:
   m_ObjectHideFlags: 0

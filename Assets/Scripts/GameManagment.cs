@@ -12,9 +12,10 @@ public class GameManagment : MonoBehaviour
     private int index, hitShots = 0, missedShots = 0, tmp, hitFieldsIndex = 0, missFieldsIndex = 0;     // index - indeks sceny, hitShots - ilosc trafien, missedShots - iosc strzalow nietrafionych, tmp - zmienna pomocnicza
                                                                                                         // przy sprawdzaniu trafienia, hitFieldsIndex - indeks zapisu do tablicy hitFields, missFieldsIndex - indeks zapisu do
                                                                                                         // tablicy missFields
-    public string[,] occupiedFields, enemyOccupiedFields, attackFields, fieldsUnderAttack;              // occupiedFields - pola zajmowanie przez statki, attackFields - pola ktore gracz chce atakowac, fieldsUnderAttack -
-                                                                                                        // pola gracza atakowane przez przeciwnika
-    private string field;
+    public string[,] occupiedFields, enemyOccupiedFields, attackFields, fieldsUnderAttack, destroyedFields, enemyDestroyedFields;
+                                                                                                        // occupiedFields - pola zajmowanie przez statki, attackFields - pola ktore gracz chce atakowac, fieldsUnderAttack -
+                                                                                                        // pola gracza atakowane przez przeciwnika, destroyedFields - pola zajmowane przez zniszczone statki
+    private string field, destroyedFieldsString;
     private string[] hitFields, missFields;
     private float[] particlePosition;
     public bool animationPlaying;
@@ -38,6 +39,7 @@ public class GameManagment : MonoBehaviour
         animationPlaying = true;
         hitFields = new string[shipsNumber];
         missFields = new string[shipsNumber];
+
 
         // inicjalizacja statkow
 
@@ -92,12 +94,15 @@ public class GameManagment : MonoBehaviour
         if (gameState == 0)
         {
             PlayerPrefs.SetInt("gameState" + index, 1);
+
+            PlayerPrefs.SetString("AttackedFields" + index, " ");
             SaveHP();
         }
         else if (gameState == 1)
         {
             // wczytanie pozycji statkow oraz sprawdzenie czy statki otrzymaly obrazenia
             occupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions" + index), maxSize);
+            destroyedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("DestroyedFields" + index), maxSize);
             shipsLeft = PlayerPrefs.GetInt("ShipsLeft" + index);
 
             pancernikComponent1.hp = PlayerPrefs.GetInt("PancernikHP" + index);
@@ -140,10 +145,13 @@ public class GameManagment : MonoBehaviour
             if (index == 1)
             {
                 fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields3"), 1);
+                enemyDestroyedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("DestroyedFields3"), maxSize);
             }
             else if (index == 3)
             {
                 fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields1"), 1);
+                enemyDestroyedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("DestroyedFields1"), maxSize);
+
             }
 
             // sprawdzenie czy przeciwnik trafil, przechodzimy po wszystkich atakowanych polach
@@ -177,6 +185,8 @@ public class GameManagment : MonoBehaviour
             }
             // zapis hp statkow
             SaveHP();
+            destroyedFieldsString = Functions.instance.ArrayToString(destroyedFields, maxSize);
+            PlayerPrefs.SetString("DestroyedFields" + index, destroyedFieldsString);
             hitParticleHolder1 = new ParticleSystem[hitShots];
             missParticleHolder1 = new ParticleSystem[missedShots];
             // zaczecie animacji ostrzalu
@@ -196,6 +206,10 @@ public class GameManagment : MonoBehaviour
                     shipsLeft -= 1;
                     var renderer = pancernik1.GetComponent<Renderer>();
                     renderer.material = zniszczony;
+                    for (int i = 0; i < maxSize; i++)
+                    {
+                        destroyedFields[0, i] = occupiedFields[0, i];
+                    }
                 }
                 break;
             case 1:
@@ -206,6 +220,10 @@ public class GameManagment : MonoBehaviour
                     shipsLeft -= 1;
                     var renderer = niszczyciel1.GetComponent<Renderer>();
                     renderer.material = zniszczony;
+                    for (int i = 0; i < maxSize; i++)
+                    {
+                        destroyedFields[1, i] = occupiedFields[1, i];
+                    }
                 }
                 break;
             case 2:
@@ -216,6 +234,10 @@ public class GameManagment : MonoBehaviour
                     shipsLeft -= 1;
                     var renderer = ciezkiKrazownik1.GetComponent<Renderer>();
                     renderer.material = zniszczony;
+                    for (int i = 0; i < maxSize; i++)
+                    {
+                        destroyedFields[2, i] = occupiedFields[2, i];
+                    }
                 }
                 break;
             case 3:
@@ -226,6 +248,10 @@ public class GameManagment : MonoBehaviour
                     shipsLeft -= 1;
                     var renderer = korweta1.GetComponent<Renderer>();
                     renderer.material = zniszczony;
+                    for (int i = 0; i < maxSize; i++)
+                    {
+                        destroyedFields[3, i] = occupiedFields[3, i];
+                    }
                 }
                 break;
             case 4:
@@ -236,6 +262,10 @@ public class GameManagment : MonoBehaviour
                     shipsLeft -= 1;
                     var renderer = lekkiKrazownik1.GetComponent<Renderer>();
                     renderer.material = zniszczony;
+                    for (int i = 0; i < maxSize; i++)
+                    {
+                        destroyedFields[4, i] = occupiedFields[4, i];
+                    }
                 }
                 break;
         }

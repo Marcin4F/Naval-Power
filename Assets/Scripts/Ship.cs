@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using System;
 
 public class Ship : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class Ship : MonoBehaviour
     protected Collider nearestField;
     public Vector3 lastSelectedPosition, lastSelectedRotation, offset;
 
-    protected int validPosition, rotacjaint;
+    protected int validPosition, rotacjaint, index;
     protected float rotacja, shipRotation;
     protected string nazwaPola;
     protected bool[] shipPlaced;
@@ -32,6 +33,7 @@ public class Ship : MonoBehaviour
     {
         childColliders = GetComponentsInChildren<Collider>();
         mainCollider = childColliders.FirstOrDefault(collider => collider.CompareTag("MainCollider"));      //uzyskanie colliderow dzieci i znalezienie MainCollider
+        index = SceneManager.GetActiveScene().buildIndex;
 
         //zapisywanie pozycji statków do pliku
         if (GameManagment.instance.gameState == 0)
@@ -40,6 +42,10 @@ public class Ship : MonoBehaviour
             PlayerPrefs.DeleteKey(name + "Z");
             PlayerPrefs.DeleteKey(name + "Rotation");
             GameManagment.instance.occupiedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
+            GameManagment.instance.destroyedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
+            GameManagment.instance.enemyDestroyedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
+            PlayerPrefs.SetString("DestroyedFields" + index, Functions.instance.ArrayToString(GameManagment.instance.destroyedFields, GameManagment.instance.maxSize));
+
             shipPlaced = new bool[GameManagment.instance.shipsNumber];
             for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
             {

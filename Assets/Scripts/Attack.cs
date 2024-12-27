@@ -10,19 +10,23 @@ public class Attack : MonoBehaviour
     public static Attack instance;
     private ReyCastSelecter reyCastSelecter;
 
-    private int shipsNumber, indeks;
+    private int shipsNumber, indeks, maxSize;
+    private float[] newPosition;
     public Vector3[] positions;
-    public GameObject mapa, znacznik, znacznik2, znacznik3; 
+    public GameObject mapa, znacznik, znacznik2, znacznik3, znacznikZniszczonych; 
     private GameObject mapa1;
     private GameObject[] znaczniki, znaczniki2;
+    private GameObject[,] znacznikiZniszczonych;
 
     void Awake()
     {
         instance = this;
         reyCastSelecter = GetComponent<ReyCastSelecter>();
         shipsNumber = GameManagment.instance.shipsNumber;
+        maxSize = GameManagment.instance.maxSize;
         znaczniki = new GameObject[shipsNumber];
         znaczniki2 = new GameObject[shipsNumber];
+        znacznikiZniszczonych = new GameObject[shipsNumber, maxSize];
         positions = new Vector3[shipsNumber];
         indeks = SceneManager.GetActiveScene().buildIndex;
     }
@@ -41,7 +45,7 @@ public class Attack : MonoBehaviour
                 {
                     type = PlayerPrefs.GetInt("Znacznik2" + 3 + i);
                 }
-                else if (i == 3)
+                else
                 {
                     type = PlayerPrefs.GetInt("Znacznik2" + 1 + i);
                 }
@@ -56,6 +60,15 @@ public class Attack : MonoBehaviour
                 znaczniki[i] = Instantiate(znacznik);
                 znaczniki[i].transform.position = positions[i];
             }
+            if (GameManagment.instance.enemyDestroyedFields[i, 0] != "")
+            {
+                for(int j = 0; j < maxSize; j++)
+                {
+                    newPosition = Functions.instance.FieldToWorldPosition(GameManagment.instance.enemyDestroyedFields[i,j]);
+                    znacznikiZniszczonych[i, j] = Instantiate(znacznikZniszczonych);
+                    znacznikiZniszczonych[i, j].transform.position = new Vector3(newPosition[0], 1.65f, newPosition[1]);
+                }
+            }
         }
     }
 
@@ -66,6 +79,10 @@ public class Attack : MonoBehaviour
         {
             Destroy(znaczniki[i]);
             Destroy(znaczniki2[i]);
+            for (int j = 0; j < maxSize; j++)
+            {
+                Destroy(znacznikiZniszczonych[i, j]);
+            }
         }
         mapa1 = null;
         reyCastSelecter.isAttacking = false;

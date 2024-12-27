@@ -64,14 +64,14 @@ public class ReyCastSelecter : MonoBehaviour
                     {
                         if (lastSelected != null)                   // odznaczenie ostatnio wybranego statku
                         {
-                            lastSelected.Translate(0, -1, 0);
+                            lastSelected.Translate(0, -0.5f, 0);
                             isSelected = false;
                             Attack.instance.QuitAttacking();
                             InGameUI.instance.DeActive();
                         }
                         var rayPos = raycastHit.transform;      // uzyskanie pozycji statku
                         lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
-                        rayPos.Translate(0, 1, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
+                        rayPos.Translate(0, 0.5f, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
                         isSelected = true;
                         
                         selectedName = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);
@@ -87,7 +87,7 @@ public class ReyCastSelecter : MonoBehaviour
 
                     else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
                     {
-                        lastSelected.Translate(0, -1, 0);
+                        lastSelected.Translate(0, -0.5f, 0);
                         lastSelected = null;
                         isSelected = false;
                         Attack.instance.QuitAttacking();
@@ -97,7 +97,7 @@ public class ReyCastSelecter : MonoBehaviour
 
                 else if (lastSelected != null)               // jezeli promien w nic nie trafil odznaczamy ostatnio wybrany statek
                 {
-                    lastSelected.Translate(0, -1, 0);
+                    lastSelected.Translate(0, -0.5f, 0);
                     lastSelected = null;
                     isSelected = false;
                     Attack.instance.QuitAttacking();

@@ -136,15 +136,21 @@ public class Functions : MonoBehaviour
     {
         float xPosition = -8.5f, zPosition = 7.5f;
         float[] returnValue = new float[2];
-        char litera = field[0];
-        int numer = int.Parse(field.Substring(1));
+        if (field != null && field != "")
+        {
+            char litera = field[0];
+            int numer = int.Parse(field.Substring(1));
 
-        xPosition += numer;
-        zPosition = zPosition + 65 - (int)litera;
+            xPosition += numer;
+            zPosition = zPosition + 65 - (int)litera;
 
-        returnValue[0] = xPosition;
-        returnValue[1] = zPosition;
-
-        return returnValue;
+            returnValue[0] = xPosition;
+            returnValue[1] = zPosition;
+            return returnValue;
+        }
+        else
+        {
+            return returnValue;
+        }
     }
 }
