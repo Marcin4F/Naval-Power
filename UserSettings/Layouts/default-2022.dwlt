@@ -118,7 +118,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 99
+  controlID: 42
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 100
+  controlID: 43
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -438,7 +438,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 24fbffff
+      m_ExpandedIDs: a229f8ff383df8ff00affbffd2e3fdff520bffff3c2affff30fbffffee590000bc5a00005a670400
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -948,9 +948,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.23659, y: -72.778404, z: 67.910515}
+    m_Target: {x: 742.3076, y: 511.97568, z: 1359.5835}
     speed: 2
-    m_Value: {x: -4.23659, y: -72.778404, z: 67.910515}
+    m_Value: {x: 742.3076, y: 511.97568, z: 1359.5835}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -996,13 +996,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.40189248, y: 0.033098992, z: -0.014525508, w: -0.9150154}
+    m_Target: {x: -0.01030663, y: -0.09420694, z: 0.00097353355, w: -0.9955396}
     speed: 2
-    m_Value: {x: -0.40187696, y: 0.033097714, z: -0.014524947, w: -0.91498005}
+    m_Value: {x: -0.010306211, y: -0.09420311, z: 0.00097349397, w: -0.99549913}
   m_Size:
-    m_Target: 52.114708
+    m_Target: 1197.9485
     speed: 2
-    m_Value: 52.114708
+    m_Value: 1197.9485
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1072,7 +1072,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Particles
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1080,16 +1080,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Particles
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\studia\semestr 3\Programowanie obiektowe\Statki 2.0
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 12}
-    m_SelectedIDs: 60750000
-    m_LastClickedID: 30048
-    m_ExpandedIDs: 00000000507500005875000000ca9a3b
+    m_SelectedIDs: 62750000
+    m_LastClickedID: 30050
+    m_ExpandedIDs: 000000005c75000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1144,7 +1144,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

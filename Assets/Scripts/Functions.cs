@@ -6,9 +6,14 @@ using JetBrains.Annotations;
 
 public class Functions : MonoBehaviour
 {
-    public string[] shipFields;
     public static Functions instance;
+
     private int shipsNumber, maxSize;
+    public string[] shipFields;
+    private float[] particlePosition;
+
+    public ParticleSystem hitParticleHolder, missParticleHolder;
+    private ParticleSystem[] hitParticleHolder1, missParticleHolder1, attackHitParticle1, attackMissParticle1;
 
     private void Awake()
     {
@@ -99,10 +104,10 @@ public class Functions : MonoBehaviour
         return nearestField;
     }
 
-    public string ArrayToString(string[,] array, int size2)        // zamiana tablicy na zmienna string. Znak ';' oddziela pola danego wiersza, znak '?' oddziela kolejne wiersze
+    public string ArrayToString(string[,] array, int size1, int size2)        // zamiana tablicy na zmienna string. Znak ';' oddziela pola danego wiersza, znak '?' oddziela kolejne wiersze
     {
         string changed = "";
-        for (int i = 0; i < shipsNumber; i++)
+        for (int i = 0; i < size1; i++)
         {
             for (int j = 0; j < size2; j++)
             {
@@ -114,13 +119,13 @@ public class Functions : MonoBehaviour
         return changed;
     }
 
-    public string[,] StringToArray(string changed, int size2)      // zamiana zmiennej string na tablice
+    public string[,] StringToArray(string changed, int size1, int size2)      // zamiana zmiennej string na tablice
     {
         string[,] array;
-        array = new string[shipsNumber, size2];
+        array = new string[size1, size2];
         string[] tmp = changed.Split('?');
 
-        for(int i = 0; i < shipsNumber; i++)
+        for(int i = 0; i < size1; i++)
         {
             string[] tmp2 = tmp[i].Split(';');
             for (int j = 0; j < size2; j++)
@@ -153,4 +158,83 @@ public class Functions : MonoBehaviour
             return returnValue;
         }
     }
+
+
+    // NIE DZIALA
+    /*public IEnumerator EndAnimation()
+    {
+        int tmp;
+        string field;
+        
+
+        for (int i = 0; i < GameManagment.instance.attackFields.Length; i++)
+        {
+            field = GameManagment.instance.attackFields[i, 0];
+            tmp = 0;
+
+            if (field != "" && field != null)
+            {
+                for (int j = 0; j < shipsNumber; j++)
+                {
+                    for (int k = 0; k < maxSize; k++)
+                    {
+                        if (field == GameManagment.instance.enemyOccupiedFields[j, k])
+                        {
+                            tmp = 1;
+                            particlePosition = FieldToWorldPosition(field);
+                            attackHitParticle1[i] = Instantiate(hitParticleHolder);
+                            attackHitParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                            attackHitParticle1[i].Play();
+                            yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                        }
+                    }
+                }
+                if (tmp == 0)
+                {
+                    particlePosition = FieldToWorldPosition(field);
+                    attackMissParticle1[i] = Instantiate(missParticleHolder);
+
+                    attackMissParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                    attackMissParticle1[i].Play();
+                    yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                }
+            }
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            field = GameManagment.instance.pancernikAbilityFields[i];
+            tmp = 0;
+            if (field == null || field == "")
+                break;
+            else
+            {
+                for (int j = 0; j < shipsNumber; j++)
+                {
+                    for (int k = 0; k < maxSize; k++)
+                    {
+                        if (field == GameManagment.instance.enemyOccupiedFields[j, k])
+                        {
+                            tmp = 1;
+                            particlePosition = FieldToWorldPosition(field);
+                            attackHitParticle1[i] = Instantiate(hitParticleHolder);
+                            attackHitParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                            attackHitParticle1[i].Play();
+                            yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                        }
+                    }
+                }
+                if (tmp == 0)
+                {
+                    particlePosition = FieldToWorldPosition(field);
+                    attackMissParticle1[i] = Instantiate(missParticleHolder);
+
+                    attackMissParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                    attackMissParticle1[i].Play();
+                    yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                }
+            }
+        }
+        yield return new WaitForSeconds(1f);
+        ScenesManager.instance.EndTurn();
+    }*/
 }

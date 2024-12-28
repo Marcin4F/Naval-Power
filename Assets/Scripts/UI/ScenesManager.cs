@@ -8,7 +8,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
 {
     public static ScenesManager instance;           // pozwala odwolac sie do tej klasy z kazdego skryptu bez potrzeby inicjalizowania refernecji do tego skryptu
     private Attack attack;
-    private string positions, attackedFields;
+    private string positions, attackedFields, abilityFields;
 
 
     private void Awake()        // przypisanie zmiennej instance, tej klasy, czyli ScenesManager
@@ -42,16 +42,18 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
     {
         int index = SceneManager.GetActiveScene().buildIndex;
         int direction = PlayerPrefs.GetInt("Direction");
-
+        
         if (GameManagment.instance.gameState != 2)
         {
+            positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.shipsNumber, GameManagment.instance.maxSize);
+            attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, GameManagment.instance.shipsNumber, 1);
+            abilityFields = Functions.instance.ArrayToString(GameManagment.instance.abilityFields, 1, 3);
+
             if (index == 1)
             {
-                positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
                 PlayerPrefs.SetString("Positions1", positions);
-
-                attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
                 PlayerPrefs.SetString("AttackedFields1", attackedFields);
+                PlayerPrefs.SetString("AbilityFields1", abilityFields);
 
                 for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
                 {
@@ -66,11 +68,9 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
             }
             else if (index == 3)
             {
-                positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.maxSize);
                 PlayerPrefs.SetString("Positions3", positions);
-
-                attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, 1);
                 PlayerPrefs.SetString("AttackedFields3", attackedFields);
+                PlayerPrefs.SetString("AbilityFields3", abilityFields);
 
                 for (int i = 0; i < GameManagment.instance.shipsNumber; i++)
                 {

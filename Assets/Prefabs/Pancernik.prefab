@@ -339,6 +339,7 @@ MonoBehaviour:
   lastSelectedPosition: {x: 0, y: 0, z: 0}
   lastSelectedRotation: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
+  znacznik: {fileID: 3878178356251599098, guid: d26c6782736905342860755f2e006204, type: 3}
 --- !u!1 &3320062566890369672
 GameObject:
   m_ObjectHideFlags: 0

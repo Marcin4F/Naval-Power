@@ -9,16 +9,16 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
-    private int displayMoveUsed, index, displayHP, loser;
+    private int displayMoveUsed, index, displayHP, loser, cooldownValue;
     public static bool isPaused = false;
     private bool isEndTurn = true;
     public bool isDraged;
     private string displayName;
 
     public Button endTurn, continueGame, quit, options, goBack, quitGame;        // inicjalizacja przyciskow na scenie
-    public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText;
+    public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText, abilityCooldown;
 
-    public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel, shipsNamesDisplayPanel, animationBlocker;
+    public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel, shipsNamesDisplayPanel, animationBlocker, abilityPanel;
     Dictionary<string, string> names = new Dictionary<string, string>
     {
         ["Pancernik"] = "Battleship",
@@ -165,6 +165,34 @@ public class InGameUI : MonoBehaviour
         displayHP = PlayerPrefs.GetInt(shipName + "HP" + index);
         hpStatku.SetText(displayHP.ToString() + " / " + shipSize.ToString());
         SetMovementValue(movesUsed, shipName);
+
+        if (shipName == "Korweta")
+            abilityPanel.SetActive(false);
+        else
+            abilityPanel.SetActive(true);
+
+        if (shipName == "Pancernik")
+        {
+            cooldownValue = PlayerPrefs.GetInt("PancernikCooldown" + index);
+        }
+        else if (shipName == "CiezkiKrazownik")
+        {
+            cooldownValue = PlayerPrefs.GetInt("CKrazownikCooldown" + index);
+        }
+        else if (shipName == "LekkiKrazownik")
+        {
+            cooldownValue = PlayerPrefs.GetInt("LKrazownikCooldown" + index);
+        }
+        else if (shipName == "Niszczyciel")
+        {
+            cooldownValue = PlayerPrefs.GetInt("NiszczycielCooldown" + index);
+        }
+        if (cooldownValue > 0)
+            cooldownValue--;
+        if (cooldownValue == 0)
+            abilityCooldown.SetText("Ability is ready!");
+        else
+            abilityCooldown.SetText(cooldownValue.ToString());
     }
 
     public void SetMovementValue(int movesLeft, string shipName)

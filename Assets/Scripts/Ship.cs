@@ -41,10 +41,8 @@ public class Ship : MonoBehaviour
             PlayerPrefs.DeleteKey(name + "X");      // usuniecie jezeli istnialy jakies pliki o podanych nazwach z wczesniejszej gry
             PlayerPrefs.DeleteKey(name + "Z");
             PlayerPrefs.DeleteKey(name + "Rotation");
-            GameManagment.instance.occupiedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
-            GameManagment.instance.destroyedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
-            GameManagment.instance.enemyDestroyedFields = new string[GameManagment.instance.shipsNumber, GameManagment.instance.maxSize];
-            PlayerPrefs.SetString("DestroyedFields" + index, Functions.instance.ArrayToString(GameManagment.instance.destroyedFields, GameManagment.instance.maxSize));
+            
+            PlayerPrefs.SetString("DestroyedFields" + index, Functions.instance.ArrayToString(GameManagment.instance.destroyedFields, GameManagment.instance.shipsNumber, GameManagment.instance.maxSize));
 
             shipPlaced = new bool[GameManagment.instance.shipsNumber];
             for (int i = 0; i < GameManagment.instance.shipsNumber; i++)

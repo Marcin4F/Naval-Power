@@ -8,20 +8,25 @@ using UnityEngine.SceneManagement;
 public class Attack : MonoBehaviour
 {
     public static Attack instance;
-    private ReyCastSelecter reyCastSelecter;
 
     private int shipsNumber, indeks, maxSize;
     private float[] newPosition;
     public Vector3[] positions;
+
     public GameObject mapa, znacznik, znacznik2, znacznik3, znacznikZniszczonych; 
     private GameObject mapa1;
     private GameObject[] znaczniki, znaczniki2;
     private GameObject[,] znacznikiZniszczonych;
 
+    private ReyCastSelecter reyCastSelecter;
+    private Pancernik pancernik;
+
     void Awake()
     {
         instance = this;
         reyCastSelecter = GetComponent<ReyCastSelecter>();
+        pancernik = FindObjectOfType<Pancernik>();
+
         shipsNumber = GameManagment.instance.shipsNumber;
         maxSize = GameManagment.instance.maxSize;
         znaczniki = new GameObject[shipsNumber];
@@ -69,6 +74,14 @@ public class Attack : MonoBehaviour
                 }
             }
         }
+        for (int i = 0; i < 3; i++)
+        {
+            if (GameManagment.instance.abilityFields[0, i] != null)
+            {
+                pancernik.znaczniki[i] = Instantiate(znacznik);
+                pancernik.znaczniki[i].transform.position = pancernik.pancernikPositions[i];
+            }
+        }
     }
 
     public void QuitAttacking()
@@ -82,6 +95,10 @@ public class Attack : MonoBehaviour
             {
                 Destroy(znacznikiZniszczonych[i, j]);
             }
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            Destroy(pancernik.znaczniki[i]);
         }
         mapa1 = null;
         reyCastSelecter.isAttacking = false;
@@ -97,7 +114,7 @@ public class Attack : MonoBehaviour
             znaczniki[shipID] = Instantiate(znacznik);
         }
 
-        if (!positions.Contains(position))
+        if (!positions.Contains(position) && !pancernik.pancernikPositions.Contains(position))
         {
             znaczniki[shipID].transform.position = position;
             positions[shipID] = position;

@@ -2,9 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Pancernik : Ship
 {
+    private int arrayIndex = 0;
+    public int cooldown;
+    public bool abilityUsed;
+
+    public Vector3[] pancernikPositions;
+
+    public GameObject znacznik;
+    public GameObject[] znaczniki;
     public Pancernik() //konstruktor
     {
         move = 5;
@@ -14,14 +25,34 @@ public class Pancernik : Ship
         shipID = 0;
     }
 
+    private void Awake()
+    {
+        znaczniki = new GameObject[3];
+        pancernikPositions = new Vector3[3];
+        abilityUsed = false;
+        index = SceneManager.GetActiveScene().buildIndex;
+
+        cooldown = PlayerPrefs.GetInt("PancernikCooldown" + index);
+        if (cooldown > 0)
+            cooldown--;
+    }
+
     public void Ability()
     {
         Attack.instance.Attacking();
     }
 
-    public void UsingAbility(Vector3 position)
+    public void UsingAbility(string fieldName, Vector3 position)
     {
-        Debug.Log(position);
+        if(arrayIndex < 3 && !Attack.instance.positions.Contains(position) && !pancernikPositions.Contains(position))
+        {
+            znaczniki[arrayIndex] = Instantiate(znacznik);
+            znaczniki[arrayIndex].transform.position = position;
+            pancernikPositions[arrayIndex] = position;
+            GameManagment.instance.abilityFields[shipID, arrayIndex] = fieldName;
+            abilityUsed = true;
+            arrayIndex++;
+        }
     }
 
     public void StopAbility()

@@ -31,8 +31,6 @@ public class ReyCastSelecter : MonoBehaviour
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         gameState = GameManagment.instance.gameState;
 
-        GameManagment.instance.attackFields = new string[GameManagment.instance.shipsNumber, 1];
-
         // UWAGA shipsNames wypelnic w kolejnosci wartosci shipID z klas statkow
         string[] shipsNames = { "Pancernik(Clone)", "Niszczyciel(Clone)", "CiezkiKrazownik(Clone)", "Korweta(Clone)", "LekkiKrazownik(Clone)" };             // umozliwienie wykonywania rotacji na poczatku tury
 
@@ -87,7 +85,7 @@ public class ReyCastSelecter : MonoBehaviour
                         if (isAttacking)
                             Attack.instance.ChooseAttackField(raycastHit.transform.name, lastSelected, shipsID, raycastHit.transform.position);
                         else if (isUsingAbility)
-                            pancernik.UsingAbility(raycastHit.transform.position);
+                            pancernik.UsingAbility(raycastHit.transform.name, raycastHit.transform.position);
                     }
 
                     else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
@@ -159,13 +157,17 @@ public class ReyCastSelecter : MonoBehaviour
                     Attack.instance.QuitAttacking();
                 }
 
-                else if (Input.GetKeyDown(KeyCode.Space) && !isUsingAbility && !isAttacking)
+                else if (Input.GetKeyDown(KeyCode.Space) && !isUsingAbility && !isAttacking )
                 {
                     if (lastSelected.name == "Pancernik(Clone)")
                     {
-                        isUsingAbility = true;
                         pancernik = lastSelected.GetComponent<Pancernik>();
-                        pancernik.Ability();
+                        if (pancernik.cooldown == 0)
+                        {
+                            isUsingAbility = true;
+                            pancernik.Ability();
+
+                        }
                     }
                 }
 
