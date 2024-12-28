@@ -127,6 +127,11 @@ MonoBehaviour:
   lastSelectedPosition: {x: 0, y: 0, z: 0}
   lastSelectedRotation: {x: 0, y: 0, z: 0}
   offset: {x: 0, y: 0, z: 0}
+  cooldown: 0
+  abilityUsed: 0
+  lekkiKrazownikPositions: []
+  znacznik: {fileID: 3878178356251599098, guid: d26c6782736905342860755f2e006204, type: 3}
+  znaczniki: []
 --- !u!1 &3534411149102089256
 GameObject:
   m_ObjectHideFlags: 0

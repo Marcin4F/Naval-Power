@@ -20,12 +20,14 @@ public class Attack : MonoBehaviour
 
     private ReyCastSelecter reyCastSelecter;
     private Pancernik pancernik;
+    private LekkiKrazownik lekkiKrazownik;
 
     void Awake()
     {
         instance = this;
         reyCastSelecter = GetComponent<ReyCastSelecter>();
         pancernik = FindObjectOfType<Pancernik>();
+        lekkiKrazownik = FindObjectOfType<LekkiKrazownik>();
 
         shipsNumber = GameManagment.instance.shipsNumber;
         maxSize = GameManagment.instance.maxSize;
@@ -82,6 +84,14 @@ public class Attack : MonoBehaviour
                 pancernik.znaczniki[i].transform.position = pancernik.pancernikPositions[i];
             }
         }
+        for (int i = 0; i < 5; i++)
+        {
+            if (GameManagment.instance.abilityFields[1,i] != null)
+            {
+                lekkiKrazownik.znaczniki[i] = Instantiate(znacznik);
+                lekkiKrazownik.znaczniki[i].transform.position = lekkiKrazownik.lekkiKrazownikPositions[i];
+            }
+        }
     }
 
     public void QuitAttacking()
@@ -100,6 +110,10 @@ public class Attack : MonoBehaviour
         {
             Destroy(pancernik.znaczniki[i]);
         }
+        for (int i = 0; i < 5; i++)
+        {
+            Destroy(lekkiKrazownik.znaczniki[i]);
+        }
         mapa1 = null;
         reyCastSelecter.isAttacking = false;
         reyCastSelecter.isUsingAbility = false;
@@ -114,7 +128,7 @@ public class Attack : MonoBehaviour
             znaczniki[shipID] = Instantiate(znacznik);
         }
 
-        if (!positions.Contains(position) && !pancernik.pancernikPositions.Contains(position))
+        if (!positions.Contains(position) && !pancernik.pancernikPositions.Contains(position) && !lekkiKrazownik.lekkiKrazownikPositions.Contains(position))
         {
             znaczniki[shipID].transform.position = position;
             positions[shipID] = position;

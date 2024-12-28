@@ -47,7 +47,7 @@ public class ScenesManager : MonoBehaviour          // SKRYPT JEST MANAGEREM SCE
         {
             positions = Functions.instance.ArrayToString(GameManagment.instance.occupiedFields, GameManagment.instance.shipsNumber, GameManagment.instance.maxSize);
             attackedFields = Functions.instance.ArrayToString(GameManagment.instance.attackFields, GameManagment.instance.shipsNumber, 1);
-            abilityFields = Functions.instance.ArrayToString(GameManagment.instance.abilityFields, 1, 3);
+            abilityFields = Functions.instance.ArrayToString(GameManagment.instance.abilityFields, 2, 5);
 
             if (index == 1)
             {

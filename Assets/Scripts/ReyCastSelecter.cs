@@ -23,6 +23,7 @@ public class ReyCastSelecter : MonoBehaviour
     private Transform lastSelected;
 
     private Pancernik pancernik;
+    private LekkiKrazownik lekkiKrazownik;
 
     Dictionary<string, int> shipsID = new Dictionary<string, int>();        // slownik z nazwami statkow i odpowiadajacymi im indeksami
 
@@ -69,9 +70,9 @@ public class ReyCastSelecter : MonoBehaviour
                             Attack.instance.QuitAttacking();
                             InGameUI.instance.DeActive();
                         }
-                        var rayPos = raycastHit.transform;      // uzyskanie pozycji statku
-                        lastSelected = rayPos;                  // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
-                        rayPos.Translate(0, 0.5f, 0);              // podniesienie okretu (tymczasowe pokazanie wybrania)
+                        var rayPos = raycastHit.transform;          // uzyskanie pozycji statku
+                        lastSelected = rayPos;                      // zapisanie statku ktory wybralismy, by moc pozniej go odznaczyc
+                        rayPos.Translate(0, 0.5f, 0);               // podniesienie okretu (tymczasowe pokazanie wybrania)
                         isSelected = true;
                         
                         selectedName = lastSelected.name.Remove(lastSelected.name.Length - 7, 7);
@@ -85,7 +86,12 @@ public class ReyCastSelecter : MonoBehaviour
                         if (isAttacking)
                             Attack.instance.ChooseAttackField(raycastHit.transform.name, lastSelected, shipsID, raycastHit.transform.position);
                         else if (isUsingAbility)
-                            pancernik.UsingAbility(raycastHit.transform.name, raycastHit.transform.position);
+                        {
+                            if (lastSelected.name == "Pancernik(Clone)")
+                                pancernik.UsingAbility(raycastHit.transform.name, raycastHit.transform.position);
+                            else if (lastSelected.name == "LekkiKrazownik(Clone)")
+                                lekkiKrazownik.UsingAbility(raycastHit.transform.name, raycastHit.transform.position);
+                        }
                     }
 
                     else if (lastSelected != null)              // jezeli promien trafil w cos innego odznaczamy ostatnio wybrany statek
@@ -169,6 +175,16 @@ public class ReyCastSelecter : MonoBehaviour
 
                         }
                     }
+
+                    else if (lastSelected.name == "LekkiKrazownik(Clone)")
+                    {
+                        lekkiKrazownik = lastSelected.GetComponent <LekkiKrazownik>();
+                        if (lekkiKrazownik.cooldown == 0)
+                        {
+                            isUsingAbility = true;
+                            lekkiKrazownik.Ability();
+                        }
+                    }
                 }
 
                 else if (Input.GetKeyDown(KeyCode.Space) && isUsingAbility)
@@ -178,6 +194,13 @@ public class ReyCastSelecter : MonoBehaviour
                         isUsingAbility = false;
                         pancernik = lastSelected.GetComponent<Pancernik>();
                         pancernik.StopAbility();
+                    }
+
+                    else if (lastSelected.name == "LekkiKrazownik(Clone)")
+                    {
+                        isUsingAbility = false;
+                        lekkiKrazownik = lastSelected.GetComponent<LekkiKrazownik>();
+                        lekkiKrazownik.StopAbility();
                     }
                 }
 

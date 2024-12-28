@@ -49,7 +49,7 @@ public class Pancernik : Ship
             znaczniki[arrayIndex] = Instantiate(znacznik);
             znaczniki[arrayIndex].transform.position = position;
             pancernikPositions[arrayIndex] = position;
-            GameManagment.instance.abilityFields[shipID, arrayIndex] = fieldName;
+            GameManagment.instance.abilityFields[0, arrayIndex] = fieldName;
             abilityUsed = true;
             arrayIndex++;
         }

@@ -20,6 +20,7 @@ public class GameManagment : MonoBehaviour
     private string[] hitFields, missFields;
     private float[] particlePosition;
     public bool animationPlaying;
+    private bool torpedoHit;
 
     public GameObject pancernik, niszczyciel, ciezkiKrazownik, korweta, lekkiKrazownik, mapa;
     public ParticleSystem hitParticleHolder, missParticleHolder;
@@ -38,14 +39,14 @@ public class GameManagment : MonoBehaviour
         instance = this;
         index = SceneManager.GetActiveScene().buildIndex;
         animationPlaying = true;
-        hitFields = new string[shipsNumber + 3];
-        missFields = new string[shipsNumber + 3];
+        hitFields = new string[shipsNumber + 10];
+        missFields = new string[shipsNumber + 10];
 
         attackFields = new string[shipsNumber, 1];
         occupiedFields = new string[shipsNumber, maxSize];
         destroyedFields = new string[shipsNumber, maxSize];
         enemyDestroyedFields = new string[shipsNumber, maxSize];
-        abilityFields = new string[1, 3];
+        abilityFields = new string[2, 5];
 
         // inicjalizacja statkow
 
@@ -151,13 +152,13 @@ public class GameManagment : MonoBehaviour
             if (index == 1)
             {
                 fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields3"), shipsNumber, 1);
-                fieldsUnderAbility = Functions.instance.StringToArray(PlayerPrefs.GetString("AbilityFields3"), 1, 3);
+                fieldsUnderAbility = Functions.instance.StringToArray(PlayerPrefs.GetString("AbilityFields3"), 2, 5);
                 enemyDestroyedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("DestroyedFields3"), shipsNumber, maxSize);
             }
             else if (index == 3)
             {
                 fieldsUnderAttack = Functions.instance.StringToArray(PlayerPrefs.GetString("AttackedFields1"), shipsNumber, 1);
-                fieldsUnderAbility = Functions.instance.StringToArray(PlayerPrefs.GetString("AbilityFields1"), 1, 3);
+                fieldsUnderAbility = Functions.instance.StringToArray(PlayerPrefs.GetString("AbilityFields1"), 2, 5);
                 enemyDestroyedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("DestroyedFields1"), shipsNumber, maxSize);
 
             }
@@ -191,33 +192,37 @@ public class GameManagment : MonoBehaviour
                     missFields[missFieldsIndex++] = field;
                 }
             }
-            for (int k = 0; k < fieldsUnderAbility.Length; k++)
+            for (int m = 0; m < 2; m++)
             {
-                field = fieldsUnderAbility[0, k];
-                tmp = 0;
-                // przechodzimy po wszystkich polach zajmowanych przez statki
-                for (int i = 0; i < shipsNumber; i++)
+                for (int k = 0; k < 5; k++)
                 {
-                    for (int j = 0; j < maxSize; j++)
+                    field = fieldsUnderAbility[m, k];
+                    tmp = 0;
+                    // przechodzimy po wszystkich polach zajmowanych przez statki
+                    for (int i = 0; i < shipsNumber; i++)
                     {
-                        // jezeli dane pole jest zajete odpowiedni statek odnosi obrazenia
-                        if (field != "" && field == occupiedFields[i, j])
+                        for (int j = 0; j < maxSize; j++)
                         {
-                            TakeDamage(i);
-                            hitShots++;
-                            hitFields[hitFieldsIndex++] = field;
-                            PlayerPrefs.SetInt("Znacznik2" + index + k, 1);
-                            tmp = 1;
+                            // jezeli dane pole jest zajete odpowiedni statek odnosi obrazenia
+                            if (field != "" && field == occupiedFields[i, j])
+                            {
+                                TakeDamage(i);
+                                hitShots++;
+                                hitFields[hitFieldsIndex++] = field;
+                                PlayerPrefs.SetInt("Znacznik2" + index + k, 1);
+                                tmp = 1;
+                            }
                         }
                     }
+                    if (tmp == 0 && field != "")
+                    {
+                        PlayerPrefs.SetInt("Znacznik2" + index + k, 0);
+                        missedShots++;
+                        missFields[missFieldsIndex++] = field;
+                    }
                 }
-                if (tmp == 0 && field != "")
-                {
-                    PlayerPrefs.SetInt("Znacznik2" + index + k, 0);
-                    missedShots++;
-                    missFields[missFieldsIndex++] = field;
-                }
-            }    
+            }
+            
             // zapis hp statkow
             SaveHP();
             destroyedFieldsString = Functions.instance.ArrayToString(destroyedFields, shipsNumber, maxSize);
@@ -346,9 +351,10 @@ public class GameManagment : MonoBehaviour
     public void EndAnimationStarter()
     {
         animationPlaying = true;
+        torpedoHit = false;
         mapa1 = Instantiate(mapa);
-        attackHitParticle1 = new ParticleSystem[shipsNumber];
-        attackMissParticle1 = new ParticleSystem[shipsNumber];
+        attackHitParticle1 = new ParticleSystem[shipsNumber + 10];
+        attackMissParticle1 = new ParticleSystem[shipsNumber + 10];
         if (index == 1)
             enemyOccupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions3"), shipsNumber, maxSize);
         else
@@ -360,6 +366,15 @@ public class GameManagment : MonoBehaviour
         else
         {
             PlayerPrefs.SetInt("PancernikCooldown" + index, pancernikComponent1.cooldown);
+        }
+        
+        if (lekkiKrazownikComponent1.abilityUsed == true)
+        {
+            PlayerPrefs.SetInt("LekkiKrazownikCooldown" + index, 5);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("LekkiKrazownikCooldown" + index, lekkiKrazownikComponent1.cooldown);
         }
         StartCoroutine(EndAnimation());
     }
@@ -399,39 +414,47 @@ public class GameManagment : MonoBehaviour
                 }
             }
         }
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 2; i++)
         {
-            field = abilityFields[0, i];
-            tmp = 0;
-            if (field == null || field == "")
-                break;
-            else
+            for (int j = 0; j < 5; j++)
             {
-                for (int j = 0; j < shipsNumber; j++)
+                field = abilityFields[i, j];
+                tmp = 0;
+                if (field == null || field == "" || torpedoHit)
                 {
-                    for (int k = 0; k < maxSize; k++)
+                    abilityFields[i, j] = null;
+                    continue;
+                }
+                else
+                {
+                    for (int m = 0; m < shipsNumber; m++)
                     {
-                        if (field == enemyOccupiedFields[j, k])
+                        for (int n = 0; n < maxSize; n++)
                         {
-                            tmp = 1;
-                            particlePosition = Functions.instance.FieldToWorldPosition(field);
-                            attackHitParticle1[i] = Instantiate(hitParticleHolder);
-                            attackHitParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
-                            attackHitParticle1[i].Play();
-                            yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                            if (field == enemyOccupiedFields[m, n])
+                            {
+                                tmp = 1;
+                                particlePosition = Functions.instance.FieldToWorldPosition(field);
+                                attackHitParticle1[shipsNumber + i + j] = Instantiate(hitParticleHolder);
+                                attackHitParticle1[shipsNumber + i + j].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                                attackHitParticle1[shipsNumber + i + j].Play();
+                                if (i == 1)
+                                    torpedoHit = true;
+                                yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                            }
                         }
                     }
-                }
-                if (tmp == 0)
-                {
-                    particlePosition = Functions.instance.FieldToWorldPosition(field);
-                    attackMissParticle1[i] = Instantiate(missParticleHolder);
-
-                    attackMissParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
-                    attackMissParticle1[i].Play();
-                    yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                    if (tmp == 0)
+                    {
+                        particlePosition = Functions.instance.FieldToWorldPosition(field);
+                        attackMissParticle1[shipsNumber + i + j] = Instantiate(missParticleHolder);
+                        attackMissParticle1[shipsNumber + i + j].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                        attackMissParticle1[shipsNumber + i + j].Play();
+                        yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                    }
                 }
             }
+
         }
         yield return new WaitForSeconds(1f);
         ScenesManager.instance.EndTurn();

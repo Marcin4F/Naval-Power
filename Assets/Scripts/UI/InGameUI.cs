@@ -177,11 +177,11 @@ public class InGameUI : MonoBehaviour
         }
         else if (shipName == "CiezkiKrazownik")
         {
-            cooldownValue = PlayerPrefs.GetInt("CKrazownikCooldown" + index);
+            cooldownValue = PlayerPrefs.GetInt("CiezkiKrazownikCooldown" + index);
         }
         else if (shipName == "LekkiKrazownik")
         {
-            cooldownValue = PlayerPrefs.GetInt("LKrazownikCooldown" + index);
+            cooldownValue = PlayerPrefs.GetInt("LekkiKrazownikCooldown" + index);
         }
         else if (shipName == "Niszczyciel")
         {
@@ -192,7 +192,7 @@ public class InGameUI : MonoBehaviour
         if (cooldownValue == 0)
             abilityCooldown.SetText("Ability is ready!");
         else
-            abilityCooldown.SetText(cooldownValue.ToString());
+            abilityCooldown.SetText("Ready in: " + cooldownValue.ToString() + " turn(s)");
     }
 
     public void SetMovementValue(int movesLeft, string shipName)
