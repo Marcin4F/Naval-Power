@@ -57,14 +57,12 @@ public class Attack : MonoBehaviour
                 }
                 if(type == 0)
                 {
-                    Debug.Log("Pudlo " + i);
                     znaczniki2[i] = Instantiate(znacznik2);
                 }
                     
                 else
                 {
                     znaczniki2[i] = Instantiate(znacznik3);
-                    Debug.Log("Trafiony " + i);
                 }
                 znaczniki2[i].transform.position = pos;
             }

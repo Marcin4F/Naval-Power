@@ -212,8 +212,12 @@ public class GameManagment : MonoBehaviour
                                 TakeDamage(i);
                                 hitShots++;
                                 hitFields[hitFieldsIndex++] = field;
-                                PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k), 1);
-                                //Debug.Log("umiejetnosci trafiony: " + znacznikiArrayIndex);
+                                if (m == 0)
+                                    PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k), 1);
+                                else
+                                {
+                                    PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k + 2), 1);
+                                }
                                 znacznikiArrayIndex++;
                                 tmp = 1;
                             }
@@ -221,8 +225,12 @@ public class GameManagment : MonoBehaviour
                     }
                     if (tmp == 0 && field != "")
                     {
-                        PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k), 0);
-                        //Debug.Log("umiejetnosci pudlo: " + znacznikiArrayIndex);
+                        if (m == 0)
+                            PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k), 0);
+                        else
+                        {
+                            PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k + 2), 0);
+                        }
                         znacznikiArrayIndex++;
                         missedShots++;
                         missFields[missFieldsIndex++] = field;
@@ -342,7 +350,7 @@ public class GameManagment : MonoBehaviour
             hitParticleHolder1[i] = Instantiate(hitParticleHolder);
             hitParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 1.5f, particlePosition[1]);
             hitParticleHolder1[i].Play();
-            yield return new WaitForSeconds(Random.Range(0.6f, 1.2f));
+            yield return new WaitForSeconds(Random.Range(0.3f, 1f));
         }
         for (int i = 0; i < missedShots; i++)
         {
@@ -350,7 +358,7 @@ public class GameManagment : MonoBehaviour
             missParticleHolder1[i] = Instantiate(missParticleHolder);
             missParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 0, particlePosition[1]);
             missParticleHolder1[i].Play();
-            yield return new WaitForSeconds(Random.Range(0.6f, 1.2f));
+            yield return new WaitForSeconds(Random.Range(0.3f, 1f));
         }
 
         //Debug.Log("koniec");
@@ -417,7 +425,7 @@ public class GameManagment : MonoBehaviour
                             attackHitParticle1[i] = Instantiate(hitParticleHolder);
                             attackHitParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
                             attackHitParticle1[i].Play();
-                            yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                            yield return new WaitForSeconds(Random.Range(0.3f, 1f));
                         }
                     }
                 }
@@ -428,7 +436,7 @@ public class GameManagment : MonoBehaviour
                     
                     attackMissParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
                     attackMissParticle1[i].Play();
-                    yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                    yield return new WaitForSeconds(Random.Range(0.3f, 1f));
                 }
             }
         }
@@ -458,7 +466,7 @@ public class GameManagment : MonoBehaviour
                                 attackHitParticle1[shipsNumber + i + j].Play();
                                 if (i == 1)
                                     torpedoHit = true;
-                                yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                                yield return new WaitForSeconds(Random.Range(0.3f, 1f));
                             }
                         }
                     }
@@ -468,13 +476,13 @@ public class GameManagment : MonoBehaviour
                         attackMissParticle1[shipsNumber + i + j] = Instantiate(missParticleHolder);
                         attackMissParticle1[shipsNumber + i + j].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
                         attackMissParticle1[shipsNumber + i + j].Play();
-                        yield return new WaitForSeconds(Random.Range(0.4f, 1.2f));
+                        yield return new WaitForSeconds(Random.Range(0.3f, 1f));
                     }
                 }
             }
 
         }
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         ScenesManager.instance.EndTurn();
     }
 
