@@ -32,7 +32,7 @@ public class Attack : MonoBehaviour
         shipsNumber = GameManagment.instance.shipsNumber;
         maxSize = GameManagment.instance.maxSize;
         znaczniki = new GameObject[shipsNumber];
-        znaczniki2 = new GameObject[shipsNumber];
+        znaczniki2 = new GameObject[shipsNumber + 3 + 5];
         znacznikiZniszczonych = new GameObject[shipsNumber, maxSize];
         positions = new Vector3[shipsNumber];
         indeks = SceneManager.GetActiveScene().buildIndex;
@@ -41,9 +41,9 @@ public class Attack : MonoBehaviour
     public void Attacking()
     {
         mapa1 = Instantiate(mapa);
-        for (int i = 0; i < shipsNumber; i++)
+        for (int i = 0; i < shipsNumber + 3 + 5; i++)
         {
-            if (PlayerPrefs.HasKey("ZnacznikiX" + indeks + i))
+            if (PlayerPrefs.HasKey("ZnacznikiX" + indeks + i) && PlayerPrefs.GetFloat("ZnacznikiX" + indeks + i) != 0)
             {
                 Vector3 pos = new Vector3(PlayerPrefs.GetFloat("ZnacznikiX" + indeks + i), PlayerPrefs.GetFloat("ZnacznikiY" + indeks + i), PlayerPrefs.GetFloat("ZnacznikiZ" + indeks + i));
                 int type = 0;
@@ -56,17 +56,24 @@ public class Attack : MonoBehaviour
                     type = PlayerPrefs.GetInt("Znacznik2" + 1 + i);
                 }
                 if(type == 0)
+                {
+                    Debug.Log("Pudlo " + i);
                     znaczniki2[i] = Instantiate(znacznik2);
+                }
+                    
                 else
+                {
                     znaczniki2[i] = Instantiate(znacznik3);
+                    Debug.Log("Trafiony " + i);
+                }
                 znaczniki2[i].transform.position = pos;
             }
-            if (GameManagment.instance.attackFields[i, 0] != null)
+            if (i < shipsNumber && GameManagment.instance.attackFields[i, 0] != null)
             {
                 znaczniki[i] = Instantiate(znacznik);
                 znaczniki[i].transform.position = positions[i];
             }
-            if (GameManagment.instance.enemyDestroyedFields[i, 0] != "")
+            if (i < shipsNumber && GameManagment.instance.enemyDestroyedFields[i, 0] != "")
             {
                 for(int j = 0; j < maxSize; j++)
                 {
@@ -100,11 +107,14 @@ public class Attack : MonoBehaviour
         for (int i = 0; i < shipsNumber; i++)
         {
             Destroy(znaczniki[i]);
-            Destroy(znaczniki2[i]);
             for (int j = 0; j < maxSize; j++)
             {
                 Destroy(znacznikiZniszczonych[i, j]);
             }
+        }
+        for (int i = 0; i < shipsNumber + 3 + 5; i++)
+        {
+            Destroy(znaczniki2[i]);
         }
         for (int i = 0; i < 3; i++)
         {

@@ -9,7 +9,7 @@ public class GameManagment : MonoBehaviour
     public static GameManagment instance;
 
     public int gameState = 0, shipsNumber = 5, maxSize = 5, shipsLeft = 5;                              // gameState - faza gry, shipsNumber - ilosc statkow, maxSize - maksymalny rozmiar statku, shipsLeft - ile statkow pozostalo
-    private int index, hitShots = 0, missedShots = 0, tmp, hitFieldsIndex = 0, missFieldsIndex = 0, isHit;     
+    private int index, hitShots = 0, missedShots = 0, tmp, hitFieldsIndex = 0, missFieldsIndex = 0, isHit, znacznikiArrayIndex;     
                                                                                                         // index - indeks sceny, hitShots - ilosc trafien, missedShots - iosc strzalow nietrafionych, tmp - zmienna pomocnicza
                                                                                                         // przy sprawdzaniu trafienia, hitFieldsIndex - indeks zapisu do tablicy hitFields, missFieldsIndex - indeks zapisu do
                                                                                                         // tablicy missFields, isHit - czy pancernik zostal trafiony
@@ -38,6 +38,7 @@ public class GameManagment : MonoBehaviour
     {
         instance = this;
         index = SceneManager.GetActiveScene().buildIndex;
+        znacznikiArrayIndex = 0;
         animationPlaying = true;
         hitFields = new string[shipsNumber + 10];
         missFields = new string[shipsNumber + 10];
@@ -164,7 +165,7 @@ public class GameManagment : MonoBehaviour
             }
 
             // sprawdzenie czy przeciwnik trafil, przechodzimy po wszystkich atakowanych polach
-            for (int k = 0; k < fieldsUnderAttack.Length; k++)
+            for (int k = 0; k < shipsNumber; k++)
             {
                 field = fieldsUnderAttack[k, 0];
                 tmp = 0;
@@ -181,6 +182,7 @@ public class GameManagment : MonoBehaviour
                             hitShots++;
                             hitFields[hitFieldsIndex++] = field;
                             PlayerPrefs.SetInt("Znacznik2" + index + k, 1);
+                            //Debug.Log("normalne ataki trafiony: " + znacznikiArrayIndex);
                             tmp = 1;
                         }
                     }
@@ -188,6 +190,7 @@ public class GameManagment : MonoBehaviour
                 if (tmp == 0 && field != "")
                 {
                     PlayerPrefs.SetInt("Znacznik2" + index + k, 0);
+                    //Debug.Log("normalne ataki pudlo: " + znacznikiArrayIndex);
                     missedShots++;
                     missFields[missFieldsIndex++] = field;
                 }
@@ -209,20 +212,23 @@ public class GameManagment : MonoBehaviour
                                 TakeDamage(i);
                                 hitShots++;
                                 hitFields[hitFieldsIndex++] = field;
-                                PlayerPrefs.SetInt("Znacznik2" + index + k, 1);
+                                PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k), 1);
+                                //Debug.Log("umiejetnosci trafiony: " + znacznikiArrayIndex);
+                                znacznikiArrayIndex++;
                                 tmp = 1;
                             }
                         }
                     }
                     if (tmp == 0 && field != "")
                     {
-                        PlayerPrefs.SetInt("Znacznik2" + index + k, 0);
+                        PlayerPrefs.SetInt("Znacznik2" + index + (shipsNumber + m + k), 0);
+                        //Debug.Log("umiejetnosci pudlo: " + znacznikiArrayIndex);
+                        znacznikiArrayIndex++;
                         missedShots++;
                         missFields[missFieldsIndex++] = field;
                     }
                 }
             }
-            
             // zapis hp statkow
             SaveHP();
             destroyedFieldsString = Functions.instance.ArrayToString(destroyedFields, shipsNumber, maxSize);
@@ -240,11 +246,11 @@ public class GameManagment : MonoBehaviour
         {
             case 0:
                 isHit = Random.Range(0, 100);
-                if (isHit < 70)
+                if (isHit < 70 && pancernikComponent1.hp > 0)
                 {
                     pancernikComponent1.hp -= 1;
                 }
-                if (pancernikComponent1.hp <= 0)
+                if (pancernikComponent1.hp == 0)
                 {
                     pancernik1.transform.tag = "Destroyed";
                     shipsLeft -= 1;
@@ -257,8 +263,11 @@ public class GameManagment : MonoBehaviour
                 }
                 break;
             case 1:
-                niszczycielComponent1.hp -= 1;
-                if (niszczycielComponent1.hp <= 0)
+                if (niszczycielComponent1.hp > 0)
+                {
+                    niszczycielComponent1.hp -= 1;
+                }
+                if (niszczycielComponent1.hp == 0)
                 {
                     niszczyciel1.transform.tag = "Destroyed";
                     shipsLeft -= 1;
@@ -271,8 +280,11 @@ public class GameManagment : MonoBehaviour
                 }
                 break;
             case 2:
-                ciezkiKrazownikComponent1.hp -= 1;
-                if (ciezkiKrazownikComponent1.hp <= 0)
+                if (ciezkiKrazownikComponent1.hp > 0)
+                {
+                    ciezkiKrazownikComponent1.hp -= 1;
+                }
+                if (ciezkiKrazownikComponent1.hp == 0)
                 {
                     ciezkiKrazownik1.transform.tag = "Destroyed";
                     shipsLeft -= 1;
@@ -285,8 +297,11 @@ public class GameManagment : MonoBehaviour
                 }
                 break;
             case 3:
-                korwetaComponent1.hp -= 1;
-                if (korwetaComponent1.hp <= 0)
+                if (korwetaComponent1.hp > 0)
+                {
+                    korwetaComponent1.hp -= 1;
+                }
+                if (korwetaComponent1.hp == 0)
                 {
                     korweta1.transform.tag = "Destroyed";
                     shipsLeft -= 1;
@@ -299,8 +314,11 @@ public class GameManagment : MonoBehaviour
                 }
                 break;
             case 4:
-                lekkiKrazownikComponent1.hp -= 1;
-                if (lekkiKrazownikComponent1.hp <= 0)
+                if (lekkiKrazownikComponent1.hp > 0)
+                {
+                    lekkiKrazownikComponent1.hp -= 1;
+                }
+                if (lekkiKrazownikComponent1.hp == 0)
                 {
                     lekkiKrazownik1.transform.tag = "Destroyed";
                     shipsLeft -= 1;
