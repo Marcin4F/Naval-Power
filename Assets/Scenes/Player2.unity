@@ -437,7 +437,7 @@ MonoBehaviour:
   korweta: {fileID: 852160811187606189, guid: 460fcf4795144bf40ad8855af187db7f, type: 3}
   lekkiKrazownik: {fileID: 852160811187606189, guid: a9c79f0682b6c6e4abbdd8327a921d5e, type: 3}
   mapa: {fileID: 5804287970053686005, guid: f0cd53bb3044dcf4193fda6e3ac98c54, type: 3}
-  hitParticleHolder: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
+  hitParticleHolder: {fileID: 3345248989584403941, guid: 6b5e9c3dedde64240ac58831af0e3754, type: 3}
   missParticleHolder: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa, type: 3}
   zniszczony: {fileID: 2100000, guid: 2ba30d0a99424aa429c1e46020cbf9ee, type: 2}
 --- !u!114 &41379272
@@ -4019,7 +4019,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -735, y: 0}
-  m_SizeDelta: {x: -1630, y: -200}
+  m_SizeDelta: {x: -1610, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1455403339
 MonoBehaviour:
