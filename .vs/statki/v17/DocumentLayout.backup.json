@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\hq explosions pack free\\scripts\\changeeffects.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|e:\\studia\\iii semestr\\programowanie obiektowe\\projekt\\statki\\assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C539CB1-349E-E81F-AA01-7E8421A81060}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -80,7 +80,7 @@
               "RelativeDocumentMoniker": "Assets\\HQ Explosions Pack FREE\\Scripts\\changeEffects.cs",
               "ToolTip": "E:\\Studia\\III semestr\\Programowanie obiektowe\\Projekt\\statki\\Assets\\HQ Explosions Pack FREE\\Scripts\\changeEffects.cs",
               "RelativeToolTip": "Assets\\HQ Explosions Pack FREE\\Scripts\\changeEffects.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCAAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-30T18:23:11.523Z",
               "EditorCaption": ""
@@ -191,8 +191,7 @@
               "RelativeToolTip": "Assets\\Scripts\\UI\\MainMenuUI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwBQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T14:32:16.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T14:32:16.581Z"
             },
             {
               "$type": "Document",
