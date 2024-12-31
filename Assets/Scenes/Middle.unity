@@ -290,13 +290,21 @@ MonoBehaviour:
   quit: {fileID: 0}
   options: {fileID: 0}
   goBack: {fileID: 0}
+  quitGame: {fileID: 0}
   nazwa: {fileID: 0}
   hpStatku: {fileID: 0}
   ruchyStatku: {fileID: 0}
   endTurnText: {fileID: 0}
+  winnerText: {fileID: 0}
+  abilityCooldown: {fileID: 0}
   pauseMenu: {fileID: 0}
   optionsPanel: {fileID: 0}
   statekPanel: {fileID: 0}
+  gameOverPanel: {fileID: 0}
+  quitGamePanel: {fileID: 0}
+  shipsNamesDisplayPanel: {fileID: 0}
+  animationBlocker: {fileID: 0}
+  abilityPanel: {fileID: 0}
 --- !u!1 &265552694
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,11 +365,11 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.80811936, g: 0.43040225, b: 0.9811321, a: 1}
-    m_HighlightedColor: {r: 0.5252197, g: 0.1990477, b: 0.6698113, a: 1}
-    m_PressedColor: {r: 0.39930686, g: 0.088777125, b: 0.5377358, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0}
-    m_DisabledColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -400,8 +408,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a51bd2ef6f9318348ab9ddff52275d44, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -738,8 +746,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
