@@ -350,15 +350,16 @@ public class GameManagment : MonoBehaviour
             hitParticleHolder1[i] = Instantiate(hitParticleHolder);
             hitParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 1.5f, particlePosition[1]);
             hitParticleHolder1[i].Play();
-            yield return new WaitForSeconds(Random.Range(0.3f, 1f));
+            Debug.Log("a");
+            yield return new WaitForSeconds(Random.Range(0.6f, 1.3f));
         }
         for (int i = 0; i < missedShots; i++)
         {
             particlePosition = Functions.instance.FieldToWorldPosition(missFields[i]);
             missParticleHolder1[i] = Instantiate(missParticleHolder);
-            missParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 0, particlePosition[1]);
+            missParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 0.5f, particlePosition[1]);
             missParticleHolder1[i].Play();
-            yield return new WaitForSeconds(Random.Range(0.3f, 1f));
+            yield return new WaitForSeconds(1.5f);
         }
 
         //Debug.Log("koniec");
