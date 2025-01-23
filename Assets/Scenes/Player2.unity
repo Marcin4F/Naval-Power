@@ -438,7 +438,7 @@ MonoBehaviour:
   lekkiKrazownik: {fileID: 852160811187606189, guid: a9c79f0682b6c6e4abbdd8327a921d5e, type: 3}
   mapa: {fileID: 5804287970053686005, guid: f0cd53bb3044dcf4193fda6e3ac98c54, type: 3}
   hitParticleHolder: {fileID: 3345248989584403941, guid: 6b5e9c3dedde64240ac58831af0e3754, type: 3}
-  missParticleHolder: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
+  missParticleHolder: {fileID: 8765008237907035935, guid: ee1c36be32b35c844beaaec7378d2ac4, type: 3}
   zniszczony: {fileID: 2100000, guid: 2ba30d0a99424aa429c1e46020cbf9ee, type: 2}
 --- !u!114 &41379272
 MonoBehaviour:
