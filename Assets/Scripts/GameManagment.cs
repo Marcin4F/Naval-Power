@@ -424,7 +424,7 @@ public class GameManagment : MonoBehaviour
                             tmp = 1;
                             particlePosition = Functions.instance.FieldToWorldPosition(field);
                             attackHitParticle1[i] = Instantiate(hitParticleHolder);
-                            attackHitParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                            attackHitParticle1[i].transform.position = new Vector3(particlePosition[0], 1.7f, particlePosition[1]);
                             attackHitParticle1[i].Play();
                             yield return new WaitForSeconds(Random.Range(0.6f, 1.3f));
                         }
@@ -435,7 +435,7 @@ public class GameManagment : MonoBehaviour
                     particlePosition = Functions.instance.FieldToWorldPosition(field);
                     attackMissParticle1[i] = Instantiate(missParticleHolder);
                     
-                    attackMissParticle1[i].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                    attackMissParticle1[i].transform.position = new Vector3(particlePosition[0], 1.7f, particlePosition[1]);
                     attackMissParticle1[i].Play();
                     yield return new WaitForSeconds(Random.Range(0.6f, 1.3f));
                 }

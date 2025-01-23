@@ -180,23 +180,34 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Red X appear on tactical map after you have chosen a fields you want to
-    attack. With that you can see all fields your ships will target in current turn.
+  m_text: 'Red X appears on tactical map after you have chosen a fields you want
+    to attack. With that you can see all the fields your ships will target in current
+    turn.
 
+    
 
+    
 
+    
 
+    
 
-    Small
-    green X indicates successful hits in previous round, while small grey X means
-    misses.
+    Small green X indicates successful hits
+    in previous round, while small grey X means misses.
 
+    
 
+    
 
+    
 
+    
 
-    Black X indciates enemy ships that have been destroyed. Enemy
-    can no longer move his ships to those fields.'
+    Black
+    X indciates enemy ships that have been destroyed. Enemy can no longer move his
+    ships to those fields.
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3231,7 +3242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 60}
+  m_AnchoredPosition: {x: 0, y: 100}
   m_SizeDelta: {x: -1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135651611
@@ -3254,17 +3265,28 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "- Battleship can attack more than 1 field. After using ability you can
-    choose up to 3 fields. Combined with normal attack, battleship can shot at 4
-    fields.\n- Heavy Cruiser ABILITY STILL IN DEVELOPMENT Heavy cruiser has a radar.
-    After using it you will see dots indicating \r\napproximate position of enemy
-    ships (it doesn't mean that dot will appear at enemy ship's position but near
-    it). However it will make heavy cruiser visable for enemy too.\n- Light Cruiser
-    can perform a torpedo attack. After choosing a field additional 4 fields \"upwards\"
-    will be targeted.\n- Destroyer ABILITY STILL IN DEVELOPMENT It has smoke screen
-    making all nearby ships invisible for the radar.\n- Corvette doesn't have a ability
-    you can use with spacebar. However it can move 2x more fields each turn compared
-    to other ships."
+  m_text: '- A Battleship can attack more than 1 field. After using an ability you
+    can choose up to 3 fields. Combined with normal attack, a battleship can shot
+    at 4 fields. Additionally a battleship has a chance to block  damage when hit.
+
+    -
+    Heavy Cruiser ABILITY STILL IN DEVELOPMENT Heavy cruiser has a radar. After using
+    it you will see dots indicating
+
+    approximate position of enemy ships (it
+    doesn''t mean that dot will appear at enemy ship''s position but near it). However
+    it will make heavy cruiser visable for enemy too.
+
+    - Light Cruiser can perform
+    a torpedo attack. After choosing a field additional 4 fields "upwards" will be
+    targeted.
+
+    - Destroyer ABILITY STILL IN DEVELOPMENT It has a smoke screen
+    making all nearby ships invisible for the radar.
+
+    - Corvette doesn''t have
+    an ability you can use with spacebar. However it can move 2x more fields each
+    turn compared to other ships.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3990,8 +4012,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: All ships have their own ability. To use an ability press "Space" after
-    chosing a ship. Most abilities have cooldown, which means you will need to wait
-    several turns before using them again.
+    chosing a ship. Most abilities have a cooldown, which means you will need to
+    wait several turns before using them again.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5854,7 +5876,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 135}
+  m_AnchoredPosition: {x: 0, y: 170}
   m_SizeDelta: {x: -1000, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2096369791
