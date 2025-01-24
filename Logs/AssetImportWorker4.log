@@ -15,7 +15,7 @@ D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-59933
+60234
 Successfully changed project path to: D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
 D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,13 +49,13 @@ D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [27292] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 1663130513 [EditorId] 1663130513 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9388] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 3969734619 [EditorId] 3969734619 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [27292] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 1663130513 [EditorId] 1663130513 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9388] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 3969734619 [EditorId] 3969734619 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 27 workers.
 FMOD failed to set the software format to the custom sample rate 1, trying software fallback rate 48000
-Refreshing native plugins compatible for Editor in 2.77 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 3.12 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.13f1 (5f90a5ebde0f)
 [Subsystems] Discovering subsystems at path D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -73,44 +73,44 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56712
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56576
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001665 seconds.
-- Loaded All Assemblies, in  0.179 seconds
+Registered in 0.001552 seconds.
+- Loaded All Assemblies, in  0.175 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.138 seconds
-Domain Reload Profiling: 317ms
-	BeginReloadAssembly (55ms)
+- Finished resetting the current domain, in  0.137 seconds
+Domain Reload Profiling: 312ms
+	BeginReloadAssembly (53ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
 	RebuildCommonClasses (18ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (27ms)
+	RebuildNativeTypeToScriptingClass (5ms)
+	initialDomainReloadingComplete (26ms)
 	LoadAllAssembliesAndSetupDomain (73ms)
-		LoadAssemblies (55ms)
+		LoadAssemblies (53ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (72ms)
 			TypeCache.Refresh (71ms)
 				TypeCache.ScanAssembly (63ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (138ms)
+	FinalizeReload (137ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (106ms)
+		SetupLoadedEditorAssemblies (105ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (4ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
 			ProcessInitializeOnLoadAttributes (69ms)
-			ProcessInitializeOnLoadMethodAttributes (28ms)
+			ProcessInitializeOnLoadMethodAttributes (26ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -118,17 +118,17 @@ Domain Reload Profiling: 317ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.311 seconds
-Refreshing native plugins compatible for Editor in 1.33 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.308 seconds
+Refreshing native plugins compatible for Editor in 1.16 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.325 seconds
-Domain Reload Profiling: 636ms
-	BeginReloadAssembly (74ms)
+- Finished resetting the current domain, in  0.330 seconds
+Domain Reload Profiling: 639ms
+	BeginReloadAssembly (75ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
@@ -136,40 +136,71 @@ Domain Reload Profiling: 636ms
 		CreateAndSetChildDomain (11ms)
 	RebuildCommonClasses (18ms)
 	RebuildNativeTypeToScriptingClass (5ms)
-	initialDomainReloadingComplete (21ms)
-	LoadAllAssembliesAndSetupDomain (192ms)
-		LoadAssemblies (138ms)
+	initialDomainReloadingComplete (20ms)
+	LoadAllAssembliesAndSetupDomain (191ms)
+		LoadAssemblies (139ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (96ms)
+		AnalyzeDomain (94ms)
 			TypeCache.Refresh (83ms)
 				TypeCache.ScanAssembly (75ms)
 			ScanForSourceGeneratedMonoScriptInfo (8ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (325ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (331ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (245ms)
+		SetupLoadedEditorAssemblies (250ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (2ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (30ms)
-			ProcessInitializeOnLoadAttributes (198ms)
-			ProcessInitializeOnLoadMethodAttributes (11ms)
+			BeforeProcessingInitializeOnLoad (29ms)
+			ProcessInitializeOnLoadAttributes (201ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
 Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
 Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 1.23 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.06 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3214 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 38 unused Assets / (0.8 MB). Loaded Objects now: 3693.
-Memory consumption went from 221.0 MB to 220.3 MB.
-Total: 2.008200 ms (FindLiveObjects: 0.140400 ms CreateObjectMapping: 0.045600 ms MarkObjects: 1.542100 ms  DeleteObjects: 0.279100 ms)
+Memory consumption went from 221.1 MB to 220.3 MB.
+Total: 2.007200 ms (FindLiveObjects: 0.141700 ms CreateObjectMapping: 0.040300 ms MarkObjects: 1.535700 ms  DeleteObjects: 0.288300 ms)
 
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 79368.745798 seconds.
+  path: Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameBig Add.mat
+  artifactKey: Guid(4ad9452cd1004624f819e31cda3cdcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameBig Add.mat using Guid(4ad9452cd1004624f819e31cda3cdcce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91a278f7fe143df7fc850f358cca161d') in 0.058803 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Prepare
+Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
+Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
+Refreshing native plugins compatible for Editor in 1.71 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4 unused Assets / (0.7 MB). Loaded Objects now: 3735.
+Memory consumption went from 167.6 MB to 166.8 MB.
+Total: 3.070100 ms (FindLiveObjects: 0.277500 ms CreateObjectMapping: 0.079100 ms MarkObjects: 2.356800 ms  DeleteObjects: 0.355700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -185,483 +216,1134 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 76957.906801 seconds.
-  path: Assets/Materials/tla/Button_New.png
-  artifactKey: Guid(30958b4bcf5c1c84ebe3da59f082974e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/tla/Button_New.png using Guid(30958b4bcf5c1c84ebe3da59f082974e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '316f6e4862b8a79708f86a70a460c5e5') in 0.031623 seconds
+  Time since last request: 2.506517 seconds.
+  path: Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameThrower Stream.mat
+  artifactKey: Guid(fbd8df583ed218d4f9e2740e23f6f8d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameThrower Stream.mat using Guid(fbd8df583ed218d4f9e2740e23f6f8d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '974ff909885e83ee2f16a5bf9de76144') in 0.010941 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 18.023765 seconds.
-  path: Assets/Materials/tla/Button_New.png
-  artifactKey: Guid(30958b4bcf5c1c84ebe3da59f082974e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Materials/tla/Button_New.png using Guid(30958b4bcf5c1c84ebe3da59f082974e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '245f03010d637ab81744ca5fc36d8b18') in 0.034933 seconds
+  Time since last request: 0.027203 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Big Alt.prefab
+  artifactKey: Guid(e8fb3f256cf9d9e439bd069f42a5a246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Big Alt.prefab using Guid(e8fb3f256cf9d9e439bd069f42a5a246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f47c4223db716f483be1bc26693d5c0b') in 0.014280 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 186.446477 seconds.
-  path: Assets/JMO Assets/WarFX/Demo/UI Canvas/CFX Demo Btn Arrow.png
-  artifactKey: Guid(6ca93523b0317c242b05932fedb07cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets/WarFX/Demo/UI Canvas/CFX Demo Btn Arrow.png using Guid(6ca93523b0317c242b05932fedb07cb3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f1b282bc984fb8e3fb07c394695cdf') in 0.018902 seconds
+  Time since last request: 8.199540 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Big Alt Looped.prefab
+  artifactKey: Guid(4a7daf0e176b21a4b945be7a6e3ba2cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Big Alt Looped.prefab using Guid(4a7daf0e176b21a4b945be7a6e3ba2cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d1c056574d9ae37e41a64efbda9ff6d') in 0.005429 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/JMO Assets/WarFX/Demo/UI Canvas/CFX Demo Btn Ground H.png
-  artifactKey: Guid(5cc9c4a6db9a74a40aaed761fc99294c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets/WarFX/Demo/UI Canvas/CFX Demo Btn Ground H.png using Guid(5cc9c4a6db9a74a40aaed761fc99294c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '587b84c5b36007875ec92ace63f27fd8') in 0.016561 seconds
+  Time since last request: 0.878142 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Big Looped.prefab
+  artifactKey: Guid(3631e3c99d52b594097c09278c60f5cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Big Looped.prefab using Guid(3631e3c99d52b594097c09278c60f5cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1675014fe439d259fb9793860a7676dd') in 0.005089 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.674704 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Looped.prefab
+  artifactKey: Guid(9debd342863be9747b5a48c343184a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/WFXMR_FlameThrower Looped.prefab using Guid(9debd342863be9747b5a48c343184a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00a07a4170904e4b671b37cdc24697b4') in 0.004901 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 7.968721 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke
+  artifactKey: Guid(f787f30e49619514f88adc139a98e143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke using Guid(f787f30e49619514f88adc139a98e143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dea0554722a200afcc738b3ae375fff') in 0.000375 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.914497 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke
+  artifactKey: Guid(8efd6f5d279c1904ea8633701e1a1ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke using Guid(8efd6f5d279c1904ea8633701e1a1ddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdb200ea2c0f013c61d02590f68c9980') in 0.000340 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.091886 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(f4a2c3f050b1cad4d9241bd31795a925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural (Black Smoke).prefab using Guid(f4a2c3f050b1cad4d9241bd31795a925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '868f907c0281158598d1e66cdfd155b6') in 0.005201 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.002651 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(47fd4bfb1804201488355f589f12342a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Circle (Black Smoke).prefab using Guid(47fd4bfb1804201488355f589f12342a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31c2b81bbf4e7cba9c87ea0f99953351') in 0.004843 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.002885 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFire (Black Smoke).prefab
+  artifactKey: Guid(17315d51dc90be34cad95e853f26b6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFire (Black Smoke).prefab using Guid(17315d51dc90be34cad95e853f26b6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e617d5cf0d69622515164cf6489bceb') in 0.005226 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.773211 seconds.
+  path: Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameSmall 4F Add.mat
+  artifactKey: Guid(86b5f27ac71d7754fa5f0159ae8f0d92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameSmall 4F Add.mat using Guid(86b5f27ac71d7754fa5f0159ae8f0d92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb7a1e7a628a59a227fff0b90ed46dbb') in 0.010392 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.994061 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(fb98c59db5f557e42917111512376ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Broad (Black Smoke).prefab using Guid(fb98c59db5f557e42917111512376ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e6ec1f9e2200c37b1b4657f54722e7a') in 0.005045 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.941665 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(47fd4bfb1804201488355f589f12342a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Circle (Black Smoke).prefab using Guid(47fd4bfb1804201488355f589f12342a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a86c92ccef1773b2d9d0f4c4f3299a78') in 0.005389 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.853343 seconds.
+  path: Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameSmall ScrollAdd.mat
+  artifactKey: Guid(70772a3d4102d07468e841ebff06d1f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Mobile/Materials/Flames/WFXM_M_FlameSmall ScrollAdd.mat using Guid(70772a3d4102d07468e841ebff06d1f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3f3a373d1f674ef21e8f484679b1709') in 0.010863 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.026460 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a79c272515d52a48b3b71828bfdd401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire SmallFlame (Black Smoke).prefab using Guid(5a79c272515d52a48b3b71828bfdd401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1377fc7cd8a412d0206b17c54db52a56') in 0.004874 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.133321 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFire (Black Smoke).prefab
+  artifactKey: Guid(17315d51dc90be34cad95e853f26b6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFire (Black Smoke).prefab using Guid(17315d51dc90be34cad95e853f26b6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1b556a208e2a7c444f134276de98b09') in 0.018662 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.857421 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(2522b91780559a44794173d3dae9723b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFireBig (Black Smoke).prefab using Guid(2522b91780559a44794173d3dae9723b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9579fcbe7333446a424fadde032e89a4') in 0.005416 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 10.346258 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(2522b91780559a44794173d3dae9723b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFireBig (Black Smoke).prefab using Guid(2522b91780559a44794173d3dae9723b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80fe291971ca906452bdb576cf716a29') in 0.005019 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 13.084008 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(2522b91780559a44794173d3dae9723b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFireBig (Black Smoke).prefab using Guid(2522b91780559a44794173d3dae9723b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ec9efae2afc05817a45df37448a77831') in 0.005304 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 26.671274 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFire (Black Smoke).prefab
+  artifactKey: Guid(17315d51dc90be34cad95e853f26b6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_GazFire (Black Smoke).prefab using Guid(17315d51dc90be34cad95e853f26b6ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ece371adfc60a08cacd792073acc05c') in 0.006003 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.065984 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a79c272515d52a48b3b71828bfdd401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire SmallFlame (Black Smoke).prefab using Guid(5a79c272515d52a48b3b71828bfdd401) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5eba403bd692e56af509fc44ee015c8') in 0.005397 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.813198 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(47fd4bfb1804201488355f589f12342a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Circle (Black Smoke).prefab using Guid(47fd4bfb1804201488355f589f12342a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c83c349c5a2182c009ca93e465003a1') in 0.005527 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.372113 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(fb98c59db5f557e42917111512376ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural Broad (Black Smoke).prefab using Guid(fb98c59db5f557e42917111512376ab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52a060a923a52d254c0d48151de86d7d') in 0.005226 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.682532 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(f4a2c3f050b1cad4d9241bd31795a925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Black Smoke/WFXMR_Fire Natural (Black Smoke).prefab using Guid(f4a2c3f050b1cad4d9241bd31795a925) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c6d24e6617bd093341d14801c1be960') in 0.005136 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 9.919233 seconds.
+  path: Assets/JMO Assets/WarFX/Mobile/Textures/Flames/WFXM_T_FlamesSmall 4frm.tga
+  artifactKey: Guid(3306c33d592bee140a52099c1882241a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Mobile/Textures/Flames/WFXM_T_FlamesSmall 4frm.tga using Guid(3306c33d592bee140a52099c1882241a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ef1d938eb173f6dff1c83ec2b632306') in 0.014629 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 10.882051 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(70f4ae7b25c458e45a1f83a9bbf8f2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural (Gray Smoke).prefab using Guid(70f4ae7b25c458e45a1f83a9bbf8f2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aac3256bcb575b0748d9ed473671074d') in 0.005153 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.649842 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(6653f15cda5958544adcee9813458b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Broad (Gray Smoke).prefab using Guid(6653f15cda5958544adcee9813458b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06ecd5fa2579f845c248f505beedba7e') in 0.007716 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.292760 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(c48f33b59c53b3b40bafa4a218e28aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Circle (Gray Smoke).prefab using Guid(c48f33b59c53b3b40bafa4a218e28aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7f1df5cff8fb56bcf1abccf0833b49f') in 0.006035 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 6.336443 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(4c5ef88d48ac4ee43b30dbc6343f6d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFire (Gray Smoke).prefab using Guid(4c5ef88d48ac4ee43b30dbc6343f6d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f908bb70f21567ba1c7883a63f015eb') in 0.005398 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 6.074641 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(70f4ae7b25c458e45a1f83a9bbf8f2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural (Gray Smoke).prefab using Guid(70f4ae7b25c458e45a1f83a9bbf8f2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72001ce976813b18e3275aeb0cdde036') in 0.005048 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.670653 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(6653f15cda5958544adcee9813458b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Broad (Gray Smoke).prefab using Guid(6653f15cda5958544adcee9813458b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a372f8994ec0c851ad1252eac4893513') in 0.005048 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.531482 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(c48f33b59c53b3b40bafa4a218e28aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire Natural Circle (Gray Smoke).prefab using Guid(c48f33b59c53b3b40bafa4a218e28aaf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8949d873e92bd6163cd3bf96919e4b30') in 0.005125 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.622726 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff7840f1c1582ea4cbe1d632c878e884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire SmallFlame (Gray Smoke).prefab using Guid(ff7840f1c1582ea4cbe1d632c878e884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e74c4255d6b345278358696b8615297') in 0.005201 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.833497 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff7840f1c1582ea4cbe1d632c878e884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_Fire SmallFlame (Gray Smoke).prefab using Guid(ff7840f1c1582ea4cbe1d632c878e884) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7596422e6a8668d54ed056eac8b78d93') in 0.005049 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.443041 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(4c5ef88d48ac4ee43b30dbc6343f6d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFire (Gray Smoke).prefab using Guid(4c5ef88d48ac4ee43b30dbc6343f6d2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '988afbe079cd88f995c8005c8a8d9236') in 0.013269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.645688 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(0cb8c2d73332b6845b2eec02e21e91f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFireBig (Gray Smoke).prefab using Guid(0cb8c2d73332b6845b2eec02e21e91f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0bdd5af8d4f63b601c5f39bc32c2031') in 0.005111 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.885494 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(0cb8c2d73332b6845b2eec02e21e91f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/Gray Smoke/WFXMR_GazFireBig (Gray Smoke).prefab using Guid(0cb8c2d73332b6845b2eec02e21e91f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3c76272bc6cbcac219770993c3cdda') in 0.005421 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 14.964697 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/No Smoke
+  artifactKey: Guid(c01b147c9d89f6a43868b328d0d8245d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/No Smoke using Guid(c01b147c9d89f6a43868b328d0d8245d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34921c8f00b66d0fe76495b9c062ae79') in 0.000334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.736971 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/No Smoke/WFXMR_Fire Natural (No Smoke).prefab
+  artifactKey: Guid(cb074760d265371429c786718a7ca5e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/No Smoke/WFXMR_Fire Natural (No Smoke).prefab using Guid(cb074760d265371429c786718a7ca5e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '017c4d0ddc2921b01ece67e2dd4a51d2') in 0.004793 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 2.525741 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/No Smoke/WFXMR_Fire Natural Circle (No Smoke).prefab
+  artifactKey: Guid(16fa56e3bc952f8418a8c26526b344e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects (Mobile)/Fire/No Smoke/WFXMR_Fire Natural Circle (No Smoke).prefab using Guid(16fa56e3bc952f8418a8c26526b344e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f0dc18ee06166d49eb31b0e84b915a6') in 0.004868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 14.691276 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects
+  artifactKey: Guid(71faefa77e7fc274fa230519616d3c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects using Guid(71faefa77e7fc274fa230519616d3c3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bc4b844f4c245daa4aef68aef5bc96d') in 0.000432 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.760759 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire
+  artifactKey: Guid(b638be5e2834e6043be3d3e95e2ac349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire using Guid(b638be5e2834e6043be3d3e95e2ac349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4430843eefc1fe7659cd1d0ac9106b41') in 0.000317 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.073980 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/WFX_FlameThrower.prefab
+  artifactKey: Guid(b8f9e29cc9e6dcf4387b96b6dacc819e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/WFX_FlameThrower.prefab using Guid(b8f9e29cc9e6dcf4387b96b6dacc819e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b740aa2f2459c7248ce3cc1f3cee95f1') in 0.007189 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
 ========================================================================
 Received Import Request.
   Time since last request: 0.000011 seconds.
-  path: Assets/JMO Assets/WarFX/Demo/UI Canvas/CFX Demo Btn Ground.png
-  artifactKey: Guid(a2bcf923df54ffa4ba7e795955c5dc22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JMO Assets/WarFX/Demo/UI Canvas/CFX Demo Btn Ground.png using Guid(a2bcf923df54ffa4ba7e795955c5dc22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5da611a5d20b0eb7bd8e4df7c24f41b') in 0.013845 seconds
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/WFX_FlameThrower Big Alt.prefab
+  artifactKey: Guid(aedd4bb62ac8dfd48ae575c52e6e4267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/WFX_FlameThrower Big Alt.prefab using Guid(aedd4bb62ac8dfd48ae575c52e6e4267) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2227a232d07b5b82fc46c28e79ccd821') in 0.005154 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 3
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 869.252671 seconds.
-  path: Assets/Scenes/Player2.unity
-  artifactKey: Guid(324f91b2c6d51854d9545d5762d5af0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Player2.unity using Guid(324f91b2c6d51854d9545d5762d5af0e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5fab5ea6cdb537326ccb4ee392ad58c') in 0.000594 seconds
+  Time since last request: 0.000009 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/WFX_FlameThrower Big Looped.prefab
+  artifactKey: Guid(b2e8413438f79464aa69948979b150a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/WFX_FlameThrower Big Looped.prefab using Guid(b2e8413438f79464aa69948979b150a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c085b75acbe00da2986cdb3d7f5fb8bf') in 0.004354 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 0.000009 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/WFX_GazFireBig (Blue).prefab
+  artifactKey: Guid(cdd71635203c8ed47a18dcefce87463e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/WFX_GazFireBig (Blue).prefab using Guid(cdd71635203c8ed47a18dcefce87463e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'afb33c8f5f282193313ec7a53f14cb9b') in 0.004935 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/WFX_GazFireBig (Purple).prefab
+  artifactKey: Guid(e15f5af5b5f07bd469b5f4f98ed23c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/WFX_GazFireBig (Purple).prefab using Guid(e15f5af5b5f07bd469b5f4f98ed23c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5b6d6cceca617e04062ee149b040a0') in 0.005122 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.458663 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke
+  artifactKey: Guid(5d46f91312c192246be2fa80b0461910) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke using Guid(5d46f91312c192246be2fa80b0461910) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63727c4e083aa5f804fba10b141037c7') in 0.000418 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 2.879268 seconds.
-  path: Assets/Scenes/Player1.unity
-  artifactKey: Guid(3fed14de8f8e4a94facefafedc56bd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Player1.unity using Guid(3fed14de8f8e4a94facefafedc56bd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bd5d753403fe1d122d2727ea44a17e1') in 0.000369 seconds
+  Time since last request: 0.171436 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab using Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f0c39433dbe217afbd0d219ff689afa') in 0.008931 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 0.615235 seconds.
-  path: Assets/Scenes/Player1 1.unity
-  artifactKey: Guid(408a4f16389e84848845653adb4c7bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Player1 1.unity using Guid(408a4f16389e84848845653adb4c7bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '000a81b0abbf5fc69c2a27ee6959c0ed') in 0.000293 seconds
+  Time since last request: 0.003373 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab using Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9c06848a9d1953dac4f69277b78e6eb') in 0.005906 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 4.093840 seconds.
-  path: Assets/Scenes/Player2.unity
-  artifactKey: Guid(408a4f16389e84848845653adb4c7bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Player2.unity using Guid(408a4f16389e84848845653adb4c7bb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '748e23c291a7cda0a6d03beacf2b94a4') in 0.000413 seconds
+  Time since last request: 0.000011 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab using Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8c2842541bb4ab4c34e7d6cfd80cbde') in 0.005199 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.227 seconds
-Refreshing native plugins compatible for Editor in 1.29 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.431 seconds
-Domain Reload Profiling: 658ms
-	BeginReloadAssembly (87ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (2ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (21ms)
-	RebuildCommonClasses (17ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (13ms)
-	LoadAllAssembliesAndSetupDomain (103ms)
-		LoadAssemblies (137ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (9ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (431ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (235ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (29ms)
-			ProcessInitializeOnLoadAttributes (187ms)
-			ProcessInitializeOnLoadMethodAttributes (12ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 1.16 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3173 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.7 MB). Loaded Objects now: 3708.
-Memory consumption went from 218.3 MB to 217.6 MB.
-Total: 1.935800 ms (FindLiveObjects: 0.138700 ms CreateObjectMapping: 0.044500 ms MarkObjects: 1.488000 ms  DeleteObjects: 0.263700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.226 seconds
-Refreshing native plugins compatible for Editor in 1.33 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.427 seconds
-Domain Reload Profiling: 653ms
-	BeginReloadAssembly (88ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (21ms)
-	RebuildCommonClasses (17ms)
-	RebuildNativeTypeToScriptingClass (5ms)
-	initialDomainReloadingComplete (13ms)
-	LoadAllAssembliesAndSetupDomain (103ms)
-		LoadAssemblies (135ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (10ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (427ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (236ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (30ms)
-			ProcessInitializeOnLoadAttributes (188ms)
-			ProcessInitializeOnLoadMethodAttributes (12ms)
-			AfterProcessingInitializeOnLoad (1ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 1.46 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3174 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.7 MB). Loaded Objects now: 3711.
-Memory consumption went from 220.5 MB to 219.8 MB.
-Total: 1.923700 ms (FindLiveObjects: 0.134200 ms CreateObjectMapping: 0.037500 ms MarkObjects: 1.480100 ms  DeleteObjects: 0.271000 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Number of asset objects unloaded after import = 21
 ========================================================================
 Received Import Request.
-  Time since last request: 221.982149 seconds.
-  path: Assets/Sounds/medium-explosion-40472.mp3
-  artifactKey: Guid(0b27508a9dbe3f04cacc90654a1c6b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Sounds/medium-explosion-40472.mp3 using Guid(0b27508a9dbe3f04cacc90654a1c6b59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1a6819baccb40ee559e684db8ff807a') in 0.046650 seconds
+  Time since last request: 0.740191 seconds.
+  path: Assets/JMO Assets/WarFX/Desktop/Materials/Flames/WFX_M_FlameSmall 4F Add.mat
+  artifactKey: Guid(b2593af31c471b7469ea80cfa0d26b34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Desktop/Materials/Flames/WFX_M_FlameSmall 4F Add.mat using Guid(b2593af31c471b7469ea80cfa0d26b34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f08966f928126175e95d9dcf3b0788e7') in 0.008930 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.406 seconds
-Refreshing native plugins compatible for Editor in 3.39 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.871 seconds
-Domain Reload Profiling: 1277ms
-	BeginReloadAssembly (152ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (4ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (24ms)
-	LoadAllAssembliesAndSetupDomain (188ms)
-		LoadAssemblies (247ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (22ms)
-			TypeCache.Refresh (10ms)
-				TypeCache.ScanAssembly (1ms)
-			ScanForSourceGeneratedMonoScriptInfo (7ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (871ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (410ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (5ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (52ms)
-			ProcessInitializeOnLoadAttributes (326ms)
-			ProcessInitializeOnLoadMethodAttributes (20ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 2.31 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3173 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.7 MB). Loaded Objects now: 3721.
-Memory consumption went from 222.3 MB to 221.6 MB.
-Total: 3.065400 ms (FindLiveObjects: 0.230700 ms CreateObjectMapping: 0.070600 ms MarkObjects: 2.317400 ms  DeleteObjects: 0.446100 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 6.409899 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab using Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5ca251dc0517a94e7cff306b45c57351') in 0.005300 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.380 seconds
-Refreshing native plugins compatible for Editor in 4.46 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.597 seconds
-Domain Reload Profiling: 977ms
-	BeginReloadAssembly (137ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (31ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (23ms)
-	LoadAllAssembliesAndSetupDomain (175ms)
-		LoadAssemblies (246ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (11ms)
-			TypeCache.Refresh (7ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (597ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (235ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (30ms)
-			ProcessInitializeOnLoadAttributes (186ms)
-			ProcessInitializeOnLoadMethodAttributes (13ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3174 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3724.
-Memory consumption went from 224.5 MB to 223.8 MB.
-Total: 1.895800 ms (FindLiveObjects: 0.137600 ms CreateObjectMapping: 0.042800 ms MarkObjects: 1.411200 ms  DeleteObjects: 0.303200 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.990150 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab using Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df7b42477b97456a66a743d1a1a1ebda') in 0.005192 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.225 seconds
-Refreshing native plugins compatible for Editor in 1.26 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.426 seconds
-Domain Reload Profiling: 651ms
-	BeginReloadAssembly (86ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (2ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (19ms)
-	RebuildCommonClasses (17ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (15ms)
-	LoadAllAssembliesAndSetupDomain (101ms)
-		LoadAssemblies (136ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (9ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (427ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (230ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			SetLoadedEditorAssemblies (2ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (31ms)
-			ProcessInitializeOnLoadAttributes (181ms)
-			ProcessInitializeOnLoadMethodAttributes (12ms)
-			AfterProcessingInitializeOnLoad (1ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (4ms)
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3174 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3727.
-Memory consumption went from 226.5 MB to 225.7 MB.
-Total: 1.995100 ms (FindLiveObjects: 0.139200 ms CreateObjectMapping: 0.041400 ms MarkObjects: 1.523100 ms  DeleteObjects: 0.290700 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 1.681143 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab using Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd725a03a1533305477a6f3c4e2201cf5') in 0.005681 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
 ========================================================================
-Received Prepare
-Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.217 seconds
-Refreshing native plugins compatible for Editor in 1.16 ms, found 4 plugins.
-Native extension for WindowsStandalone target not found
-[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
-[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
-[Package Manager] Cannot connect to Unity Package Manager local server
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.422 seconds
-Domain Reload Profiling: 639ms
-	BeginReloadAssembly (84ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (2ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (17ms)
-	RebuildCommonClasses (17ms)
-	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (14ms)
-	LoadAllAssembliesAndSetupDomain (96ms)
-		LoadAssemblies (130ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (9ms)
-			TypeCache.Refresh (4ms)
-				TypeCache.ScanAssembly (0ms)
-			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (422ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (230ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
-			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (29ms)
-			ProcessInitializeOnLoadAttributes (182ms)
-			ProcessInitializeOnLoadMethodAttributes (12ms)
-			AfterProcessingInitializeOnLoad (2ms)
-			EditorAssembliesLoaded (0ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Shader 'WFX/Transparent Diffuse': fallback shader 'Particles/Alpha Blended' not found
-Shader 'WFX/Transparent Specular': fallback shader 'Particles/Alpha Blended' not found
-Refreshing native plugins compatible for Editor in 1.14 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3174 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3730.
-Memory consumption went from 228.4 MB to 227.7 MB.
-Total: 1.958200 ms (FindLiveObjects: 0.143500 ms CreateObjectMapping: 0.040300 ms MarkObjects: 1.441100 ms  DeleteObjects: 0.332400 ms)
-
-Prepare: number of updated asset objects reloaded= 0
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
-  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+Received Import Request.
+  Time since last request: 0.770131 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab using Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7cc6d86c7b6690cff01b84d3c34729c') in 0.005364 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.971933 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab using Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3722ea8f77a3712331ac4940cfadfd5c') in 0.005529 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.674662 seconds.
+  path: Assets/JMO Assets/WarFX/Desktop/Materials/Flames/WFX_M_FlameSmall ScrollAdd.mat
+  artifactKey: Guid(654261d22ff230341bd50c7ddb17c2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Desktop/Materials/Flames/WFX_M_FlameSmall ScrollAdd.mat using Guid(654261d22ff230341bd50c7ddb17c2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32c6eacc00f68239d8010fe4f268d143') in 0.010740 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.024363 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab using Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf1a76d2173d8a6794f7fe404761db79') in 0.005073 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.469626 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab using Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2dfe6941704effe01c1d57691fe7de2a') in 0.005148 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.717987 seconds.
+  path: Assets/JMO Assets/WarFX/Desktop/Materials/Smoke/WFX_M_SmokeScroll SoftMult.mat
+  artifactKey: Guid(7cd0317a189d24e488c96376bf32b9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Desktop/Materials/Smoke/WFX_M_SmokeScroll SoftMult.mat using Guid(7cd0317a189d24e488c96376bf32b9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f5709e659f248be93a3778538149f64') in 0.009179 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.112300 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab using Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '638569981a461935fc31a24c5807d040') in 0.005219 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.999790 seconds.
+  path: Assets/JMO Assets/WarFX/Desktop/Materials/Misc/WFX_M_SmallDots Add.mat
+  artifactKey: Guid(e4f85b2e68822a041b8df56db88fbd27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Desktop/Materials/Misc/WFX_M_SmallDots Add.mat using Guid(e4f85b2e68822a041b8df56db88fbd27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3815c0946b5e71e2ae707b8d2bd6a0cf') in 0.009402 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.044182 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab using Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '589844d2b49aeb1c2ea466bc5b969a3d') in 0.005209 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.613729 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab using Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfbf7466a32ac0a1ab7e870f2abee89b') in 0.005406 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.824815 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab
+  artifactKey: Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural (Black Smoke).prefab using Guid(a817de05addd7b64faa73b34c74013ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b274c07e9a63e31febd8bb74e541e1d') in 0.005644 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 25.608929 seconds.
+  path: Assets/JMO Assets/WarFX/Desktop/Materials/Flames/WFX_M_FlameBig Add.mat
+  artifactKey: Guid(5a595d561ddb2ac4aad808dc54e08e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Desktop/Materials/Flames/WFX_M_FlameBig Add.mat using Guid(5a595d561ddb2ac4aad808dc54e08e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9d20f800f3f55cd9ef06a2d26557f46') in 0.009722 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 6.405999 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab
+  artifactKey: Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab using Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b1492ead9332b4add27b9f1133cc4f3') in 0.005092 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 4.403220 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab using Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '019f2861e39b2735b3f445026d95839a') in 0.005605 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.551186 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab using Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80fd680fb2dade3b504406d35036e632') in 0.005892 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.596285 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab using Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10984625646eb560ef6c99ea222ea79c') in 0.005460 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.810364 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab using Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c325b1f9353c3fc6a9d9f53e5265efe4') in 0.005327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 40.349292 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab
+  artifactKey: Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFireBig (Black Smoke).prefab using Guid(977bc30ff641de44bbf012f86491b775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07d4e974c7ac23b37e31d315de1ddead') in 0.005668 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 4.842713 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab
+  artifactKey: Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab using Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54fd93f65950b2a8825b1bc5a538d84b') in 0.005434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.400564 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab
+  artifactKey: Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab using Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31947755afac67dadd3ae130b745f1c0') in 0.006045 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.405372 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab
+  artifactKey: Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab using Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c9780450fd18535f5ae66cb259350c6') in 0.005907 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.199815 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab
+  artifactKey: Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_GazFire (Black Smoke).prefab using Guid(a83e0ffec52c58a47a7af8081a1dab6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '854c2245280bdae4b717c44dd1d92e83') in 0.005650 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.450129 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab using Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3625951c54fe679a449e95bc47a1579f') in 0.005441 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.195968 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab using Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '553db168e2c43740969cd51636e55800') in 0.005399 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.004626 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab using Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f60c15178fca352813dfefbdceae4fc3') in 0.005508 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.017127 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab
+  artifactKey: Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire SmallFlame (Black Smoke).prefab using Guid(5a4723eba1f3efd4e992d78be01cb3f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2c9a5763a550ac4da17be9b57c278b2') in 0.006627 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 9.524980 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab using Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '82e16478b03110ae126fde675a0f569d') in 0.005687 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.996287 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab using Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ffafa5a7001a7855d6bcbe8a0e4f99b') in 0.005224 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.417488 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab using Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '77fa425225d726fe2ada6d4f8a202aec') in 0.006165 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.002095 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab
+  artifactKey: Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Circle (Black Smoke).prefab using Guid(06a7735096a49064bac4963673c4f0b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7712fcb20997602c71425afdda182d9') in 0.005953 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 12.099977 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab using Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a7ce2ff930bc131c604b30fa7669398') in 0.005871 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.829752 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab using Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf6daf0898b2604a4c788d1b33c100ad') in 0.005251 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.036746 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab using Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b763d8e719e29dd85afdac13c45e27b0') in 0.005551 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.204415 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab
+  artifactKey: Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Black Smoke/WFX_Fire Natural Broad (Black Smoke).prefab using Guid(002c8e66c11fe4048a8c3a08b7f0fe74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a3fcd06e01cceb46d6b115d316022fb') in 0.005562 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 8.031114 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke
+  artifactKey: Guid(466ff9af76410f145b239b80db5a98c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke using Guid(466ff9af76410f145b239b80db5a98c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '975ba3e64bf565d3a935e93f20373d15') in 0.000462 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.806541 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab using Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c9acada235705cb49a5fce91dfb94e5') in 0.006385 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000009 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab using Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c39ca687f7d09314f743ae18dfa5a62a') in 0.006245 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.003998 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab using Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '095cf63240a7bb1a16b50359e66fdeb4') in 0.005467 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000009 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab using Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36b7b9245a356fae3ff64cfc35b2c04f') in 0.006074 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab using Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcda382e9acabee5bac3e89a1e92d1dd') in 0.004755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.770905 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab using Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '890707b848cc0700ee868346c532c379') in 0.004761 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.121616 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab using Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd639223b3a7a424657eb5cabd01e9cc4') in 0.005061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 5.958115 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab using Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e839665af4779d90b21806a5b1261ad6') in 0.005372 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.982070 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab using Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e67dd7c8fbda7d3a7cce43e637d041c') in 0.005294 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.888502 seconds.
+  path: Assets/JMO Assets/WarFX/Desktop/Materials/Smoke/WFX_M_SmokeScroll SoftMult Average.mat
+  artifactKey: Guid(e76fbe3a66fef0445892f29dfcd43126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Desktop/Materials/Smoke/WFX_M_SmokeScroll SoftMult Average.mat using Guid(e76fbe3a66fef0445892f29dfcd43126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '942481b1b3f518c1ff6f227d69f96226') in 0.008263 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.105535 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab using Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5725c66c21244a583803a550b1d793c') in 0.005136 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.019116 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab using Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84186b9af89965bc4850effa998ec994') in 0.006441 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.208341 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab
+  artifactKey: Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural (Gray Smoke).prefab using Guid(717898f1e82d6b94f8dfa819112cc432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6075d129fb862a06ae35defef1e8a89e') in 0.005267 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 5.052512 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab using Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c8548277744515f4d93a1857acedfd4') in 0.005585 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.008191 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab using Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdc6cfca5b8ccbdf4f9254bc4a948356') in 0.005426 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.797865 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab using Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ebbe934117df1b377336a6b99a00655b') in 0.005614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.809599 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab using Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccfaf6916b9f47dc363bc4b772deb510') in 0.005704 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.000526 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab
+  artifactKey: Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Broad (Gray Smoke).prefab using Guid(46db5b1dc2de2384da9a75fc063273be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88c160edcbf5209a21b4d50b7a0c3dd8') in 0.005060 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.979884 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab using Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3c262538c03ab148417c926a021be70') in 0.005281 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.326732 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab using Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a2dfc60f93f7aaf387e05ffd9b14aed7') in 0.005496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.200487 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab using Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93936a5d56ef2ebde0fde225a923fda3') in 0.005348 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.801074 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab using Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd860683063249be149800d9068eaec3e') in 0.005439 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.798426 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab using Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c1b29c3e49979be63487414756043f4') in 0.005807 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.797762 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab
+  artifactKey: Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire Natural Circle (Gray Smoke).prefab using Guid(dc0674a8a869b5043ab6f4155bdd5b02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9126b9bfe40c78f05a59feabc40b0206') in 0.005415 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.318393 seconds.
+  path: Assets/JMO Assets/WarFX/Desktop/Textures/Smoke/WFX_T_SmokeLoopAlpha Average.tga
+  artifactKey: Guid(1724eb924685fa7458a70dde1fd68bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/Desktop/Textures/Smoke/WFX_T_SmokeLoopAlpha Average.tga using Guid(1724eb924685fa7458a70dde1fd68bf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c32a74565bf11ad076bd6ad288870fcc') in 0.010801 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 3.641067 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab using Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bf3efeda6c25ea68bc4288de02c736a') in 0.005656 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.307469 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab using Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6443489578900bec67d5ef2ed529561b') in 0.005606 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.995937 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab using Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e965d849ce0b955fa298d3a418811718') in 0.006357 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.006183 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab using Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90827ed12b9d83132e0365f9fb7afb05') in 0.005164 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.998273 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab using Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5b7b92e9644d8b83864c08722779473') in 0.005794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.002555 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab
+  artifactKey: Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_Fire SmallFlame (Gray Smoke).prefab using Guid(ff2aa30ecb40c1b4ea64a518c1d943f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb1338bb842ceae7a6d338bdadc2f251') in 0.005245 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 6.859817 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab using Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c11b6d07c11ec0b9ecbbba06548df2e1') in 0.005657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.464699 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab using Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '109455b6a642fd560b51c32afca5d390') in 0.005658 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.796523 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab using Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2c7da41e95069e4588ac82ee340393b') in 0.005456 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.807654 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab using Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59f0b33aebc059eacfcf92d37d275a30') in 0.006016 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.600106 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab using Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caa712130b302373b32288e0933f3533') in 0.005449 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.000631 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab
+  artifactKey: Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFire (Gray Smoke).prefab using Guid(8f4c8e6e19f6811488df5bbe56510f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e716c78c220027052abf8e4a4a1dbfe') in 0.005292 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 3.178845 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab using Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c3374ca5885295c4dcb00eeeaad5c9') in 0.005202 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.955851 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab using Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2b1a712646bd7e99ff05e8b74b2f0ad') in 0.005308 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 0.395055 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab using Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bc4efb38de3f486648bdfca39e63d0c') in 0.005167 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.201691 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab using Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3279a4598b51361510e96ce95a5976c0') in 0.005413 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 2.036583 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab using Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd8112027089a25d1f28367ad10c8d1cc') in 0.006151 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 1.812380 seconds.
+  path: Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab
+  artifactKey: Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/JMO Assets/WarFX/_Effects/Fire/Gray Smoke/WFX_GazFireBig (Gray Smoke).prefab using Guid(b129faff9037943418e319f01ef35913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38e594db789b81fa8f9893856ab8213a') in 0.006296 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 21
+========================================================================
+Received Import Request.
+  Time since last request: 8.611833 seconds.
+  path: Assets/Prefabs/CiezkiKrazownik.prefab
+  artifactKey: Guid(e49b2d9d9a13a704780b6ed472ab5429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CiezkiKrazownik.prefab using Guid(e49b2d9d9a13a704780b6ed472ab5429) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7ed9c612a93d9d21f8dbdc609fb1923') in 0.024479 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 134
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Prefabs/ZnacznikAtaku.prefab
+  artifactKey: Guid(d26c6782736905342860755f2e006204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ZnacznikAtaku.prefab using Guid(d26c6782736905342860755f2e006204) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09526e66ba8a7a19eef83b14e04bc084') in 0.011067 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Prefabs/Pancernik.prefab
+  artifactKey: Guid(dc224f894b6e844428f2c24eefb484ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Pancernik.prefab using Guid(dc224f894b6e844428f2c24eefb484ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8f61add26a782bb4ffb5c1163b2b97a') in 0.011489 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 142
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Prefabs/Mapa.prefab
+  artifactKey: Guid(c7b2ff02830b9bf4f8a12f77e785a4ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Mapa.prefab using Guid(c7b2ff02830b9bf4f8a12f77e785a4ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4142290ca3dec0dc0b6795253315a3d') in 0.018794 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1704
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Prefabs/ZnacznikZniszczonych.prefab
+  artifactKey: Guid(4355f082cb8de694ba6ac1b66e1ae96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/ZnacznikZniszczonych.prefab using Guid(4355f082cb8de694ba6ac1b66e1ae96a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67b1424b90f8f0ff25f730d12830ab8a') in 0.007702 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 13
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '018f12f06e6b7a3b3af842a202f7fb25') in 0.011576 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/Prefabs/LekkiKrazownik.prefab
+  artifactKey: Guid(a9c79f0682b6c6e4abbdd8327a921d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/LekkiKrazownik.prefab using Guid(a9c79f0682b6c6e4abbdd8327a921d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '915218850a9134477d88c4990098e29a') in 0.013237 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 181
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/Prefabs/Mapa wyswietlana.prefab
+  artifactKey: Guid(f0cd53bb3044dcf4193fda6e3ac98c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Mapa wyswietlana.prefab using Guid(f0cd53bb3044dcf4193fda6e3ac98c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad7fddccfa612493b7ea52c6f97d4555') in 0.015041 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1711
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: Operacja We/Wy zosta³a przerwana z powodu zakoñczenia w¹tku lub ¿¹dania aplikacji.
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

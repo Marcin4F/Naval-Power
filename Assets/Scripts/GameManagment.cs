@@ -31,7 +31,6 @@ public class GameManagment : MonoBehaviour
     private CiezkiKrazownik ciezkiKrazownikComponent1;
     private Korweta korwetaComponent1;
     private LekkiKrazownik lekkiKrazownikComponent1;
-    public Material zniszczony;
 
     // Start is called before the first frame update
     void Awake()
@@ -117,36 +116,31 @@ public class GameManagment : MonoBehaviour
             if (pancernikComponent1.hp <= 0)
             {
                 pancernik1.transform.tag = "Destroyed";
-                var renderer = pancernik1.GetComponent<Renderer>();
-                renderer.material = zniszczony;
+                pancernikComponent1.Fire();
             }
             niszczycielComponent1.hp = PlayerPrefs.GetInt("NiszczycielHP" + index);
             if (niszczycielComponent1.hp <= 0)
             {
                 niszczyciel1.transform.tag = "Destroyed";
-                var renderer = niszczyciel1.GetComponent<Renderer>();
-                renderer.material = zniszczony;
+                niszczycielComponent1.Fire();
             }
             ciezkiKrazownikComponent1.hp = PlayerPrefs.GetInt("CiezkiKrazownikHP" + index);
             if (ciezkiKrazownikComponent1.hp <= 0)
             {
                 ciezkiKrazownik1.transform.tag = "Destroyed";
-                var renderer = ciezkiKrazownik1.GetComponent<Renderer>();
-                renderer.material = zniszczony;
+                ciezkiKrazownikComponent1.Fire();
             }
             korwetaComponent1.hp = PlayerPrefs.GetInt("KorwetaHP" + index);
             if (korwetaComponent1.hp <= 0)
             {
                 korweta1.transform.tag = "Destroyed";
-                var renderer = korweta1.GetComponent<Renderer>();
-                renderer.material = zniszczony;
+                korwetaComponent1.Fire();
             }
             lekkiKrazownikComponent1.hp = PlayerPrefs.GetInt("LekkiKrazownikHP" + index);
             if (lekkiKrazownikComponent1.hp <= 0)
             {
                 lekkiKrazownik1.transform.tag = "Destroyed";
-                var renderer = lekkiKrazownik1.GetComponent<Renderer>();
-                renderer.material = zniszczony;
+                lekkiKrazownikComponent1.Fire();
             }
 
             // wczytanie pol ktore sa atakowane przez przeciwnika
@@ -261,9 +255,8 @@ public class GameManagment : MonoBehaviour
                 if (pancernikComponent1.hp == 0)
                 {
                     pancernik1.transform.tag = "Destroyed";
+                    pancernikComponent1.Fire();
                     shipsLeft -= 1;
-                    var renderer = pancernik1.GetComponent<Renderer>();
-                    renderer.material = zniszczony;
                     for (int i = 0; i < maxSize; i++)
                     {
                         destroyedFields[0, i] = occupiedFields[0, i];
@@ -278,9 +271,8 @@ public class GameManagment : MonoBehaviour
                 if (niszczycielComponent1.hp == 0)
                 {
                     niszczyciel1.transform.tag = "Destroyed";
+                    niszczycielComponent1.Fire();
                     shipsLeft -= 1;
-                    var renderer = niszczyciel1.GetComponent<Renderer>();
-                    renderer.material = zniszczony;
                     for (int i = 0; i < maxSize; i++)
                     {
                         destroyedFields[1, i] = occupiedFields[1, i];
@@ -295,9 +287,8 @@ public class GameManagment : MonoBehaviour
                 if (ciezkiKrazownikComponent1.hp == 0)
                 {
                     ciezkiKrazownik1.transform.tag = "Destroyed";
+                    ciezkiKrazownikComponent1.Fire();
                     shipsLeft -= 1;
-                    var renderer = ciezkiKrazownik1.GetComponent<Renderer>();
-                    renderer.material = zniszczony;
                     for (int i = 0; i < maxSize; i++)
                     {
                         destroyedFields[2, i] = occupiedFields[2, i];
@@ -312,9 +303,8 @@ public class GameManagment : MonoBehaviour
                 if (korwetaComponent1.hp == 0)
                 {
                     korweta1.transform.tag = "Destroyed";
+                    korwetaComponent1.Fire();
                     shipsLeft -= 1;
-                    var renderer = korweta1.GetComponent<Renderer>();
-                    renderer.material = zniszczony;
                     for (int i = 0; i < maxSize; i++)
                     {
                         destroyedFields[3, i] = occupiedFields[3, i];
@@ -329,9 +319,8 @@ public class GameManagment : MonoBehaviour
                 if (lekkiKrazownikComponent1.hp == 0)
                 {
                     lekkiKrazownik1.transform.tag = "Destroyed";
+                    lekkiKrazownikComponent1.Fire();
                     shipsLeft -= 1;
-                    var renderer = lekkiKrazownik1.GetComponent<Renderer>();
-                    renderer.material = zniszczony;
                     for (int i = 0; i < maxSize; i++)
                     {
                         destroyedFields[4, i] = occupiedFields[4, i];
@@ -343,14 +332,12 @@ public class GameManagment : MonoBehaviour
 
     IEnumerator StartAnimation()
     {
-        //Debug.Log("start");
         for (int i = 0; i < hitShots; i++)
         {
             particlePosition = Functions.instance.FieldToWorldPosition(hitFields[i]);
             hitParticleHolder1[i] = Instantiate(hitParticleHolder);
             hitParticleHolder1[i].transform.position = new Vector3 (particlePosition[0], 1f, particlePosition[1]);
             hitParticleHolder1[i].Play();
-            Debug.Log("a");
             yield return new WaitForSeconds(Random.Range(0.6f, 1.3f));
         }
         for (int i = 0; i < missedShots; i++)
@@ -362,7 +349,6 @@ public class GameManagment : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0.6f, 1.3f));
         }
 
-        //Debug.Log("koniec");
         animationPlaying = false;
         if (shipsLeft <= 0)
         {
@@ -463,7 +449,7 @@ public class GameManagment : MonoBehaviour
                                 tmp = 1;
                                 particlePosition = Functions.instance.FieldToWorldPosition(field);
                                 attackHitParticle1[shipsNumber + i + j] = Instantiate(hitParticleHolder);
-                                attackHitParticle1[shipsNumber + i + j].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                                attackHitParticle1[shipsNumber + i + j].transform.position = new Vector3(particlePosition[0], 1.7f, particlePosition[1]);
                                 attackHitParticle1[shipsNumber + i + j].Play();
                                 if (i == 1)
                                     torpedoHit = true;
@@ -475,7 +461,7 @@ public class GameManagment : MonoBehaviour
                     {
                         particlePosition = Functions.instance.FieldToWorldPosition(field);
                         attackMissParticle1[shipsNumber + i + j] = Instantiate(missParticleHolder);
-                        attackMissParticle1[shipsNumber + i + j].transform.position = new Vector3(particlePosition[0], 2.5f, particlePosition[1]);
+                        attackMissParticle1[shipsNumber + i + j].transform.position = new Vector3(particlePosition[0], 1.7f, particlePosition[1]);
                         attackMissParticle1[shipsNumber + i + j].Play();
                         yield return new WaitForSeconds(Random.Range(0.6f, 1.3f));
                     }

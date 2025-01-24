@@ -16,6 +16,9 @@ public class Pancernik : Ship
 
     public GameObject znacznik;
     public GameObject[] znaczniki;
+
+    public ParticleSystem fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10;
+    private ParticleSystem[] fire;
     public Pancernik() //konstruktor
     {
         move = 5;
@@ -35,6 +38,12 @@ public class Pancernik : Ship
         cooldown = PlayerPrefs.GetInt("PancernikCooldown" + index);
         if (cooldown > 0)
             cooldown--;
+
+        fire = new ParticleSystem[] { fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10 };
+        for (int i = 0; i < 10; i++)
+        {
+            fire[i].Stop();
+        }
     }
 
     public void Ability()
@@ -59,4 +68,13 @@ public class Pancernik : Ship
     {
         Attack.instance.QuitAttacking();
     }
+
+    public void Fire()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Functions.instance.RestartParticles(fire[i]);
+        }
+    }
+
 }

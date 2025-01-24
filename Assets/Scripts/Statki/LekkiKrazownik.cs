@@ -19,6 +19,9 @@ public class LekkiKrazownik : Ship
 
     public GameObject znacznik;
     public GameObject[] znaczniki;
+
+    public ParticleSystem fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10, fire11, fire12, fire13, fire14, fire15, fire16, fire17, fire18;
+    private ParticleSystem[] fire;
     public LekkiKrazownik() //konstruktor
     {
         move = 2;
@@ -38,6 +41,12 @@ public class LekkiKrazownik : Ship
         cooldown = PlayerPrefs.GetInt("LekkiKrazownikCooldown" + index);
         if (cooldown > 0)
             cooldown--;
+
+        fire = new ParticleSystem[] { fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10, fire11, fire12, fire13, fire14, fire15, fire16, fire17, fire18 };
+        for (int i = 0; i < 18; i++)
+        {
+            fire[i].Stop();
+        }
     }
 
     public void Ability()
@@ -68,5 +77,13 @@ public class LekkiKrazownik : Ship
     public void StopAbility()
     {
         Attack.instance.QuitAttacking();
+    }
+
+    public void Fire()
+    {
+        for (int i = 0; i < 18; i++)
+        {
+            Functions.instance.RestartParticles(fire[i]);
+        }
     }
 }

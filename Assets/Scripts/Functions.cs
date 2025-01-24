@@ -159,6 +159,20 @@ public class Functions : MonoBehaviour
         }
     }
 
+    public void RestartParticles(ParticleSystem particle)
+    {
+        var particleGameObject = particle.gameObject;
+        if (!particleGameObject.activeSelf)
+        {
+            particleGameObject.SetActive(true);
+        }
+
+        if (!particle.isPlaying)
+        {
+            particle.Play();
+        }
+    }
+
 
     // NIE DZIALA
     /*public IEnumerator EndAnimation()
