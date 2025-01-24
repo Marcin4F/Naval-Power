@@ -98,7 +98,6 @@ public class InGameUI : MonoBehaviour
     {
         if (index != 2 && GameManagment.instance.gameState == 1)
         {
-            endTurnText.SetText("");
             GameManagment.instance.EndAnimationStarter();
         }
         else

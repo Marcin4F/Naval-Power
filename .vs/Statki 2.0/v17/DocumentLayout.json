@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|d:\\studia\\semestr 3\\programowanie obiektowe\\statki 2.0\\assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\ui\\scenesmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +13,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\reycastselecter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|d:\\studia\\semestr 3\\programowanie obiektowe\\statki 2.0\\assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanagment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\ui\\mainmenuui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\ui\\ingameui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AB6380A7-17D5-0E6C-085F-838E811FFA91}|Assembly-CSharp.csproj|D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\assets\\scripts\\statki\\pancernik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -58,7 +58,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
@@ -92,14 +92,14 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\ReyCastSelecter.cs",
               "ToolTip": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\ReyCastSelecter.cs",
               "RelativeToolTip": "Assets\\Scripts\\ReyCastSelecter.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAFwAAAB2AAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAFwAAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-27T10:16:12.174Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Ship.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Ship.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Ship.cs",
@@ -111,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Attack.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Attack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Attack.cs",
@@ -135,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Functions.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\Functions.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Functions.cs",
@@ -147,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "GameManagment.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\GameManagment.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManagment.cs",
@@ -166,7 +166,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\ScenesManager.cs",
               "ToolTip": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\UI\\ScenesManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\ScenesManager.cs",
-              "ViewState": "AgIAAEMAAAAAAAAAAAAcwFIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T19:31:00.751Z",
               "EditorCaption": ""
@@ -185,19 +185,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 0,
               "Title": "InGameUI.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\UI\\InGameUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\InGameUI.cs",
               "ToolTip": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\UI\\InGameUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\UI\\InGameUI.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAgwMQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAswGMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T19:30:59.033Z"
+              "WhenOpened": "2024-11-12T19:30:59.033Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainMenuUI.cs",
               "DocumentMoniker": "D:\\studia\\semestr 3\\Programowanie obiektowe\\Statki 2.0\\Assets\\Scripts\\UI\\MainMenuUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UI\\MainMenuUI.cs",
