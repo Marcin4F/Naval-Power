@@ -15,7 +15,7 @@ D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55755
+50834
 Successfully changed project path to: D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
 D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,13 +49,13 @@ D:/studia/semestr 3/Programowanie obiektowe/Statki 2.0
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [35584] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 1044480875 [EditorId] 1044480875 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [25212] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 3338104982 [EditorId] 3338104982 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [35584] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 1044480875 [EditorId] 1044480875 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [25212] Host "[IP] 192.168.102.1 [Port] 0 [Flags] 2 [Guid] 3338104982 [EditorId] 3338104982 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EO64SHH) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with 27 workers.
 FMOD failed to set the software format to the custom sample rate 1, trying software fallback rate 48000
-Refreshing native plugins compatible for Editor in 2.97 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.95 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.13f1 (5f90a5ebde0f)
 [Subsystems] Discovering subsystems at path D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Resources/UnitySubsystems
@@ -71,44 +71,44 @@ Initialize mono
 Mono path[0] = 'D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/Managed'
 Mono path[1] = 'D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56756
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56680
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/Program Files/Unity Hub/Editor/Unity 2022.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001560 seconds.
-- Loaded All Assemblies, in  0.181 seconds
+Registered in 0.001929 seconds.
+- Loaded All Assemblies, in  0.182 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.141 seconds
-Domain Reload Profiling: 322ms
+- Finished resetting the current domain, in  0.139 seconds
+Domain Reload Profiling: 321ms
 	BeginReloadAssembly (55ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (19ms)
+	RebuildCommonClasses (18ms)
 	RebuildNativeTypeToScriptingClass (6ms)
 	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (74ms)
-		LoadAssemblies (55ms)
+	LoadAllAssembliesAndSetupDomain (77ms)
+		LoadAssemblies (54ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (73ms)
-			TypeCache.Refresh (72ms)
-				TypeCache.ScanAssembly (64ms)
+		AnalyzeDomain (76ms)
+			TypeCache.Refresh (75ms)
+				TypeCache.ScanAssembly (68ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (142ms)
+	FinalizeReload (139ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (109ms)
+		SetupLoadedEditorAssemblies (107ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
+			InitializePlatformSupportModulesInManaged (5ms)
 			SetLoadedEditorAssemblies (4ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (1ms)
-			ProcessInitializeOnLoadAttributes (72ms)
-			ProcessInitializeOnLoadMethodAttributes (27ms)
+			ProcessInitializeOnLoadAttributes (70ms)
+			ProcessInitializeOnLoadMethodAttributes (26ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -117,54 +117,54 @@ Domain Reload Profiling: 322ms
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  0.320 seconds
-Refreshing native plugins compatible for Editor in 1.11 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.09 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.341 seconds
-Domain Reload Profiling: 661ms
-	BeginReloadAssembly (76ms)
+- Finished resetting the current domain, in  0.332 seconds
+Domain Reload Profiling: 652ms
+	BeginReloadAssembly (75ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (3ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (13ms)
+		CreateAndSetChildDomain (11ms)
 	RebuildCommonClasses (18ms)
 	RebuildNativeTypeToScriptingClass (6ms)
 	initialDomainReloadingComplete (20ms)
-	LoadAllAssembliesAndSetupDomain (201ms)
-		LoadAssemblies (145ms)
+	LoadAllAssembliesAndSetupDomain (200ms)
+		LoadAssemblies (146ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (99ms)
-			TypeCache.Refresh (86ms)
-				TypeCache.ScanAssembly (77ms)
-			ScanForSourceGeneratedMonoScriptInfo (9ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (341ms)
+		AnalyzeDomain (97ms)
+			TypeCache.Refresh (85ms)
+				TypeCache.ScanAssembly (76ms)
+			ScanForSourceGeneratedMonoScriptInfo (8ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (333ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (254ms)
+		SetupLoadedEditorAssemblies (248ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
+			InitializePlatformSupportModulesInManaged (2ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (31ms)
-			ProcessInitializeOnLoadAttributes (205ms)
-			ProcessInitializeOnLoadMethodAttributes (13ms)
+			BeforeProcessingInitializeOnLoad (30ms)
+			ProcessInitializeOnLoadAttributes (200ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 1.17 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 1.16 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3188 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 38 unused Assets / (0.8 MB). Loaded Objects now: 3666.
 Memory consumption went from 217.4 MB to 216.6 MB.
-Total: 2.138500 ms (FindLiveObjects: 0.143500 ms CreateObjectMapping: 0.043000 ms MarkObjects: 1.653800 ms  DeleteObjects: 0.297000 ms)
+Total: 1.997000 ms (FindLiveObjects: 0.133700 ms CreateObjectMapping: 0.039000 ms MarkObjects: 1.545900 ms  DeleteObjects: 0.277500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
@@ -181,25 +181,241 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 105695.331598 seconds.
-  path: Assets/Scenes/Player1.unity
-  artifactKey: Guid(3fed14de8f8e4a94facefafedc56bd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Player1.unity using Guid(3fed14de8f8e4a94facefafedc56bd99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94f51c723e603a850c93a5f711f87b22') in 0.001774 seconds
+  Time since last request: 2338.690629 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7a98278e36362e23783275605e3c42e1') in 0.065910 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
+Number of asset objects unloaded after import = 202
+========================================================================
+Received Import Request.
+  Time since last request: 16.676694 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '585b25c36512880f91618d079782b5c5') in 0.013817 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 202
+========================================================================
+Received Import Request.
+  Time since last request: 4.260107 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7188ad24d1f3b1b7979621cf3b42c2b1') in 0.012468 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 202
+========================================================================
+Received Import Request.
+  Time since last request: 27.022006 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f34629da6fcd548f148102fab077b77') in 0.014757 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 8.727593 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f72e48a805594edb69af622e9f4685d') in 0.012136 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 4.649170 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '328b29734dfb15117d70c6e504dcc5d4') in 0.013275 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 5.020119 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aad6be6644764d20741440c705fba6e2') in 0.008970 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 10.833205 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2ab7d24c521aa2ce4e4929da2542cf3') in 0.019500 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 2.606383 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b18adbde2da268c5f47ba7774154796b') in 0.010560 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 3.033522 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef611e0cc43417976869a67bf113bcf9') in 0.012991 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 4.441641 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f1c057f2c8636d800dcb8c2725b210e') in 0.012104 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 7.492011 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72b07266613b06e68abe9de8ab01467a') in 0.010360 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 15.414775 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a26bb2b045e7dbfb1380bdaf267cce6') in 0.007492 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 7.476239 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f871a346274cf61d26511be5a2457d62') in 0.010634 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 2.003295 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c18f565632d257f336f4843ae89f56d') in 0.006259 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 2.210214 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5366f23e1721ea43cc16b026f8ff0957') in 0.006552 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 7.259270 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0964504b1513662b40cb35c32fc0d827') in 0.007261 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 13.611906 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38825fa6106ee98ea3bc3dcdcb41a021') in 0.005507 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 2.000866 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8e5a7c017d79983409b952bb59e930c') in 0.017025 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 12.387043 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e37ca0031f35b895cfe03125dae84e2a') in 0.005851 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 5.516701 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c56032b79a7b21231129eaeb0dee4f70') in 0.010825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 1.593993 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea3aa14ad77e45443f7fb1d6240af0a6') in 0.020652 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 0.786113 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd40171dbe3f42330cfa0c0bfe6aa4f6d') in 0.006904 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 8.320859 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7fe302262ac15e3c345f0fffa97df3a') in 0.011010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 6.297822 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40d832dcfee3d97757c799a2830432d2') in 0.009177 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 4.884796 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8992248de71ed32edf7664c80642ad57') in 0.009356 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 3.848572 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dddd09bea54f1e21e8eaf6d3dfcec185') in 0.013777 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Import Request.
+  Time since last request: 11.381553 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '277ebdbc0b3d3d7d79c95c216b6996f4') in 0.010161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
 - Loaded All Assemblies, in  0.219 seconds
-Refreshing native plugins compatible for Editor in 1.24 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.32 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.436 seconds
-Domain Reload Profiling: 654ms
-	BeginReloadAssembly (87ms)
+- Finished resetting the current domain, in  0.428 seconds
+Domain Reload Profiling: 647ms
+	BeginReloadAssembly (86ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (2ms)
 		BackupInstance (0ms)
@@ -207,36 +423,36 @@ Domain Reload Profiling: 654ms
 		CreateAndSetChildDomain (20ms)
 	RebuildCommonClasses (18ms)
 	RebuildNativeTypeToScriptingClass (6ms)
-	initialDomainReloadingComplete (13ms)
-	LoadAllAssembliesAndSetupDomain (95ms)
-		LoadAssemblies (131ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (96ms)
+		LoadAssemblies (132ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
 		AnalyzeDomain (8ms)
 			TypeCache.Refresh (4ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
-			ResolveRequiredComponents (3ms)
-	FinalizeReload (436ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (428ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (242ms)
+		SetupLoadedEditorAssemblies (232ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (3ms)
+			SetLoadedEditorAssemblies (2ms)
 			RefreshPlugins (0ms)
 			BeforeProcessingInitializeOnLoad (30ms)
-			ProcessInitializeOnLoadAttributes (192ms)
-			ProcessInitializeOnLoadMethodAttributes (14ms)
+			ProcessInitializeOnLoadAttributes (184ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (4ms)
-Refreshing native plugins compatible for Editor in 1.08 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 1.65 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3669.
-Memory consumption went from 213.0 MB to 212.2 MB.
-Total: 2.000600 ms (FindLiveObjects: 0.141200 ms CreateObjectMapping: 0.045900 ms MarkObjects: 1.514900 ms  DeleteObjects: 0.298100 ms)
+Unloading 29 unused Assets / (0.9 MB). Loaded Objects now: 3678.
+Memory consumption went from 217.6 MB to 216.7 MB.
+Total: 1.985400 ms (FindLiveObjects: 0.146400 ms CreateObjectMapping: 0.045400 ms MarkObjects: 1.511400 ms  DeleteObjects: 0.281100 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
@@ -254,45 +470,191 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 64.693389 seconds.
-  path: Assets/Prefabs/Korweta.prefab
-  artifactKey: Guid(460fcf4795144bf40ad8855af187db7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Korweta.prefab using Guid(460fcf4795144bf40ad8855af187db7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa742a472fc10f0a7a56d18f55830a1c') in 0.068039 seconds
+  Time since last request: 16.299075 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9406360500915e3b42d266031e88e96a') in 0.047647 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 48
-========================================================================
-Received Import Request.
-  Time since last request: 8.801744 seconds.
-  path: Assets/Prefabs/Korweta.prefab
-  artifactKey: Guid(460fcf4795144bf40ad8855af187db7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Korweta.prefab using Guid(460fcf4795144bf40ad8855af187db7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f85735d77492ecf69ff3231725373455') in 0.006278 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 48
+Number of asset objects unloaded after import = 113
 ========================================================================
 Received Prepare
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.217 seconds
+- Loaded All Assemblies, in  0.221 seconds
+Refreshing native plugins compatible for Editor in 1.44 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.424 seconds
+Domain Reload Profiling: 644ms
+	BeginReloadAssembly (86ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (98ms)
+		LoadAssemblies (136ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (7ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (424ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (233ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (29ms)
+			ProcessInitializeOnLoadAttributes (185ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.10 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3681.
+Memory consumption went from 219.4 MB to 218.6 MB.
+Total: 2.033800 ms (FindLiveObjects: 0.133200 ms CreateObjectMapping: 0.044600 ms MarkObjects: 1.521500 ms  DeleteObjects: 0.333900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 28.420741 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3910285f48ccacaaf1906fc36f455c7a') in 0.047807 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.219 seconds
 Refreshing native plugins compatible for Editor in 1.12 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.432 seconds
-Domain Reload Profiling: 649ms
-	BeginReloadAssembly (84ms)
+- Finished resetting the current domain, in  0.421 seconds
+Domain Reload Profiling: 641ms
+	BeginReloadAssembly (83ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (2ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (20ms)
-	RebuildCommonClasses (17ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (18ms)
 	RebuildNativeTypeToScriptingClass (6ms)
 	initialDomainReloadingComplete (13ms)
-	LoadAllAssembliesAndSetupDomain (97ms)
-		LoadAssemblies (130ms)
+	LoadAllAssembliesAndSetupDomain (99ms)
+		LoadAssemblies (134ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (9ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (421ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (234ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (30ms)
+			ProcessInitializeOnLoadAttributes (185ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.06 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3684.
+Memory consumption went from 221.4 MB to 220.5 MB.
+Total: 2.045600 ms (FindLiveObjects: 0.136300 ms CreateObjectMapping: 0.038500 ms MarkObjects: 1.588300 ms  DeleteObjects: 0.281700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 33.242293 seconds.
+  path: Assets/Prefabs/Modele3D
+  artifactKey: Guid(7dca82a0619defd47ac4bb6d3e67f11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Modele3D using Guid(7dca82a0619defd47ac4bb6d3e67f11b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '114892ca24c70845384252193bb6a6b4') in 0.003347 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 13.490580 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '078c8ac88fd16f19bb4745a8eae0b26b') in 0.049133 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.225 seconds
+Refreshing native plugins compatible for Editor in 1.18 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.431 seconds
+Domain Reload Profiling: 656ms
+	BeginReloadAssembly (88ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (23ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (14ms)
+	LoadAllAssembliesAndSetupDomain (100ms)
+		LoadAssemblies (135ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
 			TypeCache.Refresh (4ms)
 				TypeCache.ScanAssembly (0ms)
 			ScanForSourceGeneratedMonoScriptInfo (0ms)
@@ -300,24 +662,170 @@ Domain Reload Profiling: 649ms
 	FinalizeReload (432ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (240ms)
+		SetupLoadedEditorAssemblies (237ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (2ms)
+			InitializePlatformSupportModulesInManaged (3ms)
 			SetLoadedEditorAssemblies (3ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (30ms)
-			ProcessInitializeOnLoadAttributes (191ms)
+			BeforeProcessingInitializeOnLoad (31ms)
+			ProcessInitializeOnLoadAttributes (186ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.15 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3687.
+Memory consumption went from 223.3 MB to 222.5 MB.
+Total: 1.938100 ms (FindLiveObjects: 0.133400 ms CreateObjectMapping: 0.038900 ms MarkObjects: 1.463400 ms  DeleteObjects: 0.301400 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 20.222255 seconds.
+  path: Assets/Prefabs/Niszczyciel.prefab
+  artifactKey: Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Niszczyciel.prefab using Guid(b14807d490417fd43bc6552eeb031802) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33198c471eb2a22408fb96f94d924373') in 0.055192 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 113
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.218 seconds
+Refreshing native plugins compatible for Editor in 1.34 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.427 seconds
+Domain Reload Profiling: 645ms
+	BeginReloadAssembly (84ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (19ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (98ms)
+		LoadAssemblies (133ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (427ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (236ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (2ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (31ms)
+			ProcessInitializeOnLoadAttributes (187ms)
 			ProcessInitializeOnLoadMethodAttributes (12ms)
 			AfterProcessingInitializeOnLoad (1ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (5ms)
-Refreshing native plugins compatible for Editor in 1.08 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.20 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 29 unused Assets / (0.9 MB). Loaded Objects now: 3681.
-Memory consumption went from 219.4 MB to 218.5 MB.
-Total: 1.947800 ms (FindLiveObjects: 0.145700 ms CreateObjectMapping: 0.050000 ms MarkObjects: 1.448300 ms  DeleteObjects: 0.303000 ms)
+Unloading 29 unused Assets / (0.8 MB). Loaded Objects now: 3690.
+Memory consumption went from 225.2 MB to 224.4 MB.
+Total: 2.014200 ms (FindLiveObjects: 0.135200 ms CreateObjectMapping: 0.038600 ms MarkObjects: 1.530600 ms  DeleteObjects: 0.308800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 32.783318 seconds.
+  path: Assets/Scenes/MainMenu.unity
+  artifactKey: Guid(9b6b47750248b9947b22e3571afea681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/MainMenu.unity using Guid(9b6b47750248b9947b22e3571afea681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6393138ebb2cd73deb091b4d44495b7d') in 0.030720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.219 seconds
+Refreshing native plugins compatible for Editor in 1.41 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.427 seconds
+Domain Reload Profiling: 645ms
+	BeginReloadAssembly (83ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (2ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (18ms)
+	RebuildCommonClasses (17ms)
+	RebuildNativeTypeToScriptingClass (6ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (97ms)
+		LoadAssemblies (131ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (4ms)
+				TypeCache.ScanAssembly (0ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (427ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (232ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (3ms)
+			SetLoadedEditorAssemblies (3ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (31ms)
+			ProcessInitializeOnLoadAttributes (183ms)
+			ProcessInitializeOnLoadMethodAttributes (12ms)
+			AfterProcessingInitializeOnLoad (1ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (4ms)
+Refreshing native plugins compatible for Editor in 1.09 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3158 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 29 unused Assets / (0.9 MB). Loaded Objects now: 3693.
+Memory consumption went from 227.3 MB to 226.3 MB.
+Total: 1.957400 ms (FindLiveObjects: 0.170700 ms CreateObjectMapping: 0.038700 ms MarkObjects: 1.427100 ms  DeleteObjects: 0.320200 ms)
 
 Prepare: number of updated asset objects reloaded= 0
 AssetImportParameters requested are different than current active one (requested -> active):
