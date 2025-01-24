@@ -105,13 +105,9 @@ public class GameManagment : MonoBehaviour
             PlayerPrefs.SetString("AttackedFields" + index, " ");
             SaveHP();
         }
-        else if (gameState == 1)
-        {
-            // wczytanie pozycji statkow oraz sprawdzenie czy statki otrzymaly obrazenia
-            occupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions" + index), shipsNumber, maxSize);
-            destroyedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("DestroyedFields" + index), shipsNumber, maxSize);
-            shipsLeft = PlayerPrefs.GetInt("ShipsLeft" + index);
 
+        else
+        {
             pancernikComponent1.hp = PlayerPrefs.GetInt("PancernikHP" + index);
             if (pancernikComponent1.hp <= 0)
             {
@@ -142,6 +138,14 @@ public class GameManagment : MonoBehaviour
                 lekkiKrazownik1.transform.tag = "Destroyed";
                 lekkiKrazownikComponent1.Fire();
             }
+        }
+
+        if (gameState == 1)
+        {
+            // wczytanie pozycji statkow oraz sprawdzenie czy statki otrzymaly obrazenia
+            occupiedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("Positions" + index), shipsNumber, maxSize);
+            destroyedFields = Functions.instance.StringToArray(PlayerPrefs.GetString("DestroyedFields" + index), shipsNumber, maxSize);
+            shipsLeft = PlayerPrefs.GetInt("ShipsLeft" + index);
 
             // wczytanie pol ktore sa atakowane przez przeciwnika
             if (index == 1)
@@ -252,10 +256,9 @@ public class GameManagment : MonoBehaviour
                 {
                     pancernikComponent1.hp -= 1;
                 }
-                if (pancernikComponent1.hp == 0)
+                if (pancernikComponent1.hp == 0 && pancernik1.tag != "Destroyed")
                 {
                     pancernik1.transform.tag = "Destroyed";
-                    pancernikComponent1.Fire();
                     shipsLeft -= 1;
                     for (int i = 0; i < maxSize; i++)
                     {
@@ -268,10 +271,9 @@ public class GameManagment : MonoBehaviour
                 {
                     niszczycielComponent1.hp -= 1;
                 }
-                if (niszczycielComponent1.hp == 0)
+                if (niszczycielComponent1.hp == 0 && niszczyciel1.tag != "Destroyed")
                 {
                     niszczyciel1.transform.tag = "Destroyed";
-                    niszczycielComponent1.Fire();
                     shipsLeft -= 1;
                     for (int i = 0; i < maxSize; i++)
                     {
@@ -284,10 +286,9 @@ public class GameManagment : MonoBehaviour
                 {
                     ciezkiKrazownikComponent1.hp -= 1;
                 }
-                if (ciezkiKrazownikComponent1.hp == 0)
+                if (ciezkiKrazownikComponent1.hp == 0 && ciezkiKrazownik1.tag != "Destroyed")
                 {
                     ciezkiKrazownik1.transform.tag = "Destroyed";
-                    ciezkiKrazownikComponent1.Fire();
                     shipsLeft -= 1;
                     for (int i = 0; i < maxSize; i++)
                     {
@@ -300,10 +301,9 @@ public class GameManagment : MonoBehaviour
                 {
                     korwetaComponent1.hp -= 1;
                 }
-                if (korwetaComponent1.hp == 0)
+                if (korwetaComponent1.hp == 0 && korweta1.tag != "Destroyed")
                 {
                     korweta1.transform.tag = "Destroyed";
-                    korwetaComponent1.Fire();
                     shipsLeft -= 1;
                     for (int i = 0; i < maxSize; i++)
                     {
@@ -316,10 +316,9 @@ public class GameManagment : MonoBehaviour
                 {
                     lekkiKrazownikComponent1.hp -= 1;
                 }
-                if (lekkiKrazownikComponent1.hp == 0)
+                if (lekkiKrazownikComponent1.hp == 0 && lekkiKrazownik1.tag != "Destroyed")
                 {
                     lekkiKrazownik1.transform.tag = "Destroyed";
-                    lekkiKrazownikComponent1.Fire();
                     shipsLeft -= 1;
                     for (int i = 0; i < maxSize; i++)
                     {
@@ -349,7 +348,9 @@ public class GameManagment : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(0.6f, 1.3f));
         }
 
+        yield return new WaitForSeconds(0.5f);
         animationPlaying = false;
+        startFire();
         if (shipsLeft <= 0)
         {
             gameState = 2;
@@ -364,7 +365,9 @@ public class GameManagment : MonoBehaviour
     public void EndAnimationStarter()
     {
         animationPlaying = true;
+        InGameUI.instance.animationBlocker.SetActive(true);
         torpedoHit = false;
+        DisableSmoke();
         mapa1 = Instantiate(mapa);
         attackHitParticle1 = new ParticleSystem[shipsNumber + 10];
         attackMissParticle1 = new ParticleSystem[shipsNumber + 10];
@@ -482,5 +485,38 @@ public class GameManagment : MonoBehaviour
         PlayerPrefs.SetInt("KorwetaHP" + index, korwetaComponent1.hp);
         PlayerPrefs.SetInt("LekkiKrazownikHP" + index, lekkiKrazownikComponent1.hp);
         PlayerPrefs.SetInt("ShipsLeft" + index, shipsLeft);
+    }
+
+    public void DisableSmoke()
+    {
+        pancernikComponent1.DisableSmoke();
+        ciezkiKrazownikComponent1.DisableSmoke();
+        lekkiKrazownikComponent1.DisableSmoke();
+        niszczycielComponent1.DisableSmoke();
+        korwetaComponent1.DisableSmoke();
+    }
+
+    public void startFire()
+    {
+        if (pancernikComponent1.hp == 0)
+        {
+            pancernikComponent1.Fire();
+        }
+        if (niszczycielComponent1.hp == 0)
+        {
+            niszczycielComponent1.Fire();
+        }
+        if (ciezkiKrazownikComponent1.hp == 0)
+        {
+            ciezkiKrazownikComponent1.Fire();
+        }
+        if (korwetaComponent1.hp == 0)
+        {
+            korwetaComponent1.Fire();
+        }
+        if (lekkiKrazownikComponent1.hp == 0)
+        {
+            lekkiKrazownikComponent1.Fire();
+        }
     }
 }

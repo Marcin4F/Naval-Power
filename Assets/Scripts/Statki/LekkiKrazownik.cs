@@ -21,7 +21,8 @@ public class LekkiKrazownik : Ship
     public GameObject[] znaczniki;
 
     public ParticleSystem fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10, fire11, fire12, fire13, fire14, fire15, fire16, fire17, fire18;
-    private ParticleSystem[] fire;
+    public ParticleSystem smoke1, smoke2, smoke3, smoke4, smoke5, smoke6, smoke7, smoke8, smoke9, smoke10, smoke11, smoke12, smoke13, smoke14, smoke15, smoke16, smoke17, smoke18;
+    private ParticleSystem[] fire, smoke;
     public LekkiKrazownik() //konstruktor
     {
         move = 2;
@@ -43,6 +44,7 @@ public class LekkiKrazownik : Ship
             cooldown--;
 
         fire = new ParticleSystem[] { fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10, fire11, fire12, fire13, fire14, fire15, fire16, fire17, fire18 };
+        smoke = new ParticleSystem[] { smoke1, smoke2, smoke3, smoke4, smoke5, smoke6, smoke7, smoke8, smoke9, smoke10, smoke11, smoke12, smoke13, smoke14, smoke15, smoke16, smoke17, smoke18 };
         for (int i = 0; i < 18; i++)
         {
             fire[i].Stop();
@@ -84,6 +86,15 @@ public class LekkiKrazownik : Ship
         for (int i = 0; i < 18; i++)
         {
             Functions.instance.RestartParticles(fire[i]);
+            Functions.instance.RestartParticles(smoke[i]);
+        }
+    }
+
+    public void DisableSmoke()
+    {
+        for (int i = 0; i < 18; i++)
+        {
+            smoke[i].Stop();
         }
     }
 }

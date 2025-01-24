@@ -6,7 +6,8 @@ using UnityEngine;
 public class Korweta : Ship
 {
     public ParticleSystem fire1, fire2, fire3, fire4, fire5;
-    private ParticleSystem[] fire;
+    public ParticleSystem smoke1, smoke2, smoke3, smoke4, smoke5;
+    private ParticleSystem[] fire, smoke;
     public Korweta() //konstruktor
     {
         move = 4;
@@ -19,6 +20,7 @@ public class Korweta : Ship
     private void Awake()
     {
         fire = new ParticleSystem[] { fire1, fire2, fire3, fire4, fire5 };
+        smoke = new ParticleSystem[] { smoke1, smoke2, smoke3, smoke4, smoke5 };
         for (int i = 0; i < 5; i++)
         {
             fire[i].Stop();
@@ -30,6 +32,15 @@ public class Korweta : Ship
         for (int i = 0; i < 5; i++)
         {
             Functions.instance.RestartParticles(fire[i]);
+            Functions.instance.RestartParticles(smoke[i]);
+        }
+    }
+
+    public void DisableSmoke()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            smoke[i].Stop();
         }
     }
 }

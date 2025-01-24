@@ -18,7 +18,8 @@ public class Pancernik : Ship
     public GameObject[] znaczniki;
 
     public ParticleSystem fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10;
-    private ParticleSystem[] fire;
+    public ParticleSystem smoke1, smoke2, smoke3, smoke4, smoke5, smoke6, smoke7, smoke8, smoke9, smoke10;
+    private ParticleSystem[] fire, smoke;
     public Pancernik() //konstruktor
     {
         move = 5;
@@ -40,6 +41,7 @@ public class Pancernik : Ship
             cooldown--;
 
         fire = new ParticleSystem[] { fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9, fire10 };
+        smoke = new ParticleSystem[] { smoke1, smoke2, smoke3, smoke4, smoke5, smoke6, smoke7, smoke8, smoke9, smoke10 };
         for (int i = 0; i < 10; i++)
         {
             fire[i].Stop();
@@ -74,6 +76,15 @@ public class Pancernik : Ship
         for (int i = 0; i < 10; i++)
         {
             Functions.instance.RestartParticles(fire[i]);
+            Functions.instance.RestartParticles(smoke[i]);
+        }
+    }
+
+    public void DisableSmoke()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            smoke[i].Stop();
         }
     }
 

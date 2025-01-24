@@ -154,12 +154,14 @@ public class ReyCastSelecter : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E) && !isAttacking && !isUsingAbility)
                 {
                     isAttacking = true;
+                    GameManagment.instance.DisableSmoke();
                     Attack.instance.Attacking();
                 }
 
                 else if (Input.GetKeyDown(KeyCode.E) && isAttacking)
                 {
-                   isAttacking = false;
+                    isAttacking = false;
+                    GameManagment.instance.startFire();
                     Attack.instance.QuitAttacking();
                 }
 
@@ -167,17 +169,18 @@ public class ReyCastSelecter : MonoBehaviour
                 {
                     if (lastSelected.name == "Pancernik(Clone)")
                     {
+                        GameManagment.instance.DisableSmoke();
                         pancernik = lastSelected.GetComponent<Pancernik>();
                         if (pancernik.cooldown == 0)
                         {
                             isUsingAbility = true;
                             pancernik.Ability();
-
                         }
                     }
 
                     else if (lastSelected.name == "LekkiKrazownik(Clone)")
                     {
+                        GameManagment.instance.DisableSmoke();
                         lekkiKrazownik = lastSelected.GetComponent <LekkiKrazownik>();
                         if (lekkiKrazownik.cooldown == 0)
                         {
@@ -192,6 +195,7 @@ public class ReyCastSelecter : MonoBehaviour
                     if (lastSelected.name == "Pancernik(Clone)")
                     {
                         isUsingAbility = false;
+                        GameManagment.instance.startFire();
                         pancernik = lastSelected.GetComponent<Pancernik>();
                         pancernik.StopAbility();
                     }
@@ -199,6 +203,7 @@ public class ReyCastSelecter : MonoBehaviour
                     else if (lastSelected.name == "LekkiKrazownik(Clone)")
                     {
                         isUsingAbility = false;
+                        GameManagment.instance.startFire();
                         lekkiKrazownik = lastSelected.GetComponent<LekkiKrazownik>();
                         lekkiKrazownik.StopAbility();
                     }

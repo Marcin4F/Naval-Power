@@ -6,7 +6,8 @@ using UnityEngine;
 public class Niszczyciel : Ship
 {
     public ParticleSystem fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9;
-    private ParticleSystem[] fire;
+    public ParticleSystem smoke1, smoke2, smoke3, smoke4, smoke5, smoke6, smoke7, smoke8, smoke9;
+    private ParticleSystem[] fire, smoke;
     public Niszczyciel() //konstruktor
     {
         move = 5;
@@ -19,6 +20,7 @@ public class Niszczyciel : Ship
     private void Awake()
     {
         fire = new ParticleSystem[] { fire1, fire2, fire3, fire4, fire5, fire6, fire7, fire8, fire9 };
+        smoke = new ParticleSystem[] { smoke1, smoke2, smoke3, smoke4, smoke5, smoke6, smoke7, smoke8, smoke9 };
         for (int i = 0; i < 9; i++)
         {
             fire[i].Stop();
@@ -30,6 +32,15 @@ public class Niszczyciel : Ship
         for (int i = 0; i < 9; i++)
         {
             Functions.instance.RestartParticles(fire[i]);
+            Functions.instance.RestartParticles(smoke[i]);
+        }
+    }
+
+    public void DisableSmoke()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            smoke[i].Stop();
         }
     }
 }
