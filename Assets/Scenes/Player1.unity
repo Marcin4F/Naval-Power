@@ -1109,11 +1109,11 @@ MonoBehaviour:
   animationBlocker: {fileID: 4465044}
   abilityPanel: {fileID: 1150650429}
   shipPhoto: {fileID: 1062510351}
-  korwetePhoto: {fileID: 2800000, guid: fad14392e4831db408e9e87271edc22e, type: 3}
-  niszczycielPhoto: {fileID: 2800000, guid: 0562961262162194ebc3039eafb49026, type: 3}
-  lekkiKPhoto: {fileID: 2800000, guid: b72f5b8039bddf04aaab708dc88fa37c, type: 3}
-  ciezkiKPhoto: {fileID: 2800000, guid: ebb76ee4bda052a438bf503f085cd76d, type: 3}
-  pancernikPhoto: {fileID: 2800000, guid: 293c38f6b1504394b80757fbc5f7f8a6, type: 3}
+  korwetePhoto: {fileID: 2800000, guid: c05fe4a48251831439b139953da5a4bd, type: 3}
+  niszczycielPhoto: {fileID: 2800000, guid: 668af26207935834c989f181a6a4643f, type: 3}
+  lekkiKPhoto: {fileID: 2800000, guid: 40e582508ab6b4d4b9fda3edad6a9610, type: 3}
+  ciezkiKPhoto: {fileID: 2800000, guid: 5fe307b91b1022149b29cc35e2d54acd, type: 3}
+  pancernikPhoto: {fileID: 2800000, guid: 6d3ff1d7d60bac9409b99a03fb2370d8, type: 3}
 --- !u!1 &156005829
 GameObject:
   m_ObjectHideFlags: 0
