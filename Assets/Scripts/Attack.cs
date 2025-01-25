@@ -76,8 +76,11 @@ public class Attack : MonoBehaviour
                 for(int j = 0; j < maxSize; j++)
                 {
                     newPosition = Functions.instance.FieldToWorldPosition(GameManagment.instance.enemyDestroyedFields[i,j]);
-                    znacznikiZniszczonych[i, j] = Instantiate(znacznikZniszczonych);
-                    znacznikiZniszczonych[i, j].transform.position = new Vector3(newPosition[0], 1.65f, newPosition[1]);
+                    if (newPosition[0] != 0 && newPosition[1] != 0)
+                    {
+                        znacznikiZniszczonych[i, j] = Instantiate(znacznikZniszczonych);
+                        znacznikiZniszczonych[i, j].transform.position = new Vector3(newPosition[0], 1.65f, newPosition[1]);
+                    }       
                 }
             }
         }

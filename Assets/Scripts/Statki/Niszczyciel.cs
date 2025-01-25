@@ -40,6 +40,7 @@ public class Niszczyciel : Ship
     {
         for (int i = 0; i < 9; i++)
         {
+            smoke[i].Clear();
             smoke[i].Stop();
         }
     }

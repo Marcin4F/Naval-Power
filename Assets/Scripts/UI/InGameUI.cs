@@ -19,6 +19,8 @@ public class InGameUI : MonoBehaviour
     public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText, abilityCooldown;
 
     public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel, shipsNamesDisplayPanel, animationBlocker, abilityPanel;
+    public RawImage shipPhoto;
+    public Texture korwetePhoto, niszczycielPhoto, lekkiKPhoto, ciezkiKPhoto, pancernikPhoto; 
     Dictionary<string, string> names = new Dictionary<string, string>
     {
         ["Pancernik"] = "Battleship",
@@ -166,25 +168,33 @@ public class InGameUI : MonoBehaviour
         SetMovementValue(movesUsed, shipName);
 
         if (shipName == "Korweta")
+        {
             abilityPanel.SetActive(false);
+            shipPhoto.texture = korwetePhoto;
+        }
+            
         else
             abilityPanel.SetActive(true);
 
         if (shipName == "Pancernik")
         {
             cooldownValue = PlayerPrefs.GetInt("PancernikCooldown" + index);
+            shipPhoto.texture = pancernikPhoto;
         }
         else if (shipName == "CiezkiKrazownik")
         {
             cooldownValue = PlayerPrefs.GetInt("CiezkiKrazownikCooldown" + index);
+            shipPhoto.texture = ciezkiKPhoto;
         }
         else if (shipName == "LekkiKrazownik")
         {
             cooldownValue = PlayerPrefs.GetInt("LekkiKrazownikCooldown" + index);
+            shipPhoto.texture = lekkiKPhoto;
         }
         else if (shipName == "Niszczyciel")
         {
             cooldownValue = PlayerPrefs.GetInt("NiszczycielCooldown" + index);
+            shipPhoto.texture = niszczycielPhoto;
         }
         if (cooldownValue > 0)
             cooldownValue--;

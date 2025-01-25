@@ -40,6 +40,7 @@ public class CiezkiKrazownik : Ship
     {
         for (int i = 0; i < 8; i++)
         {
+            smoke[i].Clear();
             smoke[i].Stop();
         }
     }

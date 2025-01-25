@@ -94,6 +94,7 @@ public class LekkiKrazownik : Ship
     {
         for (int i = 0; i < 18; i++)
         {
+            smoke[i].Clear();
             smoke[i].Stop();
         }
     }

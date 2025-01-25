@@ -84,6 +84,7 @@ public class Pancernik : Ship
     {
         for (int i = 0; i < 10; i++)
         {
+            smoke[i].Clear();
             smoke[i].Stop();
         }
     }

@@ -40,6 +40,7 @@ public class Korweta : Ship
     {
         for (int i = 0; i < 5; i++)
         {
+            smoke[i].Clear();
             smoke[i].Stop();
         }
     }
