@@ -9,14 +9,16 @@ using UnityEngine.UI;
 public class InGameUI : MonoBehaviour
 {
     public int shipPlaced = 0;              // ilosc statkow postawionych na planszy
-    private int displayMoveUsed, index, displayHP, loser, cooldownValue;
+    private int displayMoveUsed, index, displayHP, loser, cooldownValue, direction;
+    
     public static bool isPaused = false;
-    private bool isEndTurn = true;
     public bool isDraged;
+    private bool isEndTurn = true;
+    
     private string displayName;
 
     public Button endTurn, continueGame, quit, options, goBack, quitGame;        // inicjalizacja przyciskow na scenie
-    public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText, abilityCooldown;
+    public TMP_Text nazwa, hpStatku, ruchyStatku, endTurnText, winnerText, abilityCooldown, playerTurn;
 
     public GameObject pauseMenu, optionsPanel, statekPanel, gameOverPanel, quitGamePanel, shipsNamesDisplayPanel, animationBlocker, abilityPanel;
     public RawImage shipPhoto;
@@ -62,7 +64,15 @@ public class InGameUI : MonoBehaviour
                 gameOver();
             }
         }
-        
+        else
+        {
+            direction = PlayerPrefs.GetInt("Direction");
+            if (direction == 1)
+                playerTurn.SetText("Player 2 turn");
+            else
+                playerTurn.SetText("Player 1 turn");
+        }
+
         if (GameManagment.instance != null && GameManagment.instance.gameState == 0)
         {
             isEndTurn = false;
